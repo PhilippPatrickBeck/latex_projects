@@ -645,7 +645,95 @@
 	vergleichbar mit den größten humanitären Katastrophen der Geschichte, jedoch anhaltend
 	und sich selbst verstärkend.
 	
-	\section*{6. Zusammenfassung und Ausblick}
+	\section*{6. IT-Infrastruktur der Zukunft: Ein Netz aus kleinen, dezentralen Rechenzentren}
+	
+	Die zunehmende Digitalisierung und insbesondere der Boom der Künstlichen Intelligenz
+	führen zu einem explosionsartigen Anstieg des Energiebedarfs von Rechenzentren. Eine
+	zukunftsfähige IT-Architektur im Kontext des Klimawandels sollte daher auf Dezentralisierung,
+	Energieeffizienz und die Nutzung von Synergien mit anderen Sektoren setzen. Ein
+	vielversprechender Ansatz ist der Aufbau einer Infrastruktur aus vielen kleinen,
+	geografisch verteilten Rechenzentren – als Gegenentwurf zu wenigen, hochgradig zentralisierten
+	Hyperscale-Rechenzentren.
+	
+	\subsection*{6.1. Dezentralisierung als Paradigmenwechsel}
+	Traditionelle Rechenzentren sind zentralisiert, riesig und oft auf grüne Wiesen gebaut.
+	Ein zukunftsweisendes Modell ist die Dezentralisierung der IT-Infrastruktur. Statt weniger,
+	monolithischer Anlagen entsteht ein Cloud-Edge-Kontinuum aus kleineren, geografisch
+	verteilten Standorten – integriert in bestehende Gebäude, direkt dort, wo die Daten
+	entstehen und genutzt werden. Dezentrale Edge-Rechenzentren zeichnen sich durch ihre Nähe
+	zu den Nutzern aus und ermöglichen dadurch latenzkritische Dienste, erhöhen durch verteilte
+	Verarbeitung und Redundanz die Resilienz des Gesamtsystems und können gleichzeitig zur
+	Stabilisierung der Energienetze beitragen. Die Forschung betont die Verwendung vieler
+	kleiner, geografisch verteilter Mini-Rechenzentren, die idealerweise direkt mit erneuerbaren
+	Energiequellen gekoppelt sind \cite{kammen2014}. Diese dezentrale Struktur, die in Ländern
+	wie Deutschland oft als vermeintlicher Nachteil gesehen wird, kann sich als entscheidender
+	strategischer Vorteil erweisen. Ein dichtes Netz aus mittelgroßen Rechenzentren schafft
+	die Grundlage für eine überlegene, antifragile KI-Infrastruktur, die auf Dezentralisierung,
+	Robustheit durch Verteilung und radikale Energieeffizienz setzt \cite{xpert2025}. Dieses
+	Modell ist gegenüber den zentralen Hyperscale-Rechenzentren resilienter, da ein lokaler
+	Ausfall nicht den Kollaps des gesamten Systems verursacht.
+	
+	\subsection*{6.2. Energieeffizienz durch lokale Verarbeitung und Abwärmenutzung}
+	Das zentrale Versprechen eines dezentralen IT-Ökosystems ist die drastische Reduzierung
+	des Energieverbrauchs. Indem Daten direkt am Ort ihrer Entstehung – dem "Edge" des Netzwerks
+	– verarbeitet werden, wird der energieintensive Transport großer Datenmengen zu weit
+	entfernten Rechenzentren vermieden. Untersuchungen im Bereich des "Fog Computing" zeigen
+	klar auf, dass die Datenverarbeitung am Netzwerkrand den Energieverbrauch im Vergleich zum
+	Cloud-Computing massiv senkt \cite{wang2025, kaneti2025}.
+	
+	Ein weiterer entscheidender Vorteil kleiner Rechenzentren ist die Möglichkeit, ihre ohnehin
+	geringere Abwärme direkt vor Ort zu nutzen. Während die Abwärme großer Hyperscaler oft über
+	weite Strecken transportiert werden muss, können dezentrale Einheiten etwa in ein bestehendes
+	Nahwärmenetz einer Kommune einspeisen oder direkt ein angeschlossenes Gebäude beheizen.
+	Ein Beispiel ist das Projekt in Heiligenhaus, das Edge-Technologie mit erneuerbaren Energien
+	und lokalen Wärmenetzen verknüpft und als Blaupause für nachhaltige Rechenzentren gilt
+	\cite{neueenergie2025}. Indem Abwärme so zur wertvollen Ressource wird, steigt die
+	Gesamtenergieeffizienz erheblich.
+	
+	\subsection*{6.3. Konkrete Ansätze in der Praxis}
+	Die Theorie wird bereits in die Praxis umgesetzt. Die Lindner Group hat mit "BitHeat" eine
+	modulare, dezentrale und energieeffiziente Edge-Cloud-Lösung vorgestellt. Sie integriert
+	sich in bestehende Gebäudetechnik, minimiert Übertragungsverluste und ermöglicht eine
+	nachhaltige Wärme- und Energiegewinnung. Die Plattform ist für maximale Flexibilität
+	ausgelegt und läuft stabil auf bestehender Infrastruktur, sogar auf Minicomputern wie dem
+	Raspberry Pi \cite{lindner2025}.
+	
+	Die vielleicht zukunftsweisendsten Ansätze zielen auf eine massive Skalierung durch aktive
+	Einbindung von Privathaushalten. Das Start-up SPAN entwickelt in Zusammenarbeit mit NVIDIA
+	Mini-Rechenzentren für den heimischen Garten oder als Box an der Hauswand. Diese
+	"verteilten Rechenzentren" sollen KI-Rechenleistung dezentral bündeln, indem sie ungenutzte
+	Netzkapazität und Solarstrom nutzen. Eine zentrale Plattform verteilt dann die Rechenaufträge
+	an das Netz aus Haushalten, die im Gegenzug vergünstigte Strom- und Internettarife erhalten
+	\cite{heise2026, itboltwise2026, futurezone2026}. Das Start-up plant den Ausbau auf bis zu
+	80.000 solcher Nodes bis 2027.
+	
+	Eine Vorreiterrolle in der wissenschaftlichen Untersuchung dieser Konzepte nimmt Deutschland
+	ein. Die OFFIS-Machbarkeitsstudie "Edge-RZ" analysiert systematisch die Entwicklung kleinerer
+	Rechenzentren zu "systemdienlichen Edge-Rechenzentren", die einen integrierten Ansatz für
+	IT-Services, Netzstabilisierung und Wärmenutzung verfolgen \cite{offis2025}.
+	
+	\subsection*{6.4. Herausforderungen und politische Handlungsempfehlungen}
+	Trotz aller Vorteile ist der Weg zu einem dezentralen IT-Ökosystem nicht frei von
+	Herausforderungen. Die Sicherheit der Hardware ist ein zentrales Thema: Einzelne Rechner
+	in Privathaushalten sind deutlich schwerer gegen Diebstahl und Manipulation zu schützen als
+	ein zentrales Rechenzentrum. Zudem ist der Energieverbrauch von Hochleistungs-KI-Chips im
+	Wohnumfeld nicht zu vernachlässigen.
+	
+	Dennoch überwiegen die Argumente für eine kluge Politik. Entscheidungsträger sollten daher:
+	
+	1. **Forschung und Entwicklung fördern:** Projektförderungen wie die EU-Initiative "IPCEI-CIS"
+	oder nationale Projekte wie "Edge-RZ" müssen weiter ausgebaut werden.
+	2. **Regulatorische Hürden abbauen:** Die Integration kleiner Rechenzentren in Gebäude und
+	die Einspeisung von Abwärme in Nahwärmenetze müssen bürokratisch vereinfacht werden.
+	3. **Anreize für nachhaltige Energie schaffen:** Die Nutzung lokaler erneuerbarer Energien
+	und die flexible Teilnahme am Strommarkt (etwa durch Lastverschiebung) sollten für
+	Betreiber attraktiver gemacht werden.
+	
+	Ein gut geplantes, dezentral organisiertes IT-Ökosystem ist ein zentraler Baustein einer
+	nachhaltigen, resilienten und souveränen digitalen Zukunft. Es vereint technologischen
+	Fortschritt mit ökologischer Verantwortung.
+	
+	\section*{7. Zusammenfassung und Ausblick}
 	
 	Die gesellschaftlichen Herausforderungen des Klimawandels sind vielschichtig:
 	Verteilungskonflikte, Migration, Gesundheitsrisiken, Demokratiegefährdung, tiefe
@@ -663,12 +751,14 @@
 	Klimawandels würde zu katastrophalen, in großen Teilen irreversiblen Folgen führen:
 	jahrelange extreme Hitzewellen, Hunger, Massenmigration, gewaltsame Konflikte, der
 	Kollaps von Ökosystemen und die Zerstörung der Lebensgrundlagen von Milliarden Menschen.
-	Die letztendliche Hürde ist nicht technischer oder ökonomischer Natur, sondern politisch:
-	Es fehlt bislang der breite gesellschaftliche Rückhalt, um das Wachstumsparadigma zu
-	überwinden und die notwendigen Emissionsminderungen umzusetzen. Die Bewältigung der
-	Klimakrise erfordert daher zunächst eine umfassende demokratische Aushandlung darüber,
-	wie eine zukunftsfähige, sozial gerechte und ökologisch nachhaltige Gesellschaft
-	aussehen soll.
+	Die IT-Infrastruktur der Zukunft sollte dezentral aufgebaut sein: Viele kleine, vernetzte
+	Rechenzentren statt weniger riesiger Anlagen sparen Energie, nutzen Abwärme vor Ort und
+	erhöhen die Resilienz. Die letztendliche Hürde ist nicht technischer oder ökonomischer
+	Natur, sondern politisch: Es fehlt bislang der breite gesellschaftliche Rückhalt, um das
+	Wachstumsparadigma zu überwinden und die notwendigen Emissionsminderungen umzusetzen.
+	Die Bewältigung der Klimakrise erfordert daher zunächst eine umfassende demokratische
+	Aushandlung darüber, wie eine zukunftsfähige, sozial gerechte und ökologisch nachhaltige
+	Gesellschaft aussehen soll.
 	
 	\newpage
 	\begin{thebibliography}{99}
@@ -873,7 +963,7 @@
 		\bibitem{deepmind2018}
 		DeepMind (2018). \textit{Using machine learning to reduce data centre energy consumption}. Google DeepMind Blog.
 		
-		% Abschnitt 4 - physikalische Grundlagen (bereits vorhanden)
+		% Abschnitt 4 - physikalische Grundlagen
 		\bibitem{realclimate2007}
 		RealClimate (2007). \textit{Learning from a simple model}. RealClimate Blog.
 		
@@ -913,12 +1003,43 @@
 		\bibitem{mpimet2015}
 		Max-Planck-Institut für Meteorologie (2015). \textit{Neue Studie: Strahlungsantrieb durch Aerosole geringer und ...}. MPIMet Pressemitteilung.
 		
-		% Abschnitt 5 - neue Quellen zu Konsequenzen des Ignorierens
+		% Abschnitt 5 - Konsequenzen des Ignorierens
 		\bibitem{worldbank2012}
 		World Bank (2012). \textit{Turn Down the Heat: Why a 4°C Warmer World Must Be Avoided}. World Bank Report.
 		
 		\bibitem{iom2025}
 		International Organization for Migration (2025). \textit{World Migration Report 2025}. IOM.
+		
+		% Abschnitt 6 - Dezentrale IT-Infrastruktur
+		\bibitem{lindner2025}
+		Lindner Group (2025). \textit{BitHeat Edge-Cloud: IT-Infrastruktur goes Gebäudetechnik}. Firmenpublikation.
+		
+		\bibitem{offis2025}
+		OFFIS (2025). \textit{Edge-RZ Machbarkeitsstudie: Systemdienliche Edge-Rechenzentren als nachhaltige und resiliente Infrastruktur}. OFFIS – Institut für Informatik.
+		
+		\bibitem{kammen2014}
+		Kammen, D. et al. (2014). \textit{Distributed (green) data centers: A new concept for energy, computing, and telecommunications}. Energy for Sustainable Development, Vol. 19, S. 83–90.
+		
+		\bibitem{xpert2025}
+		Xpert.Digital (2025). \textit{Was ist besser: Dezentralisierte, föderierte, antifragile KI-Infrastruktur oder AI-Gigafactory?}. Online-Publikation.
+		
+		\bibitem{wang2025}
+		Wang, Y. et al. (2025). \textit{Survey of energy-efficient fog computing: Techniques and recent advances}. Energy Reports, Volume 13, S. 1–18.
+		
+		\bibitem{kaneti2025}
+		Kaneti, V.R. et al. (2025). \textit{Sustainable Digital Transformation Through Energy-Efficient Edge and Fog Computing}. IGI Global.
+		
+		\bibitem{heise2026}
+		Heise Online (2026). \textit{KI-Rechenleistung aus dem Vorgarten: Start-up setzt auf dezentrale Server}. Heise Verlag.
+		
+		\bibitem{itboltwise2026}
+		IT BOLTWISE (2026). \textit{Span und NVIDIA: Mini-Rechenzentren für den heimischen Garten}. Online-Publikation.
+		
+		\bibitem{futurezone2026}
+		Futurezone (2026). \textit{Start-up bietet Mini-Datencenter für Zuhause}. Online-Publikation.
+		
+		\bibitem{neueenergie2025}
+		neue energie (2025). \textit{Grüner rechnen - Edge-Technologie trifft Wärmenetz}. Magazin für erneuerbare Energien.
 		
 	\end{thebibliography}
 	

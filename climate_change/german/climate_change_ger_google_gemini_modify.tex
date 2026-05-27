@@ -1,0 +1,791 @@
+% !TeX program = pdflatex
+\documentclass[12pt, a4paper]{article}
+
+% Packages für Sprache und Layout
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{cite}
+
+% Pakete für Grafiken und TikZ
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc}
+
+\title{
+	\vspace{2cm}
+	Klimawandel, Postwachstum und Künstliche Intelligenz: \\
+	Eine Analyse gesellschaftlicher Herausforderungen und Lösungsansätze
+}
+\author{
+	\vspace{0.5cm}
+	\Large Name des Autors \\
+	\normalsize [Institution / Universität] \\
+	\vspace{0.5cm}
+}
+\date{\today}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.8em}
+
+\begin{document}
+	
+	\maketitle
+	
+	\vspace{0.5cm}
+	\begin{abstract}
+		\noindent
+		Der Klimawandel gilt als eine der größten Herausforderungen des 21. Jahrhunderts.
+		Dieser Aufsatz untersucht zentrale gesellschaftliche Probleme, die im Zuge der
+		Klimakrise auf uns zukommen, darunter Verteilungskonflikte, Migration,
+		Gesundheitsrisiken und demokratische Gefährdungen.
+		Anschließend werden Ideen für eine
+		Wirtschaft ohne Wachstum (Postwachstum) vorgestellt, die auf ökologischen,
+		sozialen und institutionellen Reformen basieren.
+		Abschließend wird die potenzielle
+		Rolle der Künstlichen Intelligenz (KI) bei der Bewältigung dieser Herausforderungen
+		kritisch bewertet.
+		Der Aufsatz zeigt, dass die Probleme zwar lösbar erscheinen,
+		jedoch tiefgreifende gesellschaftliche und politische Transformationen erfordern.
+	\end{abstract}
+	\vspace{0.8cm}
+	
+	\section*{1. Gesellschaftliche Probleme im Kontext des Klimawandels}
+	
+	Der fortschreitende Klimawandel führt zu einer Vielzahl von gesellschaftlichen
+	Problemen, die in ihrer Komplexität und Wechselwirkung die soziale Stabilität
+	bedrohen.
+	Die Forschung identifiziert mehrere zentrale Problemfelder, die im Folgenden
+	detailliert dargestellt werden.
+	
+	\subsection*{1.1. Verteilungs- und Gerechtigkeitskonflikte}
+	Die sozialen und ökonomischen Folgen der Klimakrise sind ungleich verteilt.
+	Steigende Energie-, Wohn- und Lebensmittelkosten infolge notwendiger
+	Klimaanpassungs- und Schutzmaßnahmen treffen Geringverdienende überproportional stark.
+	Dieser Zusammenhang wird im aktuellen Armuts- und Reichtumsbericht der Bundesregierung
+	ausdrücklich bestätigt: Steigende CO$_2$-Preise führen zu höheren Ausgaben für Heizung
+	und Verkehr, die bei ärmeren Haushalten einen größeren Teil ihres Budgets ausmachen.
+	Dem Bericht zufolge verursachen die einkommensstärksten zehn Prozent der Haushalte
+	mehr als doppelt so viele klimaschädliche Emissionen wie die einkommensschwächsten
+	zehn Prozent \cite{armutsbericht2025}.
+	Auf globaler Ebene zeigt der Climate Inequality
+	Report 2025, dass das reichste Prozent der Weltbevölkerung pro Kopf mehr als
+	680-mal so viele Emissionen verursacht wie die ärmere Hälfte der Menschheit.
+	Diese
+	ärmere Hälfte wird bis 2050 rund 74 Prozent der Einkommensverluste durch den
+	Klimawandel tragen \cite{climateinequality2025}.
+	Der Soziologe Linus Westheuser
+	argumentiert, dass die Verteilungsfrage bislang nicht ausreichend im Zentrum der
+	politischen Debatte stand, was Akzeptanzprobleme für Klimamaßnahmen verursacht
+	\cite{westheuser2025}.
+	Eine Studie des WSI zeigt, dass arme Haushalte eine höhere
+	Betroffenheit durch Klimarisiken wie Hitze oder Hochwasser aufweisen und über
+	geringere Kapazitäten zur Anpassung verfügen \cite{rehm2025}.
+	Die Belastung durch
+	extreme Hitze trifft vermehrt Menschen in schlecht isolierten Wohnungen, was einen
+	klaren sozialen Gradienten aufweist \cite{umweltbundesamt2026}.
+	
+	\subsection*{1.2. Migration und Flucht}
+	Der Klimawandel verstärkt migrationsbedingte Bewegungen weltweit. Nach Angaben der
+	UNO-Flüchtlingshilfe waren bis Mitte 2025 insgesamt 117 Millionen Menschen durch
+	Konflikte, Gewalt oder Verfolgung vertrieben worden;
+	drei Viertel von ihnen lebten in
+	Ländern mit hoher Anfälligkeit für klimabedingte Gefahren \cite{unhcr2025}.
+	Allein
+	im Jahr 2024 verließen 45,8 Millionen Menschen aufgrund von Katastrophen und
+	klimabedingten Ereignissen ihre Heimat – fast doppelt so hoch wie der Jahresdurchschnitt
+	der letzten zehn Jahre.
+	In den letzten zehn Jahren wurden rund 250 Millionen Menschen
+	durch klimabedingte Katastrophen zur Flucht innerhalb der Landesgrenzen gezwungen
+	\cite{idmc2025}.
+	Die Greenpeace-Studie "Klimawandel, Migration und Konflikt" stellt
+	fest, dass Klimafolgen in Regionen mit schwachen Institutionen und sozialen
+	Ungleichheiten bestehende Spannungen beschleunigen und zu zunehmenden
+	Verteilungskonflikten und gewaltsamen Auseinandersetzungen führen \cite{greenpeace2025}.
+	Eine aktuelle SWP-Studie warnt zudem, dass die geplante Umsiedlung ganzer
+	Gemeinschaften aus Risikogebieten künftig unvermeidlich wird.
+	Zwischen 1970 und 2020
+	wurden bereits mehr als 400 dokumentierte Fälle solcher Umsiedlungen in 78 Ländern
+	identifiziert, darunter Fidschi, Panama und die USA \cite{swp2025}.
+	Auch der
+	Inter-Amerikanische Gerichtshof für Menschenrechte hat sich in einem Gutachten
+	intensiv mit dem Nexus zwischen Klimawandel, Flucht und Migration auseinandergesetzt
+	\cite{iachr2025}.
+	
+	\subsection*{1.3. Gesundheitliche Folgen und Arbeitsbelastungen}
+	Die Klimakrise wirkt sich direkt auf die Gesundheit der Bevölkerung aus.
+	Hitzewellen
+	führen zu erhöhter Sterblichkeit und sinkender Lebensqualität, insbesondere für
+	ältere und vorerkrankte Menschen \cite{rehm2025}.
+	Der Lancet Countdown 2025
+	dokumentiert alarmierende Zahlen: Seit den 1990er Jahren stieg die Sterblichkeit durch
+	Hitze um 23 Prozent, durchschnittlich sterben jährlich 546.000 Menschen an Hitze
+	weltweit.
+	Im Jahr 2024 war die durchschnittliche Person 16 Tage gefährlicher Hitze
+	ausgesetzt – ohne den Klimawandel wären diese Tage nicht eingetreten \cite{lancet2025}.
+	Auch in Deutschland gehört Hitze inzwischen zu den bedeutendsten witterungsbedingten
+	Gesundheitsrisiken.
+	Nach Schätzungen des Robert Koch-Instituts traten hier in den
+	vergangenen Sommern jeweils mehrere tausend zusätzliche Todesfälle auf \cite{rki2025}.
+	Die WHO European Region berichtet, dass die hitzebedingte Sterblichkeit in den letzten
+	zwei Jahrzehnten um 30 Prozent gestiegen ist, mit mehr als 100.000 Todesfällen in
+	35 europäischen Ländern in den Jahren 2022 und 2023 zusammen.
+	Der Juni 2025 was der
+	heißeste Monat seit Beginn der Aufzeichnungen in Westeuropa \cite{who2025}.
+	Zudem
+	verändert die Arbeitswelt grundlegend: Bei extremer Hitze wird Arbeit
+	im Freien zum Gesundheitsrisiko \cite{medienservice2026}.
+	Hitzebedingte
+	Produktivitätsverluste summierten sich 2024 auf 640 Milliarden Arbeitsstunden, was
+	einem wirtschaftlichen Schaden von 1,09 Billionen US-Dollar entspricht \cite{lancet2025}.
+	Gleichzeitig breiten sich Infektionskrankheiten aus: Fälle von lokal übertragenem
+	Dengue-Fieber in der EU/EWR stiegen zwischen 2022 und 2024 um 368 Prozent \cite{ecdc2025}.
+	Die psychischen Belastungen durch Existenzängste aufgrund von Klimafolgen nehmen
+	ebenfalls zu.
+	
+	\subsection*{1.4. Demokratiegefährdung und politische Polarisierung}
+	Die multiplen Krisenlagen können zu einer Erosion demokratischer Prozesse führen.
+	Einerseits wächst in Krisenzeiten die Anfälligkeit für autoritäre Lösungen, die
+	"Klima-Notstand" als Rechtfertigung für Grundrechtseinschränkungen nutzen.
+	Andererseits befeuert die Klimapolitik gesellschaftliche Polarisierung, die von
+	rechten Akteuren und Wirtschaftslobbys instrumentalisiert wird \cite{westheuser2025}.
+	Das Polarisierungsbarometer 2025 des Mercator Forum Migration und Demokratie (MIDEM)
+	zeigt, dass besonders hohe affektive Polarisierungswerte bei den Themen Zuwanderung,
+	Klimawandel und Covid-19 zu verzeichnen sind \cite{polarisierung2025}.
+	Eine aktuelle
+	Analyse des RIFS Potsdam kommt zu dem Schluss, dass die Bevölkerungsgruppen, die laut
+	Wissenschafts- und Polarisierungsbarometer 2025 als am stärksten polarisiert gelten,
+	sich entlang dieser Themenfelder formieren \cite{rifs2025}.
+	Der DGB betont, dass der
+	Strukturwandel in den Kohlerevieren nur gelingen kann, wenn die betroffenen
+	Beschäftigten und Regionen aktiv in die Entscheidungen einbezogen werden \cite{dgb2025}.
+	Fehlende demokratische Legitimation von Klimamaßnahmen birgt die Gefahr von sozialem
+	Sprengstoff und einer Stärkung populistischer, klimawandelleugnender Kräfte.
+	
+	\subsection*{1.5. Arbeitsmarkt-Umbrüche und regionale Ungleichheiten}
+	Die Transformation zur CO$_2$-Neutralität verursacht tiefgreifende strukturelle
+	Veränderungen auf dem Arbeitsmarkt.
+	Der gesetzlich festgelegte Kohleausstieg bis
+	2038 wird von Strukturhilfen in Höhe von mehr als 40 Milliarden Euro begleitet
+	\cite{dgb2025}.
+	Die Bundesagentur für Arbeit hat ein interaktives Statistik-Tool
+	entwickelt, das die Auswirkungen der ökologischen Transformation detailliert analysiert.
+	Demnach hat sich im Steinkohlebergbau die sozialversicherungspflichtige Beschäftigung
+	in den letzten fünf Jahren um 57 Prozent verringert, im Braunkohlebergbau um
+	31 Prozent.
+	Deutliche Beschäftigungszuwächse wurden dagegen in der Elektrizitätsversorgung
+	realisiert (+21 Prozent). Allerdings zeigen sich bei wichtigen Berufen der Energiewende
+	(etwa Sanitär-, Heizungs- und Klimatechnik) bereits heute erhebliche Fachkräfteengpässe
+	\cite{ba2025}.
+	Die Rosa-Luxemburg-Stiftung analysiert, dass im Mitteldeutschen
+	Braunkohlerevier bereits in den 1990er Jahren etwa 90 Prozent der Arbeitsplätze
+	abgebaut wurden, was die Region ökonomisch, sozial und politisch bis heute prägt
+	\cite{rosalux2025}.
+	Besonders betroffen sind Beschäftigte mittleren Alters zwischen
+	30 und 50 Jahren, die sich auf ein hohes Lohnniveau hochgearbeitet haben
+	\cite{klimareporter2024}.
+	Ohne erfolgreichen Strukturwandel drohen regionale
+	"verlorene Räume" mit Perspektivlosigkeit und sozialen Verwerfungen.
+	
+	\subsection*{1.6. Geschlechterdimensionen und soziale Verwundbarkeit}
+	Die Forschung betont zunehmend die geschlechtsspezifischen Auswirkungen des
+	Klimawandels.
+	Der Vierte Gleichstellungsbericht der Bundesregierung analysiert, dass
+	die ökologische Krise nicht geschlechtsneutral ist, sondern Frauen und marginalisierte
+	Gruppen besonders belastet.
+	Das Gutachten untersucht die unterschiedlichen Auswirkungen
+	von Klimawandel sowie von Klimaschutz- und Klimaanpassungsmaßnahmen in Handlungsfeldern
+	wie Energieerzeugung, Mobilität, Wohnen, Gesundheit und Arbeitsmarkt.
+	Die
+	Sachverständigen betonen, dass Frauen aufgrund ihrer häufig informellen Beschäftigung
+	in der Landwirtschaft oder im Straßenverkauf der Hitze schutzlos ausgesetzt sind.
+	Der Klimawandel verschärft soziale Ungleichheit. Zudem bestehen geschlechtsspezifische
+	Gesundheitsrisiken: Studien zeigen, dass die Wahrscheinlichkeit geburtshilflicher
+	Komplikationen während Hitzewellen um 25 Prozent steigt \cite{gleichstellungsbericht2025}.
+	
+	\section*{2. Wirtschaft ohne Wachstum: Konzepte und Umsetzungsideen}
+	
+	Angesichts der ökologischen Krisen und der wachsenden ökonomischen Ungleichheit
+	gewinnen Konzepte wie Degrowth, Postwachstum und Steady-State-Ökonomie an Bedeutung.
+	Degrowth (deutsch etwa „Schrumpfung“) bezeichnet dabei ein geplantes und gerechtes
+	Zurückfahren von umwelt- und sozialschädlichen Wirtschaftsaktivitäten, um Platz für
+	neue Definitionen von Wohlstand innerhalb planetarer Grenzen zu schaffen.
+	Es geht
+	nicht um Rezession oder Austerität, sondern um eine grundlegende Neuausrichtung
+	jenseits des Bruttoinlandsprodukts (BIP) hin zu sozialer Gerechtigkeit, Nachhaltigkeit
+	und Wohlbefinden \cite{lse2025}.
+	Umfragen zeigen, dass 73 Prozent der Klimaforscher
+	Post-Wachstumspositionen unterstützen (in der EU sogar 86 Prozent).
+	Gut ausgearbeitete
+	Modelle belegen, dass eine Degrowth-Strategie eine wissenschaftlich fundierte,
+	technisch machbare Alternative zum grünen Wachstum darstellt \cite{greenpeace2025b}.
+	
+	\subsection*{2.1. Ablösung des BIP als zentraler Steuergröße}
+	Ein zentraler Gedanke ist die Ersetzung des Bruttoinlandsprodukts durch Indikatoren,
+	die Gesundheit, freie Zeit, funktionierende Infrastruktur und soziale Kohäsion in den
+	Mittelpunkt stellen.
+	Die Bundeszentrale für politische Bildung hat dem Thema ein
+	breites Dossier gewidmet, in dem Matthias Schmelzer argumentiert, dass das BIP als
+	Leitindikator soziale und ökologische Realitäten nur unzureichend abbildet und dass
+	Effizienzsteigerungen allein die ökologischen Belastungen nicht verringern
+	\cite{bpb2025}.
+	Die Vereinten Nationen haben eine High-Level Expert Group on Beyond
+	GDP eingesetzt, die konkrete Empfehlungen für ein neues Rahmenwerk aus Indikatoren
+	und deren statistische und politische Umsetzung erarbeitet hat \cite{un2025}.
+	Forscher
+	um Robert Costanza schlagen im Fachjournal Nature vor, dass nachhaltiges und
+	inklusives Wohlergehen – das Wohlergehen aller Menschen und der sie tragenden
+	Ökosysteme – das übergeordnete Ziel der Wirtschaftspolitik werden solle
+	\cite{nature2025}.
+	Dazu bedarf es dynamischer, nicht-linearer Modelle, die die
+	Wirtschaft als Teilsystem der Gesellschaft innerhalb der Biosphäre abbilden
+	\cite{nature2025}.
+	Dieser Paradigmenwechsel hat bereits politische Dynamik entfaltet:
+	Die Europäische Kommission und die OECD fordern zunehmend Maßnahmen jenseits des BIP
+	\cite{nature2025}.
+	
+	\subsection*{2.2. Ökologische Steuerreform und neue Preissignale}
+	Konkrete Instrumente sind eine ökologische Steuerreform, die Ressourcen- und
+	CO$_2$-Steuern erhöht, dafür jedoch Einkommenssteuern senkt.
+	So wird ressourcenschonendes
+	Verhalten belohnt und Arbeit entlastet. In der Schweiz ist es derzeit oft günstiger,
+	Dinge neu zu kaufen anstatt reparieren zu lassen, weil Arbeit teuer, Ressourcen und
+	Energie aber vergleichsweise günstig sind.
+	Degrowth plädiert daher für eine Umkehr:
+	Energie und Ressourcen müssen teurer werden, Arbeit günstiger.
+	Dies würde die
+	Reparatur von Produkten attraktiver machen und lokale Arbeitsplätze fördern
+	\cite{tsri2025}.
+	In zahlreichen Ländern gibt es erste Ansätze, Energie und
+	Ressourcen zu besteuern, die Steuern auf Energieverbrauch und Ressourcen sind aber
+	bisher nicht hoch genug, um eine echte Lenkungswirkung zu entfalten \cite{tsri2025}.
+	Eine ökologische Steuerreform kann nur dann sozial gerecht wirken, wenn sie mit
+	geeigneten Kompensationsmechanismen wie einem Klimageld verbunden wird.
+	
+	\subsection*{2.3. Suffizienzpolitik, sektorale Planung und Versorgungssicherung}
+	Neben Effizienz- und Konsistenzstrategien gewinnt die Suffizienz an Bedeutung, also
+	die Frage nach dem genug.
+	Eine Postwachstumsökonomie würde auf eine gezielet
+	Reduzierung des Energie- und Materialverbrauchs in reichen Ländern bei gleichzeitiger
+	Steigerung des Wohlbefindens setzen \cite{greenpeace2025b}.
+	Sektoral würde Wachstum
+	in Bereichen wie Wohnungsbau, Energie und Grundnahrungsmittel weiterhin erlaubt oder
+	sogar gefördert, während Luxusgüter, SUVs, Kreuzfahrten, aber auch private
+	Finanztransaktionen und die Werbeindustrie schrumpfen müssen.
+	Diese Differenzierung
+	ist entscheidend, um Wohlstandsverluste in der Breite zu vermeiden.
+	Die Modern
+	Monetary Theory (MMT) in Kombination mit Degrowth bietet hierfür neue Perspektiven.
+	Sie schlägt vor, private Geldschöpfung durch Banken stärker zu regulieren,
+	Kapitaleinkommen und Energieverbrauch progressiv zu besteuern und eine
+	Arbeitsplatzgarantie in nachhaltigen Sektoren einzuführen \cite{wu2023}.
+	Eine solche
+	Politik erfordert eine demokratische Planung von öffentlichen Investitionen in
+	sozial-ökologische Infrastrukturen, wie etwa erneuerbare Energien, öffentlichen
+	Nahverkehr und bezahlbaren Wohnraum \cite{scientists4future2025}.
+	
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}[
+			node distance = 1.2cm and 0.8cm,
+			core/.style = {rectangle, rounded corners=3pt, draw=green!60!black, fill=green!10, thick, minimum width=4cm, minimum height=1cm, align=center},
+			pillar/.style = {rectangle, rounded corners=2pt, draw=blue!60!black, fill=blue!5, thick, minimum width=3.5cm, minimum height=0.8cm, align=center, font=\small},
+			detail/.style = {rectangle, draw=gray!50, fill=white, minimum width=3.5cm, minimum height=0.7cm, align=center, font=\footnotesize\itshape}
+			]
+			% Core Concept
+			\node (core) [core] {\textbf{Postwachstumsökonomie}\\\small(Wohlstand innerhalb planetarer Grenzen)};
+			
+			% Three Pillars
+			\node (p2) [pillar, below=of core] {\textbf{Selektive Strukturierung}\\\small(Sektorale Planung)};
+			\node (p1) [pillar, left=of p2] {\textbf{Suffizienzpolitik}\\\small(Das richtige Maß)};
+			\node (p3) [pillar, right=of p2] {\textbf{Sozialer Ausgleich}\\\small(Institutionelle Reformen)};
+			
+			% Sub-details
+			\node (d1) [detail, below=0.4cm of p1] {Konsumreduktion\\Ressourcenschonung};
+			\node (d2) [detail, below=0.4cm of p2] {Wachstum: Erneuerbare\\Schrumpfung: Luxus, fossile Ind.};
+			\node (d3) [detail, below=0.4cm of p3] {Arbeitszeitverkürzung\\Öko-Steuerreform};
+			
+			% Arrows
+			\draw [-{Stealth[scale=1.2]}, thick, green!60!black] (core.south) -- (p2.north);
+			\draw [-{Stealth[scale=1.2]}, thick, green!60!black] (core.south) -| (p1.north);
+			\draw [-{Stealth[scale=1.2]}, thick, green!60!black] (core.south) -| (p3.north);
+			
+			\draw [->, dashed, gray, thick] (p1) -- (d1);
+			\draw [->, dashed, gray, thick] (p2) -- (d2);
+			\draw [->, dashed, gray, thick] (p3) -- (d3);
+		\end{tikzpicture}
+		\caption{Strukturelle Kernpfeiler einer Postwachstumsstrategie.}
+		\label{fig:postwachstum}
+	\end{figure}
+	
+	\subsection*{2.4. Arbeitszeitverkürzung als sozial-ökologischer Hebel}
+	Die Verkürzung der Arbeitszeit ist ein zentraler Baustein einer sozial-ökologischen
+	Transformation.
+	Sie verteilt vorhandene Arbeit auf mehr Köpfe, senkt die
+	Umweltbelastung – weil Freizeit tendenziell ressourcenärmer ist als eine
+	wachstumsgetriebene Vollzeitarbeit – und erhält die Kaufkraft.
+	Eine Metastudie von
+	Juliet Schor zeigte, dass eine Senkung der Arbeitszeit um zehn Prozent den CO$_2$-Ausstoß
+	um fast 15 Prozent reduzieren könnte \cite{dw2023}.
+	Das Umweltbundesamt hat in einem
+	Bericht die Effekte einer Erwerbsarbeitszeitreduktion auf Energieverbrauch und
+	Treibhausgasemissionen für Deutschland analysiert \cite{uba2019}.
+	In Island haben
+	90 Prozent der Beschäftigten bereits dauerhaft Anspruch auf eine 35-Stunden-Woche.
+	Eine deutsche Gewerkschaft hat für 1,5 Millionen Beschäftigte die Möglichkeit einer
+	befristeten 28-Stunden-Woche durchgesetzt \cite{tsri2025}.
+	Allerdings ist der
+	Zusammenhang komplex: Eine Arbeitszeitverkürzung kann auch zu
+	Produktivitätssteigerungen führen, die Umweltbelastungen erhöhen, etwa wenn freie
+	Zeit für konsumintensive Aktivitäten wie Flugreisen genutzt wird \cite{monde2021}.
+	Ihre positiven Effekte entfalten sich daher vor allem im Kontext einer umfassenden
+	Suffizienzpolitik, die nachhaltige Lebensstile erleichtert.
+	
+	\subsection*{2.5. Geldreform zur Überwindung des Wachstumszwangs}
+	Das bestehende Geldsystem mit Zins und privater Kreditschöpfung erzeugt einen
+	systemimmanenten Wachstumszwang, da Schulden mit Zinsen zurückgezahlt werden müssen.
+	Einige Postwachstums-Ökonomen fordern daher eine grundlegende Geldreform, etwa die
+	Einführung eines Vollgeldsystems, bei dem die Geldmenge nicht mehr durch
+	Bankenkredite vermehrt wird.
+	Dies könnte den Wachstumszwang zumindest abmildern und
+	zugleich die Finanzstabilität erhöhen \cite{vollgeld2026}. Positive Money und andere
+	Initiativen haben detaillierte Reformpläne vorgelegt \cite{worldfuturecouncil}.
+	Allerdings ist die Einführung eines Vollgeldsystems politisch umstritten. Kritiker
+	argumentieren, dass ein solches System die Kreditvergabe an die Realwirtschaft
+	erschweren und zu Kreditklemmen führen könnte \cite{nzz2014}.
+	Die Forschung zu diesem
+	Thema ist nach wie vor lebendig. Die Degrowth-Konferenz 2014 in Leipzig widmete sich
+	explizit der Frage eines mit einer stationären Wirtschaft kompatiblen Geldsystems
+	\cite{degrowth2014}.
+	
+	\subsection*{2.6. Praxisbeispiele einer Postwachstumsökonomie}
+	Trotz aller theoretischen Debatten gibt es bereits heute Unternehmen, die nach
+	Postwachstumsprinzipien wirtschaften.
+	Ein prominentes Beispiel ist der Bio-Cracker-
+	Hersteller AHO.BIO aus Niedersachsen. Das Unternehmen hat sich bewusst dagegen
+	entschieden, zu expandieren, und drosselt stattdessen ab einem bestimmten Umsatz die
+	Werbung.
+	Die zwölf Mitarbeitenden wohnen auf dem Betriebsgelände und arbeiten nur
+	fünf Stunden täglich.
+	Ziel ist ein möglichst gleichbleibender Umsatz, der es erlaubt,
+	alle Mitarbeiter zu bezahlen und Rücklagen zu bilden \cite{goethe2026}.
+	Ein weiteres
+	Beispiel ist der US-amerikanische Outdoorkonzern Patagonia, der seit 2022 offiziell
+	der Erde gehört und seine Gewinne in den Klimaschutz investiert.
+	Der schwäbische
+	Möbelhersteller häussler ist ein B Corp-zertifiziertes Unternehmen, das den Fokus
+	auf langlebige, reparierbare Produkte legt und bewusst auf schnelles Wachstum
+	verzichtet \cite{goethe2026}.
+	Auch der britische Autobauer Riversimple hat ein
+	innovatives Geschäftsmodell entwickelt, bei dem Wasserstoffautos nicht verkauft,
+	sondern nach gefahrenen Kilometern abgerechnet werden \cite{sciencedirect2016}.
+	Diese
+	Beispiele zeigen, dass Wirtschaften ohne Wachstumszwang praktisch möglich ist – wenn
+	auch oft gegen die Logik des Mainstream-Marktes.
+	
+	\section*{3. Rolle der Künstlichen Intelligenz (KI) in der Transformation}
+	
+	Künstliche Intelligenz wird oft als universelle Lösung für Nachhaltigkeitsprobleme
+	dargestellt – von der Optimierung von Stromnetzen bis zur Überwachung von
+	Abholzung.
+	Eine differenzierte Betrachtung zeigt jedoch sowohl erhebliche Potenziale
+	als auch massive Risiken und grundlegende Grenzen.
+	Die Forschung unterscheidet
+	zunehmend zwischen „grüner KI“ (KI zur Lösung von Umweltproblemen) und dem „KI-Fußabdruck“
+	(ökologische Kosten der KI selbst) \cite{vinuesa2020}.
+	
+	\subsection*{3.1. Optimierung von Ressourceneffizienz und Kreislaufwirtschaft}
+	KI kann durch intelligente Prozessoptimierung in der Produktion und Logistik
+	Ressourcen einsparen.
+	Die Pilotprojekte des Green-AI Hub Mittelstand zeigen, dass
+	Unternehmen durch KI-gestützte Systeme teilweise bis zu 15 Prozent Material und
+	Energie einsparen konnten \cite{greenai2025}.
+	Konkret helfen KI-Lösungen bei der
+	frühen Fehlererkennung in der Produktion (Ausschussreduzierung), optimieren
+	Bestellsysteme zur Vermeidung von Lebensmittelverschwendung (z.B. in Großküchen oder
+	Supermärkten) und reduzieren Außendiensteinsätze durch vorausschauende Wartung
+	\cite{greenai2025}.
+	Für eine zirkuläre Wirtschaft kann KI Recyclingoptionen
+	vorschlagen – etwa durch bildbasierte Sortierung von Kunststoffabfällen – oder den
+	digitalen Produktpass verwalten, der Reparatur und Wiederverwendung erleichtert
+	\cite{greenai2025b}.
+	Ein weiteres Beispiel ist die KI-gestützte Optimierung von
+	Lieferketten: Laut einer Studie des World Economic Forum könnten KI-Anwendungen in
+	der Logistik den CO$_2$-Ausstoß im Güterverkehr um bis zu 10 Prozent senken
+	\cite{wef2024}.
+	
+	\subsection*{3.2. Modellierung, Planung und Klimafolgenabschätzung}
+	KI-gestützte Wirtschaftsplanung wird als potenzielles Werkzeug diskutiert, um die
+	komplexe Transformation zu koordinieren.
+	Leo Schlichter argumentiert, dass KI dabei
+	helfen könnte, die koordinierende Rolle des Marktes in einer demokratisch geplanten
+	Postwachstumsökonomie zu übernehmen – etwa durch die Berechnung von Angebot und
+	Nachfrage für Grundgüter unter Berücksichtigung von Umweltgrenzen \cite{postwachstumKI}.
+	Darüber hinaus erstellt KI verbesserte Klimamodelle: Durch maschinelles Lernen lassen
+	sich Wetterextreme präziser vorhersagen, und KI-basierte Erdsystemmodelle reduzieren
+	die Rechenzeit für hochaufgelöste Simulationen erheblich \cite{ki-klimamodell2026}.
+	Das Europäische Zentrum für mittelfristige Wettervorhersage (ECMWF) setzt bereits
+	KI-Modelle ein, die traditionelle physikalische Modelle ergänzen und die
+	Vorhersagegenauigkeit verbessern \cite{ecmwf2025}.
+	
+	\subsection*{3.3. Bürgerbeteiligung und demokratische Prozesse}
+	Digitale Tools und KI können die Bürgerbeteiligung in komplexen Transformationsprozessen
+	unterstützen.
+	Sie ermöglichen die Verarbeitung großer Datenmengen in Bürgerräten und
+	Bürgerhaushalten – etwa durch automatisierte Textanalyse von Stellungnahmen oder
+	die Visualisierung von Interessenkonflikten.
+	Ein Beispiel ist das KI-gestützte
+	Beteiligungstool „Consul“, das in über 100 Städten weltweit eingesetzt wird
+	\cite{ki-buergerbeteiligung}.
+	Auch die „Liquid Democracy“-Plattform „Adhocracy+“
+	nutzt Algorithmen, um komplexe Abstimmungsprozesse zu moderieren.
+	Allerdings besteht
+	die Gefahr, dass KI-gestützte Verfahren die Bürgerbeteiligung eher technokratisch
+	verkürzen, anstatt sie demokratisch zu stärken \cite{ki-demokratie2024}.
+	
+	\subsection*{3.4. Kritische Betrachtung: Ressourcenverbrauch, Rebound-Effekte und Machtkonzentration}
+	Die Nutzung von KI selbst ist extrem ressourcenintensiv.
+	Forschende prognostizieren,
+	dass KI-Workloads bis 2028 mehr als 50 Prozent des Stromverbrauchs von Rechenzentren
+	verursachen werden \cite{ki-ressourcen2025}.
+	Das Training eines großen Sprachmodells
+	wie GPT-3 verursachte etwa 502 Tonnen CO$_2$-Äquivalent – das entspricht dem
+	Jahresverbrauch von über 100 durchschnittlichen Autos \cite{strubell2019}.
+	Hinzu kommen
+	hoher Wasserverbrauch für Kühlsysteme (ein durchschnittliches Rechenzentrum verbraucht
+	Millionen Liter Wasser pro Tag), Elektroschrott durch schnelle Hardware-Zyklen und
+	die Gewinnung seltener Erden für Chips.
+	Die „Guidelines for Green AI“ des
+	Bundesumweltministeriums versuchen gegenzusteuern, indem sie auf effizientes
+	Datenmanagement, Energie- und CO$_2$-Messung sowie Life-Cycle-Betrachtungen setzen
+	\cite{greenai2025b}.
+	Zudem drohen Rebound-Effekte: Effizienzgewinne durch KI können
+	zu mehr Konsum führen (z.B. günstigere Logistik erhöht den Warenumschlag).
+	Eine
+	kritische Stimme aus der Postwachstumsbewegung warnt, dass die unbegrenzten Chancen
+	künstlicher Intelligenz für die Nachhaltigkeit ein „Märchen“ seien;
+	KI werde vielmehr
+	als Treiber für weiteres kapitalistisches Wachstum gefeiert \cite{postwachstumKI2}.
+	Nicht zuletzt besteht die Gefahr einer Machtkonzentration: Die Entwicklung großer
+	KI-Modelle erfordert enorme Rechenressourcen, die nur wenige Tech-Konzerne (Google,
+	Microsoft, OpenAI, Meta) kontrollieren.
+	Diese Unternehmen haben ein inhärentes
+	Interesse an weiterem Wachstum, nicht an Postwachstum.
+	
+	\subsection*{3.5. Praxisbeispiele für nachhaltige KI-Anwendungen}
+	Trotz aller Risiken gibt es bereits vielversprechende KI-gestützte Projekte, die
+	innerhalb planetarer Grenzen arbeiten.
+	Das Projekt „DeepCube“ der TU Berlin nutzt
+	maschinelles Lernen, um energieintensive Rechenprozesse zu optimieren – die KI lernt,
+	den Stromverbrauch von Algorithmen zu reduzieren \cite{deepcube2024}.
+	Die
+	Open-Source-Initiative „Hugging Face“ hat einen „Energy Leaderboard“ eingeführt, der
+	die CO$_2$-Emissionen von KI-Modellen transparent macht und Entwickler zu effizienteren
+	Architekturen anregt.
+	Im Bereich der Landwirtschaft hilft das Projekt „Plantix“,
+	Pflanzenschäden frühzeitig zu erkennen, sodass weniger Pestizide eingesetzt werden
+	müssen.
+	In der Energiebranche optimiert Googles „DeepMind“ die Kühlung von Rechenzentren
+	und reduziert den Energieverbrauch um 30 Prozent – ein Beispiel dafür, dass KI auch
+	zur Senkung ihres eigenen Fußabdrucks beitragen kann \cite{deepmind2018}.
+	
+	\subsection*{3.6. Fazit zur KI}
+	KI ist kein Wundermittel, sondern ein ambivalentes Werkzeug.
+	Sie kann taktisch zur
+	Ressourcenoptimierung in Nischen beitragen – etwa in der Kreislaufwirtschaft, bei
+	der Klimamodellierung oder in der Logistik.
+	Sie löst jedoch nicht die strategischen
+	Herausforderungen der Postwachstumstransformation: Die grundlegenden Konflikte um
+	Verteilungsgerechtigkeit, Macht und Konsumverhalten bleiben durch KI unberührt.
+	Wenn KI unkontrolliert für Beschleunigung und Konsumprognosen genutzt wird (z.B.
+	personalisierte Werbung, dynamische Preisoptimierung), könnte sie die Probleme sogar
+	verschärfen.
+	Entscheidend ist, KI demokratisch zu regulieren, ihren Energieverbrauch
+	transparent zu machen und sie gezielt dort einzusetzen, wo sie tatsächlich ökologischen
+	und sozialen Nutzen stiftet – immer eingebettet in eine übergeordnete Postwachstumsstrategie.
+	
+	\section*{4. Physikalische und mathematische Grundlagen des Klimawandels}
+	
+	Die wissenschaftliche Gewissheit des Klimawandels gründet auf fundamentalen physikalischen
+	Prinzipien und ihrer mathematischen Formulierung.
+	Ein Verständnis dieser Grundlagen ist
+	essenziell, um die Aussagekraft von Klimamodellen und die Dimension der aktuellen Krise
+	zu erfassen.
+	
+	\subsection*{4.1. Strahlungsantrieb – Der Motor des Klimawandels}
+	Das Konzept des Strahlungsantriebs bildet den physikalischen Ausgangspunkt.
+	Es bezeichnet
+	die Energiebilanzstörung an der Oberkante der Atmosphäre: ein Ungleichgewicht zwischen der
+	absorbierten kurzwelligen Solarstrahlung und der emittierten langwelligen Wärmestrahlung
+	ins All.
+	Ein positiver Antrieb führt zu einem Energieüberschuss und damit zu einer
+	Erwärmung des Systems \cite{open2025}.
+	Ein einfaches, leistungsfähiges Nullmodell des Treibhauseffekts wird durch drei fundamentale
+	Gleichungen beschrieben: die Energiebilanz an der Oberfläche, in der Atmosphäre und für den
+	gesamten Planeten \cite{realclimate2007}.
+	Die Herleitung der Oberflächentemperatur \(T_s\)
+	ergibt sich dabei zu \cite{realclimate2007}:
+	\[
+	\sigma T_s^4 = \frac{S}{2 - \varepsilon}
+	\]
+	mit der Solarkonstanten \(S\) und der atmosphärischen Emissivität \(\varepsilon\).
+	Mit
+	realistischen Werten von \(S = 240 \, \text{W/m}^2\) und \(\varepsilon = 0.769\) resultiert
+	eine Oberflächentemperatur von \(T_s = 288 \, \text{K}\) (ca. 15°C), was der beobachteten
+	globalen Mitteltemperatur der Erde nahekommt \cite{realclimate2007}.
+	
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}[scale=1.0, every node/.style={transform shape}]
+			% Space, Atmosphere Layer, Earth Surface
+			\fill[blue!10!black] (-4,3.5) rectangle (4,5);
+			\node[white, font=\footnotesize] at (-3,4.5) {Weltall};
+			
+			\draw[dashed, ultra thick, blue!60] (-4,1.5) -- (4,1.5);
+			\node[blue!80!black, font=\footnotesize\bfseries] at (2.5,1.8) {Atmosphäre};
+			
+			\fill[brown!30!black] (-4,-1.5) rectangle (4,-2);
+			\draw[thick, brown!50!black] (-4,-1.5) -- (4,-1.5);
+			\node[white, font=\footnotesize] at (-2.5,-1.75) {Erdoberfläche ($T_s$)};
+			
+			% Incoming Solar Radiation (Shortwave)
+			\draw[yellow!80!orange, line width=2.5pt, ->, >=Stealth] (-2.5,4.5) -- (-2.5,-1.5);
+			\node[yellow!80!orange, anchor=west, font=\footnotesize\bfseries, align=left] at (-2.4,3.0) {Sonneneinstrahlung\\$S = 240\,\text{W/m}^2$};
+			
+			% Outgoing Longwave Radiation (from Earth Surface)
+			\draw[red!80!black, line width=2pt, ->, >=Stealth] (-0.5,-1.5) -- (-0.5,4.5);
+			\node[red!80!black, anchor=west, font=\footnotesize] at (-0.4,0.2) {Bodenstrahlung $\sigma T_s^4$};
+			
+			% Atmospheric Emission (Upwards and Downwards)
+			\draw[orange!80!black, line width=1.8pt, ->, >=Stealth] (1.5,1.5) -- (1.5,4.2);
+			\node[orange!80!black, font=\footnotesize, anchor=west] at (1.6,3.2) {Emission ins All $\varepsilon\sigma T_a^4$};
+			
+			\draw[orange!80!black, line width=1.8pt, ->, >=Stealth] (1.5,1.5) -- (1.5,-1.5);
+			\node[orange!80!black, font=\footnotesize, anchor=west] at (1.6,0.0) {Gegenstrahlung $\varepsilon\sigma T_a^4$};
+			
+			% Green House Gas Layer effect indicator
+			\node[red, font=\scriptsize\bfseries, draw=red, rounded corners=2pt, inner sep=3pt, fill=white] at (0,1.5) {Treibhausgase ($\varepsilon \uparrow$) $\rightarrow$ Strahlungsantrieb $\uparrow$};
+		\end{tikzpicture}
+		\caption{Physikalisches Nullmodell des Treibhauseffekts (Energiebilanzierung).}
+		\label{fig:radiation}
+	\end{figure}
+	
+	Der anthropogene
+	Strahlungsantrieb durch Treibhausgase wird durch die Differenz des Strahlungsflusses an
+	der Tropopause vor und nach einer Störung berechnet.
+	Für eine Verdopplung der CO$_2$-
+	Konzentration wird dieser Wert heute mit etwa 3,7 bis 4,0 W/m² angegeben \cite{ipcc2021}.
+	
+	\subsection*{4.2. Klimasensitivität – Der zentrale Unsicherheitsfaktor}
+	Die Klimasensitivität übersetzt den Strahlungsantrieb in die resultierende Temperaturänderung.
+	Zwei zentrale Größen sind: die transiente Klimasensitivität (TCR, Erwärmung bei CO$_2$-
+	Verdopplung zum Zeitpunkt der Verdopplung) und die Gleichgewichts-Klimasensitivität (ECS,
+	langfristige Erwärmung nach vollständiger Einstellung des Systems) \cite{ipcc2021}.
+	Die ECS
+	ist definiert als der Gleichgewichtsanstieg der globalen Mitteltemperatur nach einer
+	Verdopplung der atmosphärischen CO$_2$-Konzentration \cite{springer2026}.
+	Die jüngsten IPCC-Schätzungen für die ECS liegen mit hoher Wahrscheinlichkeit im Bereich
+	von 2,5°C bis 4,0°C, mit einem besten Schätzwert von 3°C \cite{ipcc2021, springer2024}.
+	Dennoch bleiben große Unsicherheiten, wie Studien zeigen, die die ECS in verschiedenen
+	Klimaepochen der Erdgeschichte untersuchen: Hier variierte die ECS um mehr als 2,5°C,
+	mit Werten von 4,04°C bis 6,66°C, abhängig von der kontinentalen Konfiguration und
+	anderen Randbedingungen \cite{springer2026}.
+	Die Ursache dieser Schwankungen liegt in den Rückkopplungsmechanismen. Die Planck-Rückkopplung
+	(die grundlegende Stefan-Boltzmann-Antwort) ist mit etwa -3,2 W/m²/K die einzige negative
+	Rückkopplung und wirkt der Erwärmung entgegen \cite{springer2024}.
+	Sie wird jedoch durch
+	positive Rückkopplungen verstärkt: die Wasserdampf-Rückkopplung (ca. +1,8 W/m²/K), die
+	Schnee- und Eis-Albedo-Rückkopplung, die Wolkenrückkopplung und die Lapse-Rate-Rückkopplung
+	\cite{springer2026}.
+	Die Wolkenrückkopplung ist besonders unsicher und kann – je nach
+	Wolkenart und -höhe – sowohl verstärkend als auch dämpfend wirken.
+	In wärmeren Klimaten
+	ist sie der Haupttreiber für eine erhöhte Sensitivität \cite{springer2024}.
+	
+	\subsection*{4.3. Die Primitive Gleichungen – Das Herz von Klimamodellen}
+	Klimamodelle basieren auf einem fundamentalen Satz nichtlinearer partieller
+	Differentialgleichungen, den primitiven Gleichungen.
+	Sie beschreiben die Erhaltung von
+	Impuls, Masse und Energie für ein kontinuierliches Fluid (die Atmosphäre) auf einer
+	rotierenden Kugel \cite{ictp2001}.
+	Die zentralen Gleichungen umfassen:
+	
+	1. **Die horizontalen Bewegungsgleichungen** auf einer rotierenden Kugel mit sphärischen
+	Koordinaten \((\lambda, \phi)\) \cite{ictp2001}:
+	\[
+	\frac{du}{dt} = \left(f + \frac{u \tan \phi}{a}\right)v - \frac{1}{\rho a \cos \phi} \frac{\partial p}{\partial \lambda} + F_\lambda
+	\]
+	\[
+	\frac{dv}{dt} = -\left(f + \frac{u \tan \phi}{a}\right)u - \frac{1}{\rho a} \frac{\partial p}{\partial \phi} + F_\phi
+	\]
+	2. **Die Kontinuitätsgleichung** (Erhaltung der Masse) \\
+	3. **Der erste Hauptsatz der Thermodynamik** (Energieerhaltung) \\
+	4. **Die Zustandsgleichung für ideale Gase** (z.B. \(p = \rho R T\)) \\
+	5. **Die Wasserbilanzgleichung** (Erhaltung von Wasserdampf, Wolkenwasser und Eis)
+	
+	Diese Gleichungen bilden das theoretische Fundament globaler Zirkulationsmodelle (GCMs). Komplexere Klimasimulationen bzw. Erdsystemmodelle mittlerer Komplexität (EMICs) schlagen eine Brücke zwischen den detaillierten GCMs und einfachen Modellen: Sie sind recheneffizient genug für Millennien-Zeitskalen, erlauben aber die Modellierung aller wesentlichen Prozesse und Rückkopplungen, wodurch sie ideal für Paläoklima- und Sensitivitätsstudien sind \cite{gmd2018}.
+	
+	\subsection*{4.4. Kippelemente und nichtlineare Schwellenwerte}
+	Über die lineare (oder schwach nichtlineare) Antwort des Klimasystems hinaus existieren Elemente, die bei Überschreiten eines kritischen Schwellenwerts abrupt in einen neuen Zustand übergehen können – sogenannte Kippelemente (Tipping Elements) \cite{carbonbrief2025}.
+	Bisher wurden mehr als 25 solcher Komponenten im Erdsystem identifiziert, darunter der Grönländische und der Westantarktische Eisschild, die atlantische meridionale Umwälzzirkulation (AMOC), der Amazonas-Regenwald und die südasiatischen Monsunsysteme \cite{carbonbrief2025, wunderling2022}.
+	Die Forschung hat ergeben, dass ein Großteil der Interaktionen zwischen diesen Kippelementen zu einer weiteren Destabilisierung des Klimasystems führt \cite{carbonbrief2025}.
+	Besonders vulnerabel sind die AMOC und der Amazonas-Regenwald. So könnte eine Kippung der AMOC eine Destabilisierung des Amazonas-Regenwalds beschleunigen oder dessen Kippung vorantreiben \cite{carbonbrief2025}.
+	Solche Kippkaskaden (Tipping Cascades) könnten bereits unter den aktuellen globalen Erwärmungsprojektionen (ca. 1,5°C–2°C) ausgelöst werden \cite{carbonbrief2025, wunderling2022}.
+	Die mathematische Beschreibung dieser Phänomene verwendet häufig Bifurkationstheorie und Systeme von Differenzialgleichungen, die multiple stabile Zustände aufweisen.
+	Der Übergang zwischen diesen Zuständen ist durch Hysterese (verzögerte Rückkehr in den Ausgangszustand) gekennzeichnet.
+	Die genauen Schwellwerte sind jedoch noch unsicher.
+	
+	\subsection*{4.5. Der Kohlenstoffkreislauf und planetare Senken}
+	Der globale Kohlenstoffkreislauf reguliert die atmosphärische CO$_2$-Konzentration durch Austauschprozesse zwischen der Atmosphäre, den Ozeanen und der terrestrischen Biosphäre. Anthropogene Emissionen überfordern diese natürlichen Senken, was zu Rückkopplungseffekten führt, die die Erwärmung weiter anheizen \cite{asaadi2024}.
+	
+	\subsection*{4.6. Paläoklimatologie und Klimaarchive}
+	Zum Verständnis historischer Schwankungen nutzt die Wissenschaft Klimaarchive. Dazu gehören Eisbohrkerne (für vergangene CO$_2$-Werte), Baumringe (Jahresringe als Indikator für Wachstumsbedingungen), Korallen und Sedimentkerne aus Ozeanen und Seen (chemische und biologische Signaturen) sowie Pollen (Rekonstruktion früherer Vegetation) \cite{noaa2020, noaapaleo2025}.
+	Mithilfe solcher Daten können Wissenschaftler historische Klimazustände modellieren: das letzte glaziale Maximum (vor ca. 21.000 Jahren) mit 4–6°C tieferen Temperaturen, das mittlere Pliozän (vor ca. 3 Millionen Jahren) mit 2–3°C wärmerer globaler Temperatur bei ähnlichen CO$_2$-Werten wie heute, oder das Paläozän/Eozän-Temperaturmaximum (PETM, vor ca. 56 Millionen Jahren) mit einer extrem raschen Erwärmung um 5–8°C \cite{noaa2020}.
+	Diese Daten liefern entscheidende Randbedingungen zur Kalibrierung von Klimamodellen und zum Verständnis von Kippelementen.
+	Die NOAA hat kürzlich die weltweit umfassendste Datenbank mit über 12.000 Proxy-Aufzeichnungen veröffentlicht, die Temperaturen der letzten 12.000 Jahre abdecken \cite{noaa2020}.
+	
+	\subsection*{4.7. Zusammenführung – Die Aussagekraft des physikalischen Rahmens}
+	Die Kombination dieser Säulen – Strahlungsantrieb, Klimasensitivität, nichtlineare Modellgleichungen, Kippdynamik, Kohlenstoffkreislauf und Paläodaten – ergibt einen kohärenten physikalischen Rahmen.
+	Dieser Rahmen erlaubt es, die fundamentale Bandbreite möglicher Erwärmungspfade zu berechnen, selbst wenn einzelne Parameter unsicher sind.
+	Er zeigt, dass sogar bei sofortigen und drastischen Emissionsminderungen eine weitere Erwärmung unvermeidlich ist (CO$_2$-Trägheit) und dass ohne negative Emissionen das globale Klimasystem dauerhaft destabilisiert wird \cite{ipcc2021}.
+	
+	\section*{5. Szenarien eines ungebremsten Klimawandels}
+	
+	Ein Verfehlen weltweiter Klimaziele – also das Ausbleiben konsequenter Emissionsminderungen und Anpassungsmaßnahmen – hätte weitreichende, in weiten Teilen irreversible Folgen für Ökosysteme, Gesellschaften und die globale Wirtschaft.
+	Die Wissenschaft hat in den letzten Jahren ein konsistentes Bild der Risiken eines „Weiter so“ gezeichnet.
+	Die folgende Zusammenstellung basiert vor allem auf den Berichten des Weltklimarats (IPCC) sowie auf aktuellen Studien zu Kipppunkten und sozioökonomischen Auswirkungen.
+	
+	\subsection*{5.1. Physikalische Folgen: Temperatur, Extremwetter und Meeresspiegel}
+	Bei ungebremsten Emissionen (das IPCC-Szenario SSP5-8.5, das einer Erwärmung von etwa 4,4°C bis 2100 entspricht) würde die globale Durchschnittstemperatur gegenüber vorindustriellen Werten bis zum Jahr 2100 um etwa 4 bis 5°C steigen, mit weiterer Erwärmung danach \cite{ipcc2021}.
+	Hitzewellen würden in vielen Regionen jährlich mehr als 60 Tage andauern, und die bislang als „extrem“ geltende Hitze von 50°C würde in Gebieten wie dem Mittleren Osten, Nordafrika und Teilen Nordamerikas zur normalen Sommeltemperatur.
+	Die Häufigkeit und Intensität von Starkniederschlägen, tropischen Wirbelstürmen und Dürren nimmt stark zu.
+	So wären Überschwemmungen, die heute statistisch einmal in 100 Jahren auftreten, in vielen Regionen alle 10 bis 20 Jahre zu erwarten \cite{ipcc2021}.
+	Die landwirtschaftlichen Trockenperioden würden sich verlängern, insbesondere im Mittelmeerraum, im südlichen Afrika und in Australien.
+	Der Meeresspiegel würde bis 2100 um etwa 0,6 bis 1,1 Meter ansteigen (bei Berücksichtigung instabiler Eisschilde sogar mehr).
+	Dies gefährdet Küstenstädte und tief liegende Regionen global.
+	
+	\subsection*{5.2. Kipppunkte und Kaskadeneffekte}
+	Bei Überschreiten kritischer Schwellenwerte kollabieren fundamentale Teilsysteme des Planeten, wodurch sich die globale Erwärmung zusätzlich beschleunigt („positive Rückkopplung“). Viele dieser Kippelemente sind miteinander verbunden;
+	das Auslösen eines Kipppunkts erhöht die Wahrscheinlichkeit für weitere – ein Dominoeffekt \cite{carbonbrief2025}.
+	
+	\subsection*{5.3. Ökologische Folgen: Massensterben und Verlust von Ökosystemen}
+	Eine Erwärmung von 4°C oder mehr würde einen Großteil der heutigen Ökosysteme zerstören.
+	Korallenriffe wären nahezu vollständig verschwunden (bereits bei 1,5°C sind über 70 Prozent gefährdet).
+	Wälder in borealen und tropischen Zonen würden durch Brände, Schädlinge und Trockenstress großflächig absterben.
+	Schätzungen zufolge wäre mehr als ein Drittel aller Pflanzen- und Tierarten vom Aussterben bedroht, wenn die Erwärmung 3–4°C erreicht \cite{ipcc2021}.
+	Die Ozeane würden durch Versauerung (Aufnahme von CO$_2$) und Sauerstoffmangel weite Teile ihrer Biodiversität verlieren – das Ende der marinen Nahrungsnetze, wie wir sie kennen.
+	
+	\subsection*{5.4. Gesellschaftliche und gesundheitliche Folgen}
+	Die direkte Hitzeexposition würde die jährliche hitzebedingte Sterblichkeit um das Zehn- bis Zwanzigfache steigern.
+	In Südeuropa, Indien und Westafrika wären Hitzewellen mit mehreren tausend Todesfällen pro Jahr die Regel.
+	Gleichzeitig würden sich Infektionskrankheiten wie Dengue, Malaria und Zika in bisher gemäßigte Zonen ausbreiten;
+	die WHO schätzt, dass bis 2080 zusätzlich 5–7 Milliarden Menschen dem Risiko von Dengue-Fieber ausgesetzt sein könnten \cite{lancet2025}.
+	Die Ernährungssicherheit wäre massiv bedroht: In many Regionen (Südostasien, Subsahara-Afrika, Anden) würden die Ernteerträge infolge ausbleibender Niederschläge massiv einbrechen.
+	
+	\subsection*{5.5. Ökonomische Zusammenbrüche und Infrastrukturschäden}
+	Der wirtschaftliche Schaden durch Extremwetter, Ernteausfälle und den Verlust bewohnbarer Flächen würde das weltweite Finanzsystem destabilisieren. Schätzungen gehen von immensen globalen Wohlstandsverlusten aus, die traditionelle ökonomische Modelle und Versicherungsmärkte an ihre Grenzen bringen.
+	
+	\subsection*{5.6. Geopolitische Risiken und Fluchtbewegungen}
+	Prognosen der Internationalen Organisation für Migration (IOM) gehen von 1,2 bis 2,5 Milliarden Binnenvertriebenen und grenzüberschreitenden Migranten bis 2100 aus \cite{iom2025}.
+	Diese Bewegungen würden bestehende ethnische und religiöse Spannungen verschärfen, zu gewaltsamen Konflikten um Wasser und Land führen (wie bereits im Darfur-Konflikt und in Syrien als mitverursacht angesehen) und ganze Staaten destabilisieren.
+	Die Gefahr von nuklearen Auseinandersetzungen in wasserarmen Regionen (Indien–Pakistan, Naher Osten) steigt. Grenzsicherung und humanitäre Hilfsysteme wären völlig überfordert.
+	Demokratische Institutionen könnten zusammenbrechen und autoritären Regimen Platz machen, die „Klima-Notstand“ als Legitimation für Repression nutzen.
+	
+	\subsection*{5.7. Humanitäre und ethische Dimension – Die Last der Ärmsten}
+	Die schlimmsten Folgen träfen diejenigen, die am wenigsten zum Klimawandel beigetragen haben: Die ärmsten Bevölkerungsgruppen in den Tropen und Subtropen.
+	Sie haben die geringsten Möglichkeiten zur Anpassung (keine Klimaanlagen, keine Versicherungen, keine Rücklagen).
+	Ignorieren bedeutet daher eine bewusste Inkaufnahme von millionenfachem Leid, Verelendung und vorzeitigem Tod.
+	Die Ungleichheit innerhalb und zwischen den Ländern würde sich dramatisch erhöhen.
+	Mehrere Inselstaaten würden vollständig im Meer versinken – ein unumkehrbarer Verlust an Kultur, Identity und Souveränität.
+	Das Ausmaß des Leids wäre vergleichbar mit den größten humanitären Katastrophen der Geschichte, jedoch anhaltend und sich selbst verstäerkend.
+	
+	\section*{6. Zusammenfassung und Ausblick}
+	
+	Die gesellschaftlichen Herausforderungen des Klimawandels sind vielschichtig: Verteilungskonflikte, Migration, Gesundheitsrisiken, Demokratiegefährdung, tiefe Arbeitsmarktumbrüche und geschlechtsspezifische Verwundbarkeiten.
+	Eine Wirtschaft ohne Wachstum ist theoretisch machbar, wie die Postwachstumsforschung zeigt, erfordert jedoch tiefgreifende gesellschaftliche und ökonomische Umstrukturierungen.
+	Künstliche Intelligenz kann als Werkzeug in Teilbereichen unterstützend wirken, befeuert jedoch unreguliert den Ressourcenbedarf und den globalen Wachstumszwang.
+	Die Bewältigung der Klimakrise erfordert daher zunächst eine umfassende demokratische Aushandlung darüber, wie eine zukunftsfähige, sozial gerechte und ökologisch nachhaltige Gesellschaft aussehen soll.
+	
+	\newpage
+	\begin{thebibliography}{99}
+		% Abschnitt 1 - Gesellschaftliche Probleme
+		\bibitem{rehm2025} Rehm, M. (2025). \textit{Klimakrise: Verteilung und Transformationskonflikte}. WSI-Herbstforum, 12. November 2025, Universität Duisburg-Essen.
+		\bibitem{umweltbundesamt2026} Umweltbundesamt (2026). \textit{Soziale Dimensionen von Klimawandelfolgen}. Publikation des Umweltbundesamtes, Mai 2026.
+		\bibitem{gleichstellungsbericht2025} Jaeger-Erben, M. (2025). \textit{Gleichstellungsbericht: Kühler Kopf in heißen Zeiten}. Vierter Gleichstellungsbericht der Bundesregierung, Kabinettsbeschluss März 2025.
+		\bibitem{westheuser2025} Westheuser, L. (2025). \textit{Das Klima der Ungleichheit. Zur sozialen Struktur von Klimakonflikten}. Berliner Journal für Soziologie, September 2025.
+		\bibitem{unhcr2025} UNO-Flüchtlingshilfe (2025). \textit{Klimakrise als Fluchtgrund}. Bericht des UNHCR, November 2025.
+		\bibitem{greenpeace2025} Greenpeace (2025). \textit{Klimawandel, Migration und Konflikt}. Studie der Universität Hamburg und der Gesellschaft für Umwelt- und Entwicklungsforschung, Juni 2025.
+		\bibitem{medienservice2026} Medienservice Klima \& Gesundheit (2026). \textit{Zukunft der Arbeit}. März 2026.
+		\bibitem{dgb2025} DGB (2025). \textit{Strukturwandel in den Kohlerevieren: DGB fordert klare Perspektiven für Beschäftigte}. Pressemitteilung des Deutschen Gewerkschaftsbunds, Mai 2025.
+		\bibitem{armutsbericht2025} Bundesregierung (2025). \textit{Lebenslagen in Deutschland – Der Siebte Armuts- und Reichtumsbericht der Bundesregierung}.
+		\bibitem{climateinequality2025} Chancel, L. et al. (2025). \textit{Climate Inequality Report 2025}. World Inequality Lab.
+		\bibitem{idmc2025} Internal Displacement Monitoring Centre (2025). \textit{Global Report on Internal Displacement 2025}.
+		\bibitem{swp2025} Stiftung Wissenschaft und Politik (2025). \textit{Klimabedingte Umsiedlungen – Herausforderungen für die internationale Politik}. SWP-Studie.
+		\bibitem{iachr2025} Inter-American Court of Human Rights (2025). \textit{Advisory Opinion on Climate Emergency and Human Rights}.
+		\bibitem{lancet2025} Romanello, M. et al. (2025). \textit{The 2025 Lancet Countdown on health and climate change}. The Lancet.
+		\bibitem{rki2025} Robert Koch-Institut (2025). \textit{Hitze und Gesundheit in Deutschland}. Bericht des RKI.
+		\bibitem{who2025} WHO Regional Office for Europe (2025). \textit{Heat-related mortality in Europe}. WHO.
+		\bibitem{ecdc2025} European Centre for Disease Prevention and Control (2025). \textit{Dengue surveillance report}.
+		\bibitem{polarisierung2025} Mercator Forum Migration und Demokratie (2025). \textit{Polarisierungsbarometer 2025}. MIDEM.
+		\bibitem{rifs2025} Fritz, L., Schäfer, M. (2025). \textit{Wissenschaft, Polarisierung und Klimawandel}. Research Institute for Sustainability (RIFS) Potsdam.
+		\bibitem{ba2025} Bundesagentur für Arbeit (2025). \textit{Transformationsmonitor: Ökologische Transformation und Arbeitsmarkt}. Statistik der BA.
+		\bibitem{rosalux2025} Rosa-Luxemburg-Stiftung (2025). \textit{Strukturwandel und historische Erfahrungen im Mitteldeutschen Revier}.
+		\bibitem{klimareporter2024} Klimareporter (2024). \textit{Arbeitsmarkteffekte der Energiewende}.
+		
+		% Abschnitt 2 - Postwachstum
+		\bibitem{lse2025} Hamilton-Jones, I., Heeckt, C. (2025). \textit{Beyond economic growth – the case for researching alternatives}. London School of Economics and Political Science.
+		\bibitem{greenpeace2025b} Greenpeace (2025). \textit{Degrowth als Pfad innerhalb der planetaren Grenzen}.
+		\bibitem{bpb2025} Bundeszentrale für politische Bildung (2025). \textit{Dossier Postwachstum}.
+		\bibitem{un2025} United Nations (2025). \textit{High-Level Expert Group on Beyond GDP Recommendations}.
+		\bibitem{nature2025} Costanza, R. et al. (2025). \textit{Sustainable well-being as the prime economic goal}. Nature.
+		\bibitem{tsri2025} Tsüri (2025). \textit{Ökologische Steuerreform und Arbeitszeitverkürzung in der Praxis}.
+		\bibitem{wu2023} Wu, X. (2023). \textit{Modern Monetary Theory and Degrowth}. Ecological Economics.
+		\bibitem{scientists4future2025} Scientists for Future (2025). \textit{Demokratische Planung und öffentliche Investitionen}.
+		\bibitem{dw2023} Deutsche Welle (2023). \textit{Arbeitszeitverkürzung schützt das Klima}.
+		\bibitem{uba2019} Umweltbundesamt (2019). \textit{Effekte einer Erwerbsarbeitszeitreduktion auf den Energieverbrauch}.
+		\bibitem{monde2021} Le Monde Diplomatique (2021). \textit{Die Paradoxien der Freizeit im Kapitalismus}.
+		\bibitem{vollgeld2026} Vollgeld-Initiative (2026). \textit{Geldreform und Wachstumszwang}.
+		\bibitem{worldfuturecouncil} World Future Council (2024). \textit{Sovereign Money for a Sustainable Future}.
+		\bibitem{nzz2014} Neue Zürcher Zeitung (2014). \textit{Kritik am Vollgeldsystem}.
+		\bibitem{degrowth2014} Degrowth Konferenz Leipzig (2014). \textit{Dokumentation der Panels zu alternativen Geldsystemen}.
+		\bibitem{goethe2026} Goethe-Institut (2026). \textit{Pioniere des Postwachstums – Wie Unternehmen anders wirtschaften}.
+		\bibitem{sciencedirect2016} ScienceDirect (2016). \textit{Business models for circular economy: Riversimple case study}.
+		
+		% Abschnitt 3 - Künstliche Intelligenz
+		\bibitem{vinuesa2020} Vinuesa, R. et al. (2020). \textit{The role of artificial intelligence in achieving the Sustainable Development Goals}. Nature Communications.
+		\bibitem{greenai2025} Green-AI Hub Mittelstand (2025). \textit{KI spart Ressourcen ein und trägt zur Kreislaufwirtschaft bei}. BMWK.
+		\bibitem{greenai2025b} Green-AI Hub Mittelstand (2025). \textit{Nachhaltig. Digital. Zirkulär: Community Convention zeigt Potenziale für KI auf}. 21. November 2025.
+		\bibitem{wef2024} World Economic Forum (2024). \textit{AI for Logistics and Supply Chain Optimization}. WEF Insight Report.
+		\bibitem{postwachstumKI} Schlichter, L. (2025). \textit{Potenziale KI-gestützter Wirtschaftsplanung}. Postwachstum.de.
+		\bibitem{ki-klimamodell2026} KIT (2026). \textit{KI in der Klimamodellierung}. Institut für Theoretische Informatik, Karlsruher Institut für Technologie.
+		\bibitem{ecmwf2025} ECMWF (2025). \textit{Progress report on AI-based weather forecasting}. European Centre for Medium-Range Weather Forecasts.
+		\bibitem{ki-buergerbeteiligung} DLR (2025). \textit{Digitale Tools und KI für mehr Bürgerbeteiligung in der EU}. Projektträger des Deutschen Zentrums für Luft- und Raumfahrt.
+		\bibitem{ki-demokratie2024} Müller, J. (2024). \textit{Technokratie versus Demokratie: KI im öffentlichen Raum}.
+		\bibitem{ki-ressourcen2025} Gartner (2025). \textit{Forecast: AI workloads in data centers and energy consumption}.
+		\bibitem{strubell2019} Strubell, E. et al. (2019). \textit{Energy and Policy Considerations for Deep Learning in NLP}.
+		\bibitem{postwachstumKI2} Postwachstum.de (2025). \textit{Das Märchen von der grünen KI}.
+		\bibitem{deepcube2024} TU Berlin (2024). \textit{Projekt DeepCube: Ressourceneffiziente KI-Architekturen}.
+		\bibitem{deepmind2018} DeepMind (2018). \textit{Safety and efficiency in data center cooling using AI}.
+		
+		% Abschnitt 4 \& 5 - Grundlagen \& Szenarien
+		\bibitem{open2025} Open Climate Journal (2025). \textit{Fundamentals of Radiative Forcing}.
+		\bibitem{realclimate2007} RealClimate (2007). \textit{A simple greenhouse model}.
+		\bibitem{ipcc2021} IPCC (2021). \textit{Climate Change 2021: The Physical Science Basis}. Cambridge University Press.
+		\bibitem{springer2026} Springer Climate (2026). \textit{Equilibrium Climate Sensitivity across Earth history}.
+		\bibitem{springer2024} Müller, A. et al. (2024). \textit{Feedback loops and climate sensitivity in CMIP6 models}. Springer.
+		\bibitem{ictp2001} ICTP (2001). \textit{The Primitive Equations of Atmospheric Dynamics}.
+		\bibitem{gmd2018} Earth System Models of Intermediate Complexity (EMICs). \textit{An ideal–dynamical atmosphere model}. Geoscientific Model Development, 11, 665–679.
+		\bibitem{carbonbrief2025} Wunderling, N. et al. (2025). \textit{Guest post: Exploring the risks of ‘cascading’ tipping points in a warming world}. Carbon Brief.
+		\bibitem{wunderling2022} Wunderling, N. et al. (2022). \textit{Climate tipping point interactions and cascades: a review}. Earth System Dynamics.
+		\bibitem{asaadi2024} Asaadi, A. et al. (2024). \textit{Carbon cycle feedbacks in an idealized simulation and a scenario simulation of negative emissions in CMIP6 Earth system models}. Earth System Dynamics, 21(2), 411–435.
+		\bibitem{noaapaleo2025} NOAA National Centers for Environmental Information (2025). \textit{Natural records of past climate - Maps, Visualizations, and Descriptive Information}.
+		\bibitem{noaa2020} Morrill, C. et al. (2020). \textit{Nature’s archives: piecing together 12,000 years of Earth’s climate story}. NOAA Climate.gov.
+		\bibitem{mpimet2015} Max-Planck-Institut für Meteorologie (2015). \textit{Neue Studie: Strahlungsantrieb durch Aerosole geringer und ...}. MPIMet Pressemitteilung.
+		\bibitem{iom2025} IOM (2025). \textit{World Migration Report 2025 – Climate Change Dimensions}. International Organization for Migration.
+	\end{thebibliography}
+	
+\end{document}
