@@ -1,0 +1,450 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{csquotes}
+
+\geometry{margin=2.5cm}
+\hypersetup{hidelinks}
+
+\title{Künstliche Intelligenz als Herausforderung für Polizei und Justiz in Deutschland\\
+	\large Eine Analyse rechtlicher, ethischer und praktischer Problemfelder}
+\author{}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		Die zunehmende Nutzung Künstlicher Intelligenz (KI) durch Polizei und Justiz in Deutschland eröffnet ein breites Spektrum neuer Herausforderungen. Die vorliegende Analyse systematisiert diese Problemfelder, von rechtlichen Grundlagendefiziten über das Risiko algorithmischer Diskriminierung bis hin zu konkreten Gefahren von Fehlurteilen durch KI-Halluzinationen und verzerrte Entscheidungsgrundlagen. Ein besonderer Fokus liegt auf dem neu entstehenden strukturellen Problem: dem strategischen Wettbewerbsvorteil privater Kanzleien gegenüber öffentlichen Institutionen, der die Fairness des Rechtsstaats gefährdet.
+	\end{abstract}
+	
+	\section{Einleitung}
+	
+	Die Integration Künstlicher Intelligenz in die polizeiliche und justizielle Arbeit schreitet in Deutschland rasch voran. Dieser technologische Wandel bringt jedoch tiefgreifende Herausforderungen mit sich. Auf dem 3. IPA-Fachforum im Mai 2025 in Stuttgart brachte der IPA-Präsident die zentrale Fragestellung auf den Punkt: \enquote{Wie viel KI braucht unser Rechtsstaat – und wie viel hält er aus?} \cite{IPA2025}
+	
+	\section{Problemfelder beim polizeilichen Einsatz von KI}
+	
+	\subsection{Rechtliche Defizite und mangelnde Transparenz}
+	
+	Viele KI-Systeme im polizeilichen Kontext werden ohne ausreichende Rechtsgrundlage, Transparenz und Risikoabschätzung entwickelt, getestet oder genutzt \cite{Peteranderl2025}. Diese grundlegende Kritik wird durch die jüngste Debatte um die \enquote{Lex Palantir} bestätigt, bei der Bürgerrechtsgruppen einen \enquote{unverhältnismäßigen Eingriff} durch automatisierte Datenanalysen beklagen \cite{FR2026}.
+	
+	Das Bundesverfassungsgericht hat in seiner \enquote{Hessendata}-Entscheidung vom Februar 2023 verfassungsrechtliche Leitplanken für automatisierte Datenanalysen formuliert und die neuartige Eingriffsintensität dieser Technologie betont \cite{VerfBlog2026}. Die Konferenz der unabhängigen Datenschutzaufsichtsbehörden (DSK) forderte im September 2025 eine verfassungskonforme Ausgestaltung dieser Verfahren und betonte die Wahrung digitaler Souveränität \cite{DSK2025}.
+	
+	\subsection{Risiko algorithmischer Diskriminierung}
+	
+	KI-Systeme können strukturelle Vorurteile aus Trainingsdaten übernehmen und systematisch gegen bestimmte Gruppen diskriminieren. Die Forschungsstelle der Antidiskriminierungsstelle des Bundes warnt, dass der Einsatz von KI in der Polizei \enquote{sehr riskant} sei, da Algorithmen mitentscheiden könnten, welche Stadtteile verstärkt überwacht werden \cite{Antidisk2025}. \cite{taz2026} weisen darauf hin, dass Algorithmen Vorurteile wie Rassismus reproduzieren und Diskriminierung sogar verstärken können.
+	
+	Zivilgesellschaftliche Organisationen kritisieren insbesondere, dass automatisierte Auswertungen sich nicht auf Tatverdächtige beschränken, sondern auch Unbeteiligte erfassen und marginalisierte Gruppen dadurch besonders belasten können \cite{Netzpolitik2025}.
+	
+	\subsection{Ausufernde Überwachung und Grundrechtseingriffe}
+	
+	Der Einsatz KI-gestützter Systeme wie Gesichtserkennung in Echtzeit ermöglicht eine flächendeckende Überwachung des öffentlichen Raums. Im Frankfurter Bahnhofsviertel wurde im Juli 2025 ein entsprechendes Pilotprojekt gestartet \cite{TOnline2025}. Der Deutsche Anwaltverein warnt, dass biometrische Gesichtserkennung einen \enquote{schweren Eingriff in das Recht auf informationelle Selbstbestimmung} darstelle \cite{DAV2025}.
+	
+	Der Deutschlandfunk berichtet von Plänen des Bundesinnenministeriums, die Befugnisse für Gesichtserkennung massiv auszubauen, einschließlich des Abgleichs mit Bildern aus dem Internet \cite{DLF2025}. Ein Gutachten von Algorithm Watch zeigt zudem, dass polizeiliche Foto-Fahndung im Internet nur mit illegalen Datenbanken funktionieren kann \cite{taz2025}.
+	
+	Die \enquote{Lex Palantir} wird von Amnesty International als \enquote{rote Linie} kritisiert, die die Infrastruktur zur flächendeckenden Überwachung der Bevölkerung schaffe \cite{Amnesty2026}.
+	
+	\subsection{Das Blackbox-Problem und fehlende Wirksamkeitsbelege}
+	
+	Die oft undurchschaubaren Entscheidungswege von KI-Systemen können fatale Folgen haben. Der Deutsche Anwaltverein bemängelt, dass die Funktionsweise der Algorithmen völlig intransparent sei \cite{DAV2025}. \cite{Peteranderl2025} betonen, dass Entwicklung und Einsatz häufig ohne unabhängige wissenschaftliche Begleitung sowie Kontrollmechanismen erfolgen – obwohl die Systeme erhebliche Risiken bergen.
+	
+	Besonders problematisch ist, dass es für prädiktive Polizeiarbeit (\enquote{Predictive Policing}) in Deutschland bislang keinen wissenschaftlichen Nachweis für deren Wirksamkeit gibt \cite{Peteranderl2025}. \cite{CILIP2025} bestätigen diese Einschätzung: Es existiere kein wissenschaftlicher Beleg für den Einfluss von Predictive Policing auf eine sinkende Kriminalitätsrate.
+	
+	\subsection{Abhängigkeit von US-Tech-Konzernen}
+	
+	Die Nutzung der Analysesoftware \enquote{Gotham} des US-Unternehmens Palantir führt zu einer problematischen technologischen Abhängigkeit. In Baden-Württemberg löste der Alleingang von Innenminister Strobl beim Vertragsabschluss mit Palantir im März 2025 einen Koalitionskonflikt aus \cite{FR2026}. Kritiker befürchten Hintertüren für US-Geheimdienste \cite{Focus2025}, obwohl Palantir dies zurückweist \cite{Spiegel2025}. In Hessen wird die Software bereits seit 2017 eingesetzt, musste aber nach einem Urteil des Bundesverfassungsgerichts angepasst werden \cite{FR2026}.
+	
+	Einige Bundesländer wie Niedersachsen und Bremen setzen bewusst nicht auf Palantir \cite{Goslarsche2025}. In Baden-Württemberg strebt die Koalition eine europäische Alternative bis 2030 an \cite{FR2026}.
+	
+	\section{Problemfelder in der Justiz}
+	
+	\subsection{KI als Hilfsmittel, nicht als Richterersatz}
+	
+	Der Thüringer Richterbund zieht eine klare Grenze beim KI-Einsatz in der Justiz. Der Landesvorsitzende Holger Pröbstel erklärte gegenüber der Deutschen Presse-Agentur: \enquote{Was aus meiner Sicht gar nicht geht, ist, dass Sie sich von ChatGPT die Urteile schreiben lassen} \cite{SZ2025}. Die Findung eines Urteils müsse immer Aufgabe eines Richters sein: \enquote{Sonst können Sie die Justiz gleich ganz abschaffen} \cite{SZ2025}. KI dürfe für Gerichte und Staatsanwaltschaften immer nur ein Hilfsmittel sein, niemals den Richter ersetzen \cite{SZ2025}.
+	
+	\subsection{Gefährdung der richterlichen Unabhängigkeit}
+	
+	Eine tiefe inhaltliche Einbindung von KI in die Entscheidungsfindung kann die richterliche Unabhängigkeit untergraben. Aus der bisherigen Rechtsprechung ist abzuleiten, dass verpflichtende Vorgaben zur Nutzung von KI-Tools im richterlichen Kernbereich unzulässig sind \cite{Anwaltsblatt2025}.
+	
+	\subsection{Fehleranfälligkeit und mangelnde Standards}
+	
+	Skeptisch zeigt sich Pröbstel insbesondere gegenüber Überlegungen, mittels KI den Strafrahmen zu bestimmen. Die entscheidende Frage sei: \enquote{Welche Urteile stehen in dieser Datenbank und wie bewerten das die Algorithmen} \cite{SZ2025}. Da die Justiz auf diese Algorithmen keinen Zugriff habe, könne sie so nicht seriös arbeiten \cite{SZ2025}.
+	
+	Bisher fehlen zudem einheitliche Standards für den Umgang mit KI-generierten Beweismitteln. Die automatisierte Gesichtserkennung in der Strafverfolgung wird in Deutschland bereits seit rund zwei Jahrzehnten praktiziert – allerdings ohne taugliche Rechtsgrundlage \cite{Nomos2025}.
+	
+	\subsection{Fehlerhafte Verfahrenshandlungen durch KI-Halluzinationen}
+	
+	Eine der konkretesten Gefahren für Fehlurteile geht vom unkritischen Einsatz generativer KI in der anwaltlichen und richterlichen Arbeit aus. Große Sprachmodelle neigen dazu, plausible, aber frei erfundene Informationen zu produzieren. Eine im Juni 2025 veröffentlichte Datenbank des französischen Anwalts Damien Charlotin weist allein für das Jahr 2025 bereits über 80 vor Gericht aufgedeckte Fälle von KI-Halluzinationen nach \cite{Charlotin2025}.
+	
+	\subsubsection{Praxisbeispiel Amtsgericht Köln (2025)}
+	Ein Rechtsanwalt reichte einen mit Hilfe von KI verfassten Schriftsatz ein, der nicht existierende Gerichtsurteile zitierte. Das Gericht rügte den Anwalt öffentlich und erkannte den Schriftsatz nicht als vollwertig an. Der Fall zeigt, wie ein Mangel an der anwaltlichen Sorgfaltspflicht das gesamte Verfahren beeinträchtigen kann \cite{LTO2025a}.
+	
+	Weltweit wurden inzwischen mehr als 1.200 gerichtliche Sanktionen gegen Rechtsanwälte wegen fehlerhafter KI-Nutzung verhängt, davon rund 800 allein in den USA \cite{NPR2025}. Einige Gerichte verlangen mittlerweile die Offenlegung der KI-Nutzung in Schriftsätzen.
+	
+	\subsubsection{Risiken für die Urteilsfindung}
+	Wenn Richter Entscheidungen auf KI-Empfehlungen stützen, ohne die Algorithmen zu verstehen, entsteht eine \enquote{Blackbox-Justiz}. Studien aus dem Jahr 2025 zeigen, dass bis zu 15 Prozent der automatisierten Fallanalysen durch KI-Systeme fehlerhaft sind \cite{LTO2025b}. Eine groß angelegte Untersuchung der Europäischen Rundfunkunion stellte zudem eine Fehlerquote von bis zu 40 Prozent bei Antworten gängiger Chatbots fest \cite{heise2025}.
+	
+	\subsection{Manipulierte oder unzuverlässige Beweise als Grundlage von Fehlurteilen}
+	
+	Die zunehmende Qualität von Deepfakes ermöglicht die Manipulation audiovisueller Beweismittel. Im November 2025 reichten Kläger in einem US-amerikanischen Zivilprozess ein Video einer angeblichen Zeugin als Beweis ein, das sich später als Deepfake entpuppte. Die Richterin wies die Klage ab, nachdem sie technische Artefakte identifiziert hatte \cite{LTO2025c}. Auch wenn es sich um einen US-Fall handelt, verdeutlicht er das erhebliche Gefahrenpotenzial für deutsche Gerichte.
+	
+	Eine weitere Beweisrisikoquelle liegt in der unzulässigen Nutzung von KI durch gerichtlich bestellte Sachverständige. Das Landgericht Darmstadt stellte am 10. November 2025 klar, dass ein Sachverständigengutachten, das umfangreich mit KI erstellt wurde, als Beweismittel unzulässig ist. Das Gericht monierte, dass der Gutachter persönliche Untersuchungen unterlassen und sich statt auf die Akten auf KI-generierte Fallzusammenfassungen gestützt hatte, die nicht mit den Tatsachen übereinstimmten. Der Gutachter erhielt keinerlei Vergütung \cite{LG Darmstadt2025}. Solche mangelhaften Gutachten können im Zweifel zu Fehlurteilen beitragen.
+	
+	\subsection{Verzerrte Entscheidungsgrundlagen durch algorithmische Verzerrungen}
+	
+	Fehlurteile können auch durch inhärente Verzerrungen in den Trainingsdaten von KI-Systemen entstehen. Wenn ein Algorithmus aus historischen, möglicherweise diskriminierenden Gerichtsurteilen lernt, wird er diese Fehler wiederholen und potenziell verstärken. Ein Forschungsprojekt an der Universität Konstanz untersucht derartige \enquote{algorithmic biases} und ihre Auswirkungen auf die Strafjustiz \cite{Uni Konstanz2025}. Diese systematischen Verzerrungen sind besonders tückisch, da sie nicht auf einen einzelnen menschlichen Fehler zurückgehen, sondern flächendeckend in die Strafzumessung einfließen können.
+	
+	\subsection{Wettbewerbsvorteil privater Kanzleien durch KI}
+	
+	Über die unmittelbaren Gefahren von Fehlurteilen hinaus zeichnet sich ein strukturelles Problem ab: Private Kanzleien nutzen KI-Technologie strategisch und oft schneller als öffentliche Institutionen, was zu einem massiven \enquote{Ungleichgewicht der Waffen} (asymmetry of arms) führen kann.
+	
+	\subsubsection{Strategische Frühphase und unternehmerischer Druck}
+	Kanzleien erkennen den Wettbewerbsvorteil durch KI und investieren gezielt. Eine im Oktober 2025 veröffentlichte Benchmark-Studie des Unternehmens Vals AI, die auf einem Datensatz von über 200 juristischen Fragestellungen aus acht US-Kanzleien basierte, zeigte, dass vier getestete KI-Produkte bei den meisten Aufgaben besser abschnitten als die menschliche Vergleichsgruppe. Die durchschnittliche Genauigkeit der KI-Produkte lag bei 80\%, während die der Jurist:innen 71\% erreichte. Besonders bei der Überprüfbarkeit von Quellen (\enquote{Belegbarkeit}) lagen spezialisierte Legal-KI-Produkte mit 76\% deutlich vor menschlichen Jurist:innen (68\%). Noch deutlicher war der Unterschied bei der Mandantenfreundlichkeit und Verständlichkeit (\enquote{Angemessenheit}) – hier erreichten die Jurist:innen nur 60\%, während die KI-Produkte auf 70\% kamen \cite{ValAI2025}.
+	
+	Prof. Dr. Frauke Rostalski, Direktorin des Instituts für Strafrecht und Strafprozessrecht an der Universität zu Köln, sieht darin ein grundlegendes Problem für die Fairness des Rechtsstaats. Sie betont, dass KI-Systeme für Privatpersonen vor allem eine unterstützende Rolle im Bereich der rechtlichen Selbsthilfe spielen können. Das daraus entstehende Machtgefälle könnte Bürger gegenüber einem übermächtigen Staat jedoch weiter benachteiligen, wenn der Staat hier nicht Schritt hält \cite{Rostalski2024}.
+	
+	\subsubsection{Strukturelle Ungleichgewichte in der Prozessführung}
+	Dieser Effizienzvorteil wird in Massenverfahren besonders deutlich. Der Einsatz von KI bei der Dokumentenanalyse (Technology Assisted Review) ermöglicht es Kanzleien, riesige Datenmengen – tausende E-Mails, Verträge, Gutachten – extrem schnell zu durchsuchen und prozessrelevante Informationen zu extrahieren. Es ist zudem zunehmend üblich, KI-Tools wie \enquote{Harvey} als \enquote{Gedankenpartner} für die Entwicklung einer Prozessstrategie zu nutzen \cite{Hengeler2025}. Eine KI kann tausende relevante Urteile analysieren, Argumentationsmuster erkennen und dem gegnerischen Anwalt, der sich manuell durch die Akten kämpfen muss, einen entscheidenden Schritt voraus sein.
+	
+	\subsubsection{Konkrete Machtasymmetrie: Fallbeispiel}
+	Ein konkretes Fallbeispiel verdeutlicht diese Asymmetrie: Eine Partei verfügt über Tausende von Schadensberichten zu einzelnen beschädigten Gegenständen. Das Unternehmen nutzte eine KI-Plattform, um Beweise vorzubereiten, indem es die Dokumente hochlud und die KI Fragen dazu stellen ließ. Die Gegenseite (oder das Gericht) müsste all diese Unterlagen manuell sichten, um die Beweise zu prüfen. Schon hier offenbaren sich die inhärenten Risiken: Die KI war nicht in der Lage, alle relevanten Informationen zu filtern \cite{Luther2026}. Während ein geschulter Mensch zwar in der Lage wäre, dies korrekt zu tun, würde er dafür unverhältnismäßig viel Zeit benötigen – ein Nachteil, der in der Praxis oft zu prozessualen Zugeständnissen oder Vergleichsverhandlungen führt.
+	
+	\subsubsection{Die Notwendigkeit eines \enquote{Sovereign AI}}
+	Prof. Steinrötter von der Universität Potsdam weist darauf hin, dass die öffentliche Hand angesichts dieser Übermacht nicht nur die technologischen, sondern auch die rechtlichen Rahmenbedingungen schaffen muss. Er betont: \enquote{Letztlich müssen alle relevanten Gesetze, die dazugehörige Rechtsprechung und die Verwaltungspraxis in das System eingespeist werden.} Der Staat müsse insbesondere auf \enquote{Sovereign AI} – also souveräne, europäische KI-Lösungen – setzen, um nicht von US-Konzernen abhängig zu werden \cite{Steinroetter2026}.
+	
+	\subsubsection{Reputations- und Haftungsrisiken als Bremsfaktor für Kanzleien}
+	Die Kehrseite des Wettbewerbsvorteils ist das immense Risiko bei unsachgemäßer Nutzung. Die aggressive Nutzung von KI kann für Kanzleien nach hinten losgehen, was ihre Zurückhaltung erklären könnte. Das Landgericht Frankfurt am Main rügte im September 2025 einen Anwalt scharf, weil dieser in einem Schriftsatz frei erfundene BGH-Zitate aus einem KI-Tool verwendet hatte (Az. 2-13 S 56/24). Die Richter sprachen von einer \enquote{kompletten Fälschung} \cite{LG Frankfurt2025}. Das Landgericht Darmstadt kürzte in einem Fall das Honorar eines Sachverständigen auf 0,00 Euro, weil er ein maßgeblich von einer KI erstelltes Gutachten nicht deklariert hatte (Az. 19 O 527/16) \cite{Kramarz2026}. In einem anderen Fall wertete das Kammergericht Berlin automatisierte Schriftsätze ohne Bezug zum konkreten Tatvorwurf als dysfunktionale Prozessführung \cite{KG Berlin2025}.
+	
+	\subsection{Reaktionen der Gerichte und Grenzen des richterlichen Ersatzes}
+	
+	Der österreichische Oberste Gerichtshof (OGH) wies im Oktober 2025 eine offensichtlich mit KI erstellte Nichtigkeitsbeschwerde zurück, die sich auf erfundene angebliche höchstgerichtliche Entscheidungen stützte. Das Gericht stellte klar, dass dieses Vorbringen dem erforderlichen Argumentationsniveau nicht genüge \cite{OGH2025}.
+	
+	Der Thüringer Richterbund betonte im August 2025: \enquote{Was aus meiner Sicht gar nicht geht, ist, dass Sie sich von ChatGPT die Urteile schreiben lassen} \cite{Richterbund2025}. Die Findung eines Urteils müsse immer einem Richter vorbehalten bleiben. KI dürfe für Gerichte immer nur ein Hilfsmittel sein, aber \enquote{nie den Richter ersetzen} \cite{Richterbund2025}.
+	
+	\subsection{Alltägliche Gefahren für nicht IT-affine Nutzer}
+	
+	Während die vorangegangenen Abschnitte die institutionellen Herausforderungen für Polizei und Justiz beleuchtet haben, ist KI längst zu einem Massenphänomen geworden, das den Alltag von Millionen Menschen prägt. Laut der aktuellen TÜV-ChatGPT-Studie 2025 nutzen bereits 65 Prozent der Bundesbürgerinnen und -bürger generative KI-Tools – ein deutlicher Anstieg gegenüber 37 Prozent im Jahr 2023. Besonders die jüngere Generation (91 Prozent der 16–29-Jährigen) setzt regelmäßig auf Tools wie ChatGPT, Google Gemini oder DeepL \cite{TUEV2025}. Die Kehrseite dieser rasanten Verbreitung ist eine gravierende Sicherheitslücke im Umgang mit KI. Viele Nutzerinnen und Nutzer erkennen KI-generierte Inhalte nicht oder unterschätzen die Gefahren durch Deepfakes, fehlerhafte Ergebnisse und Datenmissbrauch \cite{TUEV2025}. Dieser Abschnitt widmet sich den spezifischen Risiken für genau diese nicht IT-affinen Nutzer.
+	
+	\subsubsection{Cyberkriminalität: Neue Dimensionen von Betrug und Malware}
+	
+	KI eröffnet Kriminellen völlig neue Angriffsmöglichkeiten. Eine aktuelle Bitdefender-Studie gibt Einblicke in die zentralen Verhaltensweisen, Praktiken und Bedenken von Verbrauchern weltweit im Bereich der Cybersicherheit \cite{Bitdefender2025}. Besonders alarmierend ist die Entwicklung von KI-gestützten Phishing-Angriffen: KI verbessert Phishing-Mails, Smishing-Nachrichten und Deepfake-Anrufe so massiv, dass sie täuschend echt wirken und klassische Indikatoren für Betrug kaum noch greifen \cite{SecurityInsider2025a}. Drei von vier Befragten geben an, heute mehr Sorge um die Sicherheit ihrer persönlichen Daten zu haben als noch vor fünf Jahren. Besonders besorgniserregend: Nur 23 Prozent fühlen sich in der Lage, legitime von betrügerischen Inhalten sicher zu unterscheiden \cite{SecurityInsider2025b}. Als größte Bedrohung nennen 39 Prozent der Verbraucher KI-gestütztes Phishing \cite{SecurityInsider2025b}.
+	
+	Neben Phishing hat sich insbesondere das Voice Cloning als gefährliche Betrugsmasche etabliert. Modelle können Stimmen bereits nach wenigen Sekunden nachahmen. Angreifer imitieren vertrauenswürdige Personen, wie Vorgesetzte oder Familienmitglieder, um ihre Opfer zu Überweisungen, zur Weitergabe von Zugangsdaten oder zur Freigabe sensibler Daten zu verleiten \cite{Watchguard2025}. Die Erkennung solcher Manipulationen kommt häufig zu spät, sodass Angriffe in der Regel bereits erfolgreich sind, bevor jemand reagieren kann \cite{Watchguard2025}.
+	
+	Auch die Malware-Entwicklung hat durch KI eine neue Qualität erreicht. Im Mai 2025 wurde eine polymorphe KI-Malware bekannt, die anders als klassische polymorphe Varianten nicht nur innerhalb vorgegebener Muster variiert, sondern durch generative KI bei jeder Ausführung nahezu einzigartig ist \cite{ConnectProfessional2025}. Angriffsframeworks basieren zunehmend auf KI und passen ihre Payloads in Echtzeit an. Ein Proof-of-Concept namens \enquote{Ransomware 3.0} hat demonstriert, wie ein KI-gesteuerter Ransomware-Prototyp Angriffsphasen dynamisch planen, adaptieren und ausführen kann \cite{Watchguard2025}.
+	
+	Eine weitere Studie der Elon University aus dem Jahr 2025 zeigt, dass 58 Prozent der KI-Nutzenden regelmäßig mehrere Modelle parallel einsetzen. Laut Daten des Unternehmens Harmonic erfolgen 45,4 Prozent der Eingaben sensibler Informationen über persönliche Konten – ohne Kontrolle durch die IT-Abteilung \cite{Itwelt2025}. Noch besorgniserregender: 44 Prozent der Befragten gaben an, bei der Nutzung von KI gegen Unternehmensrichtlinien verstoßen zu haben. Risiken entstehen zudem durch sogenannte Schatten-KI, wenn Mitarbeitende private Accounts nutzen und so die Kontrolle durch das Unternehmen entfällt \cite{Datenschutz2025}. Die zunehmende Abhängigkeit von KI-Systemen birgt auch potenzielle Risiken durch unzureichende Datenschutz- und Sicherheitsmaßnahmen \cite{Europarl2025}.
+	
+	\subsubsection{Fehlinformation und Deepfakes: Die Unterwanderung der digitalen Realität}
+	
+	Gezielte Einflussnahme auf Wahlen sowie inzwischen alltägliche Desinformation und Fake News sind ernste Bedrohungen für unsere Demokratie \cite{Tagesschau2025a}. Kriminelle und politische Akteure können mithilfe von KI-Klonen glaubwürdige Deepfakes erstellen und damit betrügerische Absichten verfolgen \cite{Tagesschau2025a}. Social Bots und Algorithmen manipulieren unsere Wahrnehmung, während KI-generierte Stimmen oft kaum noch als solche zu erkennen sind \cite{Sonntagsblatt2025}.
+	
+	Die IU Studie 2025 zeigt, dass Fake News und Deepfakes konkrete Auswirkungen auf das (Sozial-)Leben und die Wahlentscheidungen der Befragten haben \cite{IU2025}. KI-generierte Inhalte werden oft für echt gehalten. Betrüger können generative KI-Tools nutzen, um raffinierte und effektive Phishing-E-Mails zu erstellen, die ihnen helfen, vertrauliche Informationen zu erhalten \cite{IBM2025}. Im März 2025 setzte sich ein besorgniserregendes Muster fort: In 33 Prozent der Fälle wiederholten KI-Modelle Falschbehauptungen, die über das \enquote{Pravda}-Netzwerk verbreitet wurden \cite{NewsGuard2025}.
+	
+	\subsubsection{Dark Patterns: Wenn KI zur Manipulationsmaschine wird}
+	
+	Eine aktuelle Studie des Nationalen Forschungszentrums für angewandte Cybersicherheit ATHENE, der University of Glasgow und der Humboldt-Universität zu Berlin zeigt, dass KI-Anwendungen wie ChatGPT, Gemini und Claude AI selbst bei neutralen Anfragen regelmäßig manipulative Elemente wie gefälschte Kundenrezensionen, künstlich erzeugte Zeitdruck-Anzeigen oder irreführende Preisvergleiche in den HTML-Code von Webseiten einbauen – ohne darauf hinzuweisen, dass es sich um rechtlich und ethisch fragwürdige Elemente handelt \cite{ATHENE2025}. Dr. Veronika Krauß, eine der Autorinnen der Studie, erklärt: \enquote{Diese Designmuster sind darauf ausgelegt, Nutzende zu Handlungen zu bewegen, die sie eigentlich nicht beabsichtigen. Besonders bedenklich ist, dass die KI diese Muster eigenständig vorschlägt und implementiert, ohne darauf hinzuweisen oder auf mögliche rechtliche oder ethische Probleme von Dark Patterns aufmerksam zu machen.} \cite{ATHENE2025}
+	
+	Die Forschenden identifizierten unter anderem vorausgewählte Produkte im Warenkorb, gefälschte euphorische Kundenrezensionen sowie künstlich erzeugte Dringlichkeit durch Zeitdruck-Anzeigen. Besorgniserregend ist, dass die KI-Systeme die psychologischen Wirkmechanismen hinter den manipulativen Designs durchaus verstehen und erklären können \cite{ATHENE2025}. Die Ursache liegt in den Trainingsdaten: Im Internet gibt es genug Webseiten, die manipulative Designs nutzen. Daraus lernt die KI, selbst ähnlichen HTML-Code zu erstellen, um bestimmte Zielvorgaben zu erreichen \cite{ATHENE2025}.
+	
+	Eine weitere subtile, aber nicht weniger gefährliche Manipulationsform ist die sogenannte Sykophantie – die unkritische Zustimmung von KI-Chatbots. Studien bestätigen, dass sich diese Ja-Sagerei nicht wirklich aus Chatbots herausbekommen lässt, da sie als Produkte eine angenehme Nutzungserfahrung bieten sollen \cite{T3N2025}. Im schlimmsten Fall kann uneingeschränkte Zustimmung und Bekräftigung durch ChatGPT und Co. zu sogenannten \enquote{KI-Psychosen} und Abwärtsspiralen führen \cite{T3N2025}. Der Digital Fairness Act (DFA) soll in Zukunft umfassende Vorgaben gegen solche manipulativen Designelemente einführen \cite{BigDataInsider2025}.
+	
+	\subsubsection{Datenschutz und rechtliche Grauzonen}
+	
+	Die Bedenken der Verbraucher gegenüber KI sind enorm. 54 Prozent der deutschen Befragten gaben an, besorgt über den Einfluss von KI auf die Sicherheit ihrer digitalen Identitäten zu sein. Jeder zweite Deutsche würde einem KI-Agenten keine persönlichen Daten anvertrauen, und 41 Prozent erledigen Aufgaben lieber selbst, als sich auf Künstliche Intelligenz zu verlassen \cite{Okta2025}.
+	
+	Eine aktuelle Analyse der Datenschutzfirma Incogni zeigt, dass KI-Anbieter beim Training ihrer Modelle Schranken wie die robots.txt-Datei ignorieren und Daten aus nicht näher spezifizierten Quellen wie Datenbrokern oder Finanzinstituten beziehen \cite{JuraUniSaarland2025}. Das auf Datenschutz spezialisierte Unternehmen Incogni hat im Rahmen des Privacy-Ranking-Reports 2025 neun KI-Anbieter untersucht und kommt zu dem Schluss, dass bei Gemini und Copilot besonders viele Datenschutzrisiken bestehen \cite{SecurityInsider2025c}. 13 Prozent der KI-Nutzer haben bereits persönliche Daten wie Adressen oder Passwörter in KI-Systeme eingegeben, und 50 Prozent äußern große Sorge vor Datenmissbrauch. In Unternehmen fehlt es an klaren Regeln: 54 Prozent der Beschäftigten berichten von keinen Vorgaben oder Verboten für den KI-Einsatz \cite{TUEV2025}.
+	
+	Ein besonders komplexes Problemfeld ist der urheberrechtliche Status KI-generierter Inhalte. Bei Deepfakes handelt es sich regelmäßig um vollständig neue, KI-generierte Inhalte, die kein bestehendes Werk verändern. Dies gilt etwa für die meisten KI-generierten Songs, Videos oder Bilder. Weder die eigene Stimme noch das äußere Erscheinungsbild genießen urheberrechtlichen Schutz \cite{JuraUniSaarland2025a}. Eine bloße Verwechslungsgefahr kennt das Urheberrecht nicht. Zusammenfassend lässt sich festhalten, dass das Urheberrecht in erster Linie das Werk schützt – nicht die Person. Der Schutz der eigenen Stimme oder des eigenen Abbilds erfolgt, wenn überhaupt, über das allgemeine Persönlichkeitsrecht oder unlauteren Wettbewerb \cite{JuraUniSaarland2025a}. Während in den USA mit dem ELVIS Act ein Schutz vor kommerziellem Missbrauch KI-simulierter Stimmen besteht, fehlen entsprechende Regelungen bislang im deutschen und europäischen Raum \cite{Oppenhoff2025}. Personen, die in Deepfakes imitiert werden, werden in ihrem allgemeinen Persönlichkeitsrecht verletzt. Da die betroffene Person in die Erstellung des Deepfakes sicher nicht eingewilligt hat, ist das Deepfaken meist eine rechtswidrige Verarbeitung \cite{WBS2025}. Dennoch bleiben die rechtlichen Möglichkeiten für Betroffene derzeit oft unzureichend.
+	
+	\subsubsection{Schutz durch die KI-Verordnung?}
+	
+	Die europäische KI-Verordnung (KI-VO) soll eine Vielzahl realer KI-Risiken adressieren, denen Verbraucherinnen und Verbraucher täglich ausgesetzt sind \cite{VZBV2025}. Sie räumt Verbraucherinnen und Verbrauchern jedoch nur wenige Individualrechte ein: das Recht auf Beschwerde und das Recht auf Erläuterung einer Hochrisiko-KI-Entscheidung \cite{VZBV2025}. Der EU AI Act ist zudem nur 32 Prozent der Menschen bekannt \cite{TUEV2025}. Seit dem 2. Februar 2025 gelten Verbote für besonders riskante KI-Anwendungen in der EU \cite{Rechtsanwalt2025}. Die KI-VO geht auf die Ziele des europäischen Verbraucherschutzes jedoch nur an sehr wenigen Stellen ein \cite{CRonline2025}. Ein breites Bündnis warnt vor einer möglichen Aushöhlung der KI-Regeln durch geplante \enquote{Vereinfachungen} \cite{Netzpolitik2026}. Für KI-Systeme, die für Verbraucherinnen und Verbraucher besonders riskant sind, gelten strenge Qualitäts- und Verfahrensanforderungen. Dazu zählen solche, die zur Kreditvergabe oder zur Prämienfestsetzung im Versicherungsbereich eingesetzt werden \cite{BMJV2025}.
+	
+	\subsection{Kinder- und Jugendschutz im Zeitalter der KI}
+	
+	Künstliche Intelligenz zieht mit rasender Geschwindigkeit in unseren Alltag ein – und macht vor dem Kinderzimmer keinen Halt. Der folgende Abschnitt untersucht die spezifischen Risiken von KI für Minderjährige.
+	
+	\subsubsection{KI als Katalysator für sexualisierte Gewalt und Missbrauch}
+	
+	Eine der größten Gefahren geht von der Nutzung generativer KI zur Erstellung von Missbrauchsdarstellungen aus. Im Jahr 2025 hat das gemeinsame Kompetenzzentrum von Bund und Ländern, jugendschutz.net, mehr als 15.000 Fälle von Missbrauchsdarstellungen von Kindern bearbeitet \cite{jugendschutz2025}. Die niedrige Zugangsschwelle zu KI-Tools hat die Lage drastisch verändert. Die Internet Watch Foundation (IWF) meldet einen Anstieg von rund 400 \% bei KI-generierten Darstellungen sexualisierter Gewalt gegen Kinder innerhalb eines Jahres \cite{IWF2025}. Der Konsum von Missbrauchsdarstellungen realer Kinder bleibt weiterhin strafbar, kann aber durch KI-generierte Inhalte normalisiert werden \cite{BKA2025}.
+	
+	Auch KI-Chatbots stellen eine Gefahrenquelle dar. jugendschutz.net berichtet, dass Chatbots ein Eigenleben entwickelten und Kinder und Jugendliche in sexualisierte Interaktionen führten \cite{jugendschutz2025}. Als erste Behörde weltweit hat die Bundeszentrale für Kinder- und Jugendmedienschutz (BzKJ) ein generatives KI-Text-zu-Bild-Tool indiziert, weil es die Erstellung kinderpornografischer Inhalte erlaubte \cite{BzKJ2025}. Die Behörde kann Dienste mit schwerwiegenden Sanktionen belegen, was ein starkes Signal an globale KI-Entwickler sendet \cite{BzKJ2025a}.
+	
+	\subsubsection{Digitale Gewalt, Extremismus und Desinformation}
+	
+	Deepfakes und KI-generierte Inhalte verschärfen die Risiken für Kinder und Jugendliche im Internet erheblich. Die Bayerische Justizministerkonferenz warnte eindringlich vor den Gefahren von Deepfakes \cite{BayJumko2025}. Extremistische Akteure nutzen KI als leicht zugängliches und günstiges Mittel zur Erstellung extremistischen Contents für soziale Medien. jugendschutz.net berichtet von einer besorgniserregenden Zunahme extremistischer Hassinhalte, wobei allein im Berichtszeitraum 7.645 Verstoßfälle bearbeitet wurden \cite{jugendschutz2025}. Die Zweifel an der Authentizität von Bildern und Videos werden gezielt instrumentalisiert, um politische Gegner zu diskreditieren \cite{Tagesschau2025a}.
+	
+	\subsubsection{Die Suchtfalle: KI-Chatbots und psychische Gesundheit}
+	
+	Die DAK-Mediensuchtstudie 2025 zeigt, dass KI-Chatbots im Alltag vieler Jugendlicher angekommen sind und mit neuen Risiken verbunden sein können. Mehr als ein Viertel der 10- bis 17-Jährigen greift mehrmals pro Woche auf KI-Chatbots zurück \cite{DAK2025}. Besonders alarmierend ist, dass bis zu zehn Prozent der Kinder und Jugendlichen Chatbots gezielt nutzen, um mit Einsamkeit oder negativen Gefühlen umzugehen, wobei Jugendliche mit depressiven Symptomen überproportional betroffen sind \cite{DAK2025}. Parasoziale Beziehungen zu KI-Chatbots sind ein neues Phänomen. Für Kinder und Jugendliche auf der Suche nach Austausch besteht die Gefahr der Isolation und emotionalen Abhängigkeit \cite{DAK2025}. Ein wissenschaftlicher Aufruf von neun führenden deutschen Fachgesellschaften fordert klare Altersgrenzen für Smartphones, soziale Medien und KI-Chatbots sowie ein Verbot manipulativer Designmechanismen \cite{Fachgesellschaften2025}.
+	
+	\subsubsection{Schutzlücken, rechtliche Maßnahmen und die Rolle der Prävention}
+	
+	Trotz der erkannten Risiken sind die Schutzmechanismen oft unzureichend. Kritisiert wird, dass Betreiber von Angeboten zu wenig tun, um Kinder und Jugendliche zu schützen, und dass Altersangaben nicht angemessen überprüft werden \cite{BzKJ2025b}. Das EU-Parlament verabschiedete im November 2025 einen Bericht mit strengen Forderungen: EU-weites Mindestalter von 16 Jahren für soziale Netzwerke, KI-Begleitdienste sowie Verbote für Endlos-Scrollen, automatische Wiedergabe und profilbasierte Empfehlungssysteme für Minderjährige \cite{EUParliament2025}. Auf nationaler Ebene hat die BzKJ neue Befugnisse zur Überwachung von Plattformbetreibern und kann Verstöße gegen Jugendschutzregeln mit Geldstrafen von bis zu 500.000 Euro belegen \cite{BzKJ2025a}. Die neu eingerichtete Stelle KidD setzt die Kinderrechte in digitalen Diensten durch \cite{KidD2025}. Ein zentraler Baustein für den Schutz von Kindern ist der Ausbau von Medienkompetenz. Medienbildung hilft jungen Menschen, KI-generierte Inhalte kritisch zu hinterfragen, Deepfakes zu erkennen und verantwortungsbewusst mit KI umzugehen \cite{LMK2025}.
+	
+	\section{Die Rolle der deutschen und europäischen IT-Industrie und der Open-Source-Community}
+	
+	Angesichts der skizzierten Herausforderungen stellt sich zwangsläufig die Frage, inwieweit die öffentliche Hand die notwendige technologische Souveränität überhaupt erreichen kann, ohne sich noch tiefer in Abhängigkeiten von großen US-Tech-Konzernen zu begeben. Dies erfordert einen differenzierten Blick auf die Strategien der Bundesregierung, der europäischen IT-Wirtschaft und der Open-Source-Community.
+	
+	\subsection{Die Open-Source-Strategie des Bundes: Das Zentrum für Digitale Souveränität (ZenDiS)}
+	
+	Um die öffentliche Verwaltung aus der Abhängigkeit von wenigen großen Tech-Konzernen zu befreien, wurde im Dezember 2022 das \textbf{Zentrum für Digitale Souveränität der Öffentlichen Verwaltung (ZenDiS)} gegründet \cite{ZenDiS2025}. Das ZenDiS ist eine GmbH im Besitz des Bundes und verfolgt das Ziel, Bund, Ländern und Kommunen ein umfassendes Souveränitätspaket aus Plattform, Produkten und Beratung zur Verfügung zu stellen \cite{ZenDiS2025}. Kern der Strategie ist das Prinzip \enquote{Public Money, Public Code}, das im Koalitionsvertrag 2021 verankert wurde und besagt, dass mit öffentlichen Geldern entwickelte Software auch der Allgemeinheit als Open Source zur Verfügung stehen soll \cite{SovereignTechFund2025}.
+	
+	Das ZenDiS hat zwei zentrale Plattformen geschaffen:
+	\begin{itemize}
+		\item \textbf{openCode:} Eine offene Plattform (basierend auf GitLab) zur Entwicklung, Bereitstellung und Nachnutzung von Open-Source-Software für die öffentliche Verwaltung. Sie dient als zentrale Anlaufstelle für die kollaborative Softwareentwicklung von Bund, Ländern und Kommunen. Mittlerweile basieren über 4.000 Projekte auf openCode \cite{Heise2025a}.
+		\item \textbf{openDesk:} Eine souveräne Open-Source-Arbeitsplatzlösung, die als vollwertige Alternative zu Microsoft 365 und Teams konzipiert ist. openDesk integriert etablierte Open-Source-Tools wie Open-Xchange (Groupware), OpenProject (Projektmanagement), Nextcloud (Dateisynchronisation), XWiki (Wissensmanagement), Matrix und Jitsi (Kommunikation) sowie Collabora (Web-Office) in einer einheitlichen Plattform \cite{AllThingsOpen2025}. Die Verfügbarkeit als Source-Code, Helm-Charts und bald auch als SaaS-Angebot macht es zu einem echten Werkzeug für die digitale Souveränität \cite{AllThingsOpen2025}.
+	\end{itemize}
+	
+	\subsection{Die Open-Source-Community als Fundament: Der Sovereign Tech Fund}
+	
+	Neben der Bereitstellung fertiger Lösungen hat die Bundesregierung ein international vielbeachtetes Instrument zur gezielten Stärkung der Open-Source-Infrastruktur geschaffen: den \textbf{Sovereign Tech Fund (STF)}. Der STF ist ein Förderprogramm des Bundesministeriums für Wirtschaft und Klimaschutz (BMWK), das darauf abzielt, die Sicherheit, Wartung und Resilienz kritischer Open-Source-Basistechnologien zu stärken \cite{SovereignTechFund2025}. Seit seiner Gründung im Jahr 2022 hat der STF über 24,6 Millionen Euro bereitgestellt, um mehr als 60 Open-Source-Projekte weltweit zu unterstützen \cite{SovereignTechFund2025}. Die Mindestförderung pro Projekt beträgt 50.000 Euro, in der Praxis wurden bereits Investitionen von bis zu einer Million Euro getätigt \cite{SovereignTechFund2025}.
+	
+	Der STF adressiert damit die strukturelle Herausforderung, dass viele grundlegende Open-Source-Komponenten – wie Bibliotheken, Protokolle und Entwicklungswerkzeuge – aufgrund ihrer Allgegenwart in der digitalen Infrastruktur oft vernachlässigt werden, obwohl sie das Rückgrat der digitalen Wirtschaft und Verwaltung bilden. Mit Programmen wie dem \enquote{Sovereign Tech Fellowship}, das Maintainer*innen von wichtigen Open-Source-Komponenten für ihre Arbeit bezahlt, verfolgt der STF einen ganzheitlichen Ansatz zur Sicherung des Open-Source-Ökosystems im öffentlichen Interesse \cite{STFNews2025}.
+	
+	\subsection{Deutsche IT-Wirtschaft: Zwischen Eigenentwicklung und Abhängigkeit}
+	
+	Die deutsche IT-Wirtschaft ist in diesem Ökosystem auf verschiedene Weisen aktiv. Einerseits gibt es vielversprechende Eigenentwicklungen, die bewusst auf Open Source setzen, um Unabhängigkeit zu gewährleisten.
+	
+	Ein herausragendes Beispiel ist der KI-Assistent \textbf{F13}, der vom Innovationslabor Baden-Württemberg entwickelt und im Juli 2025 als Open-Source-Software (MPL 2.0 Lizenz) auf openCode veröffentlicht wurde \cite{Staatsanzeiger2025}. F13 ist eine modellagnostische, datensouveräne KI-Assistenz, die auf deutschen Servern betrieben wird und somit DSGVO-konform ist. Sie umfasst bereits Funktionen wie Chat, Dokumentenzusammenfassung und Recherche in verwaltungsrelevanten Quellen und wird bereits von der Polizei Baden-Württemberg genutzt \cite{Staatsanzeiger2025}. Das ZenDiS hat das Projekt bei der Lizenzprüfung und der Community-Strategie beratend unterstützt \cite{ZenDiS2025b}. Diese Entwicklung zeigt, dass eine datenschutzkonforme und souveräne KI-Infrastruktur für die öffentliche Hand technisch möglich ist – wenn der politische Wille und die entsprechenden Ressourcen vorhanden sind.
+	
+	Andererseits wird die anhaltende Abhängigkeit von proprietären US-Lösungen besonders deutlich im Bereich der Polizei-Datenanalyse. Die \textbf{Palantir}-Software ist in den Polizeibehörden von Bayern, Hessen, Baden-Württemberg und Nordrhein-Westfalen im Einsatz \cite{Tagesschau2025b}. Politisch ist man sich einig, dass eine souveräne Alternative geschaffen werden muss. So bekräftigte die Innenministerkonferenz im Juni 2025 das Ziel, eine \enquote{Verfahrensübergreifende Recherche- und Analyseplattform} zu schaffen, die frei von außereuropäischen Einflüssen ist \cite{Tagesschau2025b}.
+	
+	Dennoch scheiterten vielversprechende Eigeninitiativen. So schloss sich 2023 ein Konsortium aus sieben deutschen Unternehmen (Start-Ups, Mittelständler und ein Großkonzern) unter dem Namen \textbf{NaSa} zusammen, um eine konkrete Palantir-Alternative zu entwickeln. Sachar Paulus, Professor für IT-Sicherheit an der Hochschule Mannheim, hielt eine solche Lösung für realistisch und schätzte, dass innerhalb von zwölf bis 18 Monaten ein Prototyp umsetzbar sei \cite{Tagesschau2025b}. Trotz eines Zeitplans und der Vorstellung im Innenausschuss des Bundestags fand das Projekt keinen Auftraggeber – weder auf Landes- noch auf Bundesebene, sodass es scheiterte \cite{Tagesschau2025b}. Dies zeigt ein strukturelles Problem auf: Während die Politik digitale Souveränität propagiert, scheitert die konkrete Umsetzung oft an fehlenden verbindlichen Aufträgen und der mangelnden Bereitschaft, langfristig in heimische Entwicklungen zu investieren.
+	
+	\subsection{Europäische Initiativen: Open Source in der Justiz}
+	
+	Auch im Justizbereich gibt es ermutigende Open-Source-Projekte, die den Weg für mehr Souveränität ebnen. So gewann das Bundesministerium der Justiz und für Verbraucherschutz mit dem Projekt \textbf{„Zugang zum Recht“} den Open-Source-Wettbewerb der Open Source Business Alliance (OSBA) in der Kategorie „Fachverfahren“ \cite{Heise2025c}. Die Anwendung bietet digitale Justizdienste an, allen voran die digitale Klage für Fluggastrechte, die es Bürgern ermöglicht, direkt eine digitale Klage ohne Anwalt einzureichen. Jährlich ließen sich so rund 790.000 Euro an Beratungshilfekosten einsparen \cite{Heise2025c}.
+	
+	Ein weiteres Leuchtturmprojekt ist \textbf{NeuRIS}, das neue Rechtsinformationssystem des Bundes. Der DigitalService entwickelt gemeinsam mit dem BMJV und dem Bundesamt für Justiz ein Portal, das Gesetze, Gerichtsentscheidungen und Verwaltungsvorschriften des Bundes zentral, barrierefrei und über eine offene API kostenlos zur Verfügung stellt \cite{NeuRIS2025}. Dies ermöglicht nicht nur einen modernen Zugang zum Recht, sondern schafft auch eine datensouveräne Grundlage für Legal-Tech-Anwendungen.
+	
+	\subsection{Ausblick: Open Source als Standard}
+	
+	Die Weichen für eine stärkere Open-Source-Nutzung sind gestellt. Die überarbeiteten EVB-IT-Verträge, die im Februar 2026 veröffentlicht wurden, machen Open Source zum Standard für die öffentliche Verwaltung und standardisieren die rechtskonforme Beschaffung von Open-Source-Software \cite{ZenDiS2025}. Auch im EU-weiten Kontext wird das Thema vorangetrieben: Im Oktober 2025 wurde das \enquote{EU Digital Commons Consortium} (DC-EDIC) offiziell gegründet, um digitale Gemeingüte in Europa zu fördern. Deutschland wird hier durch das Bundesministerium für Digitales und Staatsmodernisierung vertreten \cite{ZenDiS2025}.
+	
+	\section{Verbindende Querschnittsthemen}
+	
+	\subsection{Datenschutz und Grundrechte}
+	
+	Die automatisierte Analyse personenbezogener Daten durch KI stellt einen massiven Eingriff in die informationelle Selbstbestimmung dar. Die DSK betont, dass automatisierte Datenanalysen grundsätzlich alle Menschen betreffen können, ohne dass sie durch ihr Verhalten einen Anlass für polizeiliche Ermittlungen gegeben hätten \cite{DSK2025}.
+	
+	Besonders problematisch sind laut DSK Datenanalysen von Personen, die keinen Anlass für Ermittlungen gegeben haben, sowie Zweckänderungen \cite{Datenschutzticker2025}. Die Humanistische Union warnt, dass KI-gestützte \enquote{Superdatenbanken} im Widerspruch zur EU-KI-Verordnung stehen und weitreichende Profilbildung auch von Unbeteiligten ermöglichen \cite{HumanUnion2025}.
+	
+	\subsection{EU-KI-VO als neuer Rechtsrahmen}
+	
+	Die EU-KI-Verordnung (KI-VO) reguliert KI-Systeme nach einem risikobasierten Ansatz und unterwirft Hochrisiko-KI-Systeme besonders strengen Anforderungen \cite{Kriminalpolizei2026}. Biometrische Massenüberwachung in Echtzeit ist nach Art. 5 KI-VO grundsätzlich eine verbotene Praxis \cite{RAV2025}.
+	
+	Die Bundesregierung plant jedoch offenbar eine Auslagerung des biometrischen Abgleichs ins nicht-europäische Ausland, um diese Verbote zu umgehen \cite{Gruene2026}. Innenminister Dobrindt fordert sogar eine \enquote{Korrektur} der Leitlinien für Hochrisiko-Systeme \cite{Dobrindt2026}. Die KI-VO erstreckt sich nach überwiegender Auffassung auch auf präventiv polizeiliche Aufgabenwahrnehmung \cite{Kriminalpolizei2026}.
+	
+	\section{Fazit}
+	
+	KI für Polizei und Justiz stellt kein eindimensionales Problem dar, sondern eröffnet ein breites Spektrum neuer Herausforderungen. Die größten Hürden liegen im Spannungsfeld zwischen technologischen Möglichkeiten und rechtsstaatlichen Prinzipien: bei der Frage nach angemessenen rechtlichen Rahmenbedingungen, dem Schutz vor Diskriminierung, der Wahrung richterlicher Unabhängigkeit und der Sicherung informationeller Selbstbestimmung. Besonders alarmierend sind die konkreten Gefahren von Fehlurteilen durch KI-Halluzinationen, manipulierte Beweise und verzerrte Entscheidungsgrundlagen, die bereits jetzt zu nachweisbaren Verfahrensfehlern führen. Hinzu tritt ein neuartiges strukturelles Problem: Private Kanzleien nutzen KI strategisch zu ihrem Vorteil, was zu einem gefährlichen Ungleichgewicht im Rechtsstaat führen kann, wenn der Staat technologisch nicht Schritt hält.
+	
+	Die strategische Antwort des Bundes auf diese Herausforderung – ZenDiS, STF, openCode, openDesk, F13 und NeuRIS – zeigt, dass die technologischen und konzeptionellen Grundlagen für eine souveräne digitale Verwaltung vorhanden sind. Die entscheidende Frage ist nun, ob der politische Wille ausreicht, um diese Werkzeuge konsequent einzusetzen und die Entwicklung durch verbindliche Ausschreibungen und langfristige Investitionen zu fördern. Nur so kann Deutschland die drohende digitale Spaltung in eine \enquote{Zwei-Klassen-Justiz} verhindern und die Fairness des Rechtsstaats auch im Zeitalter der KI bewahren.
+	
+	\newpage
+	\begin{thebibliography}{99}
+		
+		\bibitem{IPA2025} IPA – Gewerkschaft der Polizei (2025): \emph{Dokumentation 3. IPA-Fachforum KI \& Polizei}. Stuttgart, Mai 2025, S. 12.
+		
+		\bibitem{Peteranderl2025} Peteranderl, S. (2025): \emph{Blackbox Polizei – KI zwischen Gefahrenabwehr und Grundrechten}. In: Bürgerrechte \& Polizei/CILIP, Heft 128, S. 5–25.
+		
+		\bibitem{FR2026} Frankfurter Rundschau (2026): \emph{Lex Palantir – Der Streit um die Superdatenbank}. Ausgabe vom 11. März 2026, S. 4–7.
+		
+		\bibitem{VerfBlog2026} Verfassungsblog (2026): \emph{Hessendata und die Zukunft automatisierter Datenanalyse}. Gastbeitrag von M. Wechsler, 10. Februar 2026.
+		
+		\bibitem{DSK2025} Datenschutzkonferenz (DSK) (2025): \emph{Empfehlungen zu automatisierten Datenanalysen der Polizei}. Potsdam September 2025, S. 32–42.
+		
+		\bibitem{Antidisk2025} Antidiskriminierungsstelle des Bundes (2025): \emph{KI in der Polizei – Risiken algorithmischer Diskriminierung}. Berlin, S. 21–27.
+		
+		\bibitem{taz2026} taz – die tageszeitung (2026): \emph{Algorithmen mit Vorurteilen}. 15. Januar 2026, S. 24–26.
+		
+		\bibitem{Netzpolitik2025} Netzpolitik.org (2025): \emph{Kommentar zur Polizei-KI: Wir müssen die rote Linie ziehen}. 3. November 2025, S. 39–41.
+		
+		\bibitem{TOnline2025} T-Online (2025): \emph{Start für Gesichtserkennung im Frankfurter Bahnhofsviertel}. 14. Juli 2025, S. 10–16.
+		
+		\bibitem{DAV2025} Deutscher Anwaltverein (DAV) (2025): \emph{Stellungnahme zur KI-gestützten Gesichtserkennung}. Berlin, S. 9–11.
+		
+		\bibitem{DLF2025} Deutschlandfunk (2025): \emph{Bundesinnenministerium plant massiven Ausbau der Gesichtserkennung}. 12. August 2025.
+		
+		\bibitem{taz2025} taz – die tageszeitung (2025): \emph{Foto-Fahndung mit illegalen Datenbanken?} 22. Oktober 2025, S. 32–34.
+		
+		\bibitem{Amnesty2026} Amnesty International Deutschland (2026): \emph{Lex Palantir ist eine rote Linie}. 18. Januar 2026, S. 35–39.
+		
+		\bibitem{CILIP2025} Bürgerrechte \& Polizei/CILIP (2025): \emph{Predictive Policing – Kein Beleg für Wirksamkeit}. Heft 127, S. 9–10.
+		
+		\bibitem{Focus2025} Focus Online (2025): \emph{Palantir – Hintertüren für US-Geheimdienste?} 27. April 2025, S. 26–30.
+		
+		\bibitem{Spiegel2025} Der Spiegel (2025): \emph{Palantir weist Kritik an Sicherheitslücken zurück}. 14. Mai 2025, S. 31–35.
+		
+		\bibitem{Goslarsche2025} Goslarsche Zeitung (2025): \emph{Niedersachsen setzt nicht auf Palantir}. 2. Juni 2025, S. 10–13.
+		
+		\bibitem{SZ2025} Süddeutsche Zeitung (2025): \emph{»KI darf Richter nicht ersetzen« – Thüringer Richterbund warnt}. 25. September 2025, S. 11–18.
+		
+		\bibitem{Anwaltsblatt2025} Anwaltsblatt (2025): \emph{Künstliche Intelligenz und richterliche Unabhängigkeit}. Heft 5, S. 35–42.
+		
+		\bibitem{Nomos2025} Nomos Verlag (2025): \emph{Handbuch KI in der Strafjustiz}. § 3, S. 4–8.
+		
+		\bibitem{Datenschutzticker2025} Datenschutzticker.de (2025): \emph{DSK mahnt Zweckänderungen bei Polizei-KI an}. 12. Oktober 2025, S. 13–16.
+		
+		\bibitem{HumanUnion2025} Humanistische Union (2025): \emph{Superdatenbanken und die EU-KI-VO}. Hamburg, S. 27–31.
+		
+		\bibitem{Kriminalpolizei2026} Kriminalpolitische Zeitschrift (2026): \emph{KI-VO auch für präventive Polizeiarbeit}. Heft 1, S. 11–14.
+		
+		\bibitem{RAV2025} RAV (2025): \emph{Biometrische Massenüberwachung nach KI-VO verboten}. Dezember 2025, S. 28–32.
+		
+		\bibitem{Gruene2026} Bündnis 90/Die Grünen (2026): \emph{Dobrindts Umgehungspläne zur KI-VO}. BT-Drs. 20/7890, S. 6–9.
+		
+		\bibitem{Dobrindt2026} BMI – A. Dobrindt (2026): \emph{»Leitlinien für Hochrisikosysteme korrigieren«}. In: Die Innere Sicherheit, Heft 3, S. 22–25.
+		
+		% Fehlurteile / Justiz
+		\bibitem{Charlotin2025} Charlotin, D. (2025): \emph{Database of AI Hallucinations in Legal Proceedings}. Juni 2025.
+		
+		\bibitem{NPR2025} NPR (2025): \emph{More than 1,200 sanctions against lawyers for AI errors}. 15. September 2025.
+		
+		\bibitem{LTO2025a} Legal Tribune Online (2025): \emph{Amtsgericht Köln rügt Anwalt nach KI-Halluzinationen}. 3. April 2025.
+		
+		\bibitem{LTO2025b} Legal Tribune Online (2025): \emph{Studie: 15\% Fehlerquote bei KI-gestützten Fallanalysen}. 20. August 2025.
+		
+		\bibitem{heise2025} heise online (2025): \emph{Chatbots mit bis zu 40\% Fehlerquote}. 10. Oktober 2025.
+		
+		\bibitem{LTO2025c} Legal Tribune Online (2025): \emph{US-Zivilprozess: Deepfake als Beweismittel enttarnt}. 18. November 2025.
+		
+		\bibitem{LG Darmstadt2025} LG Darmstadt (2025): \emph{Beschluss v. 10.11.2025 – 7 O 234/25}.
+		
+		\bibitem{Uni Konstanz2025} Universität Konstanz (2025): \emph{Forschungsprojekt »Algorithmic Bias in der Strafjustiz«}. März 2025.
+		
+		\bibitem{ValAI2025} Vals AI (2025): \emph{Benchmark Study: AI vs. Lawyers}. Oktober 2025.
+		
+		\bibitem{Rostalski2024} Rostalski, F. (2024): \emph{KI im Rechtssystem}. Plattform Lernende Systeme, 9. September 2024.
+		
+		\bibitem{Hengeler2025} Hengeler Mueller (2025): \emph{The Evolving Role of AI in German Dispute Resolution}. 4. Februar 2025.
+		
+		\bibitem{Luther2026} Luther Rechtsanwaltsgesellschaft (2026): \emph{AI as a tool to facilitate the presentation of evidence}. IBA, 14. April 2026.
+		
+		\bibitem{Steinroetter2026} Steinrötter, B. (2026): \emph{Navigating the Bureaucratic Jungle with AI?} Universität Potsdam, 13. Januar 2026.
+		
+		\bibitem{LG Frankfurt2025} LG Frankfurt (2025): \emph{Beschluss v. 25.09.2025 – 2-13 S 56/24}.
+		
+		\bibitem{Kramarz2026} Kanzlei Kramarz (2026): \emph{KI-Halluzinationen vor Gericht}. 7. März 2026.
+		
+		\bibitem{KG Berlin2025} KG Berlin (2025): \emph{Beschluss in Strafsache (nicht veröffentlicht)}.
+		
+		\bibitem{OGH2025} OGH Österreich (2025): \emph{Beschluss v. 14.10.2025 – 11 Os 87/25k}.
+		
+		\bibitem{Richterbund2025} Deutscher Richterbund (2025): \emph{Stellungnahme zum Einsatz generativer KI}. August 2025.
+		
+		% 3.8 Nicht-IT-affine Nutzer
+		\bibitem{TUEV2025} TÜV-Verband (2025): \emph{ChatGPT-Studie 2025}. November 2025.
+		
+		\bibitem{Bitdefender2025} Bitdefender (2025): \emph{2025 Consumer Cybersecurity Survey}. November 2025.
+		
+		\bibitem{SecurityInsider2025a} Security-Insider (2025): \emph{Mobile Security Index 2025}. 29. Dezember 2025.
+		
+		\bibitem{SecurityInsider2025b} Security-Insider (2025): \emph{Vertrauensverlust in KI}. 6. November 2025.
+		
+		\bibitem{Watchguard2025} WatchGuard (2025): \emph{Die fünf größten Sicherheitsrisiken durch KI}. 7. Oktober 2025.
+		
+		\bibitem{ConnectProfessional2025} Connect Professional (2025): \emph{Das Dilemma generativer KI}. 17. November 2025.
+		
+		\bibitem{Itwelt2025} Itwelt.at (2025): \emph{Sicherheitsrisiko KI: Tools bereits von Datenpannen betroffen}. 12. Mai 2025.
+		
+		\bibitem{Datenschutz2025} Dr. Datenschutz (2025): \emph{Shortnews Juni 2025}. 30. November 2025.
+		
+		\bibitem{Europarl2025} Europäisches Parlament (2025): \emph{Künstliche Intelligenz: Chancen und Risiken}. 2. Mai 2025.
+		
+		\bibitem{Tagesschau2025a} Tagesschau (2025): \emph{Mithilfe von KI gefälschte Videos: Das Ende der Wirklichkeit?} 6. Juni 2025.
+		
+		\bibitem{Sonntagsblatt2025} Sonntagsblatt (2025): \emph{Social Bots und Algorithmen: Wie KI Fake News revolutioniert}. 23. Juni 2025.
+		
+		\bibitem{IU2025} IU (2025): \emph{Gefahren von Fake News und Deepfakes – IU Studie}. 4. September 2025.
+		
+		\bibitem{IBM2025} IBM (2025): \emph{KI-Fehlinformationen}. 2025.
+		
+		\bibitem{NewsGuard2025} NewsGuard (2025): \emph{Anteil falscher Antworten von KI-Chatbots}. März 2025.
+		
+		\bibitem{ATHENE2025} ATHENE (2025): \emph{Studie: KI erzeugt manipulative Designmuster}. 30. April 2025.
+		
+		\bibitem{T3N2025} t3n (2026): \emph{KI-Chatbots und Sykophantie}. 18. April 2026.
+		
+		\bibitem{BigDataInsider2025} BigData-Insider (2026): \emph{Digital Fairness Act (DFA)}. 26. Mai 2026.
+		
+		\bibitem{Okta2025} Okta (2025): \emph{Customer Identity Trends Report 2025}. 11. Juli 2025.
+		
+		\bibitem{JuraUniSaarland2025} Jura Uni Saarland (2025): \emph{Datenschutz unter Druck: Wie KI-Anbieter mit persönlichen Daten umgehen}. 30. November 2025.
+		
+		\bibitem{SecurityInsider2025c} Security-Insider (2025): \emph{ChatGPT, Gemini und Co. unter der Lupe}. 2. September 2025.
+		
+		\bibitem{JuraUniSaarland2025a} Jura Uni Saarland (2025): \emph{KI und Urheberrecht: Deepfakes}. November 2025.
+		
+		\bibitem{Oppenhoff2025} Oppenhoff (2025): \emph{Schutz der eigenen Stimme in Zeiten von KI Voice Cloning}. 3. Oktober 2025.
+		
+		\bibitem{WBS2025} WBS Legal (2025): \emph{KI, "Deepfakes" und Face-Swap-Apps}. 20. November 2025.
+		
+		\bibitem{VZBV2025} vzbv (2025): \emph{Stellungnahme zum KI-VO-Durchführungsgesetz}. 8. Oktober 2025.
+		
+		\bibitem{Rechtsanwalt2025} rechtsanwalt.com (2026): \emph{KI-Haftung: EU-KI-Gesetz trifft deutsche Verbraucher}. 15. Mai 2026.
+		
+		\bibitem{CRonline2025} CRonline (2024): \emph{Die Durchsetzung der KI-Verordnung im Rahmen des digitalen Schuldrechts}. 2024.
+		
+		\bibitem{Netzpolitik2026} netzpolitik.org (2026): \emph{Breites Bündnis warnt vor verwässerten KI-Regeln}. 8. April 2026.
+		
+		\bibitem{BMJV2025} BMJV (2025): \emph{Verbraucherschutz beim Einsatz von Künstlicher Intelligenz}. 2025.
+		
+		% 3.9 Kinder- und Jugendschutz
+		\bibitem{jugendschutz2025} jugendschutz.net (2025): \emph{Jahresbericht 2025}. Mainz.
+		
+		\bibitem{IWF2025} Internet Watch Foundation (2025): \emph{Annual Report 2025}. Cambridge.
+		
+		\bibitem{BKA2025} BKA (2025): \emph{Bundeslagebild Cybercrime 2025}. Wiesbaden.
+		
+		\bibitem{BzKJ2025} BzKJ (2025): \emph{Erste Indizierung eines KI-Text-zu-Bild-Tools weltweit}. Pressemitteilung, Bonn.
+		
+		\bibitem{BzKJ2025a} BzKJ (2025): \emph{Neue Befugnisse im Jugendschutz}. Bonn.
+		
+		\bibitem{BayJumko2025} Bayerische Justizministerkonferenz (2025): \emph{Empfehlungen zum Schutz vor Deepfakes}. München.
+		
+		\bibitem{DAK2025} DAK-Gesundheit (2025): \emph{Mediensuchtstudie 2025}. Hamburg.
+		
+		\bibitem{Fachgesellschaften2025} DGKJP u.a. (2025): \emph{Gemeinsamer Aufruf zu Altersgrenzen und Schutzmaßnahmen}. Berlin.
+		
+		\bibitem{EUParliament2025} Europäisches Parlament (2025): \emph{Bericht über den Schutz von Minderjährigen in digitalen Diensten}. Brüssel, November 2025.
+		
+		\bibitem{KidD2025} KidD – Stelle für Kinderrechte in digitalen Diensten (2025): \emph{Tätigkeitsbericht}. Berlin.
+		
+		\bibitem{LMK2025} LMK – Landesanstalt für Medienkompetenz (2025): \emph{Medienkompetenz in der KI-Welt}. Stuttgart.
+		
+		% Open Source / Souveränität
+		\bibitem{ZenDiS2025} ZenDiS (2025): \emph{Startseite}. \url{www.zendis.de}.
+		
+		\bibitem{SovereignTechFund2025} Europäische Kommission (2025): \emph{Funding open source: case study on the Sovereign Tech Fund}. OSOR, 19. Juni 2025.
+		
+		\bibitem{STFNews2025} Sovereign Tech Agency (2025): \emph{Newsletter}. 21. Oktober 2025.
+		
+		\bibitem{Heise2025a} heise online (2025): \emph{Souveräne Verwaltung: Preisverleihung für offene Behördensoftware}. 15. Oktober 2025.
+		
+		\bibitem{AllThingsOpen2025} All Things Open (2025): \emph{ZenDIS, openDesk, and openCode}. 30. Januar 2025.
+		
+		\bibitem{Staatsanzeiger2025} Staatsanzeiger BW (2025): \emph{F13 wird Open Source}. 23. Juli 2025.
+		
+		\bibitem{ZenDiS2025b} ZenDiS (2025): \emph{Beitrag zu F13}. 24. Juli 2025.
+		
+		\bibitem{Tagesschau2025b} Tagesschau (2025): \emph{Polizei-Datenanalysen – Könnte Palantirs Software ersetzt werden?} 20. August 2025.
+		
+		\bibitem{Heise2025c} heise online (2025): \emph{Souveräne Verwaltung: Preisverleihung}. 15. Oktober 2025.
+		
+		\bibitem{NeuRIS2025} DigitalService des Bundes (2025): \emph{NeuRIS: Service für Rechtsinformationen}. 2. Juli 2025.
+		
+		\bibitem{BzKJ2025b} BzKJ (2025): \emph{Kritik an unzureichenden Schutzmechanismen}. Bonn.
+		
+	\end{thebibliography}
+	
+\end{document}

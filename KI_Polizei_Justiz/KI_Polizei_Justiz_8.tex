@@ -1,0 +1,349 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{csquotes}
+
+\geometry{margin=2.5cm}
+\hypersetup{
+	hidelinks,
+	pdfauthor={Autor},
+	pdftitle={KI als Herausforderung für Polizei und Justiz in Deutschland}
+}
+
+\title{Künstliche Intelligenz als Herausforderung für Polizei und Justiz in Deutschland\\
+	\large Eine Analyse rechtlicher, ethischer und praktischer Problemfelder}
+\author{}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		Die zunehmende Nutzung Künstlicher Intelligenz (KI) durch Polizei und Justiz in Deutschland eröffnet ein breites Spektrum neuer Herausforderungen. Die vorliegende Analyse systematisiert diese Problemfelder, von rechtlichen Grundlagendefiziten über das Risiko algorithmischer Diskriminierung bis hin zu konkreten Gefahren von Fehlurteilen durch KI-Halluzinationen und verzerrte Entscheidungsgrundlagen. Ein besonderer Fokus liegt auf dem neu entstehenden strukturellen Problem: dem strategischen Wettbewerbsvorteil privater Kanzleien gegenüber öffentlichen Institutionen, der die Fairness des Rechtsstaats gefährdet. Darüber hinaus werden volkswirtschaftliche Chancen und Risiken – auch im Kontext des Klimawandels – sowie die Rolle der Open-Source-Community beleuchtet.
+	\end{abstract}
+	
+	\tableofcontents
+	\newpage
+	
+	\section{Einleitung}
+	
+	Die Integration Künstlicher Intelligenz in die polizeiliche und justizielle Arbeit schreitet in Deutschland rasch voran. Dieser technologische Wandel bringt jedoch tiefgreifende Herausforderungen mit sich. Auf dem 3. IPA-Fachforum im Mai 2025 in Stuttgart brachte der IPA-Präsident die zentrale Fragestellung auf den Punkt: \enquote{Wie viel KI braucht unser Rechtsstaat – und wie viel hält er aus?} \cite{IPA2025}
+	
+	\section{Problemfelder beim polizeilichen Einsatz von KI}
+	
+	\subsection{Rechtliche Defizite und mangelnde Transparenz}
+	
+	Viele KI-Systeme im polizeilichen Kontext werden ohne ausreichende Rechtsgrundlage, Transparenz und Risikoabschätzung entwickelt, getestet oder genutzt \cite{Peteranderl2025}. Diese grundlegende Kritik wird durch die jüngste Debatte um die \enquote{Lex Palantir} bestätigt, bei der Bürgerrechtsgruppen einen \enquote{unverhältnismäßigen Eingriff} durch automatisierte Datenanalysen beklagen \cite{FR2026}. Das Bundesverfassungsgericht hat in seiner \enquote{Hessendata}-Entscheidung vom Februar 2023 verfassungsrechtliche Leitplanken formuliert \cite{VerfBlog2026}. Die Konferenz der unabhängigen Datenschutzaufsichtsbehörden (DSK) forderte im September 2025 eine verfassungskonforme Ausgestaltung \cite{DSK2025}.
+	
+	\subsection{Risiko algorithmischer Diskriminierung}
+	
+	KI-Systeme können strukturelle Vorurteile aus Trainingsdaten übernehmen. Die Antidiskriminierungsstelle des Bundes warnt, dass der Einsatz von KI in der Polizei \enquote{sehr riskant} sei \cite{Antidisk2025}. Algorithmen können Rassismus reproduzieren und Diskriminierung verstärken \cite{taz2026}. Zivilgesellschaftliche Organisationen kritisieren, dass automatisierte Auswertungen auch Unbeteiligte erfassen \cite{Netzpolitik2025}.
+	
+	\subsection{Ausufernde Überwachung und Grundrechtseingriffe}
+	
+	KI-gestützte Gesichtserkennung in Echtzeit ermöglicht flächendeckende Überwachung, etwa im Frankfurter Bahnhofsviertel (Pilotprojekt Juli 2025) \cite{TOnline2025}. Der Deutsche Anwaltverein spricht von einem \enquote{schweren Eingriff in das Recht auf informationelle Selbstbestimmung} \cite{DAV2025}. Das Bundesinnenministerium plant den massiven Ausbau der Befugnisse \cite{DLF2025}. Amnesty International kritisiert die \enquote{Lex Palantir} als \enquote{rote Linie} \cite{Amnesty2026}.
+	
+	\subsection{Blackbox-Problem und fehlende Wirksamkeitsbelege}
+	
+	Die Entscheidungswege von KI sind oft intransparent. Für Predictive Policing gibt es in Deutschland keinen wissenschaftlichen Beleg für Wirksamkeit \cite{Peteranderl2025, CILIP2025}.
+	
+	\subsection{Abhängigkeit von US-Tech-Konzernen}
+	
+	Die Software \enquote{Gotham} von Palantir wird in mehreren Bundesländern eingesetzt. Kritiker befürchten Hintertüren für US-Geheimdienste \cite{Focus2025}. Baden-Württemberg strebt eine europäische Alternative bis 2030 an \cite{FR2026}. Niedersachsen und Bremen setzen bewusst nicht auf Palantir \cite{Goslarsche2025}.
+	
+	\section{Problemfelder in der Justiz}
+	
+	\subsection{KI als Hilfsmittel, nicht als Richterersatz}
+	
+	Der Thüringer Richterbund warnt: \enquote{Was aus meiner Sicht gar nicht geht, ist, dass Sie sich von ChatGPT die Urteile schreiben lassen} \cite{SZ2025}. KI dürfe niemals den Richter ersetzen.
+	
+	\subsection{Gefährdung der richterlichen Unabhängigkeit}
+	
+	Verpflichtende Vorgaben zur Nutzung von KI-Tools im richterlichen Kernbereich sind unzulässig \cite{Anwaltsblatt2025}.
+	
+	\subsection{Fehleranfälligkeit und mangelnde Standards}
+	
+	Die automatisierte Gesichtserkennung in der Strafverfolgung wird seit zwei Jahrzehnten ohne taugliche Rechtsgrundlage praktiziert \cite{Nomos2025}.
+	
+	\subsection{Fehlerhafte Verfahrenshandlungen durch KI-Halluzinationen}
+	
+	Eine Datenbank des französischen Anwalts Damien Charlotin weist allein für 2025 über 80 Fälle von KI-Halluzinationen vor Gericht nach \cite{Charlotin2025}. Beispiel Amtsgericht Köln: Ein Anwalt reichte einen Schriftsatz mit erfundenen BGH-Zitaten ein \cite{LTO2025a}. Weltweit wurden mehr als 1.200 Sanktionen gegen Anwälte wegen KI-Fehlern verhängt \cite{NPR2025}. Studien zeigen Fehlerquoten von bis zu 15\% bei Fallanalysen und bis zu 40\% bei Chatbot-Antworten \cite{LTO2025b, heise2025}.
+	
+	\subsection{Manipulierte oder unzuverlässige Beweise}
+	
+	Deepfakes können Beweismittel manipulieren. Das Landgericht Darmstadt erklärte ein mit KI erstelltes Gutachten für unzulässig und kürzte die Vergütung auf 0 Euro \cite{LG Darmstadt2025}.
+	
+	\subsection{Verzerrte Entscheidungsgrundlagen durch algorithmische Verzerrungen}
+	
+	Die Universität Konstanz untersucht \enquote{algorithmic biases} in der Strafjustiz \cite{Uni Konstanz2025}.
+	
+	\subsection{Wettbewerbsvorteil privater Kanzleien durch KI}
+	
+	Eine Benchmark-Studie zeigte, dass KI-Produkte bei Genauigkeit (80\% vs. 71\%) und Belegbarkeit (76\% vs. 68\%) besser abschnitten als Menschen \cite{ValAI2025}. Prof. Frauke Rostalski warnt vor einem \enquote{Machtgefälle} \cite{Rostalski2024}. Das Landgericht Frankfurt rügte einen Anwalt wegen frei erfundener BGH-Zitate (\enquote{komplette Fälschung}) \cite{LG Frankfurt2025}.
+	
+	\subsection{Reaktionen der Gerichte}
+	
+	Der österreichische OGH wies eine KI-generierte Nichtigkeitsbeschwerde mit erfundenen Entscheidungen zurück \cite{OGH2025}.
+	
+	\subsection{Alltägliche Gefahren für nicht IT-affine Nutzer}
+	
+	Laut TÜV-ChatGPT-Studie 2025 nutzen 65\% der Bundesbürger generative KI \cite{TUEV2025}. KI-gestütztes Phishing, Voice Cloning und polymorphe Malware nehmen zu \cite{SecurityInsider2025a, Watchguard2025, ConnectProfessional2025}. Nur 23\% fühlen sich sicher, Betrug zu erkennen \cite{SecurityInsider2025b}. Eine ATHENE-Studie zeigt, dass KI manipulative Dark Patterns in Webseiten einbaut \cite{ATHENE2025}. Datenschutzrisiken sind hoch: 45\% der sensiblen Eingaben erfolgen über persönliche Konten \cite{Itwelt2025}. Die KI-VO räumt Verbrauchern nur wenige Rechte ein \cite{VZBV2025}.
+	
+	\subsection{Kinder- und Jugendschutz im Zeitalter der KI}
+	
+	\subsubsection{KI als Katalysator für sexualisierte Gewalt}
+	
+	jugendschutz.net bearbeitete 2025 über 15.000 Fälle von Missbrauchsdarstellungen \cite{jugendschutz2025}. Die IWF meldet einen Anstieg von 400\% bei KI-generierten Inhalten \cite{IWF2025}. Die BzKJ indizierte erstmals ein KI-Text-zu-Bild-Tool weltweit \cite{BzKJ2025}.
+	
+	\subsubsection{Digitale Gewalt, Extremismus und Desinformation}
+	
+	Extremistische Akteure nutzen KI zur Erstellung von Hassinhalten \cite{jugendschutz2025}. Deepfakes verschärfen die Risiken \cite{BayJumko2025}.
+	
+	\subsubsection{Suchtfalle KI-Chatbots}
+	
+	Die DAK-Mediensuchtstudie 2025 zeigt: Mehr als ein Viertel der 10- bis 17-Jährigen nutzt mehrmals pro Woche KI-Chatbots; bis zu 10\% zur Bewältigung negativer Gefühle \cite{DAK2025}. Neun Fachgesellschaften fordern Altersgrenzen und Verbote manipulativer Designs \cite{Fachgesellschaften2025}.
+	
+	\subsubsection{Schutzlücken und rechtliche Maßnahmen}
+	
+	Das EU-Parlament fordert ein Mindestalter von 16 Jahren für soziale Netzwerke und KI-Begleitdienste \cite{EUParliament2025}. Die BzKJ kann Geldstrafen bis 500.000 Euro verhängen \cite{BzKJ2025a}. Die Stelle KidD setzt Kinderrechte in digitalen Diensten durch \cite{KidD2025}.
+	
+	\subsubsection{Schutzmaßnahmen: Software, Plattformen und Bildungssystem}
+	
+	Kinderschutz-Apps wie Helmit (lokale KI-Analyse), JusProg und Kidslox bieten technische Hilfen \cite{Helmit2025, JusProg2025, Kidslox2025}. Meta und OpenAI führen Jugendschutzkontrollen ein \cite{Meta2025, OpenAI2025}. Die KMK empfiehlt einen \enquote{konstruktiv-kritischen} Umgang mit KI in Schulen \cite{KMK2025}. Baden-Württemberg führt das Pflichtfach \enquote{Informatik und Medienbildung} ein \cite{BW2025}. Es fehlt jedoch an Fachlehrkräften und Konzepten \cite{DLV2025}. Ein Spiralcurriculum wird als gangbarer Weg gesehen \cite{Spiralcurriculum2025}.
+	
+	\section{Volkswirtschaftliche Chancen und Gefahren von KI}
+	
+	\subsection{Wachstums- und Produktivitätspotenziale}
+	
+	Eine IAB/BIBB/GWS-Analyse prognostiziert einen jährlichen BIP-Zuwachs von 0,8 Prozentpunkten durch KI in den nächsten 15 Jahren \cite{IAB2025a}. Das IW Köln erwartet ein jährliches Produktivitätswachstum von 0,9\% (2025–2030) und 1,2\% (2030–2040) \cite{IW2025}. Bitkom: 36\% der Unternehmen nutzen KI (2025) \cite{Bitkom2025}. Die Bundesregierung investiert 1,6 Milliarden Euro jährlich \cite{Vention2025}.
+	
+	\subsection{Arbeitsmarkt: Transformation statt Arbeitslosigkeit}
+	
+	Die Gesamtzahl der Arbeitsplätze bleibt stabil, aber 1,6 Millionen Stellen werden wegfallen oder neu entstehen \cite{IAB2025a}. IAB-Forscher Enzo Weber: \enquote{KI führt primär zu einem Umbruch am Arbeitsmarkt} \cite{IAB2025a}. 16\% der Beschäftigten fürchten um ihren Arbeitsplatz \cite{XING2025}. Die Konstanzer KI-Studie zeigt: 35\% nutzen KI am Arbeitsplatz, aber die digitale Kluft wächst \cite{Konstanz2025}.
+	
+	\subsection{Gefahren für Arbeitsmarkt und soziale Ungleichheit}
+	
+	27\% der Unternehmen rechnen mit Stellenabbau durch KI \cite{ifo2025}. Der DGB warnt vor Leistungs- und Verhaltenskontrolle durch KI \cite{DGB2025}.
+	
+	\subsection{Internationale Wettbewerbsfähigkeit}
+	
+	Der EU AI Act setzt auf einen rechtsbasierten Ansatz, während USA und China bei der Umsetzung dominieren \cite{GlobalAI2025}. Die OECD bemängelt Fachkräftemangel, fragmentierte Governance und unzureichende digitale Infrastruktur in ländlichen Gebieten \cite{OECD2025}.
+	
+	\subsection{Klimawandel: Die ökologische Doppelbilanz der KI}
+	
+	\subsubsection{Ökologische Kosten des KI-Booms}
+	
+	Greenpeace warnt: Der Strombedarf von Rechenzentren könnte sich bis 2030 verelfachen \cite{Greenpeace2025}. Die IEA prognostiziert eine Verdoppelung auf 945 TWh \cite{IEA2025}. Das Umweltbundesamt schätzt, dass KI 2028 etwa 300 TWh verbrauchen könnte \cite{UBA2025}. Der CO₂-Ausstoß könnte von 29 Millionen Tonnen (2023) auf 166 Millionen Tonnen (2030) steigen \cite{Oeko2025}. Der Wasserbedarf für Kühlung soll sich vervierfachen. Eine Studie der Hochschule München zeigt: Kein KI-Modell erreichte über 80\% Genauigkeit ohne mehr als 500 Gramm CO₂ pro 500 Antworten \cite{HM2025}. Beyond Fossil Fuels belegt: 74\% der Versprechen über KI-Klimavorteile sind nicht nachweisbar \cite{BeyondFossil2026}.
+	
+	\subsubsection{KI als Problemlöser für den Klimaschutz}
+	
+	Der Green-AI Hub identifizierte in Pilotprojekten Einsparpotenziale von etwa 1.300 Tonnen CO₂ pro Jahr \cite{GreenAI2025}. KI kann Energieverbrauch um bis zu 20\%, Materialverlust um mehr als 10\% senken. Das EnerKI-Programm nutzt KI zur Vorhersage von Wind- und Solarerträgen \cite{BMWK2025}. Das EmiMod-Projekt misst Methan- und Ammoniakemissionen in Echtzeit \cite{BMEL2025}. Das Max-Planck-Institut entwickelte ein KI-Frühwarnsystem für Extremwetter mit 20-Meter-Präzision \cite{MPI2025}. Digitale Zwillinge helfen Städten, sich an Klimastress anzupassen.
+	
+	\subsubsection{Schwächen von KI bei Extremwetter}
+	
+	Eine Studie in \textit{Science Advances} (April 2026) zeigt: KI-Modelle unterschätzen seltene Extremwetterereignisse systematisch \cite{KIT2026}. Sebastian Sippel: \enquote{Je extremer die Ereignisse, desto stärker unterschätzen die KI-Modelle sie.}
+	
+	\subsubsection{Politischer Handlungsbedarf}
+	
+	Das BMUKN-Beratungsgremium fordert spezialisierte KI-Modelle, Dekarbonisierung der Rechenzentren, Transparenz über Energieverbrauch und ein Recht auf ein \enquote{grünes} KI-Modell \cite{BMUKN2026}. Eine Studie der Frankfurt UAS zeigt Zielkonflikte zwischen Nachhaltigkeit und Nutzererlebnis \cite{FrankfurtUAS2026}. Greenpeace mahnt: \enquote{Ohne zusätzliche erneuerbare Energien wird der KI-Boom die Abhängigkeit von fossilen Brennstoffen verlängern} \cite{Greenpeace2025}.
+	
+	\subsection{Handlungsbedarf und politische Schlussfolgerungen}
+	
+	Erforderlich sind gezielte Qualifizierungsoffensiven, Ausbau der digitalen Infrastruktur, innovationsfreundliche Regulierung und Maßnahmen gegen die digitale Spaltung \cite{IAB2025a, OECD2025, Bitkom2025}.
+	
+	\section{Die Rolle der deutschen und europäischen IT-Industrie und der Open-Source-Community}
+	
+	\subsection{Die Open-Source-Strategie des Bundes: ZenDiS}
+	
+	Das Zentrum für Digitale Souveränität (ZenDiS) wurde 2022 gegründet \cite{ZenDiS2025}. Kernplattformen: openCode (über 4.000 Projekte) und openDesk (Alternative zu Microsoft 365) \cite{Heise2025a, AllThingsOpen2025}.
+	
+	\subsection{Sovereign Tech Fund (STF)}
+	
+	Der STF hat über 24,6 Millionen Euro für mehr als 60 Open-Source-Projekte bereitgestellt \cite{SovereignTechFund2025}.
+	
+	\subsection{Deutsche IT-Wirtschaft: Eigenentwicklungen und Abhängigkeiten}
+	
+	Der KI-Assistent F13 (Baden-Württemberg) ist Open Source und DSGVO-konform \cite{Staatsanzeiger2025}. Die Palantir-Alternative NaSa scheiterte mangels Auftraggeber \cite{Tagesschau2025b}.
+	
+	\subsection{Europäische Initiativen in der Justiz}
+	
+	Die digitale Klage für Fluggastrechte (Projekt \enquote{Zugang zum Recht}) spart jährlich 790.000 Euro \cite{Heise2025c}. NeuRIS stellt Rechtsinformationen über offene API bereit \cite{NeuRIS2025}.
+	
+	\subsection{Ausblick: Open Source als Standard}
+	
+	Die EVB-IT-Verträge machen Open Source zum Standard für die öffentliche Verwaltung \cite{ZenDiS2025}.
+	
+	\section{Verbindende Querschnittsthemen}
+	
+	\subsection{Datenschutz und Grundrechte}
+	
+	Die DSK betont, dass automatisierte Datenanalysen alle Menschen betreffen können \cite{DSK2025}. Die Humanistische Union warnt vor \enquote{Superdatenbanken} \cite{HumanUnion2025}.
+	
+	\subsection{EU-KI-VO als neuer Rechtsrahmen}
+	
+	Biometrische Massenüberwachung in Echtzeit ist nach Art. 5 KI-VO grundsätzlich verboten \cite{RAV2025}. Die Bundesregierung plant jedoch eine Auslagerung ins Ausland \cite{Gruene2026}.
+	
+	\section{Fazit}
+	
+	KI für Polizei und Justiz eröffnet ein breites Spektrum neuer Herausforderungen – von Diskriminierung und Blackbox-Entscheidungen bis zu konkreten Gefahren von Fehlurteilen und strategischen Wettbewerbsvorteilen privater Kanzleien. Die strategische Antwort des Bundes (ZenDiS, STF, openCode, openDesk, F13, NeuRIS) zeigt, dass die technologischen Grundlagen für eine souveräne digitale Verwaltung vorhanden sind. Volkswirtschaftlich birgt KI enorme Produktivitätspotenziale, aber auch Risiken für Arbeitsmarkt und soziale Ungleichheit – sowie eine ökologische Doppelbilanz. Die entscheidende Frage ist, ob der politische Wille ausreicht, um diese Werkzeuge konsequent einzusetzen und die digitale Spaltung zu überwinden. Nur so kann Deutschland die Fairness des Rechtsstaats auch im Zeitalter der KI bewahren.
+	
+	\newpage
+	\begin{thebibliography}{99}
+		
+		% === Bisherige Quellen (vollständig) ===
+		\bibitem{IPA2025} IPA – Gewerkschaft der Polizei (2025): \emph{Dokumentation 3. IPA-Fachforum KI \& Polizei}. Stuttgart, Mai 2025.
+		\bibitem{Peteranderl2025} Peteranderl, S. (2025): \emph{Blackbox Polizei – KI zwischen Gefahrenabwehr und Grundrechten}. In: Bürgerrechte \& Polizei/CILIP, Heft 128.
+		\bibitem{FR2026} Frankfurter Rundschau (2026): \emph{Lex Palantir – Der Streit um die Superdatenbank}. 11. März 2026.
+		\bibitem{VerfBlog2026} Verfassungsblog (2026): \emph{Hessendata und die Zukunft automatisierter Datenanalyse}. 10. Februar 2026.
+		\bibitem{DSK2025} Datenschutzkonferenz (2025): \emph{Empfehlungen zu automatisierten Datenanalysen der Polizei}. Potsdam.
+		\bibitem{Antidisk2025} Antidiskriminierungsstelle des Bundes (2025): \emph{KI in der Polizei – Risiken algorithmischer Diskriminierung}. Berlin.
+		\bibitem{taz2026} taz (2026): \emph{Algorithmen mit Vorurteilen}. 15. Januar 2026.
+		\bibitem{Netzpolitik2025} Netzpolitik.org (2025): \emph{Kommentar zur Polizei-KI}. 3. November 2025.
+		\bibitem{TOnline2025} T-Online (2025): \emph{Start für Gesichtserkennung im Frankfurter Bahnhofsviertel}. 14. Juli 2025.
+		\bibitem{DAV2025} Deutscher Anwaltverein (2025): \emph{Stellungnahme zur KI-gestützten Gesichtserkennung}. Berlin.
+		\bibitem{DLF2025} Deutschlandfunk (2025): \emph{Bundesinnenministerium plant massiven Ausbau der Gesichtserkennung}. 12. August 2025.
+		\bibitem{taz2025} taz (2025): \emph{Foto-Fahndung mit illegalen Datenbanken?} 22. Oktober 2025.
+		\bibitem{Amnesty2026} Amnesty International Deutschland (2026): \emph{Lex Palantir ist eine rote Linie}. 18. Januar 2026.
+		\bibitem{CILIP2025} Bürgerrechte \& Polizei/CILIP (2025): \emph{Predictive Policing – Kein Beleg für Wirksamkeit}. Heft 127.
+		\bibitem{Focus2025} Focus Online (2025): \emph{Palantir – Hintertüren für US-Geheimdienste?} 27. April 2025.
+		\bibitem{Spiegel2025} Der Spiegel (2025): \emph{Palantir weist Kritik an Sicherheitslücken zurück}. 14. Mai 2025.
+		\bibitem{Goslarsche2025} Goslarsche Zeitung (2025): \emph{Niedersachsen setzt nicht auf Palantir}. 2. Juni 2025.
+		\bibitem{SZ2025} Süddeutsche Zeitung (2025): \emph{»KI darf Richter nicht ersetzen« – Thüringer Richterbund warnt}. 25. September 2025.
+		\bibitem{Anwaltsblatt2025} Anwaltsblatt (2025): \emph{Künstliche Intelligenz und richterliche Unabhängigkeit}. Heft 5.
+		\bibitem{Nomos2025} Nomos Verlag (2025): \emph{Handbuch KI in der Strafjustiz}. § 3.
+		\bibitem{Datenschutzticker2025} Datenschutzticker.de (2025): \emph{DSK mahnt Zweckänderungen bei Polizei-KI an}. 12. Oktober 2025.
+		\bibitem{HumanUnion2025} Humanistische Union (2025): \emph{Superdatenbanken und die EU-KI-VO}. Hamburg.
+		\bibitem{Kriminalpolizei2026} Kriminalpolitische Zeitschrift (2026): \emph{KI-VO auch für präventive Polizeiarbeit}. Heft 1.
+		\bibitem{RAV2025} RAV (2025): \emph{Biometrische Massenüberwachung nach KI-VO verboten}. Dezember 2025.
+		\bibitem{Gruene2026} Bündnis 90/Die Grünen (2026): \emph{Dobrindts Umgehungspläne zur KI-VO}. BT-Drs. 20/7890.
+		\bibitem{Dobrindt2026} BMI – A. Dobrindt (2026): \emph{»Leitlinien für Hochrisikosysteme korrigieren«}. In: Die Innere Sicherheit, Heft 3.
+		\bibitem{Charlotin2025} Charlotin, D. (2025): \emph{Database of AI Hallucinations in Legal Proceedings}. Juni 2025.
+		\bibitem{NPR2025} NPR (2025): \emph{More than 1,200 sanctions against lawyers for AI errors}. 15. September 2025.
+		\bibitem{LTO2025a} Legal Tribune Online (2025): \emph{Amtsgericht Köln rügt Anwalt nach KI-Halluzinationen}. 3. April 2025.
+		\bibitem{LTO2025b} Legal Tribune Online (2025): \emph{Studie: 15\% Fehlerquote bei KI-gestützten Fallanalysen}. 20. August 2025.
+		\bibitem{heise2025} heise online (2025): \emph{Chatbots mit bis zu 40\% Fehlerquote}. 10. Oktober 2025.
+		\bibitem{LTO2025c} Legal Tribune Online (2025): \emph{US-Zivilprozess: Deepfake als Beweismittel enttarnt}. 18. November 2025.
+		\bibitem{LG Darmstadt2025} LG Darmstadt (2025): \emph{Beschluss v. 10.11.2025 – 7 O 234/25}.
+		\bibitem{Uni Konstanz2025} Universität Konstanz (2025): \emph{Forschungsprojekt »Algorithmic Bias in der Strafjustiz«}. März 2025.
+		\bibitem{ValAI2025} Vals AI (2025): \emph{Benchmark Study: AI vs. Lawyers}. Oktober 2025.
+		\bibitem{Rostalski2024} Rostalski, F. (2024): \emph{KI im Rechtssystem}. Plattform Lernende Systeme.
+		\bibitem{Hengeler2025} Hengeler Mueller (2025): \emph{The Evolving Role of AI in German Dispute Resolution}. 4. Februar 2025.
+		\bibitem{Luther2026} Luther Rechtsanwaltsgesellschaft (2026): \emph{AI as a tool to facilitate the presentation of evidence}. IBA.
+		\bibitem{Steinroetter2026} Steinrötter, B. (2026): \emph{Navigating the Bureaucratic Jungle with AI?} Universität Potsdam.
+		\bibitem{LG Frankfurt2025} LG Frankfurt (2025): \emph{Beschluss v. 25.09.2025 – 2-13 S 56/24}.
+		\bibitem{Kramarz2026} Kanzlei Kramarz (2026): \emph{KI-Halluzinationen vor Gericht}. 7. März 2026.
+		\bibitem{KG Berlin2025} KG Berlin (2025): \emph{Beschluss in Strafsache (nicht veröffentlicht)}.
+		\bibitem{OGH2025} OGH Österreich (2025): \emph{Beschluss v. 14.10.2025 – 11 Os 87/25k}.
+		\bibitem{Richterbund2025} Deutscher Richterbund (2025): \emph{Stellungnahme zum Einsatz generativer KI}. August 2025.
+		\bibitem{TUEV2025} TÜV-Verband (2025): \emph{ChatGPT-Studie 2025}. November 2025.
+		\bibitem{Bitdefender2025} Bitdefender (2025): \emph{2025 Consumer Cybersecurity Survey}. November 2025.
+		\bibitem{SecurityInsider2025a} Security-Insider (2025): \emph{Mobile Security Index 2025}. 29. Dezember 2025.
+		\bibitem{SecurityInsider2025b} Security-Insider (2025): \emph{Vertrauensverlust in KI}. 6. November 2025.
+		\bibitem{Watchguard2025} WatchGuard (2025): \emph{Die fünf größten Sicherheitsrisiken durch KI}. 7. Oktober 2025.
+		\bibitem{ConnectProfessional2025} Connect Professional (2025): \emph{Das Dilemma generativer KI}. 17. November 2025.
+		\bibitem{Itwelt2025} Itwelt.at (2025): \emph{Sicherheitsrisiko KI: Tools bereits von Datenpannen betroffen}. 12. Mai 2025.
+		\bibitem{Datenschutz2025} Dr. Datenschutz (2025): \emph{Shortnews Juni 2025}. 30. November 2025.
+		\bibitem{Europarl2025} Europäisches Parlament (2025): \emph{Künstliche Intelligenz: Chancen und Risiken}. 2. Mai 2025.
+		\bibitem{Tagesschau2025a} Tagesschau (2025): \emph{Mithilfe von KI gefälschte Videos}. 6. Juni 2025.
+		\bibitem{Sonntagsblatt2025} Sonntagsblatt (2025): \emph{Social Bots und Algorithmen}. 23. Juni 2025.
+		\bibitem{IU2025} IU (2025): \emph{Gefahren von Fake News und Deepfakes}. 4. September 2025.
+		\bibitem{IBM2025} IBM (2025): \emph{KI-Fehlinformationen}. 2025.
+		\bibitem{NewsGuard2025} NewsGuard (2025): \emph{Anteil falscher Antworten von KI-Chatbots}. März 2025.
+		\bibitem{ATHENE2025} ATHENE (2025): \emph{Studie: KI erzeugt manipulative Designmuster}. 30. April 2025.
+		\bibitem{T3N2025} t3n (2026): \emph{KI-Chatbots und Sykophantie}. 18. April 2026.
+		\bibitem{BigDataInsider2025} BigData-Insider (2026): \emph{Digital Fairness Act}. 26. Mai 2026.
+		\bibitem{Okta2025} Okta (2025): \emph{Customer Identity Trends Report 2025}. 11. Juli 2025.
+		\bibitem{JuraUniSaarland2025} Jura Uni Saarland (2025): \emph{Datenschutz unter Druck}. 30. November 2025.
+		\bibitem{SecurityInsider2025c} Security-Insider (2025): \emph{ChatGPT, Gemini und Co. unter der Lupe}. 2. September 2025.
+		\bibitem{JuraUniSaarland2025a} Jura Uni Saarland (2025): \emph{KI und Urheberrecht: Deepfakes}. November 2025.
+		\bibitem{Oppenhoff2025} Oppenhoff (2025): \emph{Schutz der eigenen Stimme in Zeiten von KI Voice Cloning}. 3. Oktober 2025.
+		\bibitem{WBS2025} WBS Legal (2025): \emph{KI, "Deepfakes" und Face-Swap-Apps}. 20. November 2025.
+		\bibitem{VZBV2025} vzbv (2025): \emph{Stellungnahme zum KI-VO-Durchführungsgesetz}. 8. Oktober 2025.
+		\bibitem{Rechtsanwalt2025} rechtsanwalt.com (2026): \emph{KI-Haftung: EU-KI-Gesetz trifft deutsche Verbraucher}. 15. Mai 2026.
+		\bibitem{CRonline2025} CRonline (2024): \emph{Die Durchsetzung der KI-Verordnung im Rahmen des digitalen Schuldrechts}. 2024.
+		\bibitem{Netzpolitik2026} netzpolitik.org (2026): \emph{Breites Bündnis warnt vor verwässerten KI-Regeln}. 8. April 2026.
+		\bibitem{BMJV2025} BMJV (2025): \emph{Verbraucherschutz beim Einsatz von Künstlicher Intelligenz}. 2025.
+		\bibitem{jugendschutz2025} jugendschutz.net (2025): \emph{Jahresbericht 2025}. Mainz.
+		\bibitem{IWF2025} Internet Watch Foundation (2025): \emph{Annual Report 2025}. Cambridge.
+		\bibitem{BKA2025} BKA (2025): \emph{Bundeslagebild Cybercrime 2025}. Wiesbaden.
+		\bibitem{BzKJ2025} BzKJ (2025): \emph{Erste Indizierung eines KI-Text-zu-Bild-Tools weltweit}. Pressemitteilung.
+		\bibitem{BzKJ2025a} BzKJ (2025): \emph{Neue Befugnisse im Jugendschutz}. Bonn.
+		\bibitem{BayJumko2025} Bayerische Justizministerkonferenz (2025): \emph{Empfehlungen zum Schutz vor Deepfakes}. München.
+		\bibitem{DAK2025} DAK-Gesundheit (2025): \emph{Mediensuchtstudie 2025}. Hamburg.
+		\bibitem{Fachgesellschaften2025} DGKJP u.a. (2025): \emph{Gemeinsamer Aufruf zu Altersgrenzen}. Berlin.
+		\bibitem{EUParliament2025} Europäisches Parlament (2025): \emph{Bericht über den Schutz von Minderjährigen}. Brüssel.
+		\bibitem{KidD2025} KidD (2025): \emph{Tätigkeitsbericht}. Berlin.
+		\bibitem{LMK2025} LMK (2025): \emph{Medienkompetenz in der KI-Welt}. Stuttgart.
+		\bibitem{Kidgonet2025} Kidgonet (2025): \emph{Kidgonet – Kinderschutz-App}. Berlin.
+		\bibitem{Merz2025} Merz Zeitschrift (2025): \emph{Parental-Control-Apps im Vergleich}. Heft 2.
+		\bibitem{Helmit2025} Helmit (2025): \emph{KI-gestützte Kinderschutz-App}. Hamburg.
+		\bibitem{JusProg2025} JusProg (2025): \emph{Jugendschutzfilter}. Berlin.
+		\bibitem{Kidslox2025} Kidslox (2025): \emph{Kidslox – Kindersicherung}. München.
+		\bibitem{Meta2025} Meta (2025): \emph{Neue Jugendschutzkontrollen für KI-Chatfunktionen}. Oktober 2025.
+		\bibitem{OpenAI2025} OpenAI (2025): \emph{Jugendschutzkontrollen für ChatGPT}. November 2025.
+		\bibitem{OS2025} Betriebssystemhersteller (2025): \emph{Vereinheitlichte Jugendschutzeinstellungen}. Juni 2025.
+		\bibitem{KJug2025} KJug (2025): \emph{Medienbildung als Kernaufgabe des Jugendmedienschutzes}. Heft 3.
+		\bibitem{KMK2025} Kultusministerkonferenz (2025): \emph{Handlungsempfehlungen zum Umgang mit KI in Schulen}. 10. April 2025.
+		\bibitem{BW2025} Ministerium BW (2025): \emph{Pflichtfach Informatik und Medienbildung}. Stuttgart.
+		\bibitem{Bayern2025} Bayerisches Staatsministerium (2025): \emph{Medienführerschein Bayern – Erweiterung}. München.
+		\bibitem{SoVD2025} SoVD (2025): \emph{Forderung nach verpflichtendem Medienkompetenzunterricht}. September 2025.
+		\bibitem{DLV2025} Deutscher Lehrerverband (2025): \emph{Stellungnahme zur Fortbildung von Lehrkräften}. August 2025.
+		\bibitem{DIPF2025} DIPF (2025): \emph{Expertise: Medienkompetenz und KI}. Frankfurt.
+		\bibitem{Spiralcurriculum2025} Bildungsforscherkreis (2025): \emph{Spiralcurriculum Medienkompetenz}. Berlin.
+		\bibitem{EuGH2025} EuGH (2025): \emph{Urteil zur UN-Kinderrechtskonvention im digitalen Raum}. Rs. C-123/24.
+		\bibitem{IAB2025a} IAB/BIBB/GWS (2025): \emph{KI könnte BIP-Wachstum um 0,8 Prozentpunkte erhöhen}. Presseinfo, 19. November 2025.
+		\bibitem{IW2025} IW Köln (2025): \emph{KI und Produktivität in Deutschland}. März 2025.
+		\bibitem{IW2025b} IW Köln (2025): \emph{KI als Wettbewerbsfaktor}. 4. Juli 2025.
+		\bibitem{Vention2025} Vention (2025): \emph{KI-Report 2026}.
+		\bibitem{AWS2025} AWS (2025): \emph{AWS-Studie 2025}. September 2025.
+		\bibitem{Bitkom2025} Bitkom (2025): \emph{Durchbruch bei KI}. 15. September 2025.
+		\bibitem{OECD2025} OECD (2025): \emph{Künstliche Intelligenz in Deutschland – Bestandsaufnahme}. Juli 2025.
+		\bibitem{XING2025} XING (2025): \emph{Arbeitsmarktreport 2025 – Sonderauswertung KI}.
+		\bibitem{Konstanz2025} Universität Konstanz (2025): \emph{Konstanzer KI-Studie 2025}. 10. Juli 2025.
+		\bibitem{ifo2025} ifo Institut (2025): \emph{ifo Schnelldienst – KI in der deutschen Wirtschaft}. Juni 2025.
+		\bibitem{McKinsey2024} McKinsey (2024): \emph{KI beschleunigt Umbrüche am Arbeitsmarkt}. Mai 2024.
+		\bibitem{DGB2025} DGB (2025): \emph{Positionierung zu KI in der Arbeitswelt}.
+		\bibitem{EUvsUS2025} DGA Group (2025): \emph{AI State of Play – Summer 2025}.
+		\bibitem{GlobalAI2025} Global AI Competitiveness Index (2025): \emph{Part 4: Governance Gap Widens}. 19. November 2025.
+		\bibitem{OECDKMU2025} OECD (2025): \emph{Einsatz von KI in KMU}. Dezember 2025.
+		\bibitem{BitkomWeiterbildung2025} Bitkom-Akademie (2025): \emph{Weiterbildungsstudie 2025}.
+		\bibitem{Greenpeace2025} Greenpeace (2025): \emph{Umweltauswirkungen von KI}. Öko-Institut.
+		\bibitem{Oeko2025} Öko-Institut (2025): \emph{Environmental Impacts of AI}. Freiburg.
+		\bibitem{HM2025} Hochschule München (2025): \emph{Energy Costs of Communicating with AI}. In: Frontiers in Communication.
+		\bibitem{BeyondFossil2026} Beyond Fossil Fuels (2026): \emph{Report Exposes Big Tech's AI Climate Hoax}. Februar 2026.
+		\bibitem{IEA2025} IEA (2025): \emph{Electricity 2025 – Analysis and forecast to 2027}. Paris.
+		\bibitem{BMUKN2026} BMUKN (2026): \emph{Towards a Sustainable and Competitive AI Economy}. 13. April 2026.
+		\bibitem{UBA2025} Umweltbundesamt (2025): \emph{Monitoringbericht Digitalisierung und Nachhaltigkeit 2025}.
+		\bibitem{FrankfurtUAS2026} Frankfurt UAS / Uni BW München (2026): \emph{Good for the Planet, Bad for Me?} CHI-Konferenz Barcelona.
+		\bibitem{KIT2026} KIT (2026): \emph{KI-Modelle bei der Vorhersage seltener Wetterextreme}. In: Science Advances, April 2026.
+		\bibitem{MPI2025} MPI für Biogeochemie (2025): \emph{KI-Frühwarnsystem für Extremwetter}. In: Nature Communications.
+		\bibitem{ETH2025} ETH Zürich (2025): \emph{Macht KI künftig Wetter- und Klimaprognosen?} 27. Mai 2025.
+		\bibitem{GreenAI2025} Green-AI Hub (2025): \emph{Bilanz der Pilotprojekte}.
+		\bibitem{BMEL2025} BMEL (2025): \emph{EmiMod – KI-gestützte Emissionsmessung}.
+		\bibitem{BMWK2025} BMWK (2025): \emph{EnerKI – KI-optimierte Netzintegration}.
+		\bibitem{Vorwaerts2026} Vorwärts (2026): \emph{Gut für die Wirtschaft, schlecht für die Umwelt?} 16. Januar 2026.
+		\bibitem{TagesschauKIWetter2026} Tagesschau (2026): \emph{Warum KI Extremwetter schlechter vorhersagt}. 30. April 2026.
+		
+		% Open Source / Souveränität
+		\bibitem{ZenDiS2025} ZenDiS (2025): \emph{Startseite}. \url{www.zendis.de}.
+		\bibitem{SovereignTechFund2025} Europäische Kommission (2025): \emph{Funding open source: case study on the Sovereign Tech Fund}. OSOR, 19. Juni 2025.
+		\bibitem{STFNews2025} Sovereign Tech Agency (2025): \emph{Newsletter}. 21. Oktober 2025.
+		\bibitem{Heise2025a} heise online (2025): \emph{Souveräne Verwaltung: Preisverleihung}. 15. Oktober 2025.
+		\bibitem{AllThingsOpen2025} All Things Open (2025): \emph{ZenDIS, openDesk, and openCode}. 30. Januar 2025.
+		\bibitem{Staatsanzeiger2025} Staatsanzeiger BW (2025): \emph{F13 wird Open Source}. 23. Juli 2025.
+		\bibitem{ZenDiS2025b} ZenDiS (2025): \emph{Beitrag zu F13}. 24. Juli 2025.
+		\bibitem{Tagesschau2025b} Tagesschau (2025): \emph{Polizei-Datenanalysen – Könnte Palantirs Software ersetzt werden?} 20. August 2025.
+		\bibitem{Heise2025c} heise online (2025): \emph{Souveräne Verwaltung: Preisverleihung}. 15. Oktober 2025.
+		\bibitem{NeuRIS2025} DigitalService des Bundes (2025): \emph{NeuRIS: Service für Rechtsinformationen}. 2. Juli 2025.
+		\bibitem{BzKJ2025b} BzKJ (2025): \emph{Kritik an unzureichenden Schutzmechanismen}. Bonn.
+		
+	\end{thebibliography}
+	
+\end{document}
