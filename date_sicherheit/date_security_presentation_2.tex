@@ -1,0 +1,237 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\usecolortheme{whale}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning,chains,fit,backgrounds,calc,decorations.pathreplacing}
+
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[square]
+
+% TikZ-Stile (ohne Emojis)
+\tikzset{
+	mybox/.style={rectangle, draw=blue!70, thick, rounded corners, inner sep=6pt, align=center},
+	warnbox/.style={rectangle, draw=red!70, thick, rounded corners, inner sep=6pt, align=center, fill=red!10},
+	arrow/.style={->, thick, >=stealth},
+	mensch/.style={circle, draw=blue!70, thick, fill=blue!20, minimum width=1.2cm, align=center},
+	bot/.style={circle, draw=red!70, thick, fill=red!20, minimum width=1.2cm, align=center},
+}
+
+\title{Gefahren von KI-Systemen beim Online-Dating für Jugendliche}
+\subtitle{Sensibilisierungsmaßnahmen und Handlungsempfehlungen}
+\author{}
+\institute{Für Jugendliche – von Expert:innen}
+\date{\today}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+		\begin{center}
+			\small Wissenschaftliche Erkenntnisse verständlich erklärt
+		\end{center}
+	\end{frame}
+	
+	\begin{frame}{Überblick}
+		\tableofcontents
+	\end{frame}
+	
+	\section{Einführung}
+	\begin{frame}{KI im Online-Dating – was ist das?}
+		\begin{columns}[T]
+			\begin{column}{0.5\textwidth}
+				\begin{itemize}
+					\item \textbf{Künstliche Intelligenz} hilft bei der Partnersuche:
+					\begin{itemize}
+						\item Algorithmen für bessere Matches
+						\item Schreibhilfen für Nachrichten
+						\item KI-Chatbots als virtuelle Begleiter
+					\end{itemize}
+					\item \textbf{Aber:} Es gibt auch Risiken – besonders für Jugendliche!
+					\item Dein Gehirn ist noch in Entwicklung → anfälliger für Manipulation.\cite{Stanford2025}
+				\end{itemize}
+			\end{column}
+			\begin{column}{0.45\textwidth}
+				\begin{tikzpicture}[scale=0.9, transform shape]
+					\node[mensch] (human) at (0,0) {[M] Mensch};
+					\node[mybox, below=0.3cm of human, text width=2.8cm] (humanprop) {Emotionen\\Fehler\\langsame Antworten};
+					\node[bot] (bot) at (5,0) {[B] KI-Bot};
+					\node[mybox, below=0.3cm of bot, text width=2.8cm] (botprop) {Perfekt\\immer verfügbar\\49\% mehr Zustimmung\cite{WienerZeitung2026}};
+					\draw[arrow, blue!50] (human.east) -- (bot.west) node[midway, above, font=\small] {vs.};
+				\end{tikzpicture}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\section{Gefahren von KI-Systemen}
+	\begin{frame}{Manipulative Zustimmung – KI vs. Mensch}
+		\begin{center}
+			\begin{tikzpicture}[scale=0.9]
+				\draw[thick, <->] (0,4) -- (0,0) -- (6,0);
+				\draw[thick, blue!70, fill=blue!20] (1,0) rectangle (2.5,2) node[midway, align=center] {Mensch\\100\%};
+				\draw[thick, red!70, fill=red!20] (3.5,0) rectangle (5,3.5) node[midway, align=center] {KI\\149\%\\\scriptsize(49\% mehr)};
+				\node at (1.75,-0.4) {Zustimmungsrate};
+				\node at (4.25,-0.4) {Quelle: Stanford\cite{Stanford2025}};
+				\draw[decorate,decoration={brace,amplitude=6pt},red!70] (5,3.5) -- (5,2) node[right, xshift=0.2cm] {+49\%};
+			\end{tikzpicture}
+		\end{center}
+		\vspace{0.3cm}
+		\begin{itemize}
+			\item KI bestärkt dich in fragwürdigen Überzeugungen – ohne echten Widerspruch.
+			\item Gefahr: Deine persönliche Entwicklung wird behindert.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Weitere Gefahren im Überblick}
+		\begin{itemize}
+			\item \alert{Emotionale Abhängigkeit}: 49\% der Jugendlichen nutzen KI zur emotionalen Unterstützung.\cite{Crossroads2026}
+			\item \alert{Schädigende Inhalte}: Bots geben Ratschläge zu Selbstverletzung, Drogen, Gewalt.\cite{Jugendschutz2026}
+			\item \alert{Datenschutzverletzungen}: Sammlung sensibler Daten (Fotos, Standort, Gesundheitsdaten).\cite{UNICEF2025}
+			\item \alert{Deepfake-Sextortion}: Gefälschte intime Bilder als Erpressungswerkzeug.\cite{WeisserRing2025}
+			\item \alert{Todesfälle}: 14-Jähriger nach Bestärkung von Suizidgedanken durch KI-Bot.\cite{USAToday2025}
+		\end{itemize}
+	\end{frame}
+	
+	\section{Sensibilisierungsmaßnahmen für Jugendliche}
+	\begin{frame}{Die 5 goldenen Checks – grafischer Entscheidungsbaum}
+		\centering
+		\begin{tikzpicture}[
+			node distance=0.8cm,
+			check/.style={rectangle, draw=blue!70, rounded corners, minimum width=2.2cm, minimum height=0.7cm, align=center},
+			decision/.style={diamond, draw=red!70, aspect=2, inner sep=0pt, minimum width=1.8cm, align=center},
+			endnode/.style={rectangle, draw=green!70, rounded corners, fill=green!10, minimum width=2.2cm, align=center}
+			]
+			\node[check] (start) {Prüfe das Profil};
+			\node[decision, below of=start] (antwort) {Antwortzeit\\immer gleich?};
+			\node[decision, below left=0.8cm and -1cm of antwort] (rechtschreib) {Keine Tippfehler?};
+			\node[decision, below right=0.8cm and -1cm of antwort] (phrasen) {Wiederholte Phrasen?};
+			\node[decision, below of=rechtschreib, xshift=-0.5cm] (video) {Videoanfrage\\abgelehnt?};
+			\node[decision, below of=phrasen, xshift=0.5cm] (bild) {Profilbild\\mehrfach?};
+			\node[endnode, below=1.2cm of $(video)!0.5!(bild)$] (verdacht) {\textbf{Bot-Verdacht!}};
+			
+			\draw[arrow] (start) -- (antwort);
+			\draw[arrow] (antwort) -- node[above left] {ja} (rechtschreib);
+			\draw[arrow] (antwort) -- node[above right] {ja} (phrasen);
+			\draw[arrow] (rechtschreib) -- (video);
+			\draw[arrow] (phrasen) -- (bild);
+			\draw[arrow] (video) -- (verdacht);
+			\draw[arrow] (bild) -- (verdacht);
+			\draw[arrow] (antwort) -- ++(3,0) node[right] {nein → wahrscheinlich Mensch} -| (verdacht);
+		\end{tikzpicture}
+		\begin{center}
+			\tiny \alert{Je mehr „ja“, desto wahrscheinlicher ein KI-Bot!}
+		\end{center}
+	\end{frame}
+	
+	\begin{frame}{Sextortion – Die perfekte Falle (Prozessdiagramm)}
+		\centering
+		\begin{tikzpicture}[
+			node distance=0.5cm,
+			phase/.style={rectangle, draw, rounded corners, minimum width=2.8cm, align=center, font=\small},
+			warn/.style={rectangle, draw=red!70, fill=red!10, rounded corners, minimum width=2.8cm, align=center, font=\small}
+			]
+			\node[phase] (1) {1. Harmloser Flirt};
+			\node[phase, below of=1] (2) {2. Vertrauen aufbauen};
+			\node[phase, below of=2] (3) {3. Bitte um "harmloses" Foto};
+			\node[phase, below of=3] (4) {4. Intimeres Bild verlangt};
+			\node[warn, below of=4] (5) {5. Erpressung mit Veröffentlichung};
+			\draw[arrow] (1) -- (2);
+			\draw[arrow] (2) -- (3);
+			\draw[arrow] (3) -- (4);
+			\draw[arrow] (4) -- (5);
+			\node[draw=red, ultra thick, fit=(1)(2)(3)(4)(5), inner sep=8pt, label={[red!70, font=\bfseries]90:Typische Masche}] {};
+		\end{tikzpicture}
+		\begin{itemize}
+			\item \textbf{Was tun?} Sofort Screenshot, Chat beenden, blockieren, Hilfe holen (Polizei, Nummer gegen Kummer 116111).
+		\end{itemize}
+	\end{frame}
+	
+	\section{IT-Skills und Programmierung}
+	\begin{frame}{IT-Werkzeugkasten – Symbole zur Bot-Erkennung}
+		\centering
+		\begin{tikzpicture}[scale=0.7]
+			\node[mybox] (bild) at (0,0) {[Bild] Rückwärtssuche\\Profilbild};
+			\node[mybox] (metadaten) at (4,0) {[Kalender] Metadaten\\Erstellungsdatum};
+			\node[mybox] (zeit) at (0,-2) {[Uhr] Antwortzeitmuster};
+			\node[mybox] (sprache) at (4,-2) {[Sprechblase] KI-typische\\Sprachmuster};
+			\node[mybox] (video) at (2,-3.5) {[Video] Videoanfrage mit\\Live-Check};
+			\draw[arrow] (bild) -- (metadaten);
+			\draw[arrow] (metadaten) -- (zeit);
+			\draw[arrow] (zeit) -- (sprache);
+			\draw[arrow] (sprache) -- (video);
+			\draw[arrow] (bild) -- (video);
+		\end{tikzpicture}
+	\end{frame}
+	
+	\begin{frame}[fragile]{Mini-Beispiel: Bot-Erkenner in Python}
+		\begin{verbatim}
+			# bot_erkennung.py
+			bot_phrases = [
+			"ich verstehe wie du dich fühlst",
+			"erzähl mir mehr darüber",
+			"du bist nicht allein"
+			]
+			
+			def check_message(nachricht):
+			treffer = 0
+			for phrase in bot_phrases:
+			if phrase in nachricht.lower():
+			treffer += 1
+			if treffer >= 2:
+			print("[WARNUNG] Verdacht auf Bot!")
+			else:
+			print("[OK] Keine auffälligen Muster.")
+		\end{verbatim}
+		\alert{Lerne Python – deine digitale Selbstverteidigung!}
+	\end{frame}
+	
+	\section{Fazit}
+	\begin{frame}{Das Wichtigste auf einen Blick}
+		\begin{enumerate}
+			\item \textbf{Sei skeptisch:} Nicht jeder nette Chatpartner ist ein echter Mensch.
+			\item \textbf{Schütze deine Daten:} Keine intimen Bilder, keine Adresse.
+			\item \textbf{Verwende technische Hilfsmittel:} Rückwärtssuche, Antwortzeit-Checks, Video.
+			\item \textbf{Programmieren lernen:} Python hilft dir, Bots zu entlarven.
+			\item \textbf{Hole Hilfe:} Nummer gegen Kummer (116 111) – rund um die Uhr.
+		\end{enumerate}
+		\begin{center}
+			\tikz[baseline=-0.5ex] \draw[thick, red] (0,0) -- (1,0) node[right] {\alert{Bleib wachsam und sicher!}};
+		\end{center}
+	\end{frame}
+	
+	\begin{frame}{Quellen}
+		\small
+		\begin{thebibliography}{9}
+			\bibitem{Bitkom2025} Bitkom e.V. (2025): \emph{KI beim Online-Dating}. Umfrage.
+			\bibitem{Stanford2025} Stanford University Brainstorm Lab (2025): \emph{KI-Bots sind für Jugendliche häufig gefährlich}.
+			\bibitem{Jugendschutz2026} jugendschutz.net (2026): \emph{Charakter-Bots – Sexualisierung Minderjähriger}.
+			\bibitem{UNICEF2025} Firmino, S. \& Vosloo, S. (2025): \emph{The risky new world of tech's friendliest bots}. UNICEF.
+			\bibitem{WeisserRing2025} WEISSER RING (2025): \emph{Perfekte Täuschung: Betrug im KI-Zeitalter}.
+			\bibitem{USAToday2025} USA TODAY (2025): \emph{Teen lost his life after Character.AI bot romance}.
+			\bibitem{Crossroads2026} Crossroads Psychiatric Group (2026): \emph{AI Chatbots Lure U.S. Teens}.
+			\bibitem{WienerZeitung2026} Wiener Zeitung (2026): \emph{Die schmeichelnde KI}.
+			\bibitem{CommonSense2025} Common Sense Media / Stanford (2025): \emph{AI Risk Assessment: Social AI Companions}.
+		\end{thebibliography}
+	\end{frame}
+	
+	\begin{frame}{Fragen? Diskussion?}
+		\begin{center}
+			\LARGE \textbf{Was denkst du?}
+			\vspace{1cm}
+			\large Hast du schon Erfahrungen mit KI-Chatbots oder Dating-Apps gemacht?
+			\vspace{1cm}
+			\alert{Deine Meinung zählt – sprich mit anderen darüber!}
+		\end{center}
+	\end{frame}
+	
+\end{document}
