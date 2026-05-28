@@ -1,0 +1,373 @@
+\documentclass[10pt, aspectratio=169]{beamer}
+
+% --- Pakete (alle pdflatex-tauglich) ---
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}   % für \url
+
+% --- Farbschema (Dunkelblau & Creme) ---
+\definecolor{KitaBlue}{RGB}{0, 80, 136}
+\definecolor{KitaCream}{RGB}{243, 240, 223}
+\definecolor{KitaText}{RGB}{30, 41, 59}
+
+\setbeamercolor{palette primary}{bg=KitaBlue, fg=KitaCream}
+\setbeamercolor{background canvas}{bg=KitaCream}
+\setbeamercolor{structure}{fg=KitaBlue}
+\setbeamercolor{normal text}{fg=KitaText}
+\setbeamercolor{titlelike}{fg=KitaBlue}
+
+\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{footline}[frame number]
+
+% --- Bild-Platzhalter (kein 'dash bar') ---
+\newcommand{\imagebox}[2]{%
+	\begin{tcolorbox}[enhanced, colback=white, colframe=KitaBlue!20, arc=3mm, width=\textwidth, height=#1, valign=center, halign=center]
+		\centering
+		\vspace{0.5em}
+		\scriptsize \color{KitaBlue!60} \MakeUppercase{#2}
+	\end{tcolorbox}
+}
+
+% --- Titel-Informationen ---
+\title{Diabetes mellitus}
+\subtitle{Was dir als Untertitel einfällt}
+\author{Dein Name}
+\institute{Institut}
+
+\begin{document}
+	
+	% Folie 1: Titel
+	{\setbeamercolor{background canvas}{bg=KitaBlue}
+		\begin{frame}
+			\titlepage
+		\end{frame}
+	}
+	
+	% Folie 2: Agenda
+	\begin{frame}{Überblick / Agenda}
+		\begin{columns}[t]
+			\begin{column}{0.5\textwidth}
+				\begin{itemize}
+					\item Stoffwechsel vs. Infektion
+					\item Die Rolle von Insulin
+					\item Diabetes Typ 1 (Kindesalter)
+					\item Diabetes Typ 2 (Erwachsene)
+					\item Typen im Vergleich
+				\end{itemize}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\begin{itemize}
+					\item Symptome \& Diagnose
+					\item Behandlung \& Notfälle
+					\item Langzeitfolgen
+					\item Transfer zum Kita-Alltag
+					\item Hygiene, Meldepflicht, Elternarbeit
+				\end{itemize}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% Folie 3: Stoffwechsel vs. Infektion
+	\begin{frame}{Stoffwechsel vs. Infektion}
+		\begin{columns}
+			\begin{column}{0.6\textwidth}
+				\textbf{Keine Infektionskrankheit!}
+				\begin{itemize}
+					\item Keine Erreger oder Parasiten.
+					\item Keine Ansteckung möglich.
+				\end{itemize}
+				\vspace{1em}
+				\textbf{Sondern eine Stoffwechselstörung:}
+				\begin{itemize}
+					\item Nahrung (Zucker) kann nicht in Energie umgewandelt werden.
+				\end{itemize}
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				\imagebox{4.5cm}{Medizinische Utensilien}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% Folie 4: Insulin Funktion
+	\begin{frame}{Die Schlüsselfunktion von Insulin}
+		\begin{columns}
+			\begin{column}{0.4\textwidth}
+				\imagebox{5cm}{Bauchspeicheldrüse}
+			\end{column}
+			\begin{column}{0.55\textwidth}
+				\begin{itemize}
+					\item Gebildet in der \textbf{Bauchspeicheldrüse}.
+					\item Wirkt wie ein \textbf{Schlüssel} für die Zellen.
+					\item Lässt Glukose vom Blut in die Zellen.
+					\item Reguliert den Blutzuckerspiegel.
+				\end{itemize}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% Folie 5: Typ 1
+	\begin{frame}{Diabetes Typ 1 (Kindesalter)}
+		\begin{columns}
+			\begin{column}{0.6\textwidth}
+				\textbf{Absoluter Insulinmangel}
+				\begin{itemize}
+					\item Betrifft meist Kinder und Jugendliche.
+					\item Ursache: Immunsystem zerstört insulinproduzierende Zellen.
+					\item Der Körper produziert \textbf{kein} Insulin mehr.
+					\item Muss lebenslang durch Spritzen oder Pumpen ersetzt werden.
+				\end{itemize}
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				\imagebox{4.5cm}{Insulinspritze}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% Folie 6: Typ 2
+	\begin{frame}{Diabetes Typ 2}
+		\begin{columns}
+			\begin{column}{0.6\textwidth}
+				\textbf{Relativer Insulinmangel}
+				\begin{itemize}
+					\item Insulin ist vorhanden, wirkt aber schlecht (\textbf{Resistenz}).
+					\item Oft durch Übergewicht und Bewegungsmangel.
+					\item Entwickelt sich schleichend über Jahre.
+					\item Kann oft durch Ernährungsumstellung verbessert werden.
+				\end{itemize}
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				\imagebox{4.5cm}{Lebensstil und Ernährung}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% Folie 7: Vergleich T1 vs T2
+	\begin{frame}{Typ 1 vs. Typ 2 – Vergleich}
+		\begin{table}
+			\centering
+			\begin{tabular}{@{}lcc@{}}
+				\toprule
+				\textbf{Merkmal} & \textbf{Typ 1} & \textbf{Typ 2} \\
+				\midrule
+				Beginn & Meist plötzlich (Wochen) & Schleichend (Jahre) \\
+				Körpergewicht & Meist normal / Gewichtsverlust & Meist Übergewicht \\
+				Insulin & Muss immer gespritzt werden & Tabletten oder Insulin (später) \\
+				Häufigkeit & ca. 5–10\,\% & ca. 90–95\,\% \\
+				\bottomrule
+			\end{tabular}
+		\end{table}
+	\end{frame}
+	
+	% Folie 8: Symptome
+	\begin{frame}{Körperliche Symptome}
+		\begin{columns}
+			\begin{column}{0.35\textwidth}
+				\imagebox{4.5cm}{Müdes Kind}
+			\end{column}
+			\begin{column}{0.6\textwidth}
+				\begin{itemize}
+					\item Extremer Durst (\textbf{Polydipsie})
+					\item Häufiges Wasserlassen (\textbf{Polyurie})
+					\item Starke Müdigkeit und Abgeschlagenheit
+					\item Unerklärlicher Gewichtsverlust
+					\item Schlechte Wundheilung
+				\end{itemize}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% Folie 9: Diagnose
+	\begin{frame}{Wie wird Diabetes diagnostiziert?}
+		\begin{itemize}
+			\item \textbf{Nüchtern-Blutzucker:} Messung am Morgen.
+			\item \textbf{HbA1c-Wert:} Das „Blutzucker-Gedächtnis“ (letzte 3 Monate).
+			\item \textbf{Urintest:} Prüfung auf Zucker oder Ketone im Urin.
+		\end{itemize}
+		\vspace{1em}
+		\imagebox{2.5cm}{Untersuchung beim Arzt}
+	\end{frame}
+	
+	% Folie 10: Die 4 Säulen
+	\begin{frame}{Die 4 Säulen der Therapie}
+		\begin{columns}[t]
+			\begin{column}{0.23\textwidth}
+				\centering
+				\textbf{Insulin}
+			\end{column}
+			\begin{column}{0.23\textwidth}
+				\centering
+				\textbf{Ernährung}
+			\end{column}
+			\begin{column}{0.23\textwidth}
+				\centering
+				\textbf{Bewegung}
+			\end{column}
+			\begin{column}{0.23\textwidth}
+				\centering
+				\textbf{Kontrolle}
+			\end{column}
+		\end{columns}
+		\vspace{1.5em}
+		\imagebox{2.5cm}{Therapie Überblick}
+	\end{frame}
+	
+	% Folie 11: Notfall Unterzuckerung
+	\begin{frame}{Notfall: Unterzuckerung (Hypo)}
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\textbf{Anzeichen:}
+				\begin{itemize}
+					\item Zittern \& Schwitzen
+					\item Blässe \& Heißhunger
+					\item Unruhe, Aggressivität, Schwindel
+				\end{itemize}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\textbf{Maßnahmen:}
+				\begin{itemize}
+					\item Sofort Traubenzucker oder Saft
+					\item Kind zur Ruhe kommen lassen
+					\item Bei Bewusstlosigkeit: Notruf 112
+				\end{itemize}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% Folie 12: Notfall Überzuckerung
+	\begin{frame}{Notfall: Überzuckerung (Hyper)}
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\textbf{Anzeichen:}
+				\begin{itemize}
+					\item Starker Durst, häufiges Trinken
+					\item Atem riecht nach Aceton (Nagellackentferner)
+					\item Bauchschmerzen \& Übelkeit
+				\end{itemize}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\textbf{Handlung:}
+				\begin{itemize}
+					\item Eltern informieren
+					\item Ggf. Korrektur-Insulin (nach Plan)
+					\item Bei Erbrechen: Klinik!
+				\end{itemize}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% Folie 13: Langzeitfolgen
+	\begin{frame}{Mögliche Langzeitfolgen}
+		Ein dauerhaft zu hoher Blutzucker schädigt die Gefäße:
+		\begin{itemize}
+			\item \textbf{Augen:} Sehkraftverlust
+			\item \textbf{Nieren:} Nierenschwäche
+			\item \textbf{Nerven:} Gefühlsstörungen (Füße)
+			\item \textbf{Herz:} Schlaganfall / Infarkt
+		\end{itemize}
+		\imagebox{3cm}{Gefäßschäden vermeiden}
+	\end{frame}
+	
+	% Folie 14: Kita-Alltag
+	\begin{frame}{Diabetes im Kita-Alltag}
+		Ein Kind mit Diabetes kann am Kita-Leben voll teilnehmen. Wichtig sind:
+		\begin{itemize}
+			\item Feste Essenszeiten
+			\item Beobachtung des Verhaltens
+			\item Unterstützung beim Messen
+		\end{itemize}
+		\vspace{1em}
+		\imagebox{2.5cm}{Inklusion leben}
+	\end{frame}
+	
+	% Folie 15: Hygiene, Medikamente, Meldepflicht
+	\begin{frame}{Hygiene, Medikamente, Meldepflicht}
+		\begin{itemize}
+			\item \textbf{Hygiene:} Händewaschen vor dem Messen ist Pflicht. Kanülen sicher entsorgen!
+			\item \textbf{Medikamentengabe:} Schriftliche Vereinbarung mit den Eltern notwendig.
+			\item \textbf{Meldepflicht:} Diabetes selbst ist nicht meldepflichtig (da nicht ansteckend).
+			\item \textbf{Aufsichtspflicht:} Erhöhte Aufmerksamkeit bei Sport und Ausflügen.
+		\end{itemize}
+	\end{frame}
+	
+	% Folie 16: Wann Arzt / Notarzt?
+	\begin{frame}{Wann den Arzt hinzuziehen?}
+		\textbf{Sofort Notarzt (112) bei:}
+		\begin{itemize}
+			\item Bewusstlosigkeit oder Krampfanfall
+			\item Schwerer Verwirrtheit des Kindes
+			\item Unstillbarem Erbrechen
+		\end{itemize}
+		\vspace{0.5em}
+		\emph{Im Zweifelsfall immer lieber einmal zu viel anrufen!}
+	\end{frame}
+	
+	% Folie 17: Bedürfnisse des kranken Kindes
+	\begin{frame}{Was braucht das kranke Kind?}
+		\begin{itemize}
+			\item \textbf{Empathie:} Verständnis für Messpausen.
+			\item \textbf{Sicherheit:} Das Gefühl, dass die Erzieher wissen, was zu tun ist.
+			\item \textbf{Inklusion:} Keine Ausgrenzung wegen der Krankheit oder des Essens.
+		\end{itemize}
+		\imagebox{3cm}{Gemeinsam spielen}
+	\end{frame}
+	
+	% Folie 18: Zusammenarbeit mit Eltern
+	\begin{frame}{Zusammenarbeit mit Eltern}
+		Eltern sind die Experten für ihr Kind:
+		\begin{itemize}
+			\item Täglicher Austausch über Blutzuckerwerte.
+			\item Notfall-Set \& Telefonnummern aktuell halten.
+			\item Absprache bei Geburtstagen (Kuchen!).
+		\end{itemize}
+	\end{frame}
+	
+	% Folie 19: Fazit
+	\begin{frame}{Fazit}
+		\centering
+		\Large
+		Diabetes ist eine Herausforderung, aber kein Hindernis.
+		
+		\vspace{1em}
+		\normalsize
+		Mit guter Schulung, klaren Absprachen und einer aufmerksamen Begleitung können betroffene Kinder einen ganz normalen Kita-Alltag erleben.
+	\end{frame}
+	
+	% Folie 20: Literaturverzeichnis
+	\begin{frame}{Literaturverzeichnis}
+		\begin{itemize}
+			\item Deutsche Diabetes Hilfe: \url{www.diabetesde.org}
+			\item BZgA (BIÖG): \url{www.kindergesundheit-info.de}
+			\item Diabetes-Portal Diabinfo: \url{www.diabinfo.de}
+			\item WHO: \url{www.who.int}
+			\item Arbeitshilfe Referat: „Gesunderhaltung fördern“ PiA 1 TZ 1 (2026)
+		\end{itemize}
+	\end{frame}
+	
+	% Folie 21: Bildquellen (korrigiert: \url durch \texttt ersetzt und Unterstriche escaped)
+	\begin{frame}{Bildquellen / Image Sources}
+		\footnotesize
+		\begin{itemize}
+			\item \texttt{https://tcyod.org/wp-content/uploads/2020/02/DiabetesSupplies-16x9.jpg}
+			\item \texttt{https://knowing-diabetes.com/wp-content/uploads/2025/06/Blog-Image-1-2.png}
+			\item \texttt{https://img.freepik.com/premium-photo/plate-healthy-food-with-fruit-vegetables-including-avocado-carrots-oranges-strawberries\_14117-668327.jpg}
+			\item \texttt{https://cdn.prod.website-files.com/67a63be529a3ac2a1bc1dda8/6866345d5b9993ce707ced44\_Menopause\%20symptoms\%20.png}
+			\item \texttt{https://max-website20-images.s3.ap-south-1.amazonaws.com/Blood\_Sugar\_Test\_2fa9b72bef.png}
+			\item \texttt{https://img.freepik.com/premium-photo/human-heart-organ-heartbeat-illustration-background-pulse-line-medical-health-care-ecg-cardiogram-rhythm-frequency-rate-w}
+		\end{itemize}
+		\vspace{0.5em}
+		\scriptsize Quellen: tcyod.org, knowing-diabetes.com, freepik.com, drlouisenewson.co.uk, maxhealthcare.in
+	\end{frame}
+	
+	% Folie 22: Abschluss
+	\begin{frame}
+		\centering
+		\Huge Vielen Dank! \\
+		\vspace{1em}
+		\normalsize Habt ihr noch Fragen?
+	\end{frame}
+	
+\end{document}
