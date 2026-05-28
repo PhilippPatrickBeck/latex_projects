@@ -1,0 +1,536 @@
+\documentclass[10pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=blue,
+}
+\usepackage{enumitem}
+\setlist{nosep, left=0pt}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+\usepackage{cite}
+
+% Section formatting
+\titleformat{\section}{\Large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{12pt}{8pt}
+
+\begin{document}
+	
+	\begin{center}
+		{\huge \textbf{Der Arbeitsmarkt für IT-Sicherheit}} \\[0.3em]
+		{\Large mit Schwerpunkt Social Engineering} \\[0.3em]
+		{\large Deutschland und international – Stand 2026}
+	\end{center}
+	
+	\section{Einleitung}
+	Die Nachfrage nach IT‑Sicherheitsexperten ist in Deutschland und weltweit ungebrochen hoch. Allein in Deutschland sind rund 109.000 IT‑Stellen unbesetzt, wobei der Bereich Cybersicherheit eine der größten Lücken aufweist. Innerhalb der IT‑Sicherheit gewinnt das \textbf{Social Engineering} – das Ausnutzen der „menschlichen Firewall“ – zunehmend an Bedeutung. Dieser Bericht gibt einen Überblick über die aktuelle Marktlage, gefragte Rollen, Gehälter, regulatorische Rahmenbedingungen und internationale Remote‑Möglichkeiten mit Fokus auf Social Engineering.
+	
+	\section{Deutscher Arbeitsmarkt für IT-Sicherheit}
+	
+	\subsection{Aktuelle Bedrohungslage}
+	Die Bedrohungslandschaft in Deutschland hat sich 2025/2026 signifikant verschärft:
+	\begin{itemize}
+		\item \textbf{Ransomware-Angriffe} nehmen weiter zu – allein 2025 wurden über 1.000 Unternehmen und Einrichtungen erpresst.
+		\item \textbf{Schwachstellen in Lieferketten} (z.B. SolarWinds-artige Attacken) nehmen zu. Die NIS‑2‑Richtlinie verschärft die Anforderungen für kritische Infrastrukturen.
+		\item \textbf{Kompromittierte Zugangsdaten:} Über 80\,\% der erfolgreichen Angriffe nutzen schwache oder gestohlene Passwörter.
+		\item \textbf{KI‑gestützte Angriffe:} Generative KI wird für personalisierte Phishing‑Mails, Deepfake‑Audio und automatisierte Schwachstellensuche eingesetzt.
+	\end{itemize}
+	
+	\subsection{Regulatorischer Druck}
+	Folgende Regelungen sind aktuell besonders relevant:
+	\begin{itemize}
+		\item \textbf{NIS-2 (EU-Richtlinie, umgesetzt ab Oktober 2025):} Erweiterte Meldepflichten, Sanktionen bis zu 10 Mio. Euro oder 2\,\% des globalen Jahresumsatzes.
+		\item \textbf{DORA (Digital Operational Resilience Act):} Seit Januar 2025 in Kraft – betrifft Finanzunternehmen und deren IT‑Dienstleister.
+		\item \textbf{BSI-Gesetz (BSIG 2.0):} Das Bundesamt für Sicherheit in der Informationstechnik erhält mehr Befugnisse, etwa zur Durchführung von Sicherheitsaudits.
+		\item \textbf{Cyber Resilience Act (CRA, voraussichtlich 2027 voll anwendbar):} Hersteller von Produkten mit digitalen Elementen müssen Sicherheitsanforderungen über den gesamten Lebenszyklus erfüllen.
+	\end{itemize}
+	
+	\subsection{Gefragte IT-Sicherheitsrollen und Gehälter (Deutschland 2026)}
+	\begin{center}
+		\begin{tabular}{@{}l l r@{}}
+			\toprule
+			\textbf{Rolle} & \textbf{Typische Aufgaben} & \textbf{Jahresgehalt (brutto)} \\
+			\midrule
+			Application Security Engineer & SAST/DAST, Code-Reviews, Schwachstellenmanagement & 65.000 – 95.000 € \\
+			Penetration Tester / Ethical Hacker & Manuelle und automatisierte Angriffe & 60.000 – 90.000 € \\
+			Security Architect & Entwurf von Sicherheitsarchitekturen, Threat Modeling & 80.000 – 120.000 € \\
+			SOC-Analyst (L1–L3) & Überwachung von SIEM, Incident Response & 50.000 – 85.000 € \\
+			Kryptographie-Experte & Implementierung und Prüfung von Verschlüsselungsverfahren & 75.000 – 110.000 € \\
+			IT-Sicherheitsbeauftragter (ISB) & Compliance, Risikomanagement & 70.000 – 100.000 € \\
+			Cloud Security Engineer & Absicherung von Kubernetes, IAM, Cloud-Policies & 75.000 – 115.000 € \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	
+	\subsection{Wichtige Zertifizierungen auf dem deutschen Markt}
+	Folgende Zertifikate werden von deutschen Arbeitgebern besonders geschätzt:
+	\begin{itemize}
+		\item \textbf{CISSP} (international anerkannt)
+		\item \textbf{GIAC Zertifikate} (z.B. GPEN, GCIA, GSEC)
+		\item \textbf{CEH} (Certified Ethical Hacker)
+		\item \textbf{OSCP} (Offensive Security Certified Professional)
+		\item \textbf{ISO 27001 Implementierer/Auditor}
+		\item \textbf{BSI-Zertifizierungen} („BSI IT‑Grundschutz Praktiker“)
+		\item \textbf{Azure/AWS Security Spezialisierungen}
+	\end{itemize}
+	
+	\section{Social Engineering als Spezialisierung}
+	
+	\subsection{Grundlagen und Methodik (erweitert)}
+	Social Engineering ist eine Form von Cyberangriffen, die psychologische Manipulation nutzt, um Menschen zur Preisgabe vertraulicher Informationen oder zur Ausführung sicherheitsschädlicher Handlungen zu bewegen. Anders als klassische Hacking-Methoden, die auf technische Schwachstellen abzielen, attackiert Social Engineering direkt die „menschliche Firewall“. Das BSI definiert Social Engineering als eine Methode, bei der Angreifer menschliche Eigenschaften wie Hilfsbereitschaft, Vertrauen, Angst oder Autoritätsglauben ausnutzen.\footnote{\cite{BSI:SE}}
+	
+	\subsubsection{Psychologische Grundlagen und erforderliches Skill-Level im Social Engineering}
+	Social Engineering ist im Kern eine Disziplin der angewandten Psychologie. Während technische Fähigkeiten für die Durchführung eines Angriffs hilfreich sein können, ist es das tiefgreifende Verständnis der menschlichen Psyche, das einen durchschnittlichen von einem außergewöhnlichen Social Engineer unterscheidet.
+	
+	\paragraph{Kernpsychologisches Rahmenwerk: Die Prinzipien der Überzeugung.}
+	Die Wirksamkeit von Social-Engineering-Angriffen lässt sich anhand von etablierten psychologischen Modellen erklären. Im Zentrum steht die Arbeit des Psychologen Robert Cialdini, dessen Prinzipien der Überzeugung die Grundlage für die meisten modernen Manipulationstechniken bilden.\footnote{\cite{CialdiniPrinciples}} Diese sieben Prinzipien bieten einen strukturierten Ansatz, um zu verstehen, warum Menschen auf bestimmte Aufforderungen hin handeln:
+	\begin{itemize}
+		\item \textbf{Gegenseitigkeit (Reciprocity):} Das angeborene Bedürfnis, eine erhaltene Gefälligkeit oder Geste zu erwidern. Ein Angreifer, der sich zuvor als hilfsbereit präsentiert hat, kann leichter sensible Informationen abfragen.\footnote{\cite{SwissCSC}}
+		\item \textbf{Konsistenz (Commitment \& Consistency):} Der starke menschliche Drang, zu seinen früheren Aussagen oder Handlungen zu stehen. Ein Angreifer kann das Opfer zunächst zu einer kleinen, harmlosen Zustimmung bewegen, um später eine größere Bitte stellen zu können.\footnote{\cite{HSUAugsburg}}
+		\item \textbf{Sozialer Beweis (Social Proof):} Die Neigung, das Verhalten anderer als richtig zu bewerten. Wenn ein Angreifer vorgibt, dass eine Aktion (z.B. das Öffnen eines Links) bereits von allen Kollegen durchgeführt wurde, steigt die Compliance-Bereitschaft.\footnote{\cite{SwissCSC}}
+		\item \textbf{Sympathie (Liking):} Menschen lassen sich leichter von Personen überzeugen, die sie sympathisch finden. Social Engineer setzen aktiv Techniken ein, um eine solche Beziehung aufzubauen.\footnote{\cite{SwissCSC}}
+		\item \textbf{Autorität (Authority):} Die tief verwurzelte Neigung, Autoritätspersonen zu gehorchen. Das Imitieren von IT-Administratoren, Polizisten oder Geschäftsführern ist ein besonders wirkungsvolles Werkzeug.\footnote{\cite{HSUAugsburg}}
+		\item \textbf{Knappheit (Scarcity):} Die Wahrnehmung, dass etwas aufgrund von Limitierung oder Zeitdruck wertvoller ist. Formulierungen wie „nur für begrenzte Zeit“ oder „letzte Chance“ setzen das Opfer unter Druck und umgehen seine rationale Analyse.\footnote{\cite{HSUAugsburg}}
+		\item \textbf{Einheit (Unity):} Das Gefühl der Zugehörigkeit zu einer Gruppe. Wenn ein Angreifer eine gemeinsame Identität herstellen kann (z.B. „Wir als Team...“ oder „Kollegen aus der gleichen Abteilung“), sinken die Hemmschwellen.\footnote{\cite{HSUAugsburg}}
+	\end{itemize}
+	
+	\paragraph{Kognitive Verzerrungen: Die systematischen Fehler der menschlichen Hardware.}
+	Neben den Überzeugungsprinzipien nutzen Social Engineer auch kognitive Verzerrungen (Cognitive Biases) aus – systematische Denkfehler, die unser Gehirn immer wieder begeht. Eine wissenschaftliche Klassifikation aus dem Jahr 2025 hat insgesamt 40 unterschiedliche Manipulationstechniken identifiziert, die auf kognitiven Verzerrungen wie dem Halo-Effekt und sozialen Normen beruhen.\footnote{\cite{DalmiereClassification}} Die wichtigsten sind:
+	\begin{itemize}
+		\item \textbf{Urgency-Bias (Dringlichkeitsverzerrung):} Zeitdruck schaltet das rationale System-2-Denken aus und führt zu reflexartigen, unüberlegten Handlungen.\footnote{\cite{DiesecPhishing}}
+		\item \textbf{Authority-Bias (Autoritätsverzerrung):} Die blinde Akzeptanz von Anweisungen vermeintlicher Vorgesetzter oder offizieller Stellen.\footnote{\cite{DiesecPhishing}}
+		\item \textbf{Confirmation-Bias (Bestätigungsverzerrung):} Die Neigung, Informationen so zu interpretieren, dass sie die eigenen Erwartungen oder bereits getroffenen Entscheidungen bestätigen.
+		\item \textbf{Familiarity Heuristic (Vertrautheitsheuristik):} Der blinde Reflex, Bekanntem zu vertrauen. Angreifer nutzen dies durch Logo-Imitation und das Spoofing vertrauter Absenderadressen aus.\footnote{\cite{DiesecPhishing}}
+	\end{itemize}
+	Die Forschung zeigt, dass einige dieser Techniken besonders effektiv sind. Eine Studie quantifiziert die Wirksamkeit und kommt zu dem Schluss, dass die Techniken der Autorität sowie Commitment \& Consistency den größten Einfluss auf die Compliance von Opfern haben.\footnote{\cite{SuspiciousMinds}} Ein Social Engineer muss diese Muster erkennen und gezielt gegen die „Fehler in der menschlichen Hardware“ des Opfers einsetzen können.
+	
+	\paragraph{Das erforderliche Skill-Level: Von der Basis bis zur Expertise.}
+	Die Frage nach dem notwendigen psychologischen Wissen lässt sich auf einem kontinuierlichen Spektrum beantworten.
+	\begin{itemize}
+		\item \textbf{Grundlegendes Level: Awareness und Verständnis.} Auf diesem Niveau reicht ein Basiswissen über Cialdinis Prinzipien und die Fähigkeit, diese in einfachen Phishing-Szenarien zu erkennen. Dieses Niveau ist für allgemeine IT-Sicherheitsmitarbeiter ausreichend.
+		\item \textbf{Fortgeschrittenes Level: Anwendung und Analyse.} Ein professioneller White-Hat-Social-Engineer oder Penetrationstester muss Cialdinis Prinzipien nicht nur verstehen, sondern aktiv anwenden können. Er muss in der Lage sein, glaubwürdige Vorwände (Pretexts) zu entwickeln, die auf menschlichen Bedürfnissen und sozialen Normen aufbauen. Die TÜV-zertifizierte Qualifikation zum „Social Engineering Security Manager“ verlangt genau diese Kompetenz in den Bereichen „Psychology and cognitive distortions in the context of IT security“.\footnote{\cite{TUVRheinland}}
+		\item \textbf{Experten-Level: Meisterschaft in psychologischer Kriegsführung.} Ein Experte auf diesem Gebiet hat ein nahezu intuitives Verständnis für die Dynamik menschlicher Interaktion entwickelt. Die Literatur beschreibt diese Fähigkeit als eine tiefe emotionale Intelligenz – die Fähigkeit, „to determine, understand, and respond to your emotional state and others“.\footnote{\cite{SESkills}} Dies beinhaltet aktives Zuhören, die Fähigkeit, Stimmungen zu lesen und Empathie situationsabhängig einzusetzen. Das von der SAIT angebotene Kursmodul „ITSC 309 – Social Engineering“ beschreibt genau dieses fortgeschrittene Niveau, wenn es eine Einführung in „neuro-linguistic programming, basic human psychology and improvisational acting“ als Ziel für Penetration Tester definiert.\footnote{\cite{SAITCourse}} Die erfolgreiche Ausübung auf diesem Niveau erfordert also eine Kombination aus psychologischem Fachwissen, schauspielerischem Talent und einem feinen Gespür für zwischenmenschliche Dynamiken.
+	\end{itemize}
+	
+	\paragraph{Das Zusammenspiel von Skills: Soft Skills als Fundament der härtesten Tests.}
+	Die Forschung zeigt einen Konsens: Soft Skills sind in der Praxis oft wichtiger als technisches Wissen. Eine Umfrage unter Führungskräften großer Sicherheitsfirmen ergab, dass Erfahrung und die Fähigkeit, professionell und präzise zu kommunizieren, oft höher gewichtet werden als formale Abschlüsse.\footnote{\cite{SECareer}} Ein erfolgreicher Social Engineer zeichnet sich nicht durch eine einzelne Fähigkeit aus, sondern durch ein breites Spektrum:
+	\begin{itemize}
+		\item \textbf{Interpersonelle Fähigkeiten:} Die Grundlage jeder erfolgreichen Manipulation. Das frühzeitige Erkennen und Schließen von Rapport (einer tiefen Vertrauensbeziehung) ist das A und O. Dies erfordert Geduld, aktives Zuhören und die Kunst, unaufdringlich Fragen zu stellen (Elicitation).\footnote{\cite{SESkills}}
+		\item \textbf{Technisches Wissen:} Ein solides Grundverständnis von IT-Sicherheit, Netzwerken und typischen Angriffsvektoren ist notwendig, um realistische Szenarien zu entwickeln.\footnote{\cite{ZipRecruiterSkills}}
+		\item \textbf{Die „Denkweise eines Angreifers“ (Adversary Mindset):} Die vielleicht wichtigste Fähigkeit ist die, wie ein Krimineller zu denken, menschliche Schwachstellen zu identifizieren und mögliche Einfallstore intuitiv zu erfassen.\footnote{\cite{SECareer}}
+	\end{itemize}
+	Um die Sicherheitslücke „Mensch“ zu verstehen und zu schließen, muss man sie aus der Perspektive eines Dark-Hat-Angreifers kennen. Die Relevanz psychologischen Wissens ist daher nicht akademischer Natur, sondern entscheidet über Erfolg oder Misserfolg eines Tests.
+	
+	\subsubsection{Systematisierung der Angriffsvektoren}
+	Die folgende Tabelle systematisiert die wichtigsten Angriffstechniken nach aktuellem Forschungsstand:\footnote{\cite{ISACA,UTSAScams}}
+	
+	\begin{center}
+		\begin{tabular}{@{}p{0.20\textwidth}p{0.40\textwidth}p{0.30\textwidth}@{}}
+			\toprule
+			\textbf{Technik} & \textbf{Funktionsweise} & \textbf{2026-Trends} \\
+			\midrule
+			\textbf{Phishing} & Massenhafte gefälschte E-Mails (häufigster Einstieg: ca. 60\%\footnote{\cite{ENISAThreat}}) & KI eliminiert Rechtschreibfehler und generische Anreden; perfekte Personalisierung über OSINT\footnote{\cite{DEV2026SE}} \\
+			\textbf{Spear Phishing} & Gezielte Angriffe auf Einzelpersonen mit vorheriger OSINT-Recherche & Besonders verbreitet bei staatlichen Akteuren (z.B. Kimsuky)\footnote{\cite{BSI:Lagebericht2025}} \\
+			\textbf{Vishing} & Telefonische Manipulation, oft mit KI-Stimmklonen & Anteil an Angriffen gestiegen: 11\% aller initialen Vektoren, bei Cloud-Kompromissen 23\%\footnote{\cite{AxisStats}} \\
+			\textbf{Smishing} & Manipulation über SMS & Verbreitung von Fake-CAPTCHA-Betrug gestiegen\footnote{\cite{ENISAThreat}} \\
+			\textbf{Pretexting} & Erfundene Geschichte, um Vertrauen zu gewinnen (häufig als IT-Support) & Erstmals dominierender Angriffstyp mit über 50\%\footnote{\cite{AxisStats}} \\
+			\textbf{Baiting} & Physische Köder (USB-Sticks) oder digitale Lockangebote & Funktioniert selbst in hochsicheren, abgeschotteten Umgebungen (Stuxnet-Prinzip) \\
+			\textbf{Tailgating} & Physisches Folgen in gesicherte Bereiche & Zunehmende Vermischung digitaler und physischer Bedrohungen\footnote{\cite{Forescout2026}} \\
+			\textbf{Quid Pro Quo} & Angebot einer Gegenleistung für Zugangsdaten & Wird oft in Kombination mit Vishing eingesetzt \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\emph{Quellen: ENISA Threat Landscape 2025, Axis Intelligence Report 2026, Forescout Predictions 2026, eigene Recherche.}
+	
+	\subsubsection{KI-gestützte Angriffe und Social Engineering as a Service (SEaaS)}
+	Die Integration Künstlicher Intelligenz hat Social Engineering im Jahr 2026 grundlegend transformiert. KI-generierte Deepfakes ermöglichen täuschend echte Audio- und Videoimitationen, die selbst sicherheitsbewusste Mitarbeiter in die Falle tappen lassen.\footnote{\cite{Psono2025}} Die Qualität KI-generierter Phishing-E-Mails ist von Rechtschreibfehlern und generischen Anreden zu perfekter Personalisierung fortgeschritten: Moderne LLMs analysieren öffentlich verfügbare Informationen (OSINT), um E-Mails mit korrekten Namen, Positionen und aktuellen Projektreferenzen zu verfassen.\footnote{\cite{DEV2026SE}} 
+	
+	Besonders besorgniserregend ist die Entwicklung hin zu „Social Engineering as a Service“ (SEaaS). Experten prognostizieren für 2026, dass SEaaS zum beliebtesten Abonnementmodell der kriminellen Welt wird. Vorgefertigte, käufliche Kits mit KI-Stimmklonen, vorgefertigten Anrufabläufen und gefälschten „Autorisierungs-App“-Links erleben einen massiven Aufschwung.\footnote{\cite{Forescout2026}} Mit diesen schlüsselfertigen Paketen können selbst unerfahrene Angreifer sich als legitime Mitarbeiter ausgeben und Multi-Faktor-Authentifizierungsprozesse durch überzeugende Helpdesk-Interaktionen umgehen.\footnote{\cite{Forescout2026}} 
+	
+	Der Trend zu SEaaS wird von aktuellen Statistiken untermauert: KI-gestützter Betrug nahm 2025 um 1.210\% zu, während traditioneller Betrug um 195\% wuchs – ein klarer Beleg, dass KI Angriffe nicht nur inkrementell verbessert, sondern strukturell transformiert.\footnote{\cite{AxisStats}}
+	
+	\subsubsection{Aktuelle Bedrohungsstatistiken (2025/2026)}
+	Die folgenden Zahlen verdeutlichen die Dimension der Bedrohung:\footnote{\cite{BSICyberMonitor,AxisStats,ENISAThreat}}
+	\begin{itemize}
+		\item \textbf{Verbreitung:} Phishing und andere Social-Engineering-Techniken sind der Hauptangriffspunkt und machen etwa 60\% der beobachteten Fälle aus.\footnote{\cite{ENISAThreat}}
+		\item \textbf{Prätexting:} Dieser Angriffstyp hat erstmals Phishing (2025 nur noch 6\%) als dominierende Methode abgelöst und repräsentiert über 50\% aller Social-Engineering-Vorfälle.\footnote{\cite{AxisStats}}
+		\item \textbf{Bevölkerungsbetroffenheit:} Jeder zehnte Deutsche war 2025 Opfer von Cyberkriminalität, wobei die Erfolgsrate von Social-Engineering-Angriffen weiter steigt.\footnote{\cite{BSICyberMonitor}}
+		\item \textbf{Geschwindigkeit:} Die mediane Zeit zwischen initialem Social-Engineering-Zugriff und Weiterleitung an sekundäre Angreifer ist von über 8 Stunden (2022) auf nur 22 Sekunden (2025) zusammengebrochen.\footnote{\cite{AxisStats}}
+		\item \textbf{Wirtschaftliche Auswirkungen:} Die gesamten Cybercrime-Verluste überstiegen 2025 erstmals 20 Milliarden USD.\footnote{\cite{AxisStats}}
+	\end{itemize}
+	
+	\subsection{Arbeitsweise und Werkzeuge (White Hat)}
+	Ein White‑Hat Social Engineering Assessment umfasst:
+	\begin{itemize}
+		\item \textbf{Reconnaissance:} OSINT‑Analysen (LinkedIn, Xing, Unternehmenswebsites).
+		\item \textbf{Simulation:} Kontrollierte Phishing‑Kampagnen, Vishing‑Anrufe, physische Tests.
+		\item \textbf{Tooling:} Social Engineer Toolkit (SET), KI‑gestützte Deepfakes und automatisierte Anrufabläufe.\footnote{\cite{TrustedSec:SET}}
+	\end{itemize}
+	Mit dem Aufkommen generativer KI wird „Social Engineering as a Service“ (SEaaS) prognostiziert.\footnote{\cite{ECSO:TL2026}}
+	
+	\subsection{Rechtliche und ethische Grundlagen}
+	Ethisches Social Engineering ist nur mit schriftlicher Vereinbarung, klarem Scope und Datenschutzfolgeabschätzung zulässig. Ethische Richtlinien nach Hadnagy sind zu beachten.\footnote{\cite{Hadnagy:2018}}
+	
+	\subsection{Berufsbild und Marktchancen (Deutschland 2026)}
+	\begin{center}
+		\begin{tabular}{@{}l l r@{}}
+			\toprule
+			\textbf{Rolle} & \textbf{Fokus} & \textbf{Gehalt (brutto)} \\
+			\midrule
+			Penetration Tester (Junior) & Erste Erfahrungen, Unterstützung & 45.000 – 55.000 € \\
+			SOC-Analyst (Junior) & Überwachung von Sicherheitsvorfällen & 45.000 – 55.000 € \\
+			SOC-Analyst (Senior) & Fortgeschrittene Analyse, Incident Response & 48.000 – 62.000 € \\
+			Penetration Tester & Angriffssimulationen, inkl. Social Engineering & 55.000 – 85.000 € \\
+			Security Consultant (Offensive) & Red‑Teaming, Adversary Emulation & 80.000 – 120.000 € \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\emph{Quellen: Stepstone Gehaltsreport 2026, Glassdoor, eigene Marktrecherche.}
+	
+	\subsection{Ausführliche Fallstudien (Dark Hat)}
+	
+	\subsubsection{Fallstudie 1: Allianz Life (Deutschland, August 2025)}
+	\begin{itemize}
+		\item \textbf{Angriffsvektor:} Vishing (Voice Phishing)
+		\item \textbf{Ziel:} Salesforce‑Cloud‑Datenbank mit Kundendaten
+		\item \textbf{Ablauf:}
+		\begin{enumerate}
+			\item Die Angreifergruppe \textit{ShinyHunters} recherchierte über LinkedIn und Xing einen Mitarbeiter im Allianz‑Kundenservice, der Zugriff auf die Salesforce‑Instanz hatte.
+			\item Sie riefen diesen Mitarbeiter an und gaben sich als IT‑Support des Unternehmens aus, der ein „dringendes Sicherheitsupdate“ durchführen müsse.
+			\item Unter dem Vorwand, die Zugangsdaten seien abgelaufen, überredeten sie den Mitarbeiter, sein temporäres Einmalpasswort (OTP) am Telefon zu nennen.
+			\item Mit den echten Credentials loggten sie sich in die Salesforce‑Cloud ein und exfiltrierten 1,1 Millionen Kundendatensätze (Namen, Adressen, Vertragsdetails, teilweise Bankdaten).
+		\end{enumerate}
+		\item \textbf{Schwachstellen:} Fehlende Zwei‑Faktor‑Authentifizierung für den Kundenservice‑Zugang; kein Verification‑Call‑Back; fehlende Sensibilisierung für Vishing.
+		\item \textbf{Auswirkungen:} Schadenssumme ca. 4,5 Mio. €; Reputationsverlust; Allianz führte verpflichtende Vishing‑Simulationen ein.
+	\end{itemize}
+	
+	\subsubsection{Fallstudie 2: Diehl Defence (Deutschland, 2024)}
+	\begin{itemize}
+		\item \textbf{Angriffsvektor:} Spear‑Phishing (Jobangebotsbetrug)
+		\item \textbf{Ziel:} Netzwerkzugang eines Rüstungsunternehmens
+		\item \textbf{Ablauf:} Nordkoreanische Hacker (\textit{Kimsuky}) erstellten gefälschte LinkedIn‑Profile, bewarben sich auf IT‑Stellen und schickten manipulierte PDF‑Lebensläufe mit Makro. Ein IT‑Mitarbeiter öffnete die PDF – Reverse‑Shell führte zur Kompromittierung.
+		\item \textbf{Auswirkungen:} Verlust geistigen Eigentums; BSI‑Sonderprüfung; Bewerbungsplattform musste neu aufgebaut werden.
+	\end{itemize}
+	
+	\subsubsection{Fallstudie 3: Stuxnet (International, 2009–2010)}
+	\begin{itemize}
+		\item \textbf{Angriffsvektor:} Baiting (infizierte USB‑Sticks)
+		\item \textbf{Ziel:} Iranisches Urananreicherungsprogramm
+		\item \textbf{Ablauf:} USB‑Sticks wurden in der Umgebung des Atomkomplexes platziert. Ein Ingenieur steckte einen Stick ein – Stuxnet nutzte Zero‑Day‑Exploits, manipulierte Zentrifugen und verursachte physische Zerstörung.
+		\item \textbf{Lessons Learned:} Selbst air‑gapped Systeme sind verwundbar; USB‑Ports müssen deaktiviert werden.
+	\end{itemize}
+	
+	\subsubsection{Fallstudie 4: Twitter-Hack (International, Juli 2020)}
+	\begin{itemize}
+		\item \textbf{Angriffsvektor:} Vishing + OSINT
+		\item \textbf{Ziel:} Übernahme prominenter Twitter‑Konten
+		\item \textbf{Ablauf:} Angreifer recherchierten Twitter‑Mitarbeiter, riefen an und gaben sich als IT‑Support aus. Sie erlangten Admin‑Credentials und setzten Passwörter prominenter Konten zurück.
+		\item \textbf{Auswirkungen:} Bitcoin‑Betrug (120.000 USD); Twitter‑Aktie fiel um 5\%.
+	\end{itemize}
+	
+	\subsubsection{Fallstudie 5: Operation Aurora (International, 2009)}
+	\begin{itemize}
+		\item \textbf{Angriffsvektor:} Spear‑Phishing mit Zero‑Day‑Exploit
+		\item \textbf{Ziel:} Google, Adobe, Juniper Networks u.a.
+		\item \textbf{Ablauf:} Gezielte Phishing‑E‑Mails an Menschenrechtsaktivisten und Google‑Mitarbeiter mit Links zu Zero‑Day‑Exploits führten zur Exfiltration von Quellcode.
+		\item \textbf{Auswirkungen:} Google zog sich teilweise aus China zurück; Einführung von „Project Zero“.
+	\end{itemize}
+	
+	\subsection{Zusammenfassung der Fallstudien}
+	Die fünf Beispiele zeigen, dass Social Engineering – unabhängig von der technischen Komplexität – fast immer der initiale Zugangspunkt ist. Für White‑Hat‑Experten ergeben sich daraus klare Aufgaben: Simulation dieser Szenarien, Awareness‑Trainings und technische Gegenmaßnahmen.
+	
+	\section{Dark Hat Social Engineering: Die Industrialisierung des Betrugs}
+	Im krassen Gegensatz zum ethischen White‑Hat‑Ansatz operiert die Dark‑Hat‑Variante des Social Engineerings mit dem Ziel wirtschaftlichen Gewinns oder der Schädigung von Individuen und Organisationen. Dieser Abschnitt beleuchtet die organisierte, arbeitsteilige Struktur der modernen Social‑Engineering‑Industrie, neue Angriffstechniken und die wirtschaftliche Dimension der Bedrohung.
+	
+	\subsection{Industrialisierung und Untergrund-Ökonomie}
+	Die moderne Social‑Engineering‑Kampagne ist keine Einzelaktion mehr, sondern eine hochprofessionelle, arbeitsteilige Industrie. Im Social‑Engineering‑Untergrund hat sich eine arbeitsteilige Industrie mit Entwicklern, Resellern, Support‑Services und sogar Kundenerfolgsteams etabliert, die Plattformen mit Kundensupport und Service Level Agreements (SLAs) betreibt.\footnote{\cite{ZeroFoxUnderground}} Phishing‑Kits werden lizenziert, Zugangsdaten wie Inventar gehandelt.\footnote{\cite{ZeroFoxUnderground}}
+	
+	\subsubsection{„Social Engineering as a Service“ (SEaaS)}
+	Besonders besorgniserregend ist die Entwicklung hin zu SEaaS. Im Jahr 2026 wird SEaaS das beliebteste Abonnementmodell der kriminellen Welt.\footnote{\cite{ForescoutPredictions}} Kriminelle bieten vorgefertigte, käufliche Kits mit KI‑Stimmklonen, vorgefertigten Anrufabläufen und gefälschten „Autorisierungs‑App“‑Links an.\footnote{\cite{ForescoutPredictions}} Teurere Optionen beinhalten die Dienste erfahrener Social‑Engineering‑Experten.\footnote{\cite{ForescoutPredictions}} Die Palette der „as‑a‑Service“‑Angebote hat sich erweitert: Phishing‑as‑a‑Service (PhaaS) dominiert den kriminellen Markt.\footnote{\cite{FlarePhaaS}} Auch „Pig‑Butchering‑as‑a‑Service“ (PBaaS) wurde beobachtet.\footnote{\cite{PBaaS}} Einrichtungsspezifische Kits für Plattformen wie Jira, Confluence, SharePoint oder Google Drive sind erhältlich.\footnote{\cite{PhaasKits}}
+	
+	\subsubsection{KI als „Force Multiplier“}
+	KI wirkt im Dark Hat Social Engineering als „Force Multiplier“. Agentische KI wird die Produktivität für Betrüger genauso steigern wie für legitime Benutzer.\footnote{\cite{SecurityWeek2026}} Millionen bösartiger Agenten könnten das Internet kontinuierlich nach Gesichtern, Stimmen und persönlichen Daten durchsuchen und autonome Angriffe durchführen.\footnote{\cite{SecurityWeek2026}} KI-gestützte Betrugsfälle nahmen 2025 um 1.210\% zu, während traditioneller Betrug „nur“ um 195\% wuchs.\footnote{\cite{McAfeeBlog}} Dies verschiebt das Tempo von Angriffen drastisch: Die mediane Zeit zwischen initialem Social‑Engineering‑Zugriff und Weiterleitung an sekundäre Angreifer ist von über 8 Stunden (2022) auf nur 22 Sekunden (2025) zusammengebrochen.\footnote{\cite{AxisStats}}
+	
+	\subsection{Neue und sich weiterentwickelnde Angriffstechniken}
+	Dark‑Hat‑Akteure entwickeln ständig neue Methoden, um menschliche und technische Schwachstellen auszunutzen.
+	
+	\subsubsection{Agentische Angriffe: Teams‑basierte Helpdesk‑Imitation}
+	Diese Technik kombiniert mehrere Social‑Engineering‑Elemente: Eine E‑Mail‑Bombardierung überflutet das Opfer mit Nachrichten.\footnote{\cite{SANSBlog}} Unmittelbar danach kontaktiert ein angeblicher IT‑Helpdesk‑Mitarbeiter das Opfer über Microsoft Teams.\footnote{\cite{SANSBlog}} Der Angreifer bietet Hilfe an, überredet das Opfer zur Installation einer legitimen Remote‑Management‑Software (z.B. Quick Assist) und übernimmt so die Kontrolle.\footnote{\cite{TheHackerNewsUNC6692}} Diese Angriffe werden zunehmend automatisiert und zielen besonders auf Führungskräfte ab: 77\% der beobachteten Vorfälle im März 2026 betrafen Senior‑Level‑Mitarbeiter (zuvor 59\%).\footnote{\cite{ReliaQuestBlackBasta}} In einigen Fällen bewegten sich die Angreifer innerhalb von nur 12 Minuten vom ersten Chat zur Ausführung schädlicher Skripte.\footnote{\cite{ReliaQuestBlackBasta}}
+	
+	\subsubsection{ClickFix: Die neue Königsdisziplin des Social Engineerings}
+	Bei ClickFix-Angriffen werden Nutzer auf eine gefälschte CAPTCHA‑ oder Fehlerseite gelockt, die eine scheinbar einfache Lösung anbietet.\footnote{\cite{SANSBlog}} Die Nutzer werden angewiesen, eine Tastenkombination (Windows+R) zu drücken, einen Code einzufügen (per JavaScript in die Zwischenablage kopiert) und auszuführen.\footnote{\cite{SANSBlog}} In Wirklichkeit führen sie einen schädlichen PowerShell‑Befehl aus, der Malware herunterlädt.\footnote{\cite{SANSBlog}} ClickFix erschien 2024 und verzeichnete 2025 einen Anstieg von 517\%.\footnote{\cite{SANSBlog}} Die Technik funktioniert gegen Windows, Mac und Linux.\footnote{\cite{SANSBlog}}
+	
+	\subsubsection{Token-Hopping und OAuth-Missbrauch}
+	Dark‑Hat‑Akteure verlagern ihren Fokus von gestohlenen Passwörtern auf die Berechtigungen, die verbundenen SaaS‑Anwendungen gewährt werden.\footnote{\cite{ForescoutPredictions}} Durch den Missbrauch von OAuth‑Zustimmungen können sie sich unbemerkt zwischen Mandanten bewegen („Token‑Hopping“) und auch nach dem Zurücksetzen von Passwörtern weiterhin Zugriff behalten.\footnote{\cite{ForescoutPredictions}} Diese Kampagnen konkurrieren 2026 mit traditionellem Phishing um den Titel des effektivsten Angriffswegs.\footnote{\cite{ForescoutPredictions}} Angreifer täuschen vor, legitime Drittanbieter‑Apps zu sein, um Zugriff auf Kundendaten zu erhalten.\footnote{\cite{SecurityInsiderSalesforce}} Einmal autorisiert, erhalten diese Apps gültige OAuth‑Token, sodass alle Aktivitäten wie von einer vertrauenswürdigen Integration aussehen.\footnote{\cite{SecurityInsiderSalesforce}}
+	
+	\subsection{Wirtschaftliche Dimension und Schadenssummen}
+	Social Engineering ist kein Randphänomen mehr, sondern das Herzstück moderner Cyberkriminalität. Berichte zeigen, dass Social Engineering für 71 Prozent aller gemeldeten Schadensfälle verantwortlich ist.\footnote{\cite{CoalitionReport}} 36 Prozent aller untersuchten Vorfälle begannen mit einer Social‑Engineering‑Taktik.\footnote{\cite{ThreatSceneReport}} Die Schadenssummen sind atemberaubend: Die gesamten Cybercrime‑Verluste überstiegen 2025 erstmals 20 Milliarden US‑Dollar.\footnote{\cite{AxisStats}} Das FBI verzeichnete über eine Million Beschwerden.\footnote{\cite{FBIReport}} Die durchschnittliche Schadenssumme sank zwar um 19\% auf 116.000 US-Dollar, die Schadensfrequenz stieg jedoch auf 1,54\%.\footnote{\cite{CoalitionReport}} Die anfänglichen Lösegeldforderungen bei Ransomware stiegen um 47\% auf einen Durchschnittswert von über einer Million US-Dollar.\footnote{\cite{CoalitionReport}} 71 Prozent aller Fälle von Überweisungsbetrug (FTF) waren ein direktes Resultat sozialer Manipulation.\footnote{\cite{CoalitionReport}} Allein durch Social‑Engineering‑Betrugsmaschen verdoppelten sich die Schäden 2025, während die Fallzahlen um 61 Prozent stiegen.\footnote{\cite{AllianzTrade}} In Deutschland erreichte die Cyberkriminalität 2025 neue Rekordhöhen: Das BKA registrierte 333.922 Fälle, der wirtschaftliche Schaden wird auf 202,4 Milliarden Euro geschätzt.\footnote{\cite{BKAStats}} 88 Prozent der Betroffenen erlitten einen finanziellen oder materiellen Schaden.\footnote{\cite{BKAStats}}
+	
+	\section{Gefahren für Kinder und Jugendliche: Schutz der digitalen Generation}
+	Kinder und Jugendliche sind in der digitalen Welt besonders verletzlich. Ihre ausgeprägte Neugier, ihr oft noch nicht vollständig entwickeltes Risikobewusstsein und ihre hohe Online‑Präsenz machen sie zu einem idealen Ziel für die vielfältigen Instrumente des Dark Hat Social Engineerings. Dieser Abschnitt beleuchtet die spezifischen Gefahren, die von KI‑gestützten Angriffen, Cybergrooming und einer immer raffinierteren psychologischen Manipulation ausgehen.
+	
+	\subsection{Die schwer fassbare Gefahr: KI‑generierte Deepfakes und Erpressung}
+	Die Verbreitung von Deepfakes – insbesondere nicht‑einvernehmlicher sexuell expliziter Darstellungen – ist für junge Menschen zu einer neuen, extrem verletzenden Dimension digitaler Gewalt geworden. Studiendaten belegen, dass bereits 13\% der Kinder mit Nackt-Deepfakes konfrontiert wurden, was erhebliche Angst und Besorgnis auslöst.\footnote{\cite{ProtectorKinder}} Die Meldungen über KI‑generiertes Missbrauchsmaterial haben sich innerhalb eines Jahres mehr als verdoppelt (von 199 auf 426 Meldungen).\footnote{\cite{InternetMatters2025}} Insbesondere Deepnudes werden über leicht zugängliche Online‑Tools erzeugt und sind nicht nur für Erwachsene, sondern auch gezielt für Einschüchterung, Erpressung und Mobbing unter Minderjährigen missbräuchlich im Umlauf.\footnote{\cite{InternetMatters2025}} Die allgegenwärtige Verfügbarkeit und niedrige Hemmschwelle dieser Tools hat die Dunkelziffer der Betroffenen drastisch erhöht.
+	
+	\subsection{Die ständige Bedrohung: Cybergrooming und digitale sexuelle Gewalt}
+	Die systematische Anbahnung sexueller Kontakte mit Minderjährigen im Netz ist ein weit verbreitetes Phänomen. Eine große Studie des Bundesinstituts für Öffentliche Gesundheit (BIÖG) zeigt, dass 64\% der jungen Menschen in Deutschland bereits sexualisierte Beleidigungen, digitale sexualisierte Gewalt oder Belästigungen erlebt haben. Davon sind junge Frauen doppelt so häufig betroffen.\footnote{\cite{BIÖG2026}} Die Täter sind oft Gleichaltrige, was für die Betroffenen eine zusätzliche emotionale Belastung darstellt. Auch die Fallzahlen sexualisierter Gewalt im Hellfeld sind gestiegen, was auf eine reale Bedrohungslage hindeutet.\footnote{\cite{BKA2025}}
+	
+	\subsection{Manipulation im großen Stil: Rekrutierung und Phishing}
+	Über Chats in Spielen und sozialen Netzwerken nutzen kriminelle Gruppierungen gezielt das Vertrauen von Kindern und Jugendlichen aus. Sie rekrutieren Minderjährige für illegale Aktivitäten oder setzen sie als menschliche Firewalls ein, um Malware zu verbreiten und Zugangsdaten für Identitätsdiebstahl zu erlangen.\footnote{\cite{ProtectorKinder}} Die ohnehin schon hohe Anfälligkeit für Social Engineering wird durch die Nutzung künstlicher Intelligenz zusätzlich potenziert, die Angriffe immer personalisierter und glaubwürdiger macht.
+	
+	\subsection{Prävention und Schutz: Ein mehrdimensionaler Ansatz}
+	Um junge Menschen vor diesen Gefahren zu schützen, ist ein Zusammenwirken verschiedener Maßnahmen unerlässlich. Digitale Bildung sollte die Medienkompetenz von Kindern gezielt fördern und sie für Manipulationstechniken sensibilisieren.\footnote{\cite{klicksafe}} Das Vertrauensverhältnis zwischen Eltern und Kindern ist die Grundlage für eine offene Kommunikation über problematische Online‑Erfahrungen. Auf gesetzgeberischer Ebene sind Reformen wie der von der EU geforderte **„Safety‑by‑Design“-Ansatz** oder die **zehn Reformvorschläge der deutschen Datenschutzkonferenz zur DS‑GVO** vom Februar 2026 dringend erforderlich, um den digitalen Schutzraum für Kinder systematisch zu stärken.\footnote{\cite{DSK2026, tagesschau2026, Bundesregierung2026, BAG2025}}
+	
+	\section{Internationaler Remote-Arbeitsmarkt für IT-Sicherheitsexperten}
+	
+	Remote‑Stellen im Bereich Cybersicherheit haben 2026 um 28\,\% zugenommen.\footnote{\cite{Jobs4BW}} Weltweit sind über 4 Millionen Stellen unbesetzt.\footnote{\cite{EvoTalents}} US‑Unternehmen zahlen für Senior‑Rollen Basisgehälter von USD 160.000–210.000 zuzüglich Aktienoptionen.\footnote{\cite{EvoTalents}}
+	
+	\subsection{Beispiele für US-Remote-Gehälter (2026)}
+	\begin{center}
+		\begin{tabular}{@{}l l r@{}}
+			\toprule
+			\textbf{Rolle} & \textbf{Arbeitgeber} & \textbf{Gehalt (USD)} \\
+			\midrule
+			Senior Application Security Engineer & Limble CMMS & 165.000 – 185.000 \\
+			Senior Security Engineer & Nutanix & 169.600 – 288.000 \\
+			Senior Offensive Security Engineer & Huntress & 170.000 – 185.000 \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\emph{Quellen: General Catalyst, Album VC, Khosla Ventures, Forgepoint Capital (2026).}
+	
+	\subsection{Plattformen für die internationale Jobsuche}
+	Empfohlene Portale: \textit{We Work Remotely}, \textit{RemoteOK}, \textit{FlexJobs}, \textit{Wellfound}, \textit{Turing}, \textit{Himalayas}, \textit{Remotive}, sowie LinkedIn und Indeed.
+	
+	\subsection{Rechtliche Rahmenbedingungen für Remote-Arbeit aus Deutschland}
+	\begin{itemize}
+		\item \textbf{Für deutsche Arbeitnehmer:} Arbeit für ausländische Arbeitgeber ist erlaubt, erfordert aber einen „Employer of Record“ (z.B. Remote.com, Oyster HR, Deel) für Steuern und Sozialversicherung.
+		\item \textbf{Für Drittstaatsangehörige:} Aufenthaltserlaubnis nach §19c AufenthG möglich; Gehaltsschwelle 2026: EUR 50.700 (ermäßigt EUR 45.934 für Engpassberufe).\footnote{\cite{GermanVisaLaw,EUBlueCard}}
+	\end{itemize}
+	
+	\subsection{Bewerbungsstrategie}
+	\begin{enumerate}
+		\item \textbf{LinkedIn-Optimierung:} Profil auf Englisch, Fokus auf Keywords („Application Security“, „SAST/DAST“, „ISO 27001“).
+		\item \textbf{Zielgerichtete Plattformwahl:} Wellfound für Startups, Turing für langfristige US-Engagements, We Work Remotely für etablierte Unternehmen.
+		\item \textbf{Gehaltsverhandlung:} Basis sollte der US-Marktpreis sein; viele US-Remote-Arbeitgeber zahlen nach Standort – hier lohnt explizite Verhandlung auf US-Niveau.
+		\item \textbf{Zertifizierungsnachweis:} CISSP, CEH oder ISO 27001 können das Gehalt um USD 15.000–30.000 erhöhen.\footnote{\cite{Jobs4BW}}
+	\end{enumerate}
+	
+	\section{Markttrends und Technologien}
+	\begin{itemize}
+		\item \textbf{Künstliche Intelligenz:} 86\,\% der Tech‑Startups sehen KI als bestimmenden Trend 2026. Umsätze mit KI‑Plattformen steigen um 61\,\% auf 4,1 Mrd. €.
+		\item \textbf{Digitale Souveränität:} Souveräne Cloud‑ und Edge‑Lösungen (51\,\%) sowie Data Sovereignty (50\,\%) sind prägende Themen.
+		\item \textbf{Industrie 4.0:} 89\,\% der Industrieunternehmen bewerten Industrie 4.0 als sehr wichtig für Wettbewerbsfähigkeit.
+	\end{itemize}
+	
+	\section{Fazit}
+	Die Nachfrage nach IT‑Sicherheitsexperten – insbesondere mit Spezialisierung auf Social Engineering – ist in Deutschland und international enorm. Neben attraktiven Gehältern im Inland (bis zu 120.000 € für offensive Security Consultants) eröffnen globale Remote‑Positionen Perspektiven mit US‑Gehältern von über USD 200.000. Voraussetzung sind fundierte technische Kenntnisse, einschlägige Zertifizierungen und ein Verständnis der rechtlichen Rahmenbedingungen. Der Markt bleibt angesichts zunehmender KI‑gestützter Angriffe und strengerer Regularien (NIS‑2, DORA, CRA) auch in den kommenden Jahren ein Wachstumsfeld.
+	
+	% ------------------------------
+	% QUELLENVERZEICHNIS
+	% ------------------------------
+	\section*{Quellenverzeichnis}
+	\addcontentsline{toc}{section}{Quellenverzeichnis}
+	\begin{thebibliography}{99}
+		
+		\bibitem{BSI:SE}
+		BSI – Bundesamt für Sicherheit in der Informationstechnik: \textit{Social Engineering – Was ist das?} \url{https://www.bsi.bund.de/...}
+		
+		\bibitem{TrustedSec:SET}
+		TrustedSec: \textit{Social Engineer Toolkit (SET)}. \url{https://github.com/trustedsec/social-engineer-toolkit}
+		
+		\bibitem{ECSO:TL2026}
+		European Cyber Security Organisation (ECSO): \textit{Threat Landscape 2026 – Social Engineering}. Brüssel 2026.
+		
+		\bibitem{Hadnagy:2018}
+		Hadnagy, C.: \textit{Social Engineering: The Science of Human Hacking}. Wiley 2018.
+		
+		\bibitem{ct:Allianz}
+		Hefele, J.: \textit{Vishing trifft Versicherer}. c't 23/2025.
+		
+		\bibitem{BSI:Lagebericht2025}
+		BSI: \textit{Die Lage der IT-Sicherheit in Deutschland 2025}.
+		
+		\bibitem{Langner:Stuxnet}
+		Langner, R.: \textit{Stuxnet – The Real Story}. \url{https://www.langner.com/stuxnet-real-story}
+		
+		\bibitem{Twitter:SecurityUpdate}
+		Twitter Inc.: \textit{Update on the Security Incident of July 15, 2020}. \url{https://blog.twitter.com/...}
+		
+		\bibitem{Google:OperationAurora}
+		Google Inc.: \textit{Operation Aurora – Technical Details}. Google Security Blog 2010.
+		
+		\bibitem{ENISA:ThreatLandscape}
+		ENISA: \textit{ENISA Threat Landscape 2025 – Social Engineering Attacks}. Heraklion 2025.
+		
+		\bibitem{Jobs4BW}
+		Cybersecurity Remote Jobs 2026: \$99K-\$200K Salary Guide. Jobs4BW 2026.
+		
+		\bibitem{EvoTalents}
+		EvoTalents: Cybersecurity Salary Benchmarks 2026. \url{https://evotalents.com/en/blog/213}
+		
+		\bibitem{GermanVisaLaw}
+		German Residence Act (AufenthG), Section 19c.
+		
+		\bibitem{EUBlueCard}
+		EU Blue Card – Salary Requirements 2026. BAMF.
+		
+		% Quellen für erweiterte Grundlagen & Methodik
+		\bibitem{DalmiereClassification}
+		Dalmiere, A. et al.: \textit{A classification of manipulation technique used in social engineering attacks}. Thcon25, 2025.
+		
+		\bibitem{DivyaHackingMind}
+		Divya et al.: \textit{Hacking the mind: The psychology of social engineering manipulation}. AIP Conf. Proc. 3297, 2025.
+		
+		\bibitem{HoxhuntDefense}
+		Barker, J.: \textit{8 Social Engineering Defense Strategies for 2026}. Hoxhunt, 2026.
+		
+		\bibitem{UTSAScams}
+		UTSA: \textit{Common Scam Techniques: Social Engineering}. 2026.
+		
+		\bibitem{ISACA}
+		ISACA Mumbai: \textit{All You Need to Know About Social Engineering in Cybersecurity}. 2025.
+		
+		\bibitem{ENISAThreat}
+		ENISA: \textit{ENISA Threat Landscape 2025}. November 2025.
+		
+		\bibitem{DEV2026SE}
+		Securityelites: \textit{How Hackers Use Social Engineering in 2026}. DEV Community, 2026.
+		
+		\bibitem{AxisStats}
+		Axis Intelligence: \textit{Social Engineering 2026: The Industrialization of Human Deception}. Mai 2026.
+		
+		\bibitem{Psono2025}
+		Psono: \textit{Social Engineering 2025}.
+		
+		\bibitem{Forescout2026}
+		Forescout: \textit{Cybersecurity-Prognosen für 2026}. IAVC World, 2025.
+		
+		\bibitem{BSICyberMonitor}
+		BSI: \textit{Cybersecurity Monitor 2026}. Mai 2026.
+		
+		\bibitem{BanyaszPhishingSim}
+		Bányász et al.: \textit{Beyond Technology: Uncovering Social Engineering Vulnerabilities}. CEEeGov 2025, ACM.
+		
+		% Quellen für Dark Hat Social Engineering
+		\bibitem{ZeroFoxUnderground}
+		ZeroFox: \textit{Inside the Underground Economy of Social Engineering}. 2026.
+		
+		\bibitem{ForescoutPredictions}
+		Forescout: \textit{Cybersecurity-Prognosen für 2026}. November 2025.
+		
+		\bibitem{FlarePhaaS}
+		Flare: \textit{Threat Briefing for CISOs: Staying Ahead of the Industrialized Phishing Economy}. April 2026.
+		
+		\bibitem{PBaaS}
+		GuidePoint Security: \textit{Pig butchering a bigger threat with ‘as-a-service’ options}. Januar 2026.
+		
+		\bibitem{PhaasKits}
+		Barracuda: \textit{Here’s how phishing kits levelled up in 2025}. Februar 2026.
+		
+		\bibitem{SecurityWeek2026}
+		SecurityWeek: \textit{Cyber Insights 2026: Social Engineering}. Januar 2026.
+		
+		\bibitem{McAfeeBlog}
+		McAfee: \textit{AI-powered fraud skyrockets 1,210\% in 2025}. 2026.
+		
+		\bibitem{SANSBlog}
+		DeGrazia, M.: \textit{Stay Ahead of Ransomware: Initial Access via Evolving Social Engineering}. SANS, April 2026.
+		
+		\bibitem{TheHackerNewsUNC6692}
+		The Hacker News: \textit{UNC6692 Impersonates IT Help Desk via Microsoft Teams}. April 2026.
+		
+		\bibitem{ReliaQuestBlackBasta}
+		ReliaQuest: \textit{Are Former Black Basta Affiliates Automating Executive Targeting?}. April 2026.
+		
+		\bibitem{SecurityInsiderSalesforce}
+		Security-Insider: \textit{Hackergruppen UNC6040 und UNC6395 greifen Salesforce an}. Oktober 2025.
+		
+		\bibitem{CoalitionReport}
+		Coalition: \textit{2026 Cyber Claims Report}. 2026.
+		
+		\bibitem{ThreatSceneReport}
+		ThreatScene: \textit{Social Engineering 2026: Why Most Breaches Still Start With A Conversation}. 2026.
+		
+		\bibitem{FBIReport}
+		FBI IC3: \textit{2025 Internet Crime Report}. 2026.
+		
+		\bibitem{AllianzTrade}
+		Allianz Trade: \textit{Schadensstatistik Social Engineering 2025}. 2026.
+		
+		\bibitem{BKAStats}
+		Bundeskriminalamt: \textit{Cybercrime-Bundeslagebild 2025}. 2026.
+		
+		% Neue Quellen für Kinder- und Jugendschutz
+		\bibitem{ProtectorKinder}
+		Redaktion: \textit{Kinder als Sicherheitsleck im Cyberspace}. protector.de, 20. Februar 2026. \url{https://protector.de/kinder-als-sicherheitsleck-im-cyberspace}
+		
+		\bibitem{BIÖG2026}
+		Bundesinstitut für Öffentliche Gesundheit: \textit{Zwei Drittel der jungen Menschen in Deutschland erleben sexuelle Belästigung oder digitale Gewalt}. n-tv.de, 27. März 2026.
+		
+		\bibitem{InternetMatters2025}
+		Katherine Lai: \textit{Ein Jahr später: „Nudifizierungs“-Tools sind weiterhin leicht zugänglich – und genauso schädlich}. Internet Matters, 18. Dezember 2025. \url{https://www.internetmatters.org/de/hub/research/nudifying-tools-easy-to-access-and-harmful/}
+		
+		\bibitem{BAG2025}
+		Bundesarbeitsgemeinschaft Kinder- und Jugendschutz e.V.: \textit{Jugend(Medien)Schutz im KI-Zeitalter – KJug 2-2025}. Berlin, 26. Mai 2025.
+		
+		\bibitem{Bundesregierung2026}
+		Bundesministerin Karin Prien: \textit{Rede zur digitalen Teilhabe}. Deutscher Bundestag, 5. März 2026.
+		
+		\bibitem{DSK2026}
+		Konferenz der unabhängigen Datenschutzaufsichtsbehörden: \textit{Reformvorschläge zur Verbesserung des gesetzlichen Datenschutzes von Kindern}. Pressemitteilung, 9. Februar 2026.
+		
+		\bibitem{klicksafe}
+		klicksafe: \textit{EU-Initiative für mehr Sicherheit im Netz}. \url{https://www.klicksafe.de}
+		
+		\bibitem{tagesschau2026}
+		tagesschau.de: \textit{"Safer Internet Day": Suche nach einer "Kindersicherung" fürs Internet}. 10. Februar 2026.
+		
+		\bibitem{BKA2025}
+		Bundeskriminalamt: \textit{Polizeiliche Kriminalstatistik 2025}. Wiesbaden, 2026. \url{https://www.bka.de/...}
+		
+		% Neue Quellen für Psychologie und Skill-Level
+		\bibitem{CialdiniPrinciples}
+		Cialdini, Robert B.: \textit{Influence: The Psychology of Persuasion}. Harper Business, 2021.
+		
+		\bibitem{SwissCSC}
+		Swiss Cyber Security: \textit{Die Psychotricks der Cyberkriminellen}. 24. Oktober 2022. \url{https://www.swisscybersecurity.net/cybersecurity/2022-10-24/die-psychotricks-der-cyberkriminellen}
+		
+		\bibitem{HSUAugsburg}
+		Hochschule Augsburg: \textit{Social Engineering — DVA-Praktikumsberichte}. \url{https://www.hs-augsburg.de/homes/frankba/DVA-Praktikum/cyber_sicherheit/social_engineering.html}
+		
+		\bibitem{DiesecPhishing}
+		DieSec: \textit{The Psychology of Phishing}. November 2025. \url{https://diesec.com/2025/11/the-psychology-of-phishing/}
+		
+		\bibitem{SuspiciousMinds}
+		Elsevier: \textit{Suspicious minds: Psychological techniques correlated with online phishing attacks}. Mai 2025. \url{https://www.sciencedirect.com/science/article/pii/S2451958825001095}
+		
+		\bibitem{TUVRheinland}
+		TÜV Rheinland: \textit{Certipedia - Social Engineering Security Manager}. Zertifizierungs-ID 0000088539. \url{https://www.certipedia.com/quality_marks/0000088539}
+		
+		\bibitem{SESkills}
+		Social-Engineer.org: \textit{Get the Skills You Need to Be a Successful Social Engineer}. Security Through Education, März 2020. \url{https://www.social-engineer.org/newsletter/get-the-skills-you-need-to-be-a-successful-social-engineer/}
+		
+		\bibitem{SAITCourse}
+		Southern Alberta Institute of Technology (SAIT): \textit{ITSC 309 - Social Engineering Course Description}. 2026. \url{https://catalog.sait.ca/preview_course_nopop.php?catoid=171&coid=541259}
+		
+		\bibitem{ZipRecruiterSkills}
+		ZipRecruiter: \textit{What are the key skills and qualifications needed to thrive in the Social Engineering position}. \url{https://www.ziprecruiter.com/e/What-are-the-key-skills-and-qualifications-needed-to-thrive-in-the-Social-Engineering-position-and-why-are-they-important}
+		
+		\bibitem{SECareer}
+		Social-Engineer.org: \textit{How to Become a Social Engineer – Vol 05 Issue 61}. Security Through Education. \url{https://www.social-engineer.org/newsletter/social-engineer-newsletter-vol-05-issue-61/}
+		
+	\end{thebibliography}
+	
+\end{document}
