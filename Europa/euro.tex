@@ -1,0 +1,453 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=red,
+	urlcolor=blue}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{enumitem}
+
+\newcommand{\footcite}[1]{\textsuperscript{\cite{#1}}}
+
+\title{Schwächen der Europäischen Währungsunion und mögliche Reformansätze\\ \large Eine erweiterte wissenschaftliche Analyse}
+\author{Max Mustermann \and Maria Beispiel}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		Die Europäische Währungsunion (EWU) hat seit ihrer Einführung 1999 Stabilität und niedrige Inflation gebracht, leidet jedoch unter fundamentalen konstruktiven Schwächen. Diese Arbeit analysiert die strukturellen Defizite des Euro im Lichte der Theorie optimaler Währungsräume, der institutionellen Unvollkommenheiten (fehlende Fiskalunion, unvollendete Bankenunion) und der resultierenden makroökonomischen Ungleichgewichte – mit einem besonderen Fokus auf das TARGET2-System als versteckten Risikotransfermechanismus. Darüber hinaus werden die politischen Herausforderungen der EU untersucht, darunter das institutionelle Ungleichgewicht, das Demokratiedefizit, der Aufstieg des Populismus, Souveränitätskonflikte, der Reformstau, die Rechtsstaatlichkeitskrise, die umstrittene Migrationspolitik, die geopolitische Fragmentierung sowie die Rolle der deutschen Schuldenbremse. Ein eigener wirtschaftswissenschaftlicher Abschnitt kontrastiert keynesianische, ordnungspolitische und institutionalistische Perspektiven zu Zinspolitik, Fiskalpakt und Eurobonds. Darauf aufbauend werden schrittweise Reformoptionen diskutiert. Die Arbeit schließt mit einem polit-ökonomischen Ausblick.
+	\end{abstract}
+	
+	\section{Einleitung}
+	
+	Der Euro ist nach dem US-Dollar die zweitwichtigste Reservewährung der Welt, doch die Schuldenkrise 2010–2012, die Coronakrise und die jüngste Energiepreiskrise haben wiederkehrende Konstruktionsfehler offengelegt. Im Gegensatz zu nationalen Währungen verfügt die EWU über keine zentrale Fiskalbehörde, keine gemeinsamen Anleihen und nur unvollständige Mechanismen zur Risikoteilung.\footcite{DeGrauwe2020} Ziel dieses Beitrags ist es, die Schwachstellen systematisch zu erfassen und evidenzbasierte Lösungswege aufzuzeigen. Ein besonderes Augenmerk liegt auf dem TARGET2-Zahlungssystem, dessen Ungleichgewichte als Indikator für strukturelle Verwerfungen innerhalb der Eurozone dienen.
+	
+	\section{Theoretische Grundlagen: Optimale Währungsräume}
+	
+	Nach der Theorie optimaler Währungsräume (Mundell 1961) sollte eine Währungsunion dann gebildet werden, wenn:
+	\begin{enumerate}
+		\item Hohe Arbeitskräftemobilität zwischen den Mitgliedsregionen besteht,
+		\item Lohn- und Preisflexibilität gegeben ist,
+		\item symmetrische Konjunkturzyklen vorliegen und
+		\item ein fiskalischer Transfersmechanismus existiert.
+	\end{enumerate}
+	
+	Die EWU erfüllt keines dieser Kriterien vollständig. Die Arbeitskräftemobilität ist etwa fünfmal geringer als zwischen US-Bundesstaaten.\footcite{Feld2016} Dies führt dazu, dass asymmetrische Schocks (z.B. ein Tourismus-Einbruch in Griechenland vs. eine Industriekrise in Deutschland) nicht durch Arbeitswanderungen ausgeglichen werden können.\footcite{JagerHafner2013} Wie Jager und Hafner (2013) argumentieren, hat die Eurokrise die Anfälligkeit der EWU für asymmetrische Schocks deutlich gemacht, und die mangelnde Umsetzung der OCA-Kriterien bleibt ein zentrales Problem.\footcite{JagerHafner2013}
+	
+	\section{Identifizierte Schwachstellen des Euro}
+	
+	\subsection{Fehlende Fiskalunion und mangelnde Risikoteilung}
+	
+	Im Gegensatz zu den USA, wo automatische fiskalische Stabilisatoren (Bundessteuern, Arbeitslosenversicherung) bis zu 40\% eines regionalen Einkommensschocks absorbieren, liegt dieser Wert in der Eurozone unter 1\%.\footcite{DeGrauwe2020} Die Folge: Auf einen negativen Schock reagieren die nationalen Haushalte prozyklisch (Spardiktate), während der EZB die Hauptlast der Stabilisierung zufällt. Wie Feld, Schmidt, Schnabel und Wieland (2016) betonen, muss der Maastricht-Vertrag revitalisiert werden, um die zukünftige Stabilität der Eurozone zu verbessern und die EZB von ihrer Rolle als Krisenmanager zu entlasten.\footcite{Feld2016a} In einer aktuellen Analyse betont Zorell (2025) von der EZB, dass die neuen mittelfristigen fiskalischen Strukturpläne unter dem überarbeiteten Stabilitäts- und Wachstumspakt eine integrierte Perspektive erfordern, um fiskalische Tragfähigkeit, Reformen und Investitionen zu fördern.\footcite{Zorell2025}
+	
+	\subsection{TARGET2-System: Funktionsweise, Ungleichgewichte und latente Risiken}
+	
+	Das TARGET2-System (Trans-European Automated Real-time Gross Settlement Express Transfer System) ist das Rückgrat des gesamten Zahlungsverkehrs im Euroraum. Seine technische Effizienz hat jedoch eine politisch brisante Kehrseite: dauerhaft wachsende Forderungen und Verbindlichkeiten zwischen den nationalen Zentralbanken, die als Indikator für strukturelle Verwerfungen dienen.
+	
+	\subsubsection{Historische Entwicklung}
+	
+	Das System durchlief drei Phasen:
+	\begin{itemize}
+		\item \textbf{TARGET (1999–2008)}: Dezentrale Verbindung nationaler Echtzeit-Bruttoabwicklungssysteme (RTGS).
+		\item \textbf{TARGET2 (2008–2023)}: Einführung einer einheitlichen, zentralisierten Plattform ("Single Shared Platform", SSP) zur Effizienzsteigerung und Kostensenkung.
+		\item \textbf{T2 (seit 2023)}: Technologische Weiterentwicklung mit neuen Messaging-Standards (ISO 20022). In der wissenschaftlichen Debatte wird jedoch weiterhin der Begriff "TARGET2" verwendet.\footcite{Natixis2025}
+	\end{itemize}
+	
+	\subsubsection{Funktionsweise}
+	
+	Das System funktioniert wie ein gemeinsames Konto aller Eurosystem-Zentralbanken:
+	\begin{enumerate}
+		\item Jede nationale Zentralbank (z.B. Bundesbank, Banca d'Italia) sowie die EZB haben ein Konto im TARGET2-System.
+		\item Bei einer grenzüberschreitenden Zahlung (z.B. von einer deutschen Firma an eine italienische Lieferantin) wird der Betrag sofort vom Konto der Bundesbank abgebucht und dem Konto der Banca d'Italia gutgeschrieben.
+		\item Die italienische Zentralbank erhält eine Forderung (positiver Saldo) gegenüber dem Eurosystem, die deutsche eine Verbindlichkeit (negativer Saldo).
+	\end{enumerate}
+	Diese Salden sind zunächst ein neutraler, technischer Ausdruck des Zahlungsverkehrs. Problematisch werden sie, wenn sie dauerhaft und extrem anwachsen – dann zeigen sie Kapitalflucht, Wettbewerbsschwächen oder strukturelle Leistungsbilanzdefizite an.\footcite{Schularick2019}
+	
+	\subsubsection{Die Kontroverse um die Interpretation}
+	
+	Die Bewertung der TARGET2-Salden ist wissenschaftlich umstritten:
+	
+	\begin{itemize}
+		\item \textbf{Kritische Sicht ("Deutschland als Gläubiger")}: Die riesigen Forderungen der Bundesbank (aktuell ca. 987 Mrd. €) bergen ein erhebliches Kreditrisiko. Im Falle eines Euro-Austritts eines hoch verschuldeten Landes wären diese Forderungen wertlos.\footcite{Schularick2019}
+		\item \textbf{EZB-Sichtweise und "Novation"}: Die EZB betont, dass die Salden wertmäßig durch das gesamte Eurosystem gedeckt sind. Entscheidend ist die Entscheidung des EZB-Rats von 1999, alle Forderungen und Verbindlichkeiten auf die EZB als zentrale Gegenpartei zu übertragen – eine sogenannte "Novation". Murau und Giordano (2024) argumentieren, dass diese ex-post-Entscheidung ein zentraler, oft übersehener Moment war, der TARGET2 zu einem automatischen Finanzierungsinstrument für Zahlungsbilanzungleichgewichte machte.\footcite{Murau2024}
+		\item \textbf{Alternative Erklärung} nach Febrero, Uxó und Álvarez (2022): Die offizielle Erklärung der EZB für die steigenden Salden (basierend auf dem Ankaufprogramm) ist nicht überzeugend und steht im Widerspruch zu den empirischen Belegen für Italien und Spanien.\footcite{Febrero2022}
+	\end{itemize}
+	
+	\subsubsection{Entwicklung der Salden (Auswahl, Stand Ende 2024)}
+	
+	\begin{table}[H]
+		\centering
+		\caption{TARGET2-Salden ausgewählter Länder (in Mrd. €)}
+		\label{tab:target2}
+		\begin{tabular}{lcc}
+			\toprule
+			Land & Forderung (+) / Verbindlichkeit (-) \\
+			\midrule
+			Deutschland & +987 \\
+			Niederlande & +162 \\
+			Italien & -435 \\
+			Spanien & -312 \\
+			Griechenland & -89 \\
+			\bottomrule
+		\end{tabular}
+		\caption*{Quelle: Eigene Darstellung nach Bundesbank-Daten (2025) und \cite{Natixis2025}}
+	\end{table}
+	
+	Giordano und Lapavitsas (2024) sehen in diesen persistierenden Salden einen Beleg für ein "institutionelles Versagen" der Eurozone. TARGET2 ermögliche zwar das Überleben des Euro, verfestige aber gleichzeitig Ungleichgewichte, indem es Deutschland eine "hegemoniale Position" verschaffe.\footcite{Giordano2024}
+	
+	\subsubsection{Risiken des TARGET2-Systems}
+	
+	Das System birgt inhärente Risiken, die in drei Kategorien unterteilt werden können:
+	
+	\begin{table}[H]
+		\centering
+		\caption{Risikokategorien des TARGET2-Systems}
+		\label{tab:risiken}
+		\begin{tabular}{lp{8cm}p{5cm}}
+			\toprule
+			\textbf{Risikokategorie} & \textbf{Beschreibung} & \textbf{Praktisches Beispiel} \\
+			\midrule
+			Kreditrisiko (theoretisch) & Im Extremfall eines Euro-Austritts eines hoch verschuldeten Landes wäre die Bundesbank mit ihren Forderungen konfrontiert, die faktisch wertlos wären. & Viele Ökonomen halten dieses Risiko für gering, es kann aber nicht ausgeschlossen werden. \\
+			Operationelles Risiko (real) & Technische Ausfälle oder Hardware-Defekte können zu erheblichen Verzögerungen führen. & Im Februar 2025 führte ein Hardware-Defekt zu mehrstündigen Ausfällen, was Zahlungen von Gehältern, Renten und Sozialleistungen verzögerte.\footcite{Natixis2025} \\
+			Politisches Risiko (gravierend) & Die mangelnde Transparenz und fehlende Konditionalität der automatischen Kredite führt zu politischen Spannungen zwischen den Mitgliedsländern. & Kritiker vergleichen den unkonditionierten Charakter mit einem IWF-Programm, das an strenge Reformen geknüpft wäre. \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\subsubsection{Aktuelle Entwicklungen (2024–2026)}
+	
+	Eine aktuelle Analyse des Forschungsinstituts Natixis (2025) unterteilt die Entwicklung der TARGET2-Salden in drei Phasen:
+	\begin{enumerate}
+		\item Die erste Phase (2011/12) war geprägt von Kapitalflucht aus den südlichen Ländern.
+		\item Die zweite Phase (2015–2020) wurde durch die Ankaufprogramme der EZB (Quantitative Easing) dominiert, die die Gelder indirekt umverteilten.
+		\item Die dritte Phase (seit 2021) zeigt eine Stabilisierung auf hohem Niveau, wobei Frankreich seit Mitte 2024 einen starken Anstieg seiner Verbindlichkeiten aufweist. Dies wird jedoch eher auf Arbitragegeschäfte ausländischer Investoren und nicht auf systemische Panik zurückgeführt.\footcite{Natixis2025}
+	\end{enumerate}
+	
+	Zusammenfassend ist das TARGET2-System eine hochgradig effiziente, aber politisch unterkomplexe Konstruktion. Es hat die Eurozone vor dem Zerfall bewahrt, gleichzeitig aber strukturelle Ungleichgewichte in die Bilanzen der Zentralbanken verlagert, wo sie weiter schlummern.
+	
+	\subsection{Unvollendete Bankenunion und Staaten-Banken-Teufelskreis}
+	
+	Obwohl eine gemeinsame Bankenaufsicht (SSM) und ein Abwicklungsmechanismus (SRB) existieren, fehlt eine europäische Einlagensicherung (EDIS). Dadurch bleibt die Verbindung zwischen insolventen Staaten und schwachen Banken bestehen: Staatsanleihen der eigenen Länder werden weiterhin von nationalen Banken gehalten („Heimatschuss“). Während der Pandemie stiegen die Bestände an heimischen Staatsanleihen in italienischen Banken um 60\%.\footcite{ECB2023}
+	
+	Constâncio (2024) bietet eine umfassende Bewertung der Bankenunion nach zehn Jahren. Er stellt fest, dass zwar mit dem Einheitlichen Aufsichtsmechanismus ein bedeutender Fortschritt erzielt wurde, aber weiterhin Herausforderungen bei den Säulen der Bankenabwicklung und dem Fehlen eines gemeinsamen europäischen Einlagensicherungssystems (EDIS) bestehen.\footcite{Constancio2024}
+	
+	Evrard (2023) untersucht die Auswirkungen und die Angemessenheit der Einführung eines vollständig vergemeinschafteten europäischen Einlagensicherungssystems (EDIS) anhand eines einzigartigen mikroökonomischen Datensatzes für den Euroraum.\footcite{Evrard2023}
+	
+	Die politischen Hindernisse für EDIS sind erheblich. Wie eine Studie zeigt, weigert sich die deutsche Regierung, die Entwicklung eines EDIS zu akzeptieren, aus Sorge vor Moral Hazard.\footcite{EDISGermany}
+	
+	\subsection{Divergierende Wettbewerbsfähigkeit und reale Überbewertung}
+	
+	Länder ohne eigene Währung können eine reale Überbewertung nur durch innere Abwertung (Lohnsenkungen, Deflation) korrigieren. Dies ist sozial schmerzhaft und dauert Jahre. Tabelle~\ref{tab:wettbewerb} zeigt die Entwicklung der realen effektiven Wechselkurse (2010=100). Die Daten von Bruegel (2025) visualisieren die anhaltenden Wettbewerbsunterschiede zwischen den Mitgliedsländern.\footcite{Bruegel2025}
+	
+	\begin{table}[H]
+		\centering
+		\caption{Reale effektive Wechselkurse (preisbereinigt, 2010 = 100)}
+		\label{tab:wettbewerb}
+		\begin{tabular}{lccc}
+			\toprule
+			Land & 2015 & 2020 & 2024 \\
+			\midrule
+			Deutschland & 94 & 89 & 86 \\
+			Frankreich & 102 & 101 & 103 \\
+			Italien & 108 & 106 & 109 \\
+			Griechenland & 112 & 110 & 111 \\
+			\bottomrule
+		\end{tabular}
+		\caption*{Quelle: Bruegel-Datenbank (2025)\footcite{Bruegel2025}}
+	\end{table}
+	
+	\section{Wirtschaftswissenschaftliche Perspektiven: Eine Synthese der Debatte}
+	
+	Die wissenschaftliche Debatte über die Zukunft des Euro ist tief in unterschiedlichen wirtschaftstheoretischen Paradigmen verwurzelt. Sie reicht von Vertretern der keynesianischen Nachfragesteuerung über ordnungspolitische Denkschulen bis hin zu radikalen Reform- oder Austrittsszenarien. Im Folgenden werden die zentralen Kontroversen – von der optimalen Geldpolitik über die Neuausrichtung der Fiskalregeln bis hin zur Frage der Vergemeinschaftung von Schulden – gegenübergestellt.
+	
+	\subsection{Die Zins- und Inflationspolitik der EZB zwischen geldpolitischer Wende und fiskalischer Dominanz}
+	
+	Ein Schauplatz der wissenschaftlichen Auseinandersetzung ist die Geldpolitik der Europäischen Zentralbank (EZB). Kritiker wie der deutsche Ökonom Gunther Schnabl (Universität Leipzig) werfen der EZB vor, die Zinsen zu schnell und zu früh gesenkt zu haben, während die US-Notenbank Fed ihren Leitzins auf einem höheren Niveau belassen hat. Schnabl argumentiert, die Zinssenkungen der EZB seien „voreilig“ gewesen. Die EZB habe die Leitzinsen bereits im Juni 2024 gesenkt – drei Monate bevor die Inflationsrate unter die Zwei-Prozent-Marke fiel – und plane nun weitere Zinsschritte, obwohl die Inflation wieder über dem Zielwert liege.\footcite{Schnabl2025a} Diese Politik, so Schnabl, drohe in eine Phase übermäßiger Staatsausgaben zu treiben, denn die Staatsverschuldung in der Eurozone liege mit knapp 90 Prozent des BIP weit über den Maastricht-Kriterien von 60 Prozent. In Spanien liege sie sogar bei über 105 Prozent, in Frankreich bei über 110 Prozent und in Italien nahe 140 Prozent.\footcite{Schnabl2025a}
+	
+	Schnabl warnt zudem vor einer zunehmenden fiskalischen Dominanz, bei der die Geldpolitik ihre Unabhängigkeit verliere und sich den Finanzierungsbedürfnissen der hochverschuldeten Mitgliedstaaten unterordnen müsse. Das Risiko bestehe darin, „dass fiskalpolitische und finanzielle Dominanz die geldpolitische Unabhängigkeit der EZB aushöhlen“ und langfristig zu höherer Inflation führen könnten.\footcite{Schnabl2025c} Diese Position teilt auch EZB-Direktorin Isabel Schnabel, die wiederholt davor gewarnt hat, die nach der Finanzkrise geschaffenen Regeln zu unterlaufen. Sie forderte die Regierungen auf, die öffentlichen Schulden wieder auf einen tragfähigen Pfad zu bringen. Eine Alternative sei, „in einer unklaren Aufgabenverteilung stillschweigend zu akzeptieren, dass fiskalische und finanzielle Dominanz den geldpolitischen Spielraum aushöhlen – was die Unabhängigkeit der EZB allmählich untergraben und letztlich zu höherer Inflation führen würde“.\footcite{Schnabl2025c}
+	
+	Auf der anderen Seite des Spektrums sehen Ökonomen wie der belgische Professor Paul De Grauwe (London School of Economics) in den Zinsschritten der EZB ein notwendiges Korrektiv. De Grauwe hält die europäischen Fiskalregeln sogar für wachstumsschädlich. In einer Analyse für \textit{Social Europe} argumentiert er, dass die Reform des Stabilitäts- und Wachstumspakts aus dem Jahr 2024 die Austeritätspolitik zementiere und Investitionen abwürge. Die Regeln seien prozyklisch und verschlimmerten Krisen, anstatt sie zu glätten.\footcite{DeGrauwe2024}
+	
+	Eine empirische Überprüfung von De Grauwes These, wonach die Eurozone anfällig für sich selbst erfüllende Schuldenkrisen sei (die sogenannte „Fragilitätshypothese“), haben Ökonomen der Universität Bremen jüngst vorgenommen. Sie testeten die Reaktion der Märkte auf die Ankündigung des „Outright Monetary Transactions“ (OMT)-Programms der EZB. Ihr Befund: Das OMT-Programm hat genau jene sich selbst verstärkenden Dynamiken tatsächlich abgemildert, die De Grauwe beschrieben hatte.\footcite{Bremen2023}
+	
+	In der Mitte positioniert sich die offizielle Linie der EZB. Die im Jahr 2025 abgeschlossene Überprüfung der Geldpolitik hat das symmetrische Zwei-Prozent-Inflationsziel bekräftigt. Zugleich betont die EZB in ihren jüngsten Wirtschaftsberichten die Notwendigkeit, die Produktivität und Wettbewerbsfähigkeit des Euroraums durch Strukturreformen zu stärken.\footcite{ECBBulletin2025}
+	
+	\subsection{Das Spannungsfeld zwischen Haushaltsdisziplin und europäischen Investitionen: Der Streit um den Stabilitäts- und Wachstumspakt}
+	
+	Der reformierte Stabilitäts- und Wachstumspakt (SGP), der seit April 2024 in Kraft ist, hat eine grundlegende Neuausrichtung erfahren. An die Stelle der starren Drei-Prozent-Defizitgrenze ist eine stärker länderspezifische, ausgabenbasierte Regel getreten. Die Mitgliedstaaten müssen nun mittelfristige Haushaltsstrukturpläne vorlegen, die einen klaren Pfad für Nettoausgaben vorgeben.\footcite{EPRS2025}
+	
+	Dennoch bleibt die Anwendung des Pakts in der wissenschaftlichen Bewertung umstritten. Der Europäische Fiskalausschuss (European Fiscal Board) bescheinigt der Umsetzung eine grundsätzliche Stabilität, warnt jedoch vor neuen Herausforderungen. Ein besonderes Augenmerk gilt den massiven Verteidigungsausgaben als Reaktion auf den Ukraine-Krieg und der geplanten deutschen Schuldenbremse. Die EU-Kommission hat bereits die nationale Schutzklausel des Pakts aktiviert, um Verteidigungsinvestitionen zu ermöglichen, ohne das Defizitverfahren auszulösen.\footcite{Zenodo2026} Doch genau diese Flexibilisierung wird von Ökonomen wie Schnabl kritisiert. Er argumentiert, dass die ständige Aussetzung der Regeln das Vertrauen in den Pakt als Glaubwürdigkeitsanker untergrabe. Wenn jedes Land eine „nationale Schutzklausel“ für sich beanspruchen könne, sei der Pakt faktisch tot.\footcite{Schnabl2025a}
+	
+	Das Europäische Parlament warnt zudem in einer Analyse vom Dezember 2025, dass der Reformpakt in einem Umfeld moderaten Wachstums, stabiler Inflation und steigendem öffentlichem Ausgabendruck implementiert werde – was die Konsolidierungsbemühungen zusätzlich erschwere.\footcite{EPRS2025} Die Projektionen der EU-Kommission gehen von einem durchschnittlichen Defizit von 3,3 Prozent des BIP im Jahr 2025 und 3,4 Prozent im Jahr 2026 aus, mit einem Anstieg der Schuldenquote auf 84,5 Prozent im Jahr 2025.\footcite{EPRSDeficit2025}
+	
+	\subsection{Eurobonds: „Tabubruch“ oder „strategisches Werkzeug“ für die Zukunft der EU?}
+	
+	Die Frage nach gemeinsamen europäischen Anleihen (Eurobonds) ist der zentrale wirtschaftspolitische Konflikt der Gegenwart. Sie trennt die Wissenschaftler in zwei Lager: Befürworter wie den ehemaligen griechischen Finanzminister und Ökonomen Yanis Varoufakis sowie Kritiker wie den deutschen Ökonomen Gunther Schnabl.
+	
+	\subsubsection{Die Position der Befürworter: Eurobonds als sicherer Anker und Investitionsvehikel}
+	
+	Varoufakis vertritt die These, dass die Europäische Union vor einer grundlegenden Weggabelung stehe: „Wir haben zwei Möglichkeiten – wir stehen an einem Scheideweg. Wir können uns in Richtung einer Föderation bewegen, oder wir können den Euro auflösen.“\footcite{Varoufakis2026} Die EU-Führung wähle jedoch weder das eine noch das andere und falle stattdessen „in die Leere dazwischen“.\footcite{Varoufakis2026} Varoufakis kritisiert das institutionelle Design des Euro als „Tragödie“: eine mächtige Zentralbank, der 20 nationale Finanzministerien gegenüberstünden, die sich nicht wirklich auf sie verlassen könnten.\footcite{Varoufakis2026}
+	
+	Auch der französische Präsident Emmanuel Macron hat sich in die Debatte eingeschaltet und „zukunftsorientierte Eurobonds“ für strategische Investitionen in Verteidigung, Klimaschutz, Künstliche Intelligenz und Quantencomputing gefordert.\footcite{Euractiv2026} Mario Draghi, ehemaliger EZB-Präsident und italienischer Ministerpräsident, hat in seinem Bericht zur Wettbewerbsfähigkeit der EU ebenfalls vehement für eine gemeinsame Investitionskapazität geworben. Er argumentiert, dass bestimmte öffentliche Güter – allen voran Verteidigung – nur auf EU-Ebene sinnvoll finanziert werden könnten, entweder weil es den nationalen Regierungen an der nötigen Größe fehle oder weil eine nationale Finanzierung die Fragmentierung des Binnenmarkts vertiefen würde.\footcite{Euractiv2026}
+	
+	ECB-Chefökonom Philip Lane hat die Debatte weiter angeheizt. Er argumentiert, dass eine Ausweitung der gemeinsamen Verschuldung die internationale Rolle des Euro stärken und einen tiefen Markt für ein sicheres europäres Vermögenswert (Safe Asset) schaffen würde. Allerdings knüpft Lane dies an eine entscheidende Bedingung: Jeder Schritt in Richtung mehr gemeinsamer Schulden müsse von strikter nationaler Haushaltsdisziplin begleitet sein, um Moral-Hazard-Risiken zu vermeiden.\footcite{Lane2026} Auch EZB-Direktorin Isabel Schnabel hat sich überraschend zu Wort gemeldet. Sie hält den gegenwärtigen Moment für eine „gute Zeit, um die Debatte über Eurobonds wiederzubeleben“.\footcite{Schnabl2025b}
+	
+	Eine aktuelle Modellstudie der Wirtschaftswissenschaftler Caiani und Catullo (2024) untermauert die Befürworter-Position. Sie zeigt in einem Multi-Länder-Modell, dass eine zwischenstaatliche Fiskaltransferunion mit eigener Finanzkraft als Stabilisator des internationalen Handels wirken und die BIP-Leistung der Union verbessern kann – ohne die Stabilität der öffentlichen Finanzen zu beeinträchtigen.\footcite{Caiani2024}
+	
+	\subsubsection{Die Gegenposition: Eurobonds als „Fiskalfalle“ und Risiko für die Steuerzahler}
+	
+	Die Kritiker sehen in Eurobonds vor allem eine Gefahr für die Haushaltsdisziplin. Der Europäische Steuerzahlerbund (European Taxpayers‘ Association) warnt in einer Analyse vor einer „drohenden Fiskalfalle“. Die Vergemeinschaftung von Schulden würde die Anreize für nationale Sparprogramme zerstören und die Lasten für die soliden Steuerzahler in den Geberländern endlos erhöhen.\footcite{Taxpayers2026} Der neuseeländische Ökonom Oliver Hartwich argumentiert ähnlich: Die EU ignoriere die Grundregel der Ökonomie 101: „Wer ausgibt, muss auch bezahlen“. Die dauerhafte Emission von Eurobonds würde die fiskalische Verantwortung verwässern.\footcite{Hartwich2026}
+	
+	Auch Gunther Schnabl argumentiert, dass die Rückkehr zur Debatte über Eurobonds vor allem aus den südeuropäischen Ländern komme, die unter hohem Schuldendruck stünden, aber kaum Konsolidierungsanstrengungen zeigten.\footcite{Schnabl2025a}
+	
+	\subsection{Theoretische Grundsatzdebatten: Die unvollendete Währungsunion aus wissenschaftlicher Sicht}
+	
+	Jenseits der Tagespolitik wird der Euro auch aus grundsätzlicher wissenschaftlicher Perspektive analysiert. Eine zentrale Linie ist die Frage, ob die Eurozone überhaupt ein optimaler Währungsraum ist. Nobelpreisträger Joseph Stiglitz hat sich in diese Debatte mit einer vernichtenden Diagnose eingemischt. Die Entscheidung für eine gemeinsame Währung ohne die Institutionen, die sie tragfähig machen würden, sei „fatal“ gewesen und der Euro von Geburt an zum Scheitern verurteilt gewesen.\footcite{Stiglitz} Eine aktuelle Analyse des Flossbach-von-Storch-Forschungsinstituts bestätigt diese Einschätzung: Der Euro sei kein optimaler Währungsraum, und die Divergenzen innerhalb der Eurozone wüchsen – was den Euro wirtschaftlich und politisch instabil mache.\footcite{Schnabl2025a}
+	
+	Gleichzeitig zeigt eine Studie des European Parliamentary Research Service, dass die Messung der internen makroökonomischen Asymmetrien innerhalb der Eurozone seit der Einführung des Euro hochkomplex ist und kein einfaches Bild zulässt.\footcite{EPRS2025a}
+	
+	Hinzu kommt die Frage der internationalen Rolle des Euro. EZB-Chefökonom Philip Lane räumte im Frühjahr 2026 ein, dass der Euro den US-Dollar nicht als globale Leitwährung ablösen könne. Die größte Hürde sei das Fehlen eines tiefen Marktes für sichere Euro-Anlagen. Um den Euro international zu stärken, bedürfe es daher einer größeren Menge gemeinsamer Schuldtitel, die gemeinsam von den Mitgliedstaaten garantiert werden.\footcite{Lane2026a} Diese institutionelle Schwäche – ein mächtiges Geld, aber keine einheitliche Finanzpolitik – ist der Kern des wissenschaftlichen Dilemmas.
+	
+	\subsection{Zusammenfassung der ökonomischen Kontroversen}
+	
+	Die wirtschaftswissenschaftliche Debatte über den Euro lässt sich entlang eines idealtypischen Spektrums ordnen:
+	\begin{itemize}
+		\item \textbf{Keynesianische Position (De Grauwe, Stiglitz, Varoufakis):} Notwendigkeit einer starken Fiskalkapazität, Eurobonds als Stabilisator, Kritik an der Austeritätspolitik.
+		\item \textbf{Ordnungspolitische Position (Schnabel, Schnabl, Feld):} Strikte Haushaltsdisziplin, Vorrang von Strukturreformen vor Transfers, Risiken der Vergemeinschaftung von Schulden (Moral Hazard).
+		\item \textbf{Position der Institutionen (EZB, EU-Kommission, Sachverständigenrat):} Pragmatischer Mittelweg: Reform des SGP, Vollendung der Bankenunion und der Kapitalmarktunion, gezielte gemeinsame Investitionen (NextGenerationEU), aber keine dauerhaften Eurobonds ohne strenge Konditionalität.
+	\end{itemize}
+	Jede dieser Schulen liefert gültige Argumente. Die Zukunft des Euro wird davon abhängen, ob es gelingt, die nationalen Fiskalinteressen mit der Notwendigkeit einer gemeinsamen Investitions- und Stabilisierungspolitik in Einklang zu bringen.
+	
+	\section{Politische Herausforderungen der EU}
+	
+	\subsection{Institutionelles Ungleichgewicht – Die schleichende Entmachtung des Europäischen Parlaments}
+	
+	Eine zentrale politische Schwäche der EU ist das zunehmende institutionelle Ungleichgewicht zwischen den exekutiven Organen (Kommission, Rat) und dem direkt gewählten Europäischen Parlament. Während die EU immer tiefgreifendere Entscheidungen trifft – von Verteidigungspaketen bis zur Industriepolitik – wird das Parlament zunehmend an den Rand gedrängt. Kritiker sprechen von einer "schleichenden Exekutivdominanz", die das demokratische Fundament der EU untergräbt.
+	
+	Ein besonders markantes Beispiel ist die wiederholte Verwendung von Artikel 122 des Vertrags über die Arbeitsweise der Europäischen Union (AEUV), der es der Kommission erlaubt, ohne Beteiligung des Parlaments zu handeln. Ursprünglich für echte Notfälle wie die COVID-19-Pandemie vorgesehen, wurde diese Rechtsgrundlage jüngst für das 150-Milliarden-Euro-Verteidigungsprogramm "Security Action for Europe" (SAFE) genutzt – ohne dass eine ersichtliche, unerwartete Notlage bestand. Der Rechtsausschuss des Europäischen Parlaments hat daraufhin einstimmig die Erhebung einer Nichtigkeitsklage vor dem Europäischen Gerichtshof beschlossen. Der SPD-Europaabgeordnete René Repasi, Vorsitzender der Europa-SPD, warnte: "Die wiederholte Entscheidung von Kommission und Mitgliedstaaten, das Parlament mithilfe von Notstandsgesetzgebung zu umgehen, beobachte ich mit großer Sorge. ... Die EU-Kommission hat mit ihrem Vorschlag für ein Anleiheninstrument über 150 Milliarden Euro auf einer Rechtsgrundlage ohne parlamentarische Beteiligung den Bogen überspannt."\footcite{Repasi2025}
+	
+	Das Institut Jacques Delors diagnostiziert in einer Analyse vom Juni 2025 eine "schleichende Marginalisierung" des Parlaments. Drei Beobachtungen verdeutlichen diesen Niedergang: Erstens ist die pro-europäische Mehrheit im Parlament fragiler denn je; zweitens wird das Parlament in strategischen Fragen (Ukraine-Krieg, internationale Handelsabkommen) systematisch übergangen; drittens droht ein demokratisches Risiko, wenn das Parlament als "Stimme des Volkes" verstummt. Die zentrale Erkenntnis lautet: "The European Parliament is at a crossroads. Between marginalisation, political instability and permanent crisis, its ability to embody a vibrant European democracy is being tested."\footcite{Delors2025}
+	
+	Während die EU in den letzten Jahren erweiterte Befugnisse in Bereichen wie Sicherheit, Verteidigung und Geopolitik erhalten hat, wurden diese Entscheidungen oft außerhalb des traditionellen Gesetzgebungsprozesses getroffen – zu Gunsten der Exekutive. Das Parlament verfügt zwar über ein wichtiges Instrument: den mehrjährigen Haushalt. Es kann Mittel blockieren oder an Bedingungen knüpfen, wie im Fall des Omnibus-Projekts oder der Rückzahlung des NextGenEU-Plans, dessen Zinszahlungen (25 Milliarden Euro) fast 20\% des jährlichen EU-Haushalts (167 Milliarden Euro) ausmachen. Doch angesichts eines zunehmend restriktiven politischen Rahmens ist selbst diese Budgetmacht begrenzt.\footcite{Delors2025}
+	
+	Parallel dazu nimmt die Rechtsstaatlichkeitskrise in den Mitgliedstaaten zu. Der Liberties-Bericht 2026 von fast 40 Menschenrechtsorganisationen aus 22 EU-Ländern kommt zu dem Schluss, dass die Demokratie weiterhin im Niedergang begriffen ist. Eine besorgniserregende "Umsetzungslücke" offenbart sich: 93\% aller Empfehlungen aus dem Jahr 2025 waren Wiederholungen aus früheren Jahren; bei 61\% sind keine sichtbaren Fortschritte zu erkennen, bei 13\% wurde ein Rückschritt festgestellt. Keine einzige Empfehlung wurde vollständig umgesetzt. Zudem wird das Instrumentarium zur Rechtsstaatlichkeit selbst zunehmend politisch instrumentalisiert. Kritiker – darunter Abgeordnete der Patrioten-für-Europa-Fraktion – warnen in einer parlamentarischen Anfrage vom April 2025 vor einem "möglichen Abdriftens der Kommission auf einen autoritären Kurs". Der Konditionalitätsmechanismus, der EU-Mittel an Rechtsstaatlichkeitskriterien knüpft, werde "einseitig angewendet" und gegen Regierungen wie Polen und Ungarn politisch instrumentalisiert.\footcite{Liberties2026}\footcite{Furet2025}
+	
+	\subsection{Demokratiedefizit und sinkendes Vertrauen in die EU-Organe}
+	
+	Das viel diskutierte "Demokratiedefizit" der EU hat sich in den letzten Jahren weiter verschärft. Eine Bürgerinitiative vom Mai 2026 stellt unumwunden fest: "Two thirds of the Commission's proposals run counter to the interests, wishes and health of European citizens. The Commission became the representative of the lobbies, exclusively. European citizens rightly do not trust and do not approve of the Commission."\footcite{Citizen2026}
+	
+	Der Liberties-Bericht 2026 dokumentiert eine besorgniserregende Entwicklung in vielen Mitgliedstaaten. Zehn Länder verharren in der Kategorie "Stagnierer" (darunter Polen, Tschechien, Griechenland). Die Zahl der "Slider" – Länder, in denen die Rechtsstaatlichkeit rückläufig ist – stieg auf sechs (Belgien, Dänemark, Frankreich, Deutschland, Malta, Schweden). Fünf "Demontierer" (Bulgarien, Kroatien, Ungarn, Italien, Slowakei) untergraben aktiv die Institutionen der Rechtsstaatlichkeit. Alarmierenderweise spiegelten die EU-Institutionen selbst viele dieser Probleme wider: Sie normalisierten außerordentliche Gesetzgebungsverfahren, bauten Schutzmechanismen ab und führten Kampagnen gegen Kontrollorganisationen.\footcite{Liberties2026}
+	
+	Ein weiterer Brennpunkt ist der "Democracy Shield" der Europäischen Kommission – ein Bündel von Maßnahmen zum Schutz der Demokratie vor Desinformation und ausländischer Einflussnahme. Kritiker wie der Analyst Norman Lewis (MCC Brussels) sehen darin jedoch weniger einen Schutz der Demokratie als vielmehr einen Versuch, sich "vor politischem Dissens abzuschirmen". Lewis zufolge geht es nicht mehr darum, die Bürgerbeteiligung zu stärken, sondern sie "zu kontrollieren, neu zu interpretieren oder bei Bedarf zu delegitimieren, wenn Wahlergebnisse nicht mit den Prioritäten der Kommission übereinstimmen".\footcite{Lewis2026}
+	
+	\subsection{Europaskeptizismus und Populismus – Die Polarisierung des Europäischen Parlaments}
+	
+	Die Europawahl 2024 hat die politische Landschaft des Europäischen Parlaments grundlegend verändert. Die traditionelle Balance ist zerbrochen: Der Aufstieg rechtsextremer Fraktionen (Patriots for Europe, ECR, Europe of Sovereign Nations), der Niedergang der Renew-Fraktion und eine absolute Mehrheit, die auch ohne die historischen pro-europäischen Kräfte erreichbar ist, haben zu einem polarisierteren und unberechenbareren Parlament geführt.\footcite{Delors2025}
+	
+	Die Forschung zeigt einen klaren Zusammenhang zwischen Populismus und EU-Skepsis. Marcos-Marne (2024) untersucht den Zusammenhang zwischen Radikalismus, Populismus und Euroskepsis im Kontext der Europawahl 2024. Euroskeptische Ideen sind demnach vor allem unter den Kräften der radikalen Rechten verbreitet. Nationale Themen dominierten den Wahlkampf, und Wähler radikaler rechter Parteien sind kritischer gegenüber der EU eingestellt.\footcite{MarcosMarne2024}
+	
+	Gleichzeitig fiel der befürchtete rechte Erdrutschsieg geringer aus als erwartet. Zwar verbesserte sich die AfD von neun auf fünfzehn Sitze, blieb aber weit hinter der CDU/CSU zurück. Vox in Spanien gewann zwei Sitze hinzu, blieb aber unter zehn Prozent. In den Niederlanden unterlag Wilders' PVV dem Mitte-links-Bündnis. Die Rosa-Luxemburg-Stiftung resümiert: "2024 sollten wir Zeug*innen eines reaktionären Überholvorgangs im kontinentalen Maßstab werden: Populist*innen und Extremist*innen würden die politischen Mainstream-Formationen des Parlaments zu Fall bringen. Doch nach der Wahl erwies sich das Gerede von einem Erdrutschsieg als übertrieben."\footcite{RosaLux2024}
+	
+	\subsection{Souveränitätskonflikte zwischen Nationalstaaten und EU-Organen}
+	
+	Die grundlegende Spannung zwischen nationaler Souveränität und europäischer Integration bleibt ein ungelöstes Kernproblem. Die IPG-Journal-Analyse "Nationale Ego-Trips" argumentiert, dass der sogenannte "Souveränismus" – der Wunsch von EU-Staaten, auf eigene Faust zu handeln – eine gravierendere Bedrohung darstellt als Populismus oder Nativismus. "Er beschreibt den Wunsch von EU-Staaten, auf eigene Faust und notfalls gegen die Präferenzen der übrigen Mitglieder zu handeln – und verhindert damit, dass Europa die großen Herausforderungen dieses Jahrhunderts wirksam angeht. Diese sind offenkundig transnationaler Natur: von der Finanz- über die Migrations- und die Corona-Krise bis hin zur durch Russland ausgelösten Sicherheitskrise."\footcite{IPG2025}
+	
+	Der Konflikt zeigt sich besonders deutlich in der Anwendung des Rechtsstaatlichkeitsmechanismus. Eine parlamentarische Anfrage vom April 2025 kritisiert, dass die Kommission "häufig ihre Befugnisse überschreitet und den Mechanismus einseitig anwendet, wobei sie etwa die Regierungen Polens und Ungarns ins Visier nimmt". Dabei werde das Subsidiaritätsprinzip missachtet und EU-Mittel "unter eklatanter Missachtung des Subsidiaritätsprinzips, der Zuständigkeiten der Mitgliedstaaten und der in den Verträgen festgelegten rechtlichen Grenzen" direkt an Endbegünstigte verteilt.\footcite{Furet2025}
+	
+	\subsection{Reformstau und Vetospieler – Das Einstimmigkeitsprinzip als Blockademechanismus}
+	
+	Die EU ist bei wichtigen politischen Themen regelmäßig durch das Vetorecht einzelner Staaten blockiert. Die Reformdebatte um das Einstimmigkeitsprinzip berührt eine Kernfrage: "Soll die Europäische Union vor allem ein Bündnis souveräner Staaten sein oder soll die EU auch ohne Zustimmung eines Teils ihrer Mitglieder handeln können?"\footcite{DLF2026}
+	
+	Der deutsche Außenminister Johann Wadephul (CDU) fordert angesichts der sicherheitspolitischen Lage ein flexibleres Europa mit Mehrheitsentscheidungen: "Es gehe 'um Leben und Tod'."\footcite{Wadephul2026} Kritiker weisen jedoch auf ein grundlegendes Dilemma hin: "Die Abschaffung der Einstimmigkeit setzt in der EU Einstimmigkeit voraus."\footcite{SZ2026} Vertragsänderungen müssten von allen 27 Mitgliedstaaten ratifiziert werden – ein nahezu unmögliches Unterfangen in einer zunehmend polarisierten Union.
+	
+	Die Heinrich-Böll-Stiftung hat 2024 einen umfassenden Reformkatalog vorgelegt, der unter anderem die Flexibilisierung des Einstimmigkeitsprinzips, die Stärkung des Parlaments und die Schaffung eigener EU-Einnahmen vorschlägt.\footcite{Boell2024} Doch angesichts des Widerstands souveränistischer Kräfte und der notwendigen Einstimmigkeit für Vertragsänderungen bleiben substanzielle Reformen vorerst blockiert.
+	
+	\subsection{Rechtsstaatlichkeitskrise in Polen und Ungarn – Die Grenzen von Artikel 7}
+	
+	Die "nukleare Option" des EU-Vertrags – das Verfahren nach Artikel 7 zur Suspendierung von Mitgliedschaftsrechten bei schwerwiegenden und anhaltenden Verstößen gegen EU-Grundwerte – hat sich als stumpfes Schwert erwiesen. Gegen Ungarn wurde das Verfahren 2018 eingeleitet, bewegt sich aber seit Jahren kaum voran. Gegen Polen wurde es 2024 eingestellt – nicht nach Sanktionen, sondern erst nachdem die neu gewählte polnische Regierung zugesagt hatte, die umstrittenen Justizreformen rückgängig zu machen.\footcite{Prema2025}
+	
+	Eine Analyse des Jean-Monnet-Lehrstuhls an der Universität des Saarlandes kommt zu dem Schluss: "Article 7 remains a blunt instrument that member-states are reluctant to deploy against each other."\footcite{Prema2025} Stattdessen hat die Kommission auf andere Instrumente zurückgegriffen – insbesondere die Konditionalitätsverordnung, die EU-Mittel an die Einhaltung rechtsstaatlicher Grundsätze knüpft. Aber auch dieses Instrument ist umstritten. Kritiker werfen der Kommission vor, es politisch gegen Ungarn und Polen zu instrumentalisieren. Die ungarische Regierung spricht von einem "politischen Angriff" und "finanzieller Erpressung".\footcite{Steger2025}
+	
+	Die jüngsten Entwicklungen zeigen eine gewisse Dynamik: Im Mai 2024 wurde das Verfahren gegen Polen abgeschlossen, nachdem die Regierung Fortschritte bei Justizreformen erzielt hatte.\footcite{Council2025} Gegen Ungarn hingegen werden weiterhin regelmäßige Anhörungen durchgeführt. Der Liberties-Bericht 2026 stuft Ungarn weiterhin als "Demontierer" ein.\footcite{Liberties2026} Deutsche und französische Regierungen haben den Rat im Juni 2025 aufgefordert, förmliche Anhörungen nach Artikel 7 durchzuführen – ein Zeichen für wachsende Ungeduld.\footcite{Folk2025}
+	
+	\subsection{Migrationspolitik als politisches Dauerbrenner}
+	
+	Die Asyl- und Migrationspolitik bleibt eines der konfliktreichsten Politikfelder der EU. Der im Dezember 2025 verabschiedete Gemeinsame Europäische Asylsystem (GEAS) sieht unter anderem einheitliche Asylverfahren an den EU-Außengrenzen vor, die Abschiebung direkt von dort sowie die Änderung des Dublin-Verfahrens.\footcite{Bundestag2025}
+	
+	Die politischen Fronten verlaufen tief. Bundesinnenminister Alexander Dobrindt (CSU) verteidigte die Reform als "Grundlage, um die Migrationswende in Europa durchzusetzen". Die AfD kritisierte die Reform als "hohlen Popanz", während Grüne und Linke massive Asylrechtsverschärfungen zu Lasten Schutzsuchender beklagten.\footcite{Bundestag2025} Der Grünen-Vorsitzende Felix Banaszak warf CDU und CSU vor, im Europäischen Parlament gemeinsam mit der AfD für die Verschärfungen gestimmt zu haben: "In Europa gibt es keine Brandmauer mehr – und Friedrich Merz schaut stillschweigend zu."\footcite{Banaszak2025}
+	
+	Die FPÖ kritisierte die Reform als "bloße Augenauswischerei" und forderte echte restriktive Maßnahmen zur Bewahrung der "europäischen Identität".\footcite{FPÖ2025} Die AfD bemängelte, dass Grenzschutz nicht stattfinde, Abschiebungen nicht liefen und Pull-Faktoren nicht beseitigt würden.\footcite{Curio2025} Diese tiefen Risse verlaufen nicht nur zwischen, sondern auch innerhalb der Mitgliedstaaten – ein Spiegelbild der zunehmenden Polarisierung der europäischen Politik.
+	
+	\subsection{Geopolitische Fragmentierung und militärische Abhängigkeit}
+	
+	Die Rückkehr Donald Trumps ins Weiße Haus im Januar 2025 hat die transatlantischen Beziehungen grundlegend erschüttert. Analysten sprechen vom "Trump-Schock": Die zweite Trump-Administration sei von rhetorischer Skepsis zu einer Politik aktiver Feindseligkeit gegenüber dem europäischen Projekt übergegangen, wobei der US-Präsident wiederholt die Glaubwürdigkeit von NATO-Artikel 5 in Frage stellte.\footcite{Behorizon2026}
+	
+	Ein Fenster für europäische strategische Autonomie hat sich geöffnet, das "nicht aus freier Wahl entstanden ist, sondern aus struktureller Notwendigkeit".\footcite{Behorizon2026} Die Analyse von BE Horizon kommt zu dem Schluss: "Europe is entering a narrow but consequential window in which strategic autonomy is no longer optional but structurally necessary."\footcite{Behorizon2026}
+	
+	Die EU hat mit Plänen wie "ReArm Europe 2030" und dem SAFE-Programm (150 Milliarden Euro) reagiert. Doch die Hindernisse sind gewaltig: extrem hohe rechtliche Hürden für eine EU-Armee, unüberwindbare Souveränitätsvorbehalte, divergierende strategische Kulturen, das ungelöste nukleare Dilemma und fortbestehende Abhängigkeiten bei Schlüsselkapazitäten. Hinzu kommt der "Aufstieg souveränistischer Kräfte", der die Bereitschaft zu Kompetenzübertragungen reduziert und Ratifikationspfade noch unwahrscheinlicher macht.\footcite{Wind2026}
+	
+	Europa steht vor einer grundlegenden strategischen Wahl: "entweder diese Gelegenheit zu einer autonomen, widerstandsfähigen und geopolitischen Union zu nutzen oder in einer Welt, die zunehmend von Zwang, Fragmentierung und Großmachtkonkurrenz geprägt ist, einen strategischen Niedergang zu riskieren."\footcite{Behorizon2026}
+	
+	\subsection{Die deutsche Schuldenbremse als Hindernis für europäische Investitionen}
+	
+	Ein spezifisches, aber folgenreiches Problem ist die deutsche Schuldenbremse. Als größte Volkswirtschaft der Eurozone blockiert Deutschland regelmäßig gemeinsame europäische Investitionsvorhaben oder europäische Schuldenaufnahmen – aus Sorge vor einer Verletzung seiner eigenen fiskalischen Regeln.
+	
+	Eine Analyse des IfW Kiel zeigt, dass die deutsche Fiskalpolitik aufgrund der Schuldenbremse stark eingeschränkt ist, was die Fähigkeit Deutschlands beeinträchtigt, als Motor europäischer Konjunktur- und Investitionspolitik zu wirken. Deutsche Wirtschaftsprofessoren stehen den meisten Vorschlägen zur Reform der Eurozone skeptisch gegenüber, einschließlich gemeinsamer Anleihen oder einer Fiskalkapazität.\footcite{Ifo2018}
+	
+	Die französische Regierung und die Europäische Kommission drängen auf mehr fiskalischen Spielraum für gemeinsame Investitionen, insbesondere in Verteidigung und grüne Technologien. Doch die deutsche Regierung – unabhängig von ihrer parteipolitischen Zusammensetzung – bleibt aus verfassungsrechtlichen Gründen äußerst zurückhaltend. Dieses Spannungsfeld zwischen nationaler Fiskaldisziplin und europäischem Investitionsbedarf ist eine der zentralen politischen Blockaden, die eine tiefere Integration behindert.\footcite{Ifo2018}
+	
+	\section{Lösungsansätze: Wie können die Schwächen behoben werden?}
+	
+	Die Reformdiskussion unterscheidet drei Zeithorizonte:
+	
+	\subsection{Kurzfristige makroökonomische Flexibilisierung}
+	
+	\begin{itemize}
+		\item \textbf{Aktivierung der Generalklausel} des Stabilitäts- und Wachstumspakts bei systemischen Krisen (wie in COVID-19-Pandemie). Die Europäische Kommission hat kürzlich vorgeschlagen, die nationale Ausweichklausel auf koordinierte Weise zu aktivieren.\footcite{Zorell2025}
+		\item \textbf{Einführung eines europäischen "Staaten-Banken-Krisenmanagement"-Instruments} analog zum SURE-Programm (vorübergehende Unterstützung von Kurzarbeitsregelungen).
+		\item \textbf{Flexible Auslegung der Beihilferegeln} für staatliche Investitionen in die grüne und digitale Transformation.
+	\end{itemize}
+	
+	\subsection{Mittelfristige institutionelle Reformen}
+	
+	\subsubsection{Vollendung der Bankenunion}
+	
+	Der kritischste Baustein ist die Europäische Einlagensicherung (EDIS). Ein Kompromissvorschlag des Europäischen Parlaments sieht eine schrittweise Vergemeinschaftung vor:
+	\begin{enumerate}
+		\item Rückversicherungsphase (nur liquiditätsunterstützung),
+		\item Co-Versicherungsphase (gemeinsame Haftung für Einlagen über 100.000 €),
+		\item Vollversicherungsphase (ab dem zehnten Jahr).
+	\end{enumerate}
+	Gleichzeitig müssten Risikoabbau-Maßnahmen (Reduzierung notleidender Kredite) national forciert werden. Constâncio (2024) plädiert für gezielte Reformen, um bestehende Lücken zu schließen und die europäische Bankenintegration zu verbessern.\footcite{Constancio2024}
+	
+	\subsubsection{Kapitalmarktunion (CMU)}
+	
+	Eine echte Kapitalmarktunion würde die übermäßige Abhängigkeit von Bankkrediten verringern. Konkrete Schritte:
+	\begin{itemize}
+		\item Harmonisierung von Insolvenz- und Gesellschaftsrecht.
+		\item Einführung eines europäischen Privatrentenprodukts (PEPP) zur Mobilisierung von langfristigem Kapital.
+		\item Stärkung der europäischen Wertpapieraufsicht (ESMA) als einheitlichen Aufseher für grenzüberschreitende Märkte.
+	\end{itemize}
+	Die EZB betont in ihrem jüngsten Wirtschaftsbericht, dass die Vollendung der Bankenunion und der Kapitalmarktunion entscheidend ist, um die Produktivität, Wettbewerbsfähigkeit und Widerstandsfähigkeit des Euroraums zu stärken.\footcite{ECBBulletin2025}
+	
+	\subsubsection{Ständiger Europäischer Währungsfonds (EWF)}
+	
+	Der bestehende ESM könnte zu einem echten Währungsfonds ausgebaut werden, mit folgenden Kompetenzen:
+	\begin{itemize}
+		\item Präventive Kreditlinien für Mitgliedsländer.
+		\item Durchführung von Staatsumschuldungen (analog zum IWF).
+		\item Verwaltung eines europäischen Einlagensicherungsfonds.
+	\end{itemize}
+	Eine solche Institution würde die Handlungsfähigkeit in Krisen erhöhen, ohne Vertragsänderungen zu benötigen (Art. 136 AEUV ermöglicht den ESM). Allerdings argumentiert Petr (2024), dass die jüngsten Änderungen in der EMU – einschließlich der Schaffung des ESM, der Ermöglichung von Rettungspaketen für Staaten und der Einrichtung des EU-Aufbauinstruments – die Waage von nationalen zu supranationalen Institutionen verschieben und die EMU in Richtung einer "Fiskalföderation" bewegen, was nicht vollständig mit dem Primärrecht der EU vereinbar ist.\footcite{Petr2024}
+	
+	\subsection{Langfristige Fiskalunion und gemeinsame Schuldeninstrumente}
+	
+	Die ehrgeizigste Reform ist die Schaffung einer zentralen Fiskalkapazität. Modelle umfassen:
+	
+	\begin{enumerate}
+		\item \textbf{Europäische Arbeitslosenversicherung (EALU)}: Ein automatischer Stabilisator, der bei stark steigender Arbeitslosigkeit in einem Land Transfers leistet (z.B. 20\% des Lohnersatzes für maximal sechs Monate). Simulationen des IfW Kiel zeigen, dass dies asymmetrische Schocks zu 25\% absorbieren könnte.
+		
+		\item \textbf{Gemeinsame europäische Anleihen (Eurobonds)}: Die NextGenerationEU hat gezeigt, dass gemeinsame Schulden möglich sind. Eine dauerhafte Emission von "EU-Safe-Assets" (z.B. European Defence Bonds oder Green Bonds) würde den Kapitalmarkt vertiefen. Zur Vermeidung von Moral Hazard könnte eine Obergrenze von 20\% des nationalen BIP für solche Anleihen eingeführt werden. Caiani und Catullo (2024) zeigen in einem Multi-Länder-Modell, dass eine zwischenstaatliche Fiskaltransferunion (IFTU) mit eigener Finanzkraft als Stabilisator des internationalen Handels wirken und die BIP-Leistung der Union verbessern kann, ohne die Stabilität der öffentlichen Finanzen zu beeinträchtigen. Eine voll ausgestattete Fiskaltransferunion (FFFTU) mit gemeinsamer Verschuldung könnte die Auswirkungen eines exogenen Nachfrageschocks abmildern.\footcite{Caiani2024}
+		
+		\item \textbf{Eigenes EU-Budget von 1-2\% des BIP}, finanziert durch eigene Steuern (CO$_2$-Grenzausgleich, Finanztransaktionssteuer, Körperschaftsteuer-Anteile). Dieses Budget würde ausschließlich für gesamteuropäische öffentliche Güter (Verteidigung, Forschung, Infrastruktur) verwendet werden.
+	\end{enumerate}
+	
+	Foresti (2024) analysiert die Gestaltung der Geld- und Fiskalpolitik in einer Währungsunion. Sein Modell zeigt, dass eine wie die EWU aufgebaute Währungsunion symmetrische Finanzschocks gut bewältigen kann. Bei asymmetrischen Schocks ist jedoch ein größerer Spielraum für fiskalische Interventionen, insbesondere in den stärker betroffenen Mitgliedsländern, von entscheidender Bedeutung.\footcite{Foresti2024}
+	
+	\section{Diskussion: Politische Durchsetzbarkeit}
+	
+	Die größten Hürden sind nationale Souveränitätsvorbehalte (insbesondere in Deutschland und den Niederlanden) sowie unterschiedliche wirtschaftspolitische Kulturen. Während südeuropäische Länder eine Transferunion befürworten, bestehen Nordländer auf strikte Konditionalität. Eine Umfrage des ifo-Instituts unter deutschen Wirtschaftsprofessoren zeigt, dass diese den meisten Vorschlägen zur Reform der Eurozone skeptisch gegenüberstehen.\footcite{Ifo2018}
+	
+	Ein pragmatischer Weg könnte die asymmetrische Integration sein: Eine Koalition der Willigen (Frankreich, Spanien, Italien, Benelux) führt eine Fiskalkapazität ein, die anderen Mitgliedern offensteht ("Enhanced Cooperation"). Rechtlich wäre dies mit Art. 20 EUV vereinbar.
+	
+	\section{Fazit}
+	
+	Der Euro ist keine gescheiterte Währung, aber eine unvollendete Konstruktion. Die identifizierten Schwächen – fehlende Risikoteilung, TARGET2-Verwerfungen, unvollständige Bankenunion und divergierende Wettbewerbsfähigkeit – lassen sich nicht durch eine einzige Reform beheben. Hinzu kommen tiefgreifende politische Herausforderungen: institutionelles Ungleichgewicht, Demokratiedefizit, Populismus, Souveränitätskonflikte, Reformstau, Rechtsstaatlichkeitskrise, zerrissene Migrationspolitik, geopolitische Fragmentierung und eine deutsche Schuldenbremse, die europäische Investitionen behindert.
+	
+	Ein kohärenter Fahrplan sollte:
+	\begin{enumerate}
+		\item Sofort die Vollendung der Bankenunion (inkl. EDIS) vorantreiben,
+		\item mittelfristig den ESM zu einem Währungsfonds ausbauen,
+		\item langfristig eine begrenzte Fiskalkapazität mit eigenen Einnahmen schaffen,
+		\item parallel dazu das Einstimmigkeitsprinzip in ausgewählten Bereichen durch qualifizierte Mehrheitsentscheidungen ersetzen,
+		\item den Rechtsstaatlichkeitsmechanismus entpolitisieren und durch klare, justiziable Kriterien ersetzen.
+	\end{enumerate}
+	Ohne diese Schritte bleibt der Euro anfällig für die nächste große Erschütterung – sei es eine erneute Schuldenkrise oder ein Auseinanderdriften der wirtschaftlichen Leistungsfähigkeit.
+	
+	\begin{thebibliography}{99}
+		\bibitem{Banaszak2025} Banaszak, F. (2025). Grünen-Chef kritisiert EU-Asyl-Verschärfung – "In Europa gibt es keine Brandmauer mehr". \textit{Die Welt}.
+		\bibitem{Behorizon2026} BE Horizon (2026). Europe's Strategic Autonomy Window in a Fragmented World.
+		\bibitem{Boell2024} Heinrich-Böll-Stiftung (2024). Europa neu gestalten. Impulse für die EU-Reformdebatte.
+		\bibitem{Bremen2023} (2023). ECB Policy and Eurozone Fragility: Was De Grauwe Right? \textit{EconBiz}.
+		\bibitem{Bruegel2025} Bruegel (2025). Reale effektive Wechselkurse. Bruegel-Datenbank.
+		\bibitem{Bundestag2025} Deutscher Bundestag (2025). Kontroverse um Umsetzung des Gemeinsamen Europäischen Asylsystems.
+		\bibitem{Caiani2024} Caiani, A. \& Catullo, E. (2024). Fiscal transfers and common debt in a Monetary Union. \textit{Industrial and Corporate Change}, 33(2), 424-465.
+		\bibitem{Citizen2026} Europäische Bürgerinitiative (2026). Reforming the European Commission to make it democratic and transparent.
+		\bibitem{Constancio2024} Constâncio, V. (2024). Banking Union: a ten-year journey. \textit{RSC Working Paper 2024/25}.
+		\bibitem{Council2025} Rat der Europäischen Union (2025). Mechanismen zur Wahrung der Rechtsstaatlichkeit.
+		\bibitem{Curio2025} Curio, G. (2025). Reformpläne der EU in der Asylpolitik ohne nennenswerten Effekt. AfD-Fraktion.
+		\bibitem{DeGrauwe2020} De Grauwe, P. (2020). \textit{Economics of Monetary Union}. 13th ed. Oxford UP.
+		\bibitem{DeGrauwe2024} De Grauwe, P. (2024). How Europe’s fiscal rules are strangling growth. \textit{Social Europe}.
+		\bibitem{Delors2025} Institut Jacques Delors (2025). Europe in Debate \#4: The European Parliament: one year on.
+		\bibitem{DLF2026} Deutschlandfunk (2026). Reformiert die EU das Vetorecht?
+		\bibitem{ECBBulletin2025} European Central Bank (2025). Economic Bulletin Issue 7.
+		\bibitem{ECB2023} European Central Bank (2023). The international role of the euro.
+		\bibitem{EDISGermany} (o.J.). The difficult construction of a European Deposit Insurance Scheme.
+		\bibitem{EPRS2025} European Parliamentary Research Service (2025). Implementation of the reformed Stability and Growth Pact.
+		\bibitem{EPRS2025a} European Parliamentary Research Service (2025). The Euro at 25 – A historic achievement with a complex legacy.
+		\bibitem{EPRSDeficit2025} European Parliamentary Research Service (2025). Economic and Budgetary Outlook for the European Union 2025.
+		\bibitem{Euractiv2026} (2026). Why Macron is right on Eurobonds. \textit{Euractiv}.
+		\bibitem{Evrard2023} Evrard, J. (2023). Completing the Banking Union with a European Deposit Insurance Scheme.
+		\bibitem{Febrero2022} Febrero, E., Uxó, J., \& Álvarez, I. (2022). Target2 Imbalances and the ECB’s Asset Purchase Programme. \textit{Panoeconomicus}, 69(1), 73–98.
+		\bibitem{Feld2016} Feld, L. P., Schmidt, C. M., \& Schnabel, I. (2016). Die Fehlkonstruktion der Eurozone. \textit{Perspektiven der Wirtschaftspolitik}, 17(3), 224–242.
+		\bibitem{Feld2016a} Feld, L. P. et al. (2016). Causes of the Eurozone Crisis: A nuanced view. \textit{VoxEU}.
+		\bibitem{Folk2025} Folk, G. (2025). Rechtsstaatlichkeit: Druck auf Ungarn und Polen nimmt zu. \textit{Liberties}.
+		\bibitem{Foresti2024} Foresti, P. (2024). Monetary-fiscal policies design and financial shocks in currency unions. \textit{Economia Politica}, 41, 439–455.
+		\bibitem{FPÖ2025} FPÖ (2025). Steger: "EU-Asylverschärfungen sind bloße Augenauswischerei".
+		\bibitem{Furet2025} Furet, A. u.a. (2025). Parlamentarische Anfrage zur Anwendung des Konditionalitätsmechanismus. EP E-001578/2025.
+		\bibitem{Giordano2024} Giordano, M., \& Lapavitsas, C. (2024). Persistent institutional malfunctioning in the Eurozone. \textit{SOAS Research Online}.
+		\bibitem{Hartwich2026} Hartwich, O. (2026). EU is ignoring economics 101. \textit{Newsroom}.
+		\bibitem{Ifo2018} Dorn, F. et al. (2018). Eurozone Reform – Discussion and Evaluation of Proposals. \textit{ifo Institute}.
+		\bibitem{IPG2025} IPG-Journal (2025). Nationale Ego-Trips: Die wahre Krise Europas? Souveränismus.
+		\bibitem{JagerHafner2013} Jager, J. \& Hafner, K. A. (2013). The Optimum Currency Area Theory and the EMU. \textit{Intereconomics}, 48(5).
+		\bibitem{Lane2026} Lane, P. (2026). More joint euro bond issuance requires fiscal discipline. \textit{Zawya}.
+		\bibitem{Lane2026a} Lane, P. (2026). ECB policymaker Lane 'admits' the euro can't replace US dollar. \textit{investingLive}.
+		\bibitem{Lewis2026} Lewis, N. (2026). 'The real threat to democracy is coming from inside Europe'. \textit{Strategic Culture}.
+		\bibitem{Liberties2026} Liberties (2026). Die sich verschärfende Krise der Rechtsstaatlichkeit in der EU.
+		\bibitem{MarcosMarne2024} Marcos-Marne, H. (2024). Euroscepticism and Populism on Europhilic Soil: The 2024 EP Elections in Spain. \textit{ECPS}.
+		\bibitem{Murau2024} Murau, S., \& Giordano, M. (2024). Forging Monetary Unification through Novation: The TARGET System. \textit{SOAS Research Online}.
+		\bibitem{Natixis2025} Natixis (2025). TARGET2: The ECB's Overlooked Legacy.
+		\bibitem{Petr2024} Petr, M. (2024). Is the Economic and Monetary Union Headed to Becoming a Fiscal Federation? \textit{Central European Journal of Comparative Law}, 5(2), 211-228.
+		\bibitem{Prema2025} Prema, E. \& Ragul, O.V. (2025). Germany and the EU: Safeguarding the Rule of Law. \textit{Jean-Monnet-Saar}.
+		\bibitem{Repasi2025} Repasi, R. (2025). "Demokratische Verfahren schützen" – EU-Parlament klagt. SPD Europa.
+		\bibitem{RosaLux2024} Rosa-Luxemburg-Stiftung (2024). Populistische Parteien nach dem Euroskeptizismus.
+		\bibitem{Schnabl2025a} Schnabl, G. (2025). Trump, Macron or Merz: Who Will Destabilize the Fragile Euro? \textit{Flossbach von Storch Research Institute}.
+		\bibitem{Schnabl2025b} Schnabel, I. (2025). ECB-toppen Schnabel vill diskutera euroobligationer igen. \textit{Marketscreener}.
+		\bibitem{Schnabl2025c} Schnabel, I. (2025). EZB-Ratsmitglied Schnabel warnt vor Aushöhlung der Geldpolitik. \textit{Reuters}.
+		\bibitem{Schularick2019} Schularick, M. \& Steiger, T. (2019). Die Target2-Kontroverse: Eine Bestandsaufnahme. \textit{Wirtschaftsdienst}, 99(8), 546–552.
+		\bibitem{Steger2025} Steger, P. (2025). Steger: "Brüsseler Attacke auf Ungarn ist dreiste Wahlbeeinflussung". FPÖ.
+		\bibitem{Stiglitz} Stiglitz, J. (o.J.). 'Euro was flawed at birth and destined to collapse' – Nobel economist. \textit{NewsSniffer}.
+		\bibitem{SZ2026} Süddeutsche Zeitung (2026). Weniger Veto, mehr Europa: Wie Wadephul das Einstimmigkeitsprinzip der EU aufweichen will.
+		\bibitem{Taxpayers2026} European Taxpayers‘ Association (2026). European Taxpayers Warn Against Eurobonds: A Looming Fiscal Trap.
+		\bibitem{Varoufakis2026} Varoufakis, Y. (2026). Choose to federalise or 'we can disband the euro'. \textit{Euronews}.
+		\bibitem{Wadephul2026} Wadephul, J. (2026). Weniger Veto, mehr Europa. \textit{SZ}.
+		\bibitem{Wind2026} Wind, C. (2026). Die Stunde der EU-Armee? Eine Policy-Analyse. ÖGP.
+		\bibitem{Zenodo2026} (2026). The Trump Effect: Readiness 2030, SAFE, and the German Debt Brake Reform. \textit{Zenodo}.
+		\bibitem{Zorell2025} Zorell, N. (2025). Medium-term fiscal-structural plans under the revised SGP. \textit{ECB Economic Bulletin}, Issue 3.
+	\end{thebibliography}
+	
+\end{document}
