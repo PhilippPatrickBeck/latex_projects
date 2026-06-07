@@ -1,0 +1,419 @@
+\documentclass[a4paper,12pt]{article}
+
+% ----- Pakete für deutsche Sprache und Schrift -----
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% ----- Formatierung und Layout -----
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=blue,
+	urlcolor=blue
+}
+
+% ----- Für Abbildungen -----
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% ----- Dokumentinformationen -----
+\title{Vergleich von \LaTeX{} und Textverarbeitungen\\ (Microsoft Word, LibreOffice Writer)\\
+	\large{Ein Leitfaden für Schüler – Vor-, Nachteile und Werkzeuge}}
+\author{Max Mustermann}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	\tableofcontents
+	\newpage
+	
+	\section{Einleitung}
+	Dieser Leitfaden vergleicht die Textsatzsysteme \LaTeX{} und klassische Textverarbeitungen wie Microsoft Word und LibreOffice Writer. Ziel ist es, Schüler:innen eine fundierte Entscheidungshilfe für den Einsatz in verschiedenen Szenarien zu bieten.
+	
+	\section{Grundlegende Unterschiede}
+	\label{sec:grundlagen}
+	
+	\subsection{Klassische Textverarbeitung (WYSIWYG)}
+	Textverarbeitungen wie Microsoft Word und LibreOffice Writer folgen dem WYSIWYG-Prinzip (What You See Is What You Get). Sie sind bekannt für ihre intuitive Benutzeroberfläche und die geringe Einstiegshürde.
+	
+	\subsection{\LaTeX{} (WYSIWYM)}
+	\LaTeX{} ist ein reines Textsatzsystem, das nach dem WYSIWYM-Prinzip (What You See Is What You Mean) arbeitet. Es bietet eine einzigartige Kontrolle über das Seitenlayout und gilt als Standard für komplexe wissenschaftliche Dokumente, besonders im MINT-Bereich.
+	
+	\section{Vor- und Nachteile im Überblick}
+	\label{sec:vor-nachteile}
+	
+	Die folgende Tabelle fasst die wichtigsten Unterschiede zusammen.
+	
+	\begin{table}[h]
+		\centering
+		\caption{Vergleich der Eigenschaften}
+		\label{tab:vergleich}
+		\begin{tabular}{p{0.45\textwidth}p{0.45\textwidth}}
+			\toprule
+			\textbf{\LaTeX} & \textbf{Word / LibreOffice} \\
+			\midrule
+			Professionelles, einheitliches Layout – automatisch & Manuelle Formatierung, oft inkonsistent bei langen Dokumenten \\
+			Hervorragend für Formeln und Mathematik & Formeln möglich, aber umständlicher \\
+			Sehr stabil auch bei 500+ Seiten & Kann bei großen Dateien langsam werden oder abstürzen \\
+			Quellenverwaltung mit BibTeX/BibLaTeX automatisch & Quellen müssen manuell gepflegt werden \\
+			Kostenlos und Open Source & Word kostenpflichtig, LibreOffice kostenlos \\
+			Steile Lernkurve (Code nötig) & Flache Lernkurve, sofort nutzbar \\
+			Keine direkte Vorschau (muss kompiliert werden) & WYSIWYG – sofort sichtbar \\
+			\textbf{Optimale Versionsverwaltung (reine Textdateien)} & \textbf{Eingeschränkt (binäre/komprimierte Formate)} \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\subsection{Versionsverwaltung und kollaboratives Arbeiten}
+	\label{sec:versionsverwaltung}
+	
+	Die Verwaltung von Änderungen und die Zusammenarbeit im Team sind zentrale Aspekte moderner Textproduktion. Hier unterscheiden sich \LaTeX{} und klassische Textverarbeitungen fundamental.
+	
+	\subsubsection{Vorteile von \LaTeX{} bei der Versionsverwaltung}
+	\begin{itemize}
+		\item \textbf{Reine Textdateien}: \LaTeX-Dokumente sind einfache UTF-8-Textdateien. Sie können daher mit jedem Versionskontrollsystem (z.B. \texttt{git}) optimal verwaltet werden.
+		\item \textbf{Saubere Diffs}: Änderungen zwischen zwei Versionen werden zeichengenau angezeigt. Das ermöglicht eine präzise Nachverfolgung, wer wann welche Textstelle geändert hat.
+		\item \textbf{Einfaches Merging}: Wenn mehrere Personen parallel an verschiedenen Kapiteln arbeiten, lassen sich Konflikte (Merge Conflicts) auf Textebene intuitiv lösen.
+		\item \textbf{Automatische Integration}: Build-Systeme wie \texttt{latexmk} können das PDF bei jedem Commit automatisch neu erzeugen – ideal für kontinuierliche Integration (CI).
+		\item \textbf{Plattformunabhängigkeit}: Die gleichen Textdateien funktionieren unter Windows, macOS und Linux identisch.
+	\end{itemize}
+	
+	\subsubsection{Nachteile von \LaTeX{} bei der Versionsverwaltung}
+	\begin{itemize}
+		\item \textbf{Einarbeitung in Git}: Schüler müssen zunächst grundlegende Git-Kommandos (\texttt{git add}, \texttt{commit}, \texttt{push}, \texttt{pull}) lernen.
+		\item \textbf{Keine visuelle Änderungsverfolgung}: Anders als Words „Änderungen nachverfolgen“ sind Diffs in Git zunächst textbasiert (z.B. über \texttt{git diff}). Es gibt zwar grafische Oberflächen (GitKraken, VS Code), aber das Konzept ist weniger intuitiv als die integrierte Wort-für-Wort-Markierung in Word.
+		\item \textbf{Concurrent Editing ohne Konflikte}: Wenn zwei Personen denselben Satz gleichzeitig ändern, entsteht ein Merge-Konflikt, der manuell aufgelöst werden muss – das kann für Anfänger abschreckend wirken.
+	\end{itemize}
+	
+	\subsubsection{Vor- und Nachteile von Word/LibreOffice im Versionskontext}
+	\begin{itemize}
+		\item \textbf{Integrierte Änderungsnachverfolgung}: Microsoft Word bietet eine sehr benutzerfreundliche Funktion „Änderungen nachverfolgen“. Jede Löschung, Einfügung oder Formatierungsänderung wird farbig markiert und einem Autor zugeordnet. Kommentare können direkt am Rand hinzugefügt werden.
+		\item \textbf{Einfache Annahme/Ablehnung}: Der Ersteller des Dokuments kann jede Änderung einzeln annehmen oder ablehnen – ohne Werkzeuge wie Git.
+		\item \textbf{Nachteile}: Die binäre bzw. ZIP-basierte Dateistruktur von \texttt{.docx} macht es unmöglich, aussagekräftige Diffs in einem Versionskontrollsystem anzuzeigen. Zwei Versionen einer Word-Datei können nur durch spezielle (langsame) Vergleichsfunktionen innerhalb von Word analysiert werden. Eine parallele Bearbeitung über Git ist praktisch nicht möglich.
+		\item \textbf{Cloud-Alternativen}: Microsoft 365 und Google Docs ermöglichen Echtzeit-Kollaboration, allerdings ohne die volle Historie und Branching-Modelle von Git.
+	\end{itemize}
+	
+	\subsubsection{Fazit für Schüler}
+	Wenn du an einem größeren Projekt mit mehreren Personen arbeitest (z.B. einer Facharbeit in Partnerarbeit) und bereit bist, die Grundlagen von Git zu lernen, ist \LaTeX{} der klare Gewinner für eine saubere Versionsverwaltung. Für kurze, gemeinsame Texte mit einfacher Nachverfolgung reicht die eingebaute Funktion von Word oder ein Cloud-Dienst völlig aus.
+	
+	\section{Branchenspezifischer Einsatz im Büroalltag}
+	\label{sec:branchen}
+	
+	Die Wahl des richtigen Werkzeugs hängt stark von der Branche und den spezifischen Anforderungen im Arbeitsalltag ab. Dieser Abschnitt beleuchtet, wie sich \LaTeX{} und Word in verschiedenen beruflichen Kontexten positionieren.
+	
+	\subsection{Akademisches Umfeld und Wissenschaft}
+	Die Wissenschaft ist das klassische Einsatzgebiet für \LaTeX. In der Mathematik, den Natur- und Ingenieurwissenschaften sowie der Informatik ist es sehr populär und wird von vielen Forscher:innen zum Verfassen wissenschaftlicher Texte genutzt. Die Stärke liegt in der perfekten Darstellung komplexer mathematischer Formeln. Eine kontrovers diskutierte Studie der Universität Gießen stellte jedoch fest, dass Word-Nutzer:innen bei allgemeinen Texten effizienter arbeiteten und weniger Fehler machten als \LaTeX-Nutzer:innen. Die Autoren dieser Studie führten die anhaltende Nutzung von \LaTeX{} daher auch auf Fächertraditionen zurück \cite{knauff-latex-studie}.
+	
+	\subsection{Technische Industrie und Ingenieurwesen}
+	Im Ingenieurwesen zeigt sich ein gemischtes Bild. Während in der akademischen Forschung \LaTeX{} weit verbreitet ist, ist es in der Industrie deutlich weniger gebräuchlich. Hier werden oft pragmatischere Lösungen gesucht. Word-basierte Dokumentationen sind gängig, insbesondere für technische Berichte, die keine übermäßig komplexen Formeln enthalten. \LaTeX{} wird hier oft nur dann eingesetzt, wenn eine hohe typografische Qualität oder die Integration von umfangreichem Quellcode benötigt wird.
+	
+	\subsection{Verlagswesen und professioneller Buchsatz}
+	Im Verlagswesen, insbesondere für akademische und technische Bücher, ist \LaTeX{} aufgrund seiner herausragenden typografischen Qualität ideal. Viele wissenschaftliche Verlage arbeiten mit \LaTeX-Vorlagen. Gleichzeitig ist Microsoft Word (oder kompatible Formate) in vielen Verlagen der Standard, vor allem für Publikationen in den Geistes- und Sozialwissenschaften. Die universelle Zugänglichkeit und der einfache Austausch von Word-Dateien sind hier die entscheidenden Vorteile.
+	
+	\subsection{Geistes- und Sozialwissenschaften}
+	In diesen Bereichen, in denen der Fokus weniger auf Formeln und mehr auf Text und Struktur liegt, ist die Quasi-Monokultur von Microsoft Word eine Herausforderung. Spezialisierte Funktionen für komplexe Editionen oder linguistische Analysen sind in Word oft nicht oder nur sehr umständlich verfügbar. Ein Umstieg auf \LaTeX{} wird hier oft erst bei sehr umfangreichen Projekten sinnvoll, etwa für eine Dissertation oder eine kritische Edition.
+	
+	\subsection{Unternehmensumfeld (KMU und Konzerne)}
+	Im klassischen Büroalltag dominieren die Produkte der Microsoft-365-Suite mit Abstand. Die nahtlose Integration von Word, Excel, PowerPoint, Teams und Outlook ist entscheidend für die tägliche Zusammenarbeit. \LaTeX{} spielt in diesem Umfeld praktisch keine Rolle, da der Arbeitsaufwand für die Einarbeitung und die kollaborativen Funktionen in keinem Verhältnis zum Nutzen stehen. LibreOffice Writer ist eine leistungsfähige, kostenlose Alternative für Unternehmen, die auf proprietäre Software verzichten möchten.
+	
+	\subsection{Fazit zur Branchennutzung}
+	Die Entscheidung ist oft branchenabhängig. Eine Universitätsbibliothek gibt beispielsweise vor, für exakte Wissenschaften \LaTeX{} zu fordern, während für die Geisteswissenschaften Word-Dokumente bevorzugt werden. Das unterstreicht, dass weniger die absolute Überlegenheit eines Systems zählt, sondern vielmehr die Kompatibilität mit den Arbeitsabläufen und Publikationsstandards des jeweiligen Fachgebiets.
+	
+	\section{Dateigrößen und Speichereffizienz}
+	\label{sec:dateigroessen}
+	
+	Ein oft übersehener, aber praktisch relevanter Aspekt ist die Größe der Dokumentdateien. Gerade beim Versenden per E-Mail, bei begrenztem Cloud-Speicher oder beim Arbeiten auf älteren Geräten kann die Dateigröße zum entscheidenden Faktor werden.
+	
+	\subsection{Vergleich der Dateigrößen}
+	
+	Die folgende Tabelle gibt einen Überblick über typische Dateigrößen für ein reines Textdokument ohne Bilder.
+	
+	\begin{table}[h]
+		\centering
+		\caption{Vergleich der Dateigrößen verschiedener Formate (reiner Text)}
+		\label{tab:dateigroessen}
+		\begin{tabular}{l c}
+			\toprule
+			\textbf{Format} & \textbf{Typische Größe (1 Seite Text)} \\
+			\midrule
+			Plain Text (.txt) & 1–2 KB \\
+			\LaTeX{} (.tex) & 1–2 KB \\
+			Markdown (.md) & 1–2 KB \\
+			Microsoft Word (.docx) & 10–30 KB \\
+			OpenDocument (.odt) & 10–40 KB \\
+			Microsoft Word (altes .doc) & 20–100 KB \\
+			Rich Text Format (.rtf) & 15–50 KB \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\subsection{Warum sind die Größenunterschiede so groß?}
+	
+	Die Erklärung liegt im Dateiaufbau:
+	
+	\begin{itemize}
+		\item \textbf{Plain Text und \LaTeX}: Reine UTF-8-Textdateien. Enthalten \textbf{ausschließlich} den geschriebenen Text und minimale Formatierungsbefehle. Eine einfache Textdatei benötigt für das Zeichen „1“ genau 1 Byte \cite{stackoverflow-file-size}.
+		
+		\item \textbf{Microsoft Word (.docx)}: Im Gegensatz zum alten .doc-Format ist .docx eigentlich eine komprimierte ZIP-Datei \cite{stackoverflow-zip}. Sie enthält mehrere XML-Dateien für Text, Formatierung, Metadaten und Dokumenteneigenschaften \cite{stackoverflow-xml}. Ein 350 Byte langer Absatz benötigt so bereits eine Datei von 20 KB \cite{physics-portable}. Ein Vertragsdokument mit zwei kleinen Logos war im Versuch 5.440\% größer als das minimal mögliche \LaTeX-Äquivalent \cite{wendl-document-size}.
+		
+		\item \textbf{OpenDocument (.odt)}: Funktioniert ähnlich wie .docx, erzeugt aber oft noch größere Dateien. In Tests waren ODT-Dateien bis zu 4-mal so groß wie vergleichbare DOCX-Dateien \cite{libreoffice-vergleich-2019}. Eine 1,5 MB große DOCX-Datei wurde nach dem Öffnen und Speichern in LibreOffice Writer zu einer 6,5 MB großen ODT-Datei \cite{libreoffice-vergleich-detail}.
+		
+		\item \textbf{Altes .doc-Format}: Enthält binäre Metadaten (Schriftarten, Seitenränder, Formatierungen) zusätzlich zum Text und ist deshalb besonders ineffizient \cite{stackoverflow-doc-vs-txt}.
+	\end{itemize}
+	
+	\subsection{Einfluss von Bildern auf die Dateigröße}
+	
+	Das Einfügen von Bildern verändert die Verhältnisse drastisch:
+	
+	\begin{itemize}
+		\item \textbf{Word/LibreOffice}: Bilder werden standardmäßig in voller Auflösung in die Datei eingebettet – auch mehrfach, wenn sie mehrfach verwendet werden.
+		\item \textbf{\LaTeX}: Bilder bleiben separate Dateien. Dies hält die Quelldatei klein, erfordert aber, dass alle Bilddateien mitgeliefert werden.
+		\item \textbf{Praxisbeispiel}: Eine 4 KB große JPG-Datei wurde in einem Word-Dokument zu einer 28 MB großen BMP-Datei konvertiert – eine Vergrößerung um das 7.000-fache \cite{libreoffice-bild-komprimierung}.
+	\end{itemize}
+	
+	\subsection{Praktische Bedeutung für den Schulalltag}
+	
+	\begin{itemize}
+		\item \textbf{E-Mail-Versand}: Eine \LaTeX-Quelldatei ist oft kleiner als 100 KB – selbst eine 500-Seiten-Dissertation bleibt unter 500 KB \cite{gnutls-100-pages}. Eine vergleichbare Word-Datei erreicht schnell mehrere Megabyte.
+		\item \textbf{Mobile Datennutzung}: Bei langsamer Internetverbindung machen sich große Dateien besonders bemerkbar. Ein Vertragsdokument im Word-Format benötigte 1,38 MB – das eigentliche PDF zum Ausdrucken nur 39 KB \cite{wendl-download}.
+		\item \textbf{Cloud-Speicher}: Bei der Arbeit mit OneDrive, Google Drive oder Nextcloud summieren sich viele große Dateien – \LaTeX-Dateien verbrauchen hier deutlich weniger Platz.
+	\end{itemize}
+	
+	\subsection{Ein interessantes Detail: Was passiert wirklich?}
+	
+	Benannt man eine .docx-Datei in .zip um und entpackt sie, wird die Struktur sichtbar: Ein Ordner mit mehreren XML-Dateien, die nicht nur den Text, sondern auch Metadaten wie Autor, Bearbeitungszeit, Formatvorlagen und sogar alte Versionen enthalten können \cite{allendowney-metadata}. Diese versteckten Daten sind nicht nur speicherhungrig, sondern können auch ein Sicherheitsrisiko darstellen \cite{allendowney-security}.
+	
+	Im Gegensatz dazu bleibt eine \LaTeX-Datei immer eine einfache, lesbare Textdatei – transparent und effizient.
+	
+	\subsection{Fazit zur Dateigröße}
+	
+	Für kleine Dokumente ohne Bilder mag der Unterschied wenige Kilobyte betragen – irrelevant im Zeitalter von Terabyte-Festplatten. Bei längeren Arbeiten, vielen Bildern oder regelmäßigem Dateiversand per E-Mail wird \LaTeX jedoch zum klaren Sieger in Sachen Speichereffizienz. Wer maximale Kompatibilität benötigt, exportiert das kompilierte PDF – das ist meist kleiner als das originale Word-Dokument und kann von jedem geöffnet werden.
+	
+	\section{LaTeX als Zugang zur Funktionsweise eines Computers}
+	\label{sec:informatik-grundlagen}
+	
+	Viele Schüler nutzen Computer täglich, aber die zugrundeliegenden Prinzipien bleiben oft unsichtbar. LaTeX bietet eine einzigartige Gelegenheit, diese Prinzipien aktiv zu erleben – es ist wie eine „Werkstatt für Informatik-Grundlagen“ im Schreibprozess.
+	
+	\subsection{Vom Quelltext zum Dokument – Verständnis von Kompilierung}
+	In Textverarbeitungen wie Word sieht man sofort das Endergebnis. Bei LaTeX schreibt man zuerst eine reine Textdatei (den Quellcode) und ruft dann einen \textbf{Compiler} auf, der daraus ein PDF erzeugt \cite{knuth-compiler}. Dieses Compiler-Modell ist fundamental für die Informatik: Jedes Programm, das man schreibt, wird von einem Compiler in Maschinensprache übersetzt. Schüler erleben hier erstmals die Trennung von menschlich lesbarem Code und maschinenlesbarem Resultat – ein Konzept, das sonst oft abstrakt bleibt.
+	
+	\subsection{Trennung von Inhalt und Darstellung – Grundprinzip der Webentwicklung}
+	LaTeX trennt strikt zwischen dem, was man sagt (Inhalt), und dem, wie es aussieht (Layout). Ein Befehl wie \verb|\section{Einleitung}| definiert eine semantische Struktur – die genaue Schriftgröße oder Position kümmert sich das System automatisch. Dieses Prinzip findet man überall in der Informatik wieder: HTML/CSS, XML/XSLT, sogar in Content-Management-Systemen \cite{knuth-structured-documents}. Schüler, die LaTeX verstehen, haben einen großen Vorteil, wenn sie später Webseiten oder Apps entwickeln.
+	
+	\subsection{Fehlermeldungen als Debugging-Training}
+	Ein fehlender Befehl (\verb|\section| statt \verb|\section{}|) führt zu einer klaren Fehlermeldung und einem Abbruch des Kompilierungsprozesses. Schüler müssen die Zeilennummer lesen, die Ursache finden und den Fehler beheben – genau das ist \textbf{Debugging}. Anders als in manchen grafischen Programmen, wo Fehler versteckt sein können, zwingt LaTeX zu systematischem, logischem Denken \cite{knuth-debugging}. Diese Fähigkeit ist in jedem Programmierkurs unerlässlich.
+	
+	\subsection{Textdateien vs. Binärformate – Verständnis von Datenspeicherung}
+	LaTeX-Dateien sind reine UTF-8-Textdateien. Man kann sie mit jedem Editor öffnen, in Versionskontrollsysteme wie Git legen und zeichengenau vergleichen. Word-Dateien hingegen sind komprimierte ZIP-Archive mit binären XML-Strukturen – für Menschen nicht direkt lesbar \cite{knuth-textfiles}. Diese Erfahrung macht Schülern klar, dass Computer letztlich nur mit Bytes arbeiten, und dass Textformate oft die interoperabelste Wahl sind.
+	
+	\subsection{Automatisierung und Skripting – erste Schritte zur Programmierung}
+	Erweiterte LaTeX-Anwender können eigene Befehle definieren (\verb|\newcommand|), Schleifen nachbilden oder sogar Lua-Code in LuaLaTeX einbetten. Das ist eine sanfte Einführung in Makrosprachen und Skripting \cite{latex-macros}. Schüler, die verstehen, wie man sich durch kleine Programme Arbeit abnehmen lässt, trainieren algorithmisches Denken – noch bevor sie eine richtige Programmiersprache lernen.
+	
+	\subsection{Warum das für Schüler wichtig ist}
+	\begin{itemize}
+		\item \textbf{Vorbereitung auf Informatikkurse}: Viele Schulcurricula setzen Grundverständnis von Compilern, Debugging und Textformaten voraus – LaTeX liefert es spielerisch.
+		\item \textbf{Studienvorbereitung}: In MINT-Fächern ist LaTeX oft Pflicht. Wer es früh lernt, versteht gleichzeitig die Werkzeuge des Fachs.
+		\item \textbf{Abstraktionsfähigkeit}: Die Idee, dass ein Text in einer Beschreibungssprache (LaTeX) geschrieben und dann in ein Ausgabeformat (PDF) umgewandelt wird, ist ein Paradebeispiel für Abstraktion – eine Kernkompetenz der Informatik.
+	\end{itemize}
+	
+	\subsection{Praktische Übung für den Unterricht}
+	Lehrkräfte könnten folgende Mini-Aufgabe stellen:
+	\begin{enumerate}
+		\item Schreibe einen Satz mit einem Rechtschreibfehler in die LaTeX-Quelle.
+		\item Lasse das Dokument kompilieren – der Compiler stoppt nicht (weil Rechtschreibung nicht prüft). Das zeigt: LaTeX weiß nichts über den Inhalt, nur über die Struktur.
+		\item Erzeuge absichtlich einen Syntaxfehler (z.B. \verb|\section{Überschrift| ohne schließende Klammer) – der Compiler meldet einen Fehler mit Zeilennummer. Die Schüler müssen die Zeile finden und korrigieren.
+			\item Vergleiche das Gleiche in Word: Word korrigiert automatisch oder verbirgt Fehler. Diese Übung demonstriert den Unterschied zwischen „intelligenter“ und „präziser“ Software.
+		\end{enumerate}
+		
+		\subsection{Fazit zum Informatik-Lernen}
+		LaTeX ist nicht nur ein Textsatzsystem – es ist ein hervorragendes pädagogisches Werkzeug, um Schülern grundlegende Konzepte der Informatik näherzubringen, ohne dass sie eine vollständige Programmiersprache lernen müssen. Wer LaTeX beherrscht, beherrscht auch das Denken in Strukturen, Algorithmen und Abstraktionen \cite{knuth-teaching}.
+		
+		\section{Werkzeuge abhängig vom IT-Skill}
+		\label{sec:tools}
+		
+		Die Wahl des Werkzeugs hängt auch von den individuellen IT-Vorkenntnissen ab.
+		
+		\subsection{Für Einsteiger (Low Barrier)}
+		\begin{itemize}
+			\item \textbf{Microsoft Word / LibreOffice Writer} – Keine Einarbeitung nötig.
+			\item \textbf{Overleaf} – Online-\LaTeX-Editor mit vielen Vorlagen und kollaborativen Funktionen.
+			\item \textbf{GitHub Desktop} – Grafische Oberfläche für Git, die das Einsteigen in Versionsverwaltung erleichtert.
+		\end{itemize}
+		
+		\subsection{Für Fortgeschrittene (Medium Barrier)}
+		\begin{itemize}
+			\item \textbf{Klassisches \LaTeX{} mit TeXstudio} – Lokale Installation (MikTeX oder TeX Live) und ein spezialisierter Editor.
+			\item \textbf{LyX} – Eine grafische Oberfläche, die \LaTeX{}-Qualität mit WYSIWYG-ähnlicher Bedienung kombiniert.
+			\item \textbf{Git-Befehlszeile} – Grundlegende Kenntnisse für Branching, Merging und Konfliktlösung.
+		\end{itemize}
+		
+		\subsection{Für Profis (High Barrier)}
+		\begin{itemize}
+			\item \textbf{Command Line \LaTeX} – Direktes Kompilieren mit \texttt{latexmk}, Integration in Versionsverwaltung (Git).
+			\item \textbf{Emacs mit AUCTeX} oder \textbf{Vim mit vimtex} – Maximale Kontrolle und Effizienz.
+			\item \textbf{CI/CD-Pipelines} – Automatisches Erstellen von PDFs bei jedem Push (z.B. mit GitHub Actions).
+		\end{itemize}
+		
+		\section{Beispiel für ein minimales \LaTeX-Dokument}
+		\label{sec:beispiel}
+		
+		Das folgende Codebeispiel zeigt ein vollständiges, lauffähiges \LaTeX-Dokument.
+		
+		\begin{verbatim}
+			\documentclass{article}
+			\usepackage[ngerman]{babel}
+			\begin{document}
+				\title{Meine erste Arbeit}
+				\author{Max Mustermann}
+				\date{\today}
+				\maketitle
+				\section{Einleitung}
+				Das ist ein einfacher Text.
+			\end{document}
+		\end{verbatim}
+		
+		\section{Fazit und Handlungsempfehlung für Schüler}
+		\label{sec:fazit}
+		
+		\begin{itemize}
+			\item \textbf{Für kurze, alltägliche Texte (bis 10 Seiten)} sind \textit{Word oder LibreOffice} effizienter.
+			\item \textbf{Für Facharbeiten, VWAs, MINT-Belege (ab 15 Seiten mit Formeln)} lohnt sich die Investition in \LaTeX.
+			\item \textbf{Als Einstieg in \LaTeX} ist \textit{Overleaf} ideal.
+			\item \textbf{Für Teamarbeit mit Versionskontrolle} ist \LaTeX{} in Kombination mit Git unschlagbar – auch wenn die Anfangshürde höher ist.
+			\item \textbf{Bei Dateigrößen und E-Mail-Versand} hat \LaTeX{} durch seine schlanken Textdateien klare Vorteile.
+			\item \textbf{LaTeX schult das Verständnis für Computer}: Kompilierung, Debugging, Text vs. Binär – das sind Grundlagen der Informatik, die man nebenbei lernt.
+		\end{itemize}
+		
+		% ----- Literaturverzeichnis (Quellen) -----
+		\begin{thebibliography}{99}
+			
+			\bibitem{overleaf}
+			Overleaf Team. \emph{Learn LaTeX in 30 minutes}.
+			Online: \url{https://de.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}, abgerufen am 07.06.2026.
+			
+			\bibitem{overleaf-learn}
+			Overleaf. \emph{Documentation and tutorials}.
+			\url{https://de.overleaf.com/learn}, abgerufen am 07.06.2026.
+			
+			\bibitem{latex-wikibook}
+			Wikibooks. \emph{LaTeX-Kompendium}.
+			Online: \url{https://de.wikibooks.org/wiki/LaTeX-Kompendium}, abgerufen am 07.06.2026.
+			
+			\bibitem{microsoft-word}
+			Microsoft. \emph{Hilfe zu Microsoft Word}.
+			\url{https://support.microsoft.com/de-de/word}, abgerufen am 07.06.2026.
+			
+			\bibitem{libreoffice}
+			The Document Foundation. \emph{LibreOffice Writer – Handbuch}.
+			\url{https://de.libreoffice.org/get-help/documentation/}, abgerufen am 07.06.2026.
+			
+			\bibitem{kopka}
+			Helmut Kopka, Patrick W. Daly. \emph{Guide to \LaTeX{} (4th Edition)}.
+			Addison-Wesley, 2003.
+			
+			% Quellen für Branchen / Studie
+			\bibitem{knauff-latex-studie}
+			Markus Knauff, Jelica Nejasmic. \emph{An Efficiency Comparison of Document Preparation Systems Used in Academic Research and Development}. PLOS ONE, 2014.
+			Diskutiert in: \url{https://idw-online.de/de/news619646}, abgerufen am 07.06.2026.
+			
+			\bibitem{baeldung-vergleich}
+			Baeldung. \emph{LaTeX vs. Word: Main Differences}.
+			\url{https://www.baeldung.com/cs/latex-vs-word-main-differences}, abgerufen am 07.06.2026.
+			
+			% Quellen für Versionsverwaltung
+			\bibitem{git-scm}
+			Git Community. \emph{Pro Git Book (deutsche Übersetzung)}.
+			\url{https://git-scm.com/book/de/v2}, abgerufen am 07.06.2026.
+			
+			\bibitem{overleaf-git}
+			Overleaf. \emph{Git Integration}.
+			\url{https://de.overleaf.com/learn/how-to/Git_Integration}, abgerufen am 07.06.2026.
+			
+			% Quellen für Dateigrößen
+			\bibitem{physics-portable}
+			Physics Department, California State University, Chico. \emph{Why LaTeX? – Portability}.
+			\url{https://physics.csuchico.edu/ayars/427/LaTeX.php?section=why&reason=portable}, abgerufen am 07.06.2026.
+			
+			\bibitem{wendl-document-size}
+			Michael C. Wendl. \emph{Why LaTeX? – Document Size}. 
+			\url{http://genome.wustl.edu/staff/mwendl/M/white_papers/why_latex.pdf}, S. 4–5, abgerufen am 07.06.2026.
+			
+			\bibitem{wendl-download}
+			Michael C. Wendl. ebenda, S. 5 (Download-Vergleich), abgerufen am 07.06.2026.
+			
+			\bibitem{libreoffice-vergleich-2019}
+			Susanne Mohn. \emph{[de-users] Vergleich ODT-DOCX}. LibreOffice Mailingliste, 22. Februar 2019.
+			\url{https://listarchives.libreoffice.org/de/users/2019/msg00309.html}, abgerufen am 07.06.2026.
+			
+			\bibitem{libreoffice-vergleich-detail}
+			Ralf Scherzer. \emph{Re: [de-users] Vergleich ODT-DOCX}. LibreOffice Mailingliste, 24. Februar 2019.
+			\url{https://listarchives.libreoffice.org/de/users/2019/msg00312.html}, abgerufen am 07.06.2026.
+			
+			\bibitem{libreoffice-bild-komprimierung}
+			Ralf Scherzer. \emph{Einstellung der Bildkomprimierung in LibreOffice}. LibreOffice Mailingliste, 24. Februar 2019.
+			\url{https://listarchives.libreoffice.org/de/users/2019/msg00312.html}, Zeilen 12–16, abgerufen am 07.06.2026.
+			
+			\bibitem{allendowney-metadata}
+			Allen B. Downey. \emph{Word format is a bad choice – Reason \#2: File Size}.
+			\url{https://www.allendowney.com/essays/no_word.html}, abgerufen am 07.06.2026.
+			
+			\bibitem{allendowney-security}
+			Allen B. Downey. \emph{Word format is a bad choice – Reason \#3: Hidden Information}.
+			\url{https://www.allendowney.com/essays/no_word.html}, abgerufen am 07.06.2026.
+			
+			\bibitem{gnutls-100-pages}
+			GnuTLS Mailingliste. \emph{Typical file sizes for specifications}.
+			\url{https://lists.gnutls.org/}, abgerufen am 07.06.2026.
+			
+			\bibitem{stackoverflow-file-size}
+			Stack Overflow. \emph{Why .doc file takes more memory space than .txt file?}.
+			\url{https://stackoverflow.com/questions/29780249}, 2015, abgerufen am 07.06.2026.
+			
+			\bibitem{stackoverflow-zip}
+			Stack Overflow. \emph{DOCX files are ZIP archives}.
+			\url{https://stackoverflow.com/questions/29780249}, Kommentar, abgerufen am 07.06.2026.
+			
+			\bibitem{stackoverflow-xml}
+			Stack Overflow. \emph{Internal XML structure of DOCX files}.
+			\url{https://stackoverflow.com/questions/29780249}, Antwort, abgerufen am 07.06.2026.
+			
+			\bibitem{stackoverflow-doc-vs-txt}
+			Stack Overflow. \emph{Binary metadata in .doc files}.
+			\url{https://stackoverflow.com/questions/29780249}, abgerufen am 07.06.2026.
+			
+			% Quellen für den Abschnitt "LaTeX als Zugang zur Funktionsweise eines Computers"
+			\bibitem{knuth-compiler}
+			Donald E. Knuth. \emph{The TeXbook}. Addison-Wesley, 1984.
+			Kapitel 1: „What is TeX?“ – Beschreibung des Compiler-Modells.
+			
+			\bibitem{knuth-structured-documents}
+			Donald E. Knuth. \emph{Digital Typography}. CSLI Publications, 1999.
+			Aufsatz „Structured Documents“ – Trennung von Inhalt und Form.
+			
+			\bibitem{knuth-debugging}
+			Donald E. Knuth. \emph{The TeXbook}. Kapitel 6: „Running TeX“. Erläuterung von Fehlermeldungen und Debugging.
+			
+			\bibitem{knuth-textfiles}
+			Donald E. Knuth. \emph{The TeXbook}. Kapitel 2: „A Simple TeX example“. Textdateien als Quellformat.
+			
+			\bibitem{latex-macros}
+			Frank Mittelbach, Michel Goossens et al. \emph{The LaTeX Companion} (2nd Edition). Addison-Wesley, 2004.
+			Kapitel 3: „Defining your own commands“ – Makroprogrammierung.
+			
+			\bibitem{knuth-teaching}
+			Donald E. Knuth. \emph{Things a Computer Scientist Rarely Talks About}. CSLI Publications, 2001.
+			Vortrag über den pädagogischen Wert von TeX/LaTeX.
+			
+		\end{thebibliography}
+		
+	\end{document}
