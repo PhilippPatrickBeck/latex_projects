@@ -1,0 +1,56 @@
+\section{Die Multi-Level-Monte-Carlo-Methode}
+Die Multi-Level-Monte-Carlo-Methode (MLMC) beruht genauso wie die klassische Monte-Carlo-Methode auf wiederholtem zuf"alligem Sampling. Jedoch werden diese Samples nun auf unterschiedlichen Level von unterschiedlicher Genauigkeit ausgef"uhrt.
+Die MLMC-Methode kann die Rechenkosten der klassischen MC-Methode stark reduzieren, indem man die meisten Samples auf einem Level mit niedriger Genauigkeit und entsprechend niedrigen Kosten nimmt und nur wenige Samples bei hoher Genauigkeit und entsprechend hohen Kosten.\\
+Auch bei der MLMC-Methode ist das Ziel, die Erwartung $\mathbb{E}(X)$ einer Zufallsvariable $X$ zu approximieren. Dazu nutzt man  eine Folge von Approximationen $X_0,X_1,...,X_L$ mit ansteigender Genauigkeit und Kosten, die f"ur $L\longrightarrow\infty$ gegen $X$ konvergieren.\\
+Die Grundlage der Multi-Level-Methode ist die Teleskopsumme. Genauer:
+\begin{align*}
+\mathbb{E}(X_L)=\mathbb{E}(X_0)+\sum_{l=1}^L \mathbb{E}(X_l-X_{l-1}).
+\end{align*}
+Durch die Linearit"at des Erwartungswertes ist diese Gleichung trivialerweise erf"ullt. Dabei wird jede Erwartung $\mathbb{E}(X_l-X_{l-1})$ durch die Monte-Carlo-Methode approximiert. Man muss jedoch beachten, dass ein Sample von $X_l-X_{l-1}$ auf dem Level $l$ sowohl eine Simulation von $X_{l-1}$ als auch von $X_l$ ben"otigt.\\
+Die MLMC-Methode funktioniert, falls die Varianz $\text{Var}[X_l-X_{l-1}]$ f"ur $l\rightarrow\infty$ gegen $0$ konvergiert. Dies ist jedoch der Fall, falls $X_l$ und $X_{l-1}$ dieselbe Zufallsvariable approximieren.\vspace{1cm}
+
+F"ur den MLMC-Algorithmus angewandt auf unser Nadelproblem definieren wir $D_0=Y_0$ und f"ur $l=1,2,...$
+\begin{align*}
+D_l(x,\alpha):=(Y_l-Y_{l-1})(x,\alpha)=\sum_{j=1}^{m_l} f(x,\alpha;\lambda_j^l)\mathbb{I}_{(\lambda_{j-1}^l,\lambda_j^l]}-\sum_{j=1}^{m_{l-1}}f(x,\alpha;\lambda_j^{l-1})\mathbb{I}_{(\lambda_{j-1}^{l-1},\lambda_j^{l-1}]}
+\end{align*}
+Zuerst betrachten wir die Varianz und den Erwartungswert von $D_l$.
+\newpage
+\begin{prop}\label{k}
+Es gilt $\mathbb{E}(D_0)=a(1)\mathbb{I}_{(0,1]}$ und f"ur jedes $l=1,2,...$ gilt
+\begin{align*}
+\mathbb{E}(D_l)=\sum_{j=1}^{m_{l-1}}(a(\lambda_{2j-1}^l)-a(\lambda_{2j}^l))\mathbb{I}_{(\lambda_{2j-2}^l,\lambda_{2j-1}^l]}.
+\end{align*}
+Zus"atzlich gilt f"ur alle $l\in\mathbb{N}$
+\begin{align*}
+\|D_l-\mathbb{E}[D_l]\|^2_{L^2(\Omega,H)}=\frac{1}{\pi m_l}\left(1-\frac{2}{\pi m_l}\right).
+\end{align*}
+\end{prop}
+\begin{proof}
+Es gilt $\lambda_{j-1}^{l-1}=\frac{j-1}{2^{l-1}}=\frac{2(j-1)}{2^l}=\lambda^l_{2(j-1)}$ und analog $\lambda_j^{l-1}=\lambda_{2j}^l$.\\
+Deshalb gilt auch 
+\begin{align*}
+\mathbb{I}_{(\lambda_{j-1}^{l-1},\lambda_j^{l-1}]}=\mathbb{I}_{(\lambda_{2(j-1)}^{l},\lambda_{2j}^{l}]}=\mathbb{I}_{(\lambda_{2(j-1)}^{l},\lambda_{2j-1}^{l}]}+\mathbb{I}_{(\lambda_{2j-1}^{l},\lambda_{2j}^{l}]} 
+\end{align*}
+f"ur alle $ l=1,2,...$ und $ j=1,...,m_l$.\\
+Damit folgt
+\begin{align*}
+\mathbb{E}[D_l]=&\mathbb{E}\left(\sum_{j=1}^{m_l}f(x,\alpha;\lambda_j^l)\mathbb{I}_{(\lambda_{j-1}^{l},\lambda_j^{l}]}\right)-\mathbb{E}\left(\sum_{j=1}^{m_{l-1}}f(x,\alpha;\lambda_j^{l-1})\mathbb{I}_{(\lambda_{j-1}^{l-1},\lambda_j^{l-1}]}\right)\\=&\sum_{j=1}^{m_l}a(\lambda_j^l)\mathbb{I}_{(\lambda_{j-1}^{l},\lambda_j^{l}]}-\sum_{j=1}^{m_{l-1}}a(\lambda_j^{l-1})\mathbb{I}_{(\lambda_{j-1}^{l-1},\lambda_j^{l-1}]}\\=&\sum_{j=1}^{m_{l-1}}\left(a(\lambda_{2j-1}^l)\mathbb{I}_{(\lambda_{2j-2}^{l},\lambda_{2j-1}^{l}]}+a(\lambda_{2j}^l)\mathbb{I}_{(\lambda_{2j-1}^{l},\lambda_{2j}^{l}]}\right)\\-&\sum_{j=1}^{m_{l-1}}\left(a(\lambda_{j}^{l-1})\mathbb{I}_{(\lambda_{2(j-1)}^{l},\lambda_{2j-1}^{l}]}+a(\lambda_{j}^{l-1})\mathbb{I}_{(\lambda_{2j-1}^{l},\lambda_{2j}^{l}]}\right)\\=& \sum_{j=1}^{m_{l-1}}a(\lambda_{2j-1}^l)-a(\lambda_{2j}^l))\mathbb{I}_{(\lambda^l_{2j-2},\lambda^l_{2j-1}]}=\sum_{j=1}^{m_l}\left(-\frac{2}{\pi m_l}\right)\mathbb{I}_{(\lambda^l_{2j-2},\lambda^l_{2j-1}]}.
+\end{align*}
+Dies beweist den ersten Teil der Proposition. F"ur den zweiten Teil gilt
+\allowdisplaybreaks
+\begin{align*}
+\|D_l-\mathbb{E}(D_l)\|^2_{L^2(\Omega,H)}
+=&\mathbb{E}
+\int_0^1|\sum_{j=1}^{m_l}
+f(\cdot;\lambda_j^l)\mathbb{I}_{(\lambda_{j-1}^l,\lambda_j^l]}
+\sum_{j=1}^{m_{l-1}}f(\cdot;\lambda_j^{l-1})\mathbb{I}_{(\lambda_{j-1}^{l-1},\lambda_j^{l-1}]}\\
+-&\sum_{j=1}^{m_{l-1}}\left(-\frac{2}{\pi m_l}\right)\mathbb{I}_{(\lambda^l_{2j-2},\lambda^l_{2j-1}]}|^2\td{\lambda}\\
+=&\mathbb{E}\int_0^1|\sum_{j=1}^{m_{l-1}}f(\cdot;\lambda_{2j-1}^{l})-f(\cdot;\lambda_{2j}^{l})+\frac{2}{\pi m_l})\mathbb{I}_{(\lambda^l_{2j-2},\lambda^l_{2j-1}]}|^2\td{\lambda}\\
+=& \sum_{j=1}^{m_{l-1}}\frac{1}{m_l}\left(\mathbb{E}|f(\cdot;\lambda^l_{2j-1})-f(\cdot;\lambda_{2j}^l)|^2-\left(\frac{2}{\pi m_l}\right)^2\right)\\
+=&\frac{1}{m_l}\sum_{j=1}^{m_{l-1}}\frac{2}{\pi m_l}\left(1-\frac{2}{\pi m_l}\right)=\frac{1}{m_l}\left(m_{l-1}\left(\frac{2}{\pi m_l}\left(1-\frac{2}{\pi m_l}\right)\right)\right)
+\\=&
+\frac{1}{\pi m_l}\left(1-\frac{2}{\pi m_l}\right),
+\end{align*}
+da $\frac{m_{l-1}}{m_l}=\frac{1}{2}$.
+\end{proof}
+

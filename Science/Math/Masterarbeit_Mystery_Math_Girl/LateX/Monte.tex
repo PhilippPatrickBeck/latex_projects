@@ -1,0 +1,103 @@
+\section{Die klassische Monte-Carlo-Methode}
+In diesem Kapitel ist unser Ziel, die Approximation der exakten L"osung des Buffonschen Nadelproblems mit Hilfe der klassischen Monte-Carlo-Methode zu untersuchen.\\
+Insbesondere wollen wir die Anzahl an Monte-Carlo-Samples und Schrittgr"o"se herausfinden, sodass die mittlere quadratische Abweichung unter einer gegebenen Fehlertoleranz $\varepsilon>0$ liegt.\\
+F"ur gegebenes $L,n\in\mathbb{N}$ definieren wir den Monte-Carlo-Sch"atzer f"ur dieses Problem als
+\begin{align*}
+\mathcal{M}_L^{\text{MC}}(n):=\frac{1}{n}\sum_{i=1}^n  Y_{L,i}.
+\end{align*}
+Dabei ist $(Y_{L,i})_{i\in\mathbb{N}}$ eine Folge unabh"angiger identisch verteilter Kopien der Zufallsvariable $Y_L$ \eqref{lustige_gleichung}.
+Dann gilt f"ur die mittlere quadratische Abweichung des MC-Sch"atzers
+\begin{align*}
+\parallel a-\mathcal{M}_L^{\text{MC}}(n)\parallel_{L^2(\Omega,H)}^2=&\parallel a-\mathbb{E}[Y_L]+\mathbb{E}[Y_L]-\mathcal{M}_L^{\text{MC}}(n)\parallel_{L^2(\Omega,H)}^2\
+\\=&\parallel a- \mathbb{E}[Y_L]\parallel^2+2\mathbb{E}\left[\left<a-\mathbb{E}[Y_L],\mathbb{E}[Y_L]-\mathcal{M}_L^{\text{MC}}(n)\right >_H\right]\\&+\parallel\mathbb{E}[Y_L]-\mathcal{M}_L^{\text{MC}}(n)\parallel_{L^2(\Omega,H)}^2.
+\end{align*}
+Da $a$ deterministisch ist und 
+\begin{align*}
+\mathbb{E}\left(\mathcal{M}_L^{\text{MC}}(n)\right)=\frac{1}{n}\sum_{i=1}^n\mathbb{E}(Y_{L,i})=\frac{1}{n}\cdot n \cdot \mathbb{E}(Y_L)=\mathbb{E}(Y_L)
+\end{align*}
+gilt, ist insgesamt:
+\begin{align*}
+\mathbb{E}\left[\left<a-\mathbb{E}[Y_L],\mathbb{E}[Y_l]-\mathcal{M}_L^{\text{MC}}(n)\right >_H\right]=&\left<a-\mathbb{E}[Y_L],\mathbb{E}[Y_L]-\mathbb{E}[\mathcal{M}_L^{\text{MC}}(n)]\right>_H
+\\=&\left<a-\mathbb{E}[Y_L],\mathbb{E}[Y_L]-\mathbb{E}[Y_L]\right>_H=\left<a-\mathbb{E}[Y_L],0\right>_H=0.
+\end{align*}
+
+Zudem haben wir:
+\begin{align*}
+\parallel \mathbb{E}[Y_L]-\mathcal{M}_L^{\text{MC}}(n)\parallel_{L^2(\Omega,H)}^2=&\mathbb{E}\left[\parallel \mathbb{E}[Y_L]-\frac{1}{n}\sum_{i=1}^nY_{L,i}\parallel_H^2\right]=\frac{1}{n^2}\mathbb{E}\left[\parallel\sum_{i=1}^n(Y_{L,i}-\mathbb{E}[Y_L])\parallel_H^2\right]\\=&\frac{1}{n}\parallel Y_L-\mathbb{E}[Y_L]\parallel^2_{L^2(\Omega,H)}.\\
+\end{align*}
+Damit folgt $ \parallel \mathbb{E}[Y_L]-\mathcal{M}_L^{\text{MC}}(n)\parallel_{L^2(\Omega,H)}^2=\mathcal{O}\left(\frac{1}{n}\right)$.
+
+Hierbei wurde benutzt, dass $(Y_{L,i})_{i\in\mathbb{N}}$ i.i.d Kopien von $Y_L$ sind.\\
+Zusammenfassend gilt also:
+\begin{align}\label{mc}
+\|a-\mathcal{M}_L^{\text{MC}}(n)\|^2_{L^2(\Omega,H)}=\|a-\mathbb{E}(Y_L)\|_H^2+\frac{1}{n}\|Y_L-\mathbb{E}(Y_L)\|^2_{L^2(\Omega,H)}.
+\end{align}
+Folglich besteht die mittlere quadratische Abweichung der klassischen Monte-Carlo-Methode aus dem statistischen Bias und der zweite Teil h"angt von der Varianz des Basisexperiments $Y_L$  sowie der Anzahl der Monte-Carlo-Samples $n$ ab.\vspace{0,2cm}
+
+Die n"achste Proposition liefert uns eine untere Schranke f"ur $L$ und $n$, sodass die mittlere quadratische Abweichung der Approximation mit Hilfe der klassichen MC-Methode unter einer gegebenen Toleranz $\varepsilon>0$ liegt.
+
+\begin{prop}
+Sei $\theta\in(0,1)$ und $\varepsilon>0$ und sei
+\begin{align*}
+L_\theta:=\left\lceil 1- \frac{\log(\sqrt{3\theta}\pi\varepsilon)}{\log(2)}\right\rceil
+\end{align*}
+Dann gilt f"ur alle $L\geq L_\theta$
+\begin{align*}
+\|a-\mathbb{E}(Y_L)\|^2_H\leq \theta\varepsilon^2.
+\end{align*}
+Zus"atzlich gilt f"ur alle $n \geq n_\theta$ mit
+\begin{align*}
+n_\theta:=\Big\lceil\frac{\|Y_{L_\theta}-\mathbb{E}(Y_{L_\theta})\|^2_{L^2(\Omega,H)}}{(1-\theta)\varepsilon^2}\Big\rceil \\
+\frac{1}{n}\|Y_{L_\theta}-\mathbb{E}[Y_{L_\theta}]\|^2_{L^2(\Omega,H)}\leq (1-\theta)\varepsilon^2.
+\end{align*}
+Insbesondere gilt also f"ur alle $L\geq L_\theta$ und $n\geq n_\theta$ mit \eqref{mc}
+\begin{align*}
+\|a-\mathcal{M}_L^{\text{MC}}(n)\|_{L^2(\Omega,H)}\leq \varepsilon.
+\end{align*}
+Die mittlere quadratische Abweichung ist also von Ordnung $\mathcal{O}(\varepsilon^2)$.
+\end{prop}
+\begin{proof}
+F"ur $\theta\in(0,1)$ und $\varepsilon>0$ erhalten wir mit Proposition 2.1, dass gilt
+\begin{align*}
+\|a-\mathbb{E}(Y_L)\|^2_H=\frac{4}{3\pi^2}\frac{1}{m^2_L}=\frac{4}{3\pi^2}2^{-2L}
+\end{align*}
+Es ist 
+\begin{align*}
+\frac{4}{3\pi^2}2^{-2L}\leq \theta \varepsilon^2 \Leftrightarrow L \geq -\frac{1}{2}(\log(3\theta\pi^2\varepsilon^2)-\log(4))\log(2)^{-1}=&\frac{-\frac{1}{2}\log(3\theta\pi^2\varepsilon)}{\log(2)}+\frac{\frac{1}{2}\log(4)}{\log(2)}
+\\=&1-\frac{\log(\sqrt{3\theta}\pi\varepsilon)}{\log(2)}.
+\end{align*}
+Das beweist die erste Behauptung. Au"serdem gilt f"ur alle $n\geq n_\theta$
+\begin{align*}
+\frac{1}{n}\|Y_{L_\theta}-\mathbb{E}(Y_{L_\theta})\|^2_{L^2(\Omega,H)}\leq& \frac{1}{n_\theta}\cdot \|Y_{L_\theta}-\mathbb{E}(Y_{L_\theta})\|^2_{L^2(\Omega,H)}\\ \leq&\frac{1}{\frac{\|Y_{L_\theta}-\mathbb{E}(Y_{L_\theta})\|^2_{L^2(\Omega,H)}}{(1-\theta)\varepsilon^2}}\cdot \|Y_{L_\theta}-\mathbb{E}(Y_{L_\theta})\|^2_{L^2(\Omega,H)}\\=&\frac{1}{\frac{1}{(1-\theta)\varepsilon^2}}=(1-\theta)\varepsilon^2
+\end{align*}
+und insgesamt folgt mit \eqref{mc} 
+\begin{align*}
+\|a-\mathcal{M}_L^{\text{MC}}(n)\|_{L^2(\Omega,H)}\leq \varepsilon.
+\end{align*}.
+\end{proof} 
+Es ist 
+\begin{align*}
+\|a-\mathbb{E}(Y_L)\|^2_H=\mathcal{O}(\varepsilon^2)=\mathcal{O}((\frac{1}{m_l})^2)), \ \ \text{f"ur}\  \varepsilon \rightarrow 0, \l \rightarrow \infty.
+\end{align*} 
+Man w"ahlt also $\frac{1}{m_l}$ von Ordnung $\mathcal{O}(\varepsilon)$.\\
+Analog w"ahlt man, wie auch in der Proposition zu erkennen, $n$ von Ordnung $\mathcal{O}(\varepsilon^{-2})$.\\
+Die n"achste Proposition berechnet nun die Varianz der $Y_L$.
+\begin{prop}
+F"ur jedes $l\in\mathbb{N}_0$ gilt
+\begin{align*}
+\|Y_l-\mathbb{E}(Y_l)\|^2_{L^2(\Omega,H)}=\frac{1}{m_l}\sum_{j=1}^{m_l}a(\lambda_j^l)(1-a(\lambda_j^l))=\frac{1}{m_l^3}\left(\frac{2}{\pi}\right)^2\sum_{j=1}^{m_l} j\cdot \left(\frac{\pi}{2}m_l-j\right)
+\end{align*}
+\end{prop}
+\newpage
+\begin{proof}
+Durch Einsetzen der Definition von $Y_l$ und des Erwartungswertes von $Y_l$ erhalten wir
+\allowdisplaybreaks
+\begin{align*}
+\|Y_l-\mathbb{E}(Y_l)\|^2_{L^2(\Omega,H)}=&\int_0^1\mathbb{E}\left[\left(\sum_{j=1}^{m_l}(f(\cdot;\lambda_j^l)\mathbb{I}_{(\lambda_{j-1}^l,\lambda_j^l)}(\lambda)-a(\lambda_j^l)\mathbb{I}_{(\lambda_{j-1}^l,\lambda_j^l)}(\lambda)\right)^2\right]\td{\lambda}\\=&\int_0^1\mathbb{E}\left[\left(\sum_{j=1}^{m_l}(f(\cdot;\lambda_j^l)-a(\lambda_j^l)\mathbb{I}_{(\lambda_{j-1}^l,\lambda_j^l)}(\lambda)\right)^2\right]\td{\lambda}\\=&\sum_{j=1}^{m_l} \int_{\lambda_{j-1}^l}^{\lambda_j^l}\mathbb{E}[(f(\cdot;\lambda_j^l)-a(\lambda_j^l))^2]\td{\lambda}\\=&\frac{1}{m_l}\sum_{j=1}^{m_l}(\underbrace{\mathbb{E}[f(\cdot;\lambda_j^l)^2]}_{\mathbb{E}[f(\cdot;\lambda_j^l)]}-a(\lambda_j^l)^2)=\frac{1}{m_l}\sum_{j=1}^{m_l}a(\lambda_j^l)(1-a(\lambda_j^l))\\=&\frac{1}{m_l}\sum_{j=1}^{m_l}\frac{2\lambda_j^l}{\pi}\left(1-\frac{2\lambda_j^l}{\pi}\right)=\frac{1}{m_l}\left(\frac{2}{\pi}\right)^2\sum_{j=1}^{m_l}\lambda_j^l\left(\frac{\pi}{2}-\lambda_j^l\right)\\=&\frac{1}{m_l}\left(\frac{2}{\pi}\right)^2\sum_{j=1}^{m_l}\frac{j}{m_l}\left(\frac{\pi}{2}-\frac{j}{m_l}\right)=\frac{1}{m_l^3}\left(\frac{2}{\pi}\right)^2\sum_{j=1}^{m_l}j\left(\frac{\pi}{2}m_l-j\right)
+\end{align*}
+\end{proof}
+\begin{df}[Rechenaufwand]
+Wir definieren den numerischen Rechendaufwand als die Anzahl von insgesamt durchgef"uhrten Simulationschritten bei der Erzeugung von Samplepfaden.
+\end{df}
+Diese Definition f"uhrt dazu, dass eine Simulation von $n$ Pfaden mit jeweils $\omega$ Diskretisierungsstellen beispielsweise einen Rechenaufwand von $n \cdot \omega$ Simulationsschritten erfordert.\\
+In unserem Fall haben wir also einen Rechenaufwand von $ n \cdot m_l =n \cdot 2^l$, was der Ordnung $\mathcal{O}(\varepsilon^{-3})$ entspricht.

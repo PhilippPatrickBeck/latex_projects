@@ -1,0 +1,8 @@
+\section{Die klassische Monte-Carlo-Methode}
+In diesem Kapitel ist unser Ziel die Approximation der exakten l"osung des Buffonschen Nadelproblems mit Hilfe der klassischen Monte-Carlo-Methode zu untersuchen.\\
+Insbesondere wollen wir die optimale Anzahl an Monte-Carlo-Samples und Schrittgr"o"se herausfinden, sodass die mittlere quadratische Abweichung unter einer gegebenen Fehlertoleranz $\varepsilon>0$ liegt. Dabei sollte aber die Rechenleistung m"oglichst minimal sein.\\
+F"ur gegebenes $L,n\in\mathbb{N}$ definieren wir den Monte-Carlo-Sch"atzer f"ur dieses Problem als
+\begin{align*}
+\mathcal{M}_L^{\text{MC}}(n):=\frac{1}{n}\sum_{i=1}^n  Y_L,i,
+\end{align*}
+Dabei ist $(Y_L,i)_{i\in\mathbb{N}$ eine Folge unabh"angiger identisch verteiler Kopien der Zufallsvariable $Y_L$ \eqref{lustige_gleichung}.

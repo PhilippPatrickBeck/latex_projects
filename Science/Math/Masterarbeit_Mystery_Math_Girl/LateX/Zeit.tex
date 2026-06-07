@@ -1,0 +1,40 @@
+\subsection{Optimale Anzahl von Leveln und Samples bei gegebenen Rechenaufwand}
+Im vorherigen Kapitel haben wir uns einen Fehler $\varepsilon>0$ und damit auch die Levelanzahl $L\in\mathbb{N}$ vorgegeben. Davon ausgehend, unter der Bedingung die Kosten minimal zu halten, dann die optimale Sampleanzahl bestimmt.\\
+In diesem Kapitel besch"aftigen wir uns damit, unter Vorgabe eines Kostenbudgets $C$ die optimale Levelanzahl sowie die optimale Anzahl an Samples auf jedem dieser Level zu bestimmen, sodass wir aber einen m"oglichst kleinen Fehler haben.\\[0,2cm]
+
+Eine obere Schranke f"ur die Anzahl der Level ist automatisch gegeben.
+Angenommen wir nehmen auf jedem Level nur ein Sample, dann gilt:
+\begin{align}
+\sum_{l=1}^L C_3 h^{-l} \leq C \Leftrightarrow& \sum_{l=1}^L 2^l \leq \underbrace{\frac{C}{C_3}}_{=C'} \underset{geo. Reihe}{\Leftrightarrow} \frac{1-2^{L+1}}{1-2}-1\leq C' 
+\Leftrightarrow 1-2^{L+1}+1 \geq -C'\\
+ \Leftrightarrow & 2+C' \geq 2^{L+1} \Leftrightarrow \frac{\ln(2+C')}{\ln(2)}-1\geq L 
+\end{align}
+Nat"urlich wird es nicht vorkommen, dass man nur ein Sample pro Level nimmt. Dies war nur eine rein theoretische Annahme um "uberhaupt eine Schranke f"ur die Levelanzahl zu erhalten. Diese schwache Schranke garantiert jedoch, dass wir nur endlich viele Level testen m"ussen.
+Das Ziel ist es nun, einen Algorithmus zu entwickeln, der unser eigentliches Problem l"ost.\\[0,1cm]
+
+Zuerst besch"aftigen wir uns jedoch wieder damit, dass die Levelanzahl $L\in\mathbb{N}$ fest gegeben sei. Wir bestimmen dann die optimale Anzahl an Samples auf jedem dieser Level. Jedoch unter der Bedingung, dass die Kosten unter der vorgegebenen Schranke $C$ liegen.\\
+Danach gilt es rauszufinden, welche Levelanzahl optimal ist. Wegen $(18)$, wissen wir unsere maximale Anzahl an theoretisch m"oglichen Leveln. Da wir aber mehr als nur ein Sample auf den verschiedenen Leveln nehmen, wird die tats"achliche Levelanzahl stark darunter liegen. Jedoch werde ich von dieser Schranke ausgehen, um die optimale Levelanzahl zu bestimmen.\\[0,1cm]
+D.h. wir haben nun f"ur gegebenes $L,C \in \mathbb{N}$ folgendes Problem zu l"osen:
+\begin{align*}
+\min_{(n_1,n_2,...,n_L)\in\mathbb{N}^L}& \|a-\mathcal{M}_L^{\text{MLMC}}((n_l)_{l=1}^L)\|_{L^p(\Omega;E)}\\
+\text{\small{u.d.N}}& \sum_{l=1}^L n_l \cdot c_l \leq C
+\end{align*}
+Wir haben eine obere Schranke f"ur $\|a-\mathcal{M}_L^{\text{MLMC}}((n_l)_{l=1}^L)\|_{L^p(\Omega;E)}$ gegeben. 
+Wir wollen nun also diese Schranke optimieren.\\
+ Mit unseren schon in den vorherigen Kapiteln bestimmten Konstanten ergibt sich die Schranke
+\begin{align*}
+\frac{2}{\pi\sqrt{3}}\left(\frac{1}{2}\right)^L+\frac{2}{\pi}\left(\sum_{l=1}^L\left(\frac{1}{4}\right)^l\cdot\frac{1}{n_l}\right)^{\frac{1}{2}}.
+\end{align*}
+Da der erste Summand nicht von $n_l$ abh"angt, kann man diesen f"ur die Minimierung vernachl"assigen. Genauso den Faktor $\frac{2}{\pi}$ im zweiten Summanden. Aufgrund der Monotonie der Wurzelfunktion reicht es also $\sum_{l=1}^L\frac{1}{4}^l\cdot\frac{1}{n_l}$ zu minimieren. Wir erhalten also mit der zu Anfang des Kapitel 5 bestimmten Schranke f"ur die Kosten folgendes vereinfachte Optimierungsproblem
+\begin{align*}
+\min_{(n_1,n_2,...,n_L)\in\mathbb{N}^L}&\sum_{l=1}^L(\frac{1}{4})^l\cdot\frac{1}{n_l}\\
+\text{\small{u.d.N}}& \sum_{l=1}^L n_l \frac{5}{2}2^l\leq C\\
+\Leftrightarrow& \sum_{l=1}^L n_l 2^l\leq \underbrace{C \cdot \frac{2}{5}}_{C'}.
+\end{align*}
+Wir geben uns also immer die Konstante $C':=C$ vor.\\[0,2cm]
+
+\textbf{\underline{Bemerkung:}}\\
+Wenn man die zu minimierende Funktion genauer betrachtet, ist leicht zu erkennen, dass wir die meisten Samples auf den niedrigen Leveln und vor allem auf Level 1 nehmen m"ochten. Da der Faktor $\frac{1}{4^l}$ mit gr"o"ser werdendem $l$ immer geringer wird, ist es f"ur unseren Fehler $\varepsilon$ am schlechtesten die $n_l$ f"ur niedrige $l$ zu verringern. Dies w"urde das schnellste Wachstum des Funktionswertes  bedeuten.\\[0,2cm]
+Nun werde ich meine zwei Vorgehensweisen zur Bestimmung eines Optimums vorstellen. Dabei habe ich immer die Tatsache aus der Bemerkung ber"ucksichtigt.
+
+

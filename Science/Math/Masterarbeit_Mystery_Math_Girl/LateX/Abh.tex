@@ -1,0 +1,115 @@
+\subsection{Abh"angigkeit der Rechenkosten und der Fehlertoleranz}
+Im vorherigen Kapitel haben wir die optimale Anzahl an Samples pro Level bei gegebener Levelanzahl $L\in\mathbb{N}$ und Fehlertoleranz $\varepsilon\in(0,\infty)$  bestimmt. Wegen \eqref{L1} verh"alt sich die untere Schranke f"ur $L\in\mathbb{N}$ wie $(q_1\log(h))^{-1}\log(\varepsilon)$ f"ur $\varepsilon\rightarrow 0$.\\
+In diesem Kapitel wollen wir nun die Abh"angigkeit der gesamten Rechenkosten des MLMC-Algorithmus und der Fehlertoleranz untersuchen. Hierf"ur ist es notwendig eine Verbindung von $L$ und $\varepsilon$ herzustellen.\\
+Daf"ur sei $\theta\in (0,1)$ und wir definieren
+\begin{align}\label{L}
+L_\theta:=L_\theta(\varepsilon):=\Big\lceil \frac{\log(\varepsilon)+\log{(\frac{\theta}{C_1}})}{q_1\log(h)}\Big \rceil\in\mathbb{N}.
+\end{align}
+Dies stellt sicher, dass der Statistische Bias von $\theta\varepsilon$ eingegrenzt wird. Beziehungsweise analog zur Rechnung in \eqref{L1} gilt $C_1h^{q_1L_\theta}\leq \theta\varepsilon$. Also gilt insgesamt:
+\begin{align*}
+\|a-\mathcal{M}_L^{\text{MLMC}}((n_l)_{l=1}^L)\|_{L^p(\Omega;E)}\leq &\underbrace{C_1 h^{q_1L}}_{\leq \theta\varepsilon}+\underbrace{2C_2 T_p(E)\left(\sum_{l=1}^L \frac{h^{p q_2 l}}{n_l^{p-1}}\right)^{\frac{1}{p}}}_{\leq(1-\theta)\varepsilon}\leq\varepsilon.
+\end{align*} Folglich ist
+\begin{align*}
+\delta_\theta:=\frac{(1-\theta)\varepsilon}{2C_2T_p(E)}\leq \frac{\varepsilon-C_1h^{q_1L_\theta}}{2C_2T_p(E)}=\delta.
+\end{align*}
+Unser Ziel ist es, das Wachstum von $\text{cost}(\mathcal{M}_{L_\theta}^{\text{MLMC}}((n_l^\theta)_{l=1}^{L_\theta}))$ f"ur $\varepsilon\rightarrow 0$ zu bestimmen. $(n_l^\theta)_{l=1}^{L_\theta}$ beschreibt die Anzahl an Samples in \eqref{n} mit $L_\theta$ und $\delta_\theta$ anstelle von $L$ und $\theta$. Das bedeutet
+\begin{align*}
+n_l^\theta:=\lceil a_l^\theta \rceil:=\left\lceil \delta_\theta^{-\frac{p}{p-1}}b_lc_l^{-\frac{1}{p}}\left(\sum_{k=1}^{L_\theta} c_k^{\frac{p-1}{p}}b_k\right)^{\frac{1}{p-1}}\right\rceil \in \mathbb{N}, \ \ l=1,...,L_\theta,
+\end{align*}
+wobei $b_l$ und $c_l$ dieselben wie in \eqref{delta} sind. Wegen $\delta^{-\frac{p}{p-1}}\leq \delta_\theta^{-\frac{p}{p-1}}$ folgt, dass auch $n_l^*\leq n_l^\theta$ f"ur $l=1,...,L_\theta$ gilt. Daher ist $(n_l^\theta)_{l=1}^{L_\theta}$ eine geeignete L"osung f"ur $(6)-(8)$ mit 
+\begin{align*}
+\text{cost}(\mathcal{M}_{L_\theta}^{\text{MLMC}}((n_l^*)_{l=1}^{L_\theta}))\leq \text{cost}(\mathcal{M}_{L_\theta}^{\text{MLMC}}((n_l^\theta)_{l=1}^{L_\theta})).
+\end{align*}
+Au"serdem ist mit Voraussetzung \ref{v} eine obere Schranke f"ur die Kosten gegeben. Diese ergibt sich aus
+\begin{align}\label{r}
+\text{cost}(\mathcal{M}_{L_\theta}^{\text{MLMC}}((n_l^\theta)_{l=1}^{L_\theta}))
+\leq& \nonumber \sum_{l=1}^{L_\theta}n_l^\theta C_3h^{-rl}\leq \sum_{l=1}^{L_\theta}(a_l^\theta+1)C_3h^{-rl}\\ \nonumber=&
+\underbrace{C_3\sum_{l=1}^{L_\theta}h^{-rl}}_{(*)}+\underbrace{C_3\sum_{l=1}^{L_\theta}a_l^\theta h^{-rl}}_{(**)}
+\\=&C_3\frac{h^{-rL_\theta}-1}{1-h^r}+\delta_\theta^{-\frac{p}{p-1}}\left(\sum_{l=1}^{L_\theta}c_l^{\frac{p-1}{p}}b_l\right)^{\frac{p}{p-1}}.
+\end{align}
+Der Summand $(*)$ liefert
+\begin{align*}
+C_3\sum_{l=1}^{L_\theta}h^{-rl}=C_3\sum_{l=0}^{L_\theta-1}(h^{-r})^{l+1}=C_3h^{-r} \sum_{l=0}^{L_\theta-1}(h^{-r})^{l}=C_3h^{-r}\frac{(h^{-r})^{L_\theta}-1}{h^{-r}-1}=C_3\frac{h^{-rL_\theta}-1}{1-h^r}
+\end{align*}
+und f"ur  $(**)$ gilt
+\begin{align*}
+C_3\sum_{l=1}^{L_\theta}a_l^\theta h^{-rl}=&C_3\sum_{l=1}^{L_\theta}\delta_\theta^{-\frac{p}{p-1}}b_lc_l^{-\frac{1}{p}}\left(\sum_{k=1}^{L_\theta}c_k^{\frac{p-1}{p}}b_k\right)^{\frac{1}{p-1}}\cdot h^{-rl}
+\\=&\delta_\theta^{-\frac{p}{p-1}}\sum_{k=1}^{L_\theta}\left(c_k^{\frac{p-1}{p}}b_k\right)^{\frac{1}{p-1}}\sum_{l=1}^{L_\theta}(b_l\underbrace{c_l^{-\frac{1}{p}}\underbrace{C_3h^{-rl}}_{c_l}}_{c_l^{\frac{p-1}{p}}})\\
+=&\delta_\theta^{-\frac{p}{p-1}}\left(\sum_{l=1}^{L_\theta}c_l^{\frac{p-1}{p}}b_l\right)^{\frac{1}{p-1}+1}=\delta_\theta^{-\frac{p}{p-1}}\left(\sum_{l=1}^{L_\theta}c_l^{\frac{p-1}{p}}b_l\right)^{\frac{p}{p-1}}.
+\end{align*}
+Wegen \eqref{L} ist
+\begin{align*}
+h^{cL_\theta}=\exp(c\log(h)L_\theta)\leq&\exp\left(c\log(h)\left(\frac{\log(\varepsilon)+\log(\frac{\theta}{C_1})}{q_1\log(h)}+1\right)\right)\\
+=&\exp(c\log(h))\cdot\exp\left(c\frac{\log(\varepsilon)+\log(\frac{\theta}{C_1})}{q_1}\right)=h^c\cdot\left(\frac{\varepsilon\theta}{C_1}\right)^{\frac{c}{q_1}}
+\end{align*}
+f"ur jedes $c\in\mathbb{R}$ erf"ullt.
+Damit erhalten wir f"ur den ersten Summanden
+\begin{align}\label{1}
+C_3\frac{h^{-rL_\theta}-1}{1-h^r}\leq C_3\frac{h^{-rL\theta}}{1-h^r}\leq C_3\frac{1}{h^r(1-h^r)}\left(\frac{C_1}{\theta}\right)^{\frac{r}{q_1}}\varepsilon^{-\frac{r}{q_1}}.
+\end{align}
+Nachdem wir $b_l$ und $c_l$ eingesetzt haben, erhalten wir mit der geometrischen Reihe
+\begin{align}\label{cases}
+\sum_{l=1}^{L_\theta}c_l^{\frac{p-1}{p}}b_l=C_3^{\frac{p-1}{p}}\sum_{l=1}^{L_\theta}h^{(q_2-\frac{p-1}{p}r)l}=\begin{cases} C_3^{\frac{p-1}{p}}\frac{1-h^{(q_2-\frac{p-1}{p}r)L_\theta}}{h^{-(q_2-\frac{p-1}{p}r)}-1}, \ \ &\text{falls} \ q_2-\frac{p-1}{p}r>0, \\
+C_3^{\frac{p-1}{p}}L_\theta, &\text{falls} \ q_2-\frac{p-1}{p}r=0, \\
+C_3^{\frac{p-1}{p}}\frac{h^{(q_2-\frac{p-1}{p}r)L_\theta}-1}{1-h^{-(q_2-\frac{p-1}{p}r)}}, \ \ &\text{falls} \ q_2-\frac{p-1}{p}r<0.\\
+\end{cases}
+\end{align}
+Wir untersuchen nun die drei F"alle im Einzelnen.\\
+\underline{1.Fall:}\\
+Falls  $q_2-\frac{p-1}{p}r>0$ erhalten wir mit \eqref{cases} und $h\in(0,1)$, dass 
+\begin{align*}
+\sum_{l=1}^{L_\theta}c_l^{\frac{p-1}{p}}b_l\leq C_3^{\frac{p-1}{p}}\frac{1}{h^{-(q_2-\frac{p-1}{p}r)}-1}
+\end{align*} gilt.
+Also folgt in diesem Fall mit \eqref{r} und \eqref{1}
+\begin{align*}
+\text{cost}(\mathcal{M}_{L_\theta}^{\text{MLMC}}((n_l^\theta)_{l=1}^{L_\theta}))\leq& \frac{C_3}{h^r(1-h^r)}\left(\frac{C_1}{\theta}\right)^{\frac{r}{q_1}}\varepsilon^{-\frac{r}{q_1}}+C_3\delta_\theta^{-\frac{p}{p-1}}(h^{-(q_2-\frac{p-1}{p}r)}-1)^{-\frac{p}{p-1}}\\
+\underset{(*)}{\leq}& \frac{C_3}{h^r(1-h^r)}\left(\frac{C_1}{\theta}\right)^{\frac{r}{q_1}}\varepsilon^{-\frac{r}{q_1}}+C_3\left(\frac{2C_2T_p(E)}{(1-\theta)(h^{-(q_2-\frac{p-1}{p}r)}-1)}\right)^{\frac{p}{p-1}}\varepsilon^{-\frac{p}{p-1}}\\
+\leq& C\left(\varepsilon^{-\frac{r}{q_1}}+\varepsilon^{-\frac{p}{p-1}}\right).
+\end{align*}
+\begin{enumerate}
+\item[-]$(*)$ entsteht durch Einsetzen von $\delta_\theta$.
+\item[-]C ist eine Konstante, welche von $C_1,C_2,C_3,T_p(E),h,r,q_1,q_2,p$ und $\theta$ abh"angt.
+\end{enumerate}
+\underline{2. Fall:}\\
+Sei nun also $q_2-\frac{p-1}{p}r=0$. Dann folgt
+\begin{align*}
+\text{cost}(\mathcal{M}_{L_\theta}^{\text{MLMC}}((n_l^\theta)_{l=1}^{L_\theta}))\leq& \frac{C_3}{h^r(1-h^r)}\left(\frac{C_1}{\theta}\right)^{\frac{r}{q_1}}\varepsilon^{-\frac{r}{q_1}}+C_3\delta_\theta^{-\frac{p}{p-1}}L_\theta^{\frac{p}{p-1}}.
+\end{align*}
+Durch Absch"atzen nach oben von $L_\theta$ und Einsetzen von $\delta_\theta$ erhalten wir
+\begin{align*}
+C_3\delta_\theta^{-\frac{p}{p-1}}L_\theta^{\frac{p}{p-1}}\leq& C_3\left(\frac{2C_2T_p(E)}{(1-\theta)\varepsilon}\right)^{\frac{p}{p-1}}\left(\frac{\log(\varepsilon)+\log(\frac{\theta}{C_1})}{q_1\log(h)}+1\right)^{\frac{p}{p-1}}\\
+\leq& C(1+\log(\varepsilon^{-1})^{\frac{p}{p-1}})\varepsilon^{-\frac{p}{p-1}}.
+\end{align*}
+Insgesamt existiert dann eine Konstante $C$, welche von $C_1,C_2,C_3,T_p(E),h,r,q_1,q_2,p$ und $\theta$ abh"angt, sodass gilt:
+\begin{align*}
+\text{cost}(\mathcal{M}_{L_\theta}^{\text{MLMC}}((n_l^\theta)_{l=1}^{L_\theta}))\leq C(\varepsilon^{-\frac{r}{q_1}}+(1+\log(\varepsilon^{-1})^{\frac{p}{p-1}})\varepsilon^{-\frac{p}{p-1}}).
+\end{align*}
+\underline{3.Fall:}\\
+Sei nun $q_2-\frac{p-1}{p}r<0$ dann folgt aus \eqref{1} mit $(q_2-\frac{p-1}{p}r)L_\theta$ anstelle von $-r$
+\begin{align*}
+\frac{h^{(q_2-\frac{p-1}{p}r)L_\theta}-1}{1-h^{-(q_2-\frac{p-1}{p}r)}}\leq \frac{1}{h^{-(q_2-\frac{p-1}{p}r)}(1-h^{(q_2-\frac{p-1}{p}r)})}\left(\frac{C_1}{\theta}\right)^{-\frac{1}{q_1}(q_2-\frac{p-1}{p}r)}\varepsilon^{\frac{1}{q_1}(q_2-\frac{p-1}{p}r)}.
+\end{align*}
+Also erhalten wir in diesem Fall
+\begin{align*}
+\text{cost}(\mathcal{M}_{L_\theta}^{\text{MLMC}}((n_l^\theta)_{l=1}^{L_\theta}))\leq C\left(\varepsilon^{-\frac{r}{q_1}}+\varepsilon^{-\frac{p}{p-1}(1-\frac{1}{q_1}(q_2-\frac{p-1}{p}r))}\right).
+\end{align*}
+Wir befinden uns mit unseren Konstanten im ersten Fall, da $q_2-\frac{p-1}{p}r=1- \frac{2-1}{2}\cdot 1 = 1- \frac{1}{2}=\frac{1}{2}>0$ ist. Dies bedeutet, dass f"ur unsere Kosten gilt:
+\begin{align*}
+\text{cost}(\mathcal{M}_{L_\theta}^{\text{MLMC}}((n_l^\theta)_{l=1}^{L_\theta}))\leq C\left(\varepsilon^{-1}+\varepsilon^{-2}\right).
+\end{align*}
+Wegen
+\begin{equation*}
+\lim_{\varepsilon\rightarrow 0} \frac{\frac{1}{\varepsilon}}{\frac{1}{\varepsilon^2}}=\lim_{\varepsilon\rightarrow 0} \varepsilon=0
+\end{equation*}
+dominiert $\varepsilon^{-2}$ den Term $\varepsilon^{-1}$  und
+unsere Kosten sind von Ordnung $\mathcal{O}(\varepsilon^{-2})$ . Dies ist besser als die der klassischen Monte-Carlo-Methode mit $\mathcal{O}(\varepsilon^{-3})$.\\[0,2cm]
+Es ist wieder die genaue Kenntnis der Konstanten $C_1,C_2,T_p(E),h$ sowieso der Raten $q_1,q_2$ und $r$ vonn"oten. In der Praxis sind diese Variablen nicht alle verf"ugbar. Jedoch gilt trotzdem, dass die Verh"altnisse der $(n_l^*)_{l\in\mathbb{N}}$  nicht von $C_1,C_2$ und $T_p(E)$ abh"angen. Denn es ist
+\begin{align*}
+\frac{a_l^*}{a_1^*}=h^{(q_2+\frac{r}{p})(l-1)} 
+\end{align*} f"ur $l=1,2,...L$.
+Die Strategie ist nun den MLMC-Algorithmus mit der Wahl
+\begin{align*}
+\overline{n_l}:=\lceil \eta_\varepsilon h^{-(q_2+\frac{r}{p})(L-l)} \rceil,
+\end{align*}
+zu implementieren.
+Hierbei ist $\eta_\varepsilon\in (0,\infty)$ ein Parameter, der von der Fehlertoleranz $\varepsilon>0$ abh"angt. Die Gleichung\eqref{n} liefert, dass $\eta_\varepsilon$ sich asymptotisch wie $\varepsilon^{-\frac{p}{p-1}}$ f"ur $\varepsilon\rightarrow0$ verh"alt.

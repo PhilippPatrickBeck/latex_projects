@@ -1,0 +1,69 @@
+\subsubsection{Vergleich der beiden Vorgehensweisen}
+Wir haben nun zwei sehr unterschiedliche Vorgehensweisen zur Bestimmung der optimalen Sampleanzahlen f"ur den bestm"oglichen Fehler kennengelernt. Bei der Bestimmung der optimalen Levelanzahl sind wir bei beiden Methoden jedoch gleich vorgegangen.\\[0,2cm]
+Nun betrachten wir die Unterschiede.\\
+W"ahrend wir bei der Lagrange-Methode erstmal die Notwendigkeit der Ganzzahligkeit des Optimums vernachl"assigen und das Problem ausgehend von der analytischen L"osung berechnen, bauen wir bei der zweiten Variante unsere L"osung durch gieriges Vorgehen nach und nach auf. Dies macht nat"urlich gro"se Unterschiede in der Laufzeit.
+Bei der Lagrange-Methode berechne ich direkt den Vektor mit dem analytischen Optimum. Danach passiert au"ser Abrunden und Auff"ullen des ersten Levels nichts mehr. Dies ist also eine sehr schnelle Vorgehensweise.\\
+Bei der zweiten Methode hingegen gibt es wie im Algorithmus zu erkennen viele Schleifen. Bei einen hohen Kostenbudgets kann dies l"anger dauern. Bez"uglich der Laufzeit ist also die Lagrange-Methode besser.\\[0,2cm]
+Vergleichen wir nun die Ergebnisse der beiden Methoden:
+\begin{center}
+\textbf{Ergebnisse von Lagrange}\\[0,1cm]
+\begin{tabular}{|c|c|c|}
+Kostenbudgets & opt. Levelanzahl & Fehler $\varepsilon$ \\
+ \hline
+10 & 1 & 0.3261 \\
+\hline
+100& 3 & 0.1471 \\
+\hline
+1000& 5 &  0.0518 \\
+\hline
+10 000& 8 & 0.0158 \\
+\hline
+100 000& 10 & 0.0051 \\
+\hline
+1 000 000& 12 &  0.0016 \\
+\hline
+5 000 000& 13 & 7.2485e-04
+ \\
+\end{tabular}\\[0,5cm]
+\textbf{Ergebnisse nach Umverteilen}\\[0,1cm]
+\begin{tabular}{|c|c|c|}
+Kostenbudgets & opt. Levelanzahl & Fehler $\varepsilon$ \\
+ \hline
+10 & 1 & 0.3261 \\
+\hline
+100& 4 & 0.1395 \\
+\hline
+1000& 5 &  0.0562 \\
+\hline
+10 000& 7 & 0.0206 \\
+\hline
+100 000& 8 & 0.0082 \\
+\hline
+1 000 000& 10 &   0.0029 \\
+\hline
+5 000 000& 11 & 0.0015
+ \\
+\end{tabular}
+\end{center}\vspace{0,2cm}
+Es ist zu erkennen, dass bei einem niedrigen Kostenbudgets bis zu 10 000 es keine starken Abweichungen der Ergebnisse gibt.
+Bei h"oheren Kosten jedoch ist deutlich zu erkennen, wie viel bessere Ergebnisse die Lagrange-Methode liefert. Dies liegt daran, dass wir von der analytischen optimalen L"osung ausgehen. Diese ist zwar nicht ganzzahlig, jedoch bewegen wir uns nur sehr wenig von ihr weg.\\
+Die zweite Methode muss es durch das Umverteilen erstmal schaffen, nahe an die eigentlich optimale L"osung heranzukommen. Durch das strenge Vorgehen der Verteilung von links nach rechts kann es sein, dass wir andere M"oglichkeiten von Sampleverteilungen verpassen, welche vielleicht doch ein besseres Ergebnis liefern w"urden. Dies ist eine klare Schw"ache von Greedy-Algorithmen.\\
+\\[0,2cm]
+Zur graphischen Veranschaulichung noch ein Plot der Ergebnisse:
+\begin{center}
+\includegraphics[width=14cm]{Vergleich.png}
+\end{center}
+Der Fehler, den wir durch die Umverteilmethode erhalten, ist bis auf ein paar wenige Ausnahmen schlechter. Dies gilt vor allem ab einem hohen Kostenbudget.\\
+Zusammenfassend ist also klar zu erkennen, dass die erste Vorgehensweise besser ist. Sie liefert sowohl bessere Ergebnisse und ist deutlich schneller.
+Die Laufzeit der Umverteilungsmethode w"urde sich jedoch noch verbessern lassen, indem man mehr als ein Sample pro Iteration umschichtet.
+Dies l"asst sich beispielsweise durch absteigende Zehnerpotenzen realisieren. Um dieses Vorgehen zu skizzieren betrachten 
+wir mit 
+\begin{align*}
+2 \cdot 10^n +4 \cdot 1 + ... + 2^L \cdot 1 \leq C
+\end{align*}
+eine m"ogliche Ausgangssituation der Umverteilungsmethode.
+Wir verteilen nun solange $10^{n-1}$ Sampels von Level 1 zu Level 2, bis die Nebenbedingung verletzt wird.
+Dann nehmen wir einen Verteilvorgang zur"uck und verteilen mit einer Zehnerpotenz weniger.
+Das Ergebnis von diesem Vorgehen ist identisch zu der Umverteilung von genau einem Sample pro Iteration.
+Durch die Zehnerpotenzschritte wird die Anzahl an insgesamt durchgef"uhrten Iterationen jedoch deutlich gesenkt und die Laufzeit somit reduziert.
+

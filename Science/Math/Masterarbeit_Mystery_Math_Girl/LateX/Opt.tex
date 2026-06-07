@@ -1,0 +1,25 @@
+\section{Optimierung der Parameter und des Rechenaufwandes der MLMC-Methode}
+In diesem Kapitel besch"aftigen wir uns mit folgender Frage:\\
+Sei $\varepsilon>0$ eine gegebene Fehlertoleranz.\\ Wie sind die Parameter $L\in \mathbb{N}$ (Anzahl der Level) und $(n_l)^L_{l=1}$ (Anzahl der Samples pro Level) in der MLMC-Methode zu w"ahlen, sodass der Rechenaufwand minimiert wird?\\
+ Dies jedoch unter der Bedingung, dass der Fehler in \eqref{c} durch $\varepsilon$ beschr"ankt ist.\\
+ Desweiteren wollen wir wissen, wie der Rechenaufwand von der Fehlertoleranz abh"angt, falls $\varepsilon\rightarrow 0$ gilt.\\
+ Um diese Fragen zu beantworten, m"ussen wir zuerst festlegen, wie die Rechenkosten gemessen werden. Durch die Definition von 
+ $\mathcal{M}_L^{\text{MLMC}}((n_l)_{l=1}^L))$ ist klar, dass gilt
+ \begin{align*}
+ \text{cost}(\mathcal{M}_L^{\text{MLMC}}((n_l)_{l=1}^L)))=\text{cost}\left(\sum_{l=1}^L\frac{1}{n_l}\sum_{i=1}^{n_l}D_{l,i}\right)=\sum_{l=1}^Ln_l(\text{cost}(add_E)+\text{cost}(D_l)),
+ \end{align*}
+ Dabei bezeichnet cost($add_E$) die Kosten um zwei Elemente in E zu addieren und cost($D_l$) den Aufwand um eine Realisierung von $(D_l)_{l\in\mathbb{N}}$ zu generieren. Wir fordern folgende Bedingung.
+ \begin{vor}\label{v}
+ Es existiert ein $h\in(0,1)$, eine Konstante $C_3$ und ein $r\in[0,\infty]$, sodass 
+ \begin{equation*}
+ \text{cost}(add_E)+\text{cost}(D_l)\leq C_3h^{-rl}
+ \end{equation*}
+ f"ur jedes $l\in\mathbb{N}$ gilt.
+ \end{vor}
+Wir nehmen an, dass die Kosten f"ur arithmetische Operationen $1$ sind und es gilt in unserem Fall $\text{cost}(D_l)=2^l+2^{l-1}=\frac{3}{2}\cdot 2^l$. Insgesamt erhalten wir
+\begin{align*}
+ \text{cost}(add_E)+\text{cost}(D_l)=1+\frac{3}{2}2^l\leq (1+\frac{3}{2})2^l= C_3h^{-rl},
+\end{align*}
+womit $ C_3=\frac{5}{2}, \ h=\frac{1}{2}$ und $ r=1$ folgt.\\[0,2cm] \label{cost}
+
+Zuerst wollen wir nun die Frage beantworten, wie $(n_l)_{l=1}^L$ f"ur ein gegebenes $L\in \mathbb{N}$ zu w"ahlen ist. Im zweiten Unterkapitel benutzten wir die Resultate um eine obere Schranke f"ur die Rechenkosten in Abh"angigkeit einer gegegebenen Fehlerschranke $\varepsilon$ zu erhalten. Danach gehen wir zur optimalen Levelanzahl $L\in\mathbb{N}$ "uber.

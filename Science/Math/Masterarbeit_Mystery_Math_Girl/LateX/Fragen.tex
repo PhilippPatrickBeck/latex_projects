@@ -1,0 +1,30 @@
+\documentclass[12pt,twoside]{article}
+\usepackage[ngerman]{babel} 
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\begin{document}
+\textbf{Fragen:}
+\begin{enumerate}
+\item Ist es richtig, dass bei uns $T_p(E)$ also $T_p(L^2(\Omega,H))=1$ und $p=2$ gilt, da wir einen Hilbertraum haben?
+\item Woher kommt genau die Wahl am Ende von $a_l^*$ und was ist $a_1^*$?
+\item Wie bekomme ich die Konstanten $C_2$ und $q_2$?\\
+Ich habe versucht mit Proposition 4.1 zu arbeiten. Danach gilt ja
+\begin{align*}
+\|D_l-\mathbb{E}(D_l)\|^2=\frac{1}{\pi m_l}(1-\frac{2}{\pi m_l})
+\end{align*}
+Also
+\begin{align*}
+\|D_l-\mathbb{E}(D_l)\|\leq\frac{1}{\pi m_l}(1-\frac{2}{\pi m_l})< \frac{1}{\pi}(\frac{1}{2})^l
+\end{align*}
+Also k"onnte man h wieder als 1/2 $q_2=1$ und $C_2=\frac{1}{\pi}$. Aber das ist doch zu ungenau. Ich habe auch hier lange versucht auf was anderes zu kommen.
+\item Wie komme ich auf die Konstanten $C_3$ und $r$, die wenn ich richtig verstanden habe, wichtig f"ur das Optimierungsproblem sind?
+\item Wie l"ose ich die neuen Optimierungsproblem, welches ich durch das Branchen bekomme?\\
+Meine Idee ist immer wieder das Lemma 5.3 anzuwenden. Jedoch ist mir nicht genau klar wie ich das machen kann.\\
+Meine erste Idee war, nachdem man z.B die Fallunterscheidung f"ur eine Komplente gemacht hat die Zweige des Baumes nicht mit $\leq$ und $\geq$ zu beschriften sondern wirklich direkt die Gleichheit anzunehmem und nur noch "uber die restlichen Komponenten zu minimieren. Die Nebenbedingung passt man dann an, indem man das $\delta^p$ neu bestimmen muss. Jedoch find ich das nicht gut.
+Die andere kann ich gerade schwer so in Worten formulieren. \\
+Ich hab mir nat"urlich auch "uberlegt es anders, als mit dem Lemma zu l"osen aber bin auf nichts gekommen.
+\end{enumerate}
+\end{document}

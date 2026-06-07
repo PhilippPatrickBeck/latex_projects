@@ -1,0 +1,20 @@
+\section{Einleitung}
+Die Monte-Carlo-Simulation oder Monte-Carlo-Studie, auch MC-Simulation genannt, ist ein Verfahren aus der Stochastik, bei dem eine sehr gro"se Zahl gleichartiger Zufallsexperimente die Basis darstellt. Es wird dabei versucht, analytisch nicht oder nur aufwendig l"osbare Probleme mit Hilfe der Wahrscheinlichkeitstheorie numerisch zu l"osen. Als Grundlage ist vor allem das Gesetz der gro"sen Zahlen zu sehen.
+Anwendung findet die Monte-Carlo-Methode in vielen Bereichen. Neben der numerischen Mathematik werden die Monte-Carlo-Methoden auch in der Physik, Finanzwirtschaft und in den Ingenieurwissenschaften verwendet.\\
+Das gr"o"ste Problem an dieser Methode liegt darin, dass ein hoher Grad an numerischer Genauigkeit auch einen hohen numerischen Aufwand mit sich bringt. Dies erfordert also eine Abw"agung zwischen hoher Pr"azision auf der einen Seite und einem m"oglichst niedrigen Rechenaufwand auf der anderen Seite. Damit stellt sich die Frage wie sich der Rechenaufwand des Verfahrens verringern l"asst, jedoch die Genauigkeit nicht darunter leidet. Eine Antwort bietet das Multi-Level-Monte-Carlo-Verfahren, bei dem durch die Variation der Diskretisierungsschrittweiten bei der Simulation eine Verringerung der Anzahl an notwendigen Simulationen erzielt werden kann.\\[0,1cm]
+Diese Arbeit befasst sich mit dem  Buffonschen Nadelproblem und der Anwendung und Optimierung von Monte-Carlo-Algorithmen darauf. 
+Das Buffonsche Nadelproblem besch"aftigt sich mit der Wahrscheinlichkeit, mit welcher  eine willk"urlich geworfene Nadel ein Gitter paralleler Linien schneidet. Es erlaubt unter anderem, die Kreiszahl 
+$\pi$  experimentell zu bestimmen. Das Problem geh"ort zum Bereich der Integralgeometrie und war eines der ersten auf diesem Gebiet. Georges-Louis Leclerc de Buffon behandelte es erstmals 1733 vor der Pariser Akademie der Wissenschaften. 
+Georges-Louis Leclerc, Comte de Buffon (geb. am September 1707 in Montbard; gestorb. 16. April 1788 in Paris) war ein franz"osischer Naturforscher im Zeitalter der Aufkl"arung.\\
+
+Wir werden zuerst die klassische Monte-Carlo-Methode auf dieses Problem anwenden und dann zur Multi-Level-Monte-Carlo-Methode "ubergehen.
+Anschlie"send ist das Ziel diese Methoden f"ur das Problem zu optimieren.\\
+Als Erstes ist unser Ziel, bei einer gegebenen Levelanzahl und Fehlertoleranz die optimale Anzahl an Samples pro Level zu bestimmen.
+Dabei bestimmen wir die L"osung eines allgemeineren Optimierungproblemes und zeigen, dass diese bei uns anwendbar ist.
+Danach besch"aftigen wir uns mit dem Problem, wie die Levelanzahl und Sampleanzahl bei gegebener Rechenkapazit"at zu w"ahlen ist, um den Fehler minimal zu halten. Dabei werde ich zwei unterschiedliche Vorgehensweisen vorstellen.\\ Bei beiden Methoden werde ich zuerst die optimale Sampleverteilung bei gegebenen Kostenbudget und gegebener Levelanzahl bestimmen. Erst danach betrachte ich das Problem, welche Anzahl an Leveln den minimalen Fehler liefert.\\
+Die erste Vorgehensweise ist die Lagrange-Multiplikator-Methode. Da wir ein Optimierungsproblem mit Nebenbedingung vorliegen haben, ist dies eine geeignete M"oglichkeit. Unser Optimierungsproblem ist aber diskret, was wir nat"urlich noch ber"ucksichtigen m"ussen.
+Bei der zweiten Vorgehensweise versuche ich das Problem direkt diskret mit einer angepassten Form des Greedy-Algorithmus zu l"osen. Abschlie"send werde ich die Ergebnisse der beiden Methoden  sowie die Ergebnisse der zwei unterschiedlichen Optimierungsprobleme vergleichen.\\[0,2cm]
+
+
+
+

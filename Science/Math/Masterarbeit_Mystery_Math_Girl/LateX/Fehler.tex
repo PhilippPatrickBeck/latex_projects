@@ -1,0 +1,113 @@
+\subsection{Fehlerschranken f"ur die MLMC-Methode}
+In diesem Kapitel formulieren wir die MLMC-Methode allgemein f"ur Zufallsvariablen, die ihre Werte in Banachr"aumen haben.
+Es sei $p\in (1,2]$ und $E$ ein $\mathbb{R}$-Banachraum von Typ $p$. Wir werden eine
+Sch"atzung des Fehlers bez"uglich der Norm in $L^p(\Omega;E)$ erhalten.\\
+Unser Ziel ist die Approximation von
+\begin{align*}
+a=\mathbb{E}(Y)\in E,
+\end{align*}
+wobei $Y\in L^p(\Omega;E)$ eine gegebene Zufallsvariable ist.\\
+Hierf"ur nehmen wir an, dass eine Folge $(D_l)_{l\in\mathbb{N}}\subset L^p(\Omega;E)$ von unabh"angigen und identisch verteilten Zufallsvariablen existiert,welche folgende Eigenschaften erf"ullt:\\[0,1cm]
+F"ur $L\in \mathbb{N}$ sei
+\begin{align*}
+Y_L:=\sum_{l=1}^L D_l;
+\end{align*}
+oder "aquivalent hierzu
+\begin{align*}
+Y_l=Y_{l-1}+D_l, \ \ l\in\mathbb{N}
+\end{align*}
+mit $Y_0:=0\in L^p(\Omega;E).$ Nun fordern wir, dass gilt
+\begin{itemize}
+\item[(A)]$\lim_{L\in \mathbb{N}}\|a-\mathbb{E}[Y_L]\|=0$;
+\item[(B)]$\sup_{L\in\mathbb{N}}\|Y_L-\mathbb{E}[Y_L]\|_{L^p(\Omega;E)}<\infty.$
+\end{itemize}
+Die Forderung (A) gew"ahrleistet, dass die statistische Abweichung zwischen $Y_L$ und $a$ f"ur $L\rightarrow \infty$ klein wird und (B) gibt uns  Kontrolle "uber die $L^p$-Norm von $Y_L$.\\
+Zusammen jedoch sind beide Bedingungen n"utzlich um zu gew"ahrleisten, dass die klassische MC-Methode bzgl. der $L^p(\Omega;E)$-Norm gegen $a\in E$ konvergiert. \\
+Sei nun also $(Y_{L,i})_{i\in\mathbb{N}}$ eine Folge von unabh"angigen und identisch verteilten Kopien von $Y_L$, dann folgt mit \ref{Ung}, dass 
+\begin{align*}
+\Big\|a-\frac{1}{n}\sum_{i=1}^nY_{L,i}\Big\|_{L^p(\Omega;E)}\leq
+\| a-\mathbb{E}[Y_L]\|_{L^p(\Omega,E)}+\frac{2T_p(E)}{n^{1-\frac{1}{p}}}\cdot\|Y_L-\mathbb{E}[Y_L]\|_{L^p(\Omega;E)}.
+\end{align*} gilt.
+Dies folgt wegen
+\begin{align*}
+\left \|a-\frac{1}{n}\sum_{i=1}^nY_{L,i}\right \|_{L^p(\Omega,E)}\leq\left\|a-\mathbb{E}(Y_L)\right\|_{L^p(\Omega,E)}+\left\|\mathbb{E}(Y_L)-\frac{1}{n}\sum_{i=1}^nY_{L,i}\right\|_{L^p(\Omega,E)}
+\end{align*}
+und es ist 
+\begin{align*}
+\left\| \mathbb{E}(Y_L)-\frac{1}{n}\sum_{i=1}^n Y_{L,i}\right\|_{L^p(\Omega,E)}
+=&\left\|\frac{1}{n}\sum_{i=1}^n(\mathbb{E}(Y_L)-Y_{L,i})
+\right\|_{L^p(\Omega,E)}\\ \stackrel{4.6}{\leq}& 2T_p(E) \left(\frac{1}{n^p}\sum_{i=1}^n \| \mathbb{E}(Y_L)-Y_{L,i}\|_{L^p(\Omega,E)}\right)^{\frac{1}{p}}\\
+\overset{(*)}{=}&2T_p(E)\left(\frac{1}{n^{p-1}}\|\mathbb{E}(Y_L)-Y_L\|^p_{L^p(\Omega,E)}\right)^{\frac{1}{p}}\\
+=&2T_p(E)\frac{1}{n^{1-\frac{1}{p}}}\|\mathbb{E}(Y_L)-Y_L\|_{L^p(\Omega,E)}.
+\end{align*}
+Dabei gilt $(*)$, da $Y_{l,i}$ identisch verteilte Kopien von $Y_L$ sind.\\
+Durch (A) und (B) wird die rechte Seite klein f"ur $L,n\rightarrow \infty$. Da $E$ unendlich dimensional sein kann und man sicher gehen will, dass die Approximation funktioniert, ist es sinnvoll zu verlangen, dass $Y_L$ nur Werte in einem endlich dimensionalen Unterraum von $E$ annimmt. Dies sollte man beachten, wenn man die zu approximierenden Folgen $(D_l)_{l_\in\mathbb{N}}$ und $(Y_l)_{l\in\mathbb{N}}$ von Zufallsvariablen konstruiert.\\[1cm]
+Bez"uglich $(D_l)_{l\in\mathbb{N}}$ betrachten wir nun den MLMC-Sch"atzer:
+Es sei $L\in\mathbb{N}$ und $(n_i)_{i=1}^l\subset \mathbb{N}$ gegeben. $(D_{l,i})_{i\in\mathbb{N}}$ sei eine Folge von unabh"angingen und identisch verteilten Kopien von $(D_l)_{l\in\mathbb{N}}$, so dass $(D_{l,i})_{l,i \in\mathbb{N}}\subset L^p(\Omega;E)$ eine Familie von unabh"angigen Zufallsvariablen bzgl. beider Parameter bildet. Dann ist der MLMC-Sch"atzer gegeben durch
+\begin{align*}
+\mathcal{M}_L^{\text{MLMC}}((n_l)_{l=1}^L):=\sum_{l=1}^L\frac{1}{n_l}\sum_{i=1}^{n_l}D_{l,i},
+\end{align*} wobei $D_0=Y_0=0$ ist.
+Offensichtlich gilt $\mathcal{M}_L^{\text{MLMC}}((n_l)_{l=1}^L)\in L^p(\Omega;E).$\\
+W"ahrend die Fehleranalyse der klassischen MC-Methode mit den zwei obigen Eigenschaften der Folge $(Y_l)_{l\in\mathbb{N}}$ erfolgt, ist es f"ur die MLMC-Methode praktischer direkt folgende Bedingungen an die Folge $(D_l)_{l\in\mathbb{N}}\subset L^p(\Omega;E)$ zu stellen.
+\begin{vor}
+Sei $h\in(0,1)$ ein gegebener Wert, sodass die folgenden Bedingungen erf"ullt sind:
+\begin{enumerate}
+\item[a)] Es exisitiert eine Konstante $C_1$ und ein $q_1\in (0,\infty)$, sodass
+\begin{align*}
+\Big\|a-\mathbb{E}\left[\sum_{l=1}^L D_l \right]\Big\|\leq C_1h^{q_1L}
+\end{align*}
+f"ur alle $L\in\mathbb{N}$ gilt. Wir nennen $q_1$ die \textbf{schwache Konvergenzordnung}.
+\item[b)] Es gibt eine Konstante $C_2$ und ein $q_2\in(0,\infty)$, sodass
+\begin{align*}
+\|D_l-\mathbb{E}[D_l]\|_{L^p(\Omega;E)}\leq C_2h^{q_2 l}
+\end{align*}
+f"ur alle $L\in\mathbb{N}$ gilt. Wir nennen $q_2$ die \textbf{starke Konvergenzordnung}.
+\end{enumerate}
+\end{vor}
+Beide Teile a) und b) aus obiger Definition implizieren die zugeh"origen Bedingungen (A) und (B) an $(Y_l)_{l\in\mathbb{N}}$.
+Da $h\in(0,1)$  und damit
+\begin{align*}
+\Big\|a-\mathbb{E}[\underbrace{\sum_{l=1}^L D_l }_{Y_L}]\Big\|\leq C_1h^{q_1L}\underset{L\rightarrow \infty}{\longrightarrow} 0
+\end{align*}
+folgt (A) direkt aus a).\\
+Die Forderung (B) folgt aus der Dreiecksungleichung:
+\begin{align*}
+\|Y_L-\mathbb{E}[Y_L]\|_{L^p(\Omega;E)}=\|\sum_{l=1}^L(D_l-\mathbb{E}[D_l])\|_{L^p(\Omega;E)}\underset{b)}{\leq}\sum_{l=1}^L C_2 h^{q_2 l}\leq C_2 \cdot \sum_{l=1}^\infty(h^{q_2})^l= C_2(1-h^{q_2})^{-1}<\infty.
+\end{align*}
+Vergleichen wir Voraussetzung 4.7 mit Proposition 2.1 erhalten wir wegen  $\|a-\mathbb{E}(\sum_{l=1}^L D_l)\|=\|a-\mathbb{E}(Y_L)\|$ f"ur unser Buffonsches Nadelproblem die Konstanten $h,C_1$ und $q_1$. Proposition 2.1 besagt, dass f"ur alle $l\in\mathbb{N}_0$ 
+\begin{align*}
+\|a-\mathbb{E}(Y_l)\|_H=\frac{2}{\pi\sqrt{3}}\frac{1}{m_l}=\frac{2}{\pi\sqrt{3}}\left(\frac{1}{2}\right)^l\leq C_1h^{q_1l}
+\end{align*} gilt.
+Daraus folgt $h=\frac{1}{2}, q_1=1$ und $C_1=\frac{2}{\pi\sqrt{3}}$.\\[0,2cm]
+Die Proposition \eqref{k} liefert $\|D_l-\mathbb{E}[D_l]\|^2_{L^2(\Omega,H)}=\frac{1}{\pi m_l}\left(1-\frac{2}{\pi m_l}\right)$.
+Dadurch erhalten wir
+\begin{align*}
+\|D_l-\mathbb{E}[D_l]\|_{L^2(\Omega,H)}=\sqrt{\frac{1}{\pi m_l}\left(1-\frac{2}{\pi m_l}\right)}\leq \frac{1}{\pi m_l}\left(1-\frac{2}{\pi m_l}\right) \leq \frac{1}{\pi}\left(\frac{1}{2}\right)^l\leq C_2h^{q_2l},
+\end{align*}
+woraus $ q_2=1, C_2=\frac{1}{\pi}$ und $h=\frac{1}{2}$ folgt.
+
+
+\begin{prop}
+F"ur jede Wahl von $L\in\mathbb{N}$ und $(n_l)_{l=1}^L\subset\mathbb{N}$ gilt
+\begin{align}\label{b}
+\|a-\mathcal{M}_L^{\text{MLMC}}((n_l)_{l=1}^L)\|_{L^p(\Omega;E)}\leq\|a-a_L\|+2T_p(E)\left(\sum_{l=1}^L\frac{1}{n_l^{p-1}}\|D_l-\mathbb{E}[D_l]\|^p_{L^p(\Omega;E)}\right)^{\frac{1}{p}},
+\end{align}
+mit $a_L=\sum_{l=1}^L\mathbb{E}[D_l]$. Falls $(D_l)_{l\in\mathbb{N}}$ a) und b) aus obiger Definition erf"ullt, dann folgt
+\begin{align}\label{c}
+\|a-\mathcal{M}_L^{\text{MLMC}}((n_l)_{l=1}^L)\|_{L^p(\Omega;E)}\leq C_1 h^{q_1L}+2C_2 T_p(E)\left(\sum_{l=1}^L \frac{h^{p q_2 l}}{n_l^{p-1}}\right)^{\frac{1}{p}}.
+\end{align}
+\end{prop}
+\begin{proof}
+Durch Einsetzen von $a_L$ und $\mathcal{M}_L^{\text{MLMC}}((n_l)_{l=1}^L$, liefert die Dreiecksungleichung
+\begin{align*}
+\|a-\mathcal{M}_L^{\text{MLMC}}((n_l)_{l=1}^L)\|_{L^p(\Omega;E)}\leq&
+\|a-a_L\|+\|a_L-\mathcal{M}_L^{\text{MLMC}}((n_l)_{l=1}^L)\|_{L^p(\Omega;E)}\\
+=&\|a-a_L\|+\left\|\sum_{l=1}^L \frac{1}{n_l}\sum_{i=1}^{n_l}(D_{l,i}-\mathbb{E}[D_l])\right\|_{L^p(\Omega;E)}.
+\end{align*}
+Nach Definition ist $(\frac{1}{n_l}(D_{l,i}-\mathbb{E}[D_l]))_{l,i\in\mathbb{N}}$ eine Familie von unabh"angigen zentrierten Zufallsvariablen. Deshalb k"onnen wir \ref{Ung} anwenden und erhalten
+\begin{align*}
+\Big\|\sum_{l=1}^L \frac{1}{n_l}\sum_{i=1}^{n_l}(D_{l,i}-\mathbb{E}[D_l])\Big\|_{L^p(\Omega;E)}\leq&\ 2T_p(E)\left(\sum_{l=1}^L\frac{1}{{n_l}^p}\sum_{i=1}^{n_l} \| D_{l,i}-\mathbb{E}[D_l]\|^p_{L^p(\Omega,E)}\right)^{\frac{1}{p}}\\
+=& 2T_p(E)\left(\sum_{l=1}^L\frac{1}{{n_l}^{p-1}} \| D_{l}-\mathbb{E}[D_l]\|^p_{L^p(\Omega,E)}\right)^{\frac{1}{p}},
+\end{align*}
+da $(D_{l,i})_{l,i\in\mathbb{N}}$  identisch verteilte Kopien von $D_l$ sind. Dies beweist \eqref{b}. Wenden wir nun b) aus der Definition an, erhalten wir den zweiten Teil der Proposition \eqref{c}.
+\end{proof}

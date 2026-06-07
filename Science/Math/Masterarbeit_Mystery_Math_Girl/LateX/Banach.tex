@@ -1,0 +1,67 @@
+\subsection{Einschub: Zufallsvariablen mit Werten in Banachr"aumen}
+F"ur die Fehleranalyse der Multi-Level-Monte-Carlo-Methode ben"otigen wir einige neue Definitionen von Zufallsvariablen, die ihre Werte in Banachr"aumen haben. In diesem Kapitel folgen wir \cite{Heinrich} und geben einen kurzen "Uberblick "uber die zugeh"orige Integrationstheorie.\\[0,2cm]
+
+Es sei $E$ ein $\mathbb{R}$-Banachraum mit Norm $\|\cdot\|$. $\mathcal{B}(E)$ bezeichne die Borel-$\sigma$-Algebra, welche durch die offenen Mengen in $E$ erzeugt wird. Au"serdem sei $(\Omega,\mathcal{F},\mathbb{P})$ ein vollst"andiger Wahrscheinlichkeitsraum.
+
+\begin{df}
+Eine Abbildung $X:\Omega\rightarrow E$ hei"st eine \textbf{$E$-wertige Zufallsvariable}, falls $X$ $\mathcal{F}-\mathcal{B}(E)$-messbar ist.\\
+Falls es eine $\mathbb{P}$-Nullmenge $\mathcal{N}\in\mathcal{F}$ gibt,  mit $X(\mathcal{N}^c)\subset E$ seperabel, dann nennen wir $X$ \textbf{stark messbar}. Die Menge aller stark messbaren Zufallsvariablen, welche Werte in E annehmen, werden mit $\mathcal{L}^0(\Omega,\mathcal{F},\mathbb{P};E)$ bezeichnet.
+\end{df}
+
+\begin{df}
+Es sei $1\leq p <\infty$. Eine stark messbare Zufallsvariable $X \in \mathcal{L}^0(\Omega,\mathcal{F},\mathbb{P};E)$ hei"st \textbf{p-fach integrierbar}, falls gilt
+\begin{align*}
+\|X\|_{L^p(\Omega,E)}:=(\mathbb{E}[\|X\|^p])^{\frac{1}{p}}:=\left(\int_\Omega \|X(\omega)\|^p \text{d}\mathbb{P}(\omega)\right)^{\frac{1}{p}}<\infty.
+\end{align*}
+Die Menge aller p-fach integrierbaren Zufallsvariablen mit Werten in E wird mit $\mathcal{L}^p(\Omega,\mathcal{F},\mathbb{P};E)$ bezeichnet.
+\end{df}
+Im Allgemeinen definiert die Abbildung $\|\cdot\|_{L^p{(\Omega,E)}}:\mathcal{L}^p(\Omega,\mathcal{F},\mathbb{P};E)\rightarrow \mathbb{R}$ nur eine Halbnorm.
+Wie "ublich identifiziert man Zufallsvariablen miteinander, die $\mathbb{P}$-fast sicher "ubereinstimmen. Das bedeutet $X\sim Y \Leftrightarrow \|X-Y\|_{L^p(\Omega,E)}=0$ f"ur $1\leq p<\infty$.\\
+Die Lebesgue-R"aume $L^p(\Omega,E):=L^p(\Omega,\mathcal{F},\mathbb{P};E):=\mathcal{L}^p(\Omega,\mathcal{F},\mathbb{P};E)/\sim$ werden zu Banachr"aumen, falls sie mit der Norm $\|\cdot\|_{L^p(\Omega,E)}$ f"ur $1\leq p < \infty$ versehen werden.
+Falls $E$ ein Hilbertraum mit Skalarprodukt $\langle\cdot,\cdot\rangle$ ist, dann ist $L^2(\Omega;E)$ auch ein Hilbertraum mit Skalarprodukt
+\begin{align*}
+\langle X,Y \rangle_{L^2(\Omega,E)}:=\mathbb{E}[\langle X,Y \rangle_E]:=\int_\Omega \langle X(\omega),Y(\omega) \rangle_E \text{d}\mathbb{P}(\omega).
+\end{align*}
+Die Konstruktion des Bochner-Lebesgue-Integrals verl"auft wie gewohnt.\\
+Zuerst betrachten wir einfache Zufallsvariablen, welche nur endlich viele Werte in E annehmen. Das bedeutet $X=\sum_{j=1}^n \mathbb{I}_{A_j}e_j$ f"ur $n\in\mathbb{N},(e_j)_{j=1}^n\subset E\setminus\{0\}$ und $(A_j)_{j=1}^n\subset \mathcal{F}$ mit $e_j\neq e_i$ und $A_j \cap A_i = \emptyset$ falls $j\neq i$.\\
+\begin{df}[Bochner-Lebesgue-Integral]
+Das \textbf{Bochner-Lebesgue-Integral} ist definiert durch
+\begin{align*}
+\mathbb{E}[X]:=\int_\Omega X(\omega)\text{d}P(\omega):=\sum_{j=1}^n\mathbb{P}(A_j)e_j\in E.
+\end{align*}
+\end{df}
+Diese Definition h"angt nicht von einer bestimmten Darstellung von $X$ ab. Ferner ist die Erwartung eine lineare Abbildung vom Raum aller einfachen Zufallsvariablen in $E$ und es gilt $\|\mathbb{E}[X]\|\leq\|X\|_{L^1(\Omega;E)}$ f"ur jedes einfache $X:\Omega\rightarrow E.$\\[0,1cm]
+Die Definition von $\mathbb{E}[\cdot]$ kann auf den Abschluss der Menge der einfachen Zufallsvariablen bzgl. der $L^1$-Norm erweitert werden. Tats"achlich folgt aus der Eigenschaft der Separabilit"at, dass f"ur jedes $X\in\mathcal{L}^1(\Omega,\mathcal{F},\mathbb{P};E)$ eine Folge von einfachen Zufallsvariablen $(X_n)_{n\in\mathbb{N}}$ existiert, sodass $\lim_{n\rightarrow \infty}\|X-X_n\|_{L^1(\Omega;E)}=0$.\\
+Die Erwartung von $X$ ist dann definiert durch,
+\begin{align*}
+\mathbb{E}[X]:=\int_\Omega X(\omega)\text{d}\mathbb{P}(\omega):=\lim_{n\rightarrow \infty} \mathbb{E}[X_n]\in E.
+\end{align*}
+Das Element $\mathbb{E}[X]$ h"angt nicht von der Wahl der Folge $(X_n)_{n\in\mathbb{N}}$ ab. Es gilt $\mathbb{E}[X]=\mathbb{E}[Y]$, falls $X=Y$ fast sicher gilt. \\
+Daher ist das Bochner-Lebesgue-Integral eine lineare Abbildung $\mathbb{E}[\cdot]:L^1(\Omega;E)\rightarrow E$, welche $\|\mathbb{E}[X]\|_E\leq \|X\|_{L^1(\Omega;E)}$ erf"ullt.\\
+Es gibt offenbar keinen gro"sen Unterschied zwischen der Erwartung einer reellen Zufallsvariable und einer welche ihre Werte in einem Banachraum annimmt. Jedoch gilt nicht mehr die Formel von Bienayme. Diese Formel hat keine direktes Gegenst"uck f"ur Zufallsvariablen mit Werten in Banachr"aumen. Um dieses Problem zu umgehen beschr"anken wir uns auf Banachr"aume mit folgender Eigenschaft.
+\begin{df}
+Sei $(\varepsilon_i)_{i\in\mathbb{N}}$ eine \textbf{Rademacher-Folge}. 
+Das hei"st $(\varepsilon_i)_{i\in\mathbb{N}}$ ist eine Folge von reellwertigen unabh"angig und identisch verteilten Zufallsvariablen auf $\Omega$ mit $\mathbb{P}(\varepsilon_i=\pm 1)=\frac{1}{2}$ f"ur jedes $i\in\mathbb{N}$.\\
+Wir sagen ein Banachraum $E$ ist von \textbf{Rademacher-Typ $p\in [1,2]$}, falls es eine Konstante $C$ gibt, sodass 
+\begin{align*}
+\Big\|\sum_{i=1}^n \varepsilon_i e_i \Big\|_{L^p(\Omega;E)}\leq C \left(\sum_{i=1}^n\|e_i\|^p\right)^{\frac{1}{p}}
+\end{align*}
+f"ur alle $n\in\mathbb{N}$ und jede endliche Folge $(e_i)_{i=1}^n\subset E$ gilt. Das minimale $C$ wird \textbf{Typ-p-Konstante} von E genannt und wird mit $T_p(E)$ bezeichnet.
+\end{df}
+\begin{bsp}
+\begin{enumerate}
+\item[a)]Durch die Dreiecksungleichung folgt, dass jeder Banachraum von Typ $p=1$ ist.
+\item[b)]Jeder Hilbertraum ist von Typ $p=2$. In diesem Fall gilt sogar Gleichheit mit $T_2(E)=1$.
+Da es sich bei  $L^2(\Omega,H)$ um einen Hilbertraum handelt, gilt in diesem Fall also $p=2$ und $T_2(E)=1$.
+\end{enumerate}
+\end{bsp}
+Folgende Proposition "ubernimmt die Rolle der Formel von Bienayme in den folgenden Kapiteln.
+\begin{prop}\label{Ung}
+Sei $p\in [1,2]$ und $E$ ein Banachraum von Typ p. Dann gilt f"ur jede endliche Folge $(X_i)^n_{i=1}\subset L^p(\Omega;E),n\in \mathbb{N}$, von unabh"angigen Zufallsvariablen mit $\mathbb{E}[X_i]=0$
+\begin{align*}
+\mathbb{E}\left[\Big\|\sum_{i=1}^nX_i\Big\|^p\right]\leq (2T_p(E))^p\sum_{i=1}^n\mathbb{E}[\|X_i\|^p].
+\end{align*}
+\end{prop}
+\begin{proof}
+siehe \cite{Heinrich}.
+\end{proof}

@@ -1,0 +1,166 @@
+\subsubsection{Die Lagrange-Multiplikator-Methode}
+Unter Vernachl"assigung der Ganzzahligkeitsbedingung an die $n_l$ kann dieses Problem durch geschickte Substitution mit Hilfe der Lagrange-Multiplikator-Methode gel"ost werden.
+Wir substituieren $4^l\cdot n_l= y_l$ und suchen das Minimum der Funktion $\sum_{l=1}^L \frac{1}{y_l}$ unter der neuen  Nebenbedingung  $\sum_{l=1}^L \left(\frac{1}{2}\right)^l \cdot y_l \leq C$. Da wir die Ganzzahligkeit erstmal vernachl"assigen, wissen wir, dass unsere Nebenbedingung zur Gleichung wird.\\
+Wir erhalten also folgende Lagrange-Funktion mit zugeh"origem Gradienten:
+\begin{align*}
+L(y,\lambda)=&\sum_{l=1}^L \frac{1}{y_l}+\lambda\cdot \left(\sum_{l=1}^L\left(\frac{1}{2}\right)^ly_l-C \right)\\
+\nabla L(y,\lambda)=&\begin{pmatrix}
+-\frac{1}{y_1^2}+\lambda\cdot \left(\frac{1}{2}\right)^1\\
+\vdots\\
+-\frac{1}{y_L^2}+\lambda\cdot \left(\frac{1}{2}\right)^L\\
+\sum_{l=1}^L \left(\frac{1}{2}\right)^ly_l-C
+\end{pmatrix}\overset{!}{=}0
+\end{align*} mit $y=(y_1,...,y_L)$.
+Wir erhalten f"ur die $l$-te Komponente
+\begin{align*}
+\lambda\cdot \left(\frac{1}{2}\right)^l=\frac{1}{y_l^2} \Leftrightarrow y_l^2=\frac{1}{\lambda}\cdot 2^l \Leftrightarrow y_l=\frac{\sqrt{2^l}}{\sqrt{\lambda}},
+\end{align*}
+sowie
+\begin{align*}
+\sum_{l=1}^L   \frac{\sqrt{2^l}}{\sqrt{\lambda}} \cdot\left(\frac{1}{2}\right)^l=C\Leftrightarrow \frac{1}{C}\sum_{l=1}^L (\sqrt{2})^{-l}=\sqrt{\lambda}.
+\end{align*}
+Das bedeutet wir erhalten insgesamt $y_l=\frac{\sqrt{2^l}\cdot C}{\sum_{l=1}^L(\sqrt{2})^{-l}}$ und durch Resubstitution folgt f"ur die optimale Sampleanzahl
+\begin{align*}
+n_l=\frac{\sqrt{2^l}\cdot C}{4^l\sum_{l=1}^L(\sqrt{2})^{-l}}.
+\end{align*}
+Diese ist jedoch noch nicht ganzzahlig. Um dieses Problem zu umgehen, kann man wie im vorherigen Kapitel die untere Gau"sklammer auf diese $n_l$ anwenden. Dies wird also nahe am Optimum liegen. Durch das Abrunden der einzelnen Zahlen werden jedoch Kosten frei, da durch die $n_l$ mit Lagrange die Summe der einzelnen Samplekosten genau C ergeben haben.\\
+Die Idee ist nun, die Samples auf Level $1$ ( mit den niedrigsten Kosten und gr"o"sten Vorfaktor $\frac{1}{4}$) um $1$ zu erh"ohen, solange  wir dadurch immer noch unter unserer Kostenschranke $C$ bleiben. Dies verringert den Fehler $\varepsilon$ sicher.\\
+Durch das Abrunden der einzelnen Sampleanzahlen kann es jedoch vorkommen, dass wir auf Null abrunden. Dies geschieht bei einem zu geringen Kostenbudget und daf"ur zu hoher gew"unschter Levelanzahl. In diesem Fall ignorieren wir die auf Null gerundeten Level
+und geben den Fehler \textit{"Levelanzahl zu hoch f"ur diese Kosten. Levelanzahl senken oder Kosten erh"ohen."} aus.\\[0,2cm]
+\textbf{Beispiele:}
+\begin{enumerate}
+\item[a)] Ausgabe f"ur $C=100$:
+\begin{enumerate}
+\item[-]1 Level: $n=50$; $\varepsilon=0.2288$
+\item[-]2 Level: $n=(30,10)$ ; $\varepsilon=0.1688$
+\item[-]3 Level: $n=(26,8,2)$;$\varepsilon=0.1471$
+\item[-]4 Level: 
+ $n=( 30,6,2);\varepsilon= 0.1497$.\\
+F"ur diese Levelanzahl sind die Kosten zu hoch und obige Fehlermeldung wird ausgegeben. 
+D.h. bei diesen Kosten sind $4$ Level nicht mehr sinnvoll und es wurde nach 3 Leveln abgeschnitten.
+\end{enumerate}
+\item[b)] Ausgabe f"ur $C=1000$:  Hier ist schon eine deutliche Verbesserung des Fehlers im Vergleich zu a) zu erkennen.
+
+\item[-]2 Level: $n=(294,103); \varepsilon= 0.1162$
+\item[-]4 Level: $n=(202,69,24, 8);\varepsilon= 0.0594$
+\item[-]5 Level: $n=(200,62,22,7,2);\varepsilon=0.0518$
+\item[-]6 Level: $n=(214,59,20,7,2);\varepsilon=0.0520$\\
+F"ur diese Levelanzahl sind die Kosten zu hoch und obige Fehlermeldung wird ausgegeben. 
+\item[c)] Ausgabe f"ur $C=10000$:
+\item[-]4 Level: $n=(1956,690,24,86);\varepsilon=0.0345$
+\item[-]6 Level: $n=(1694,591,209,73,26,9);\varepsilon= 0.0192$
+\item[-]8 Level: $n=(1604,552,195,69,24,8,3,1);\varepsilon=0.0158$\\
+Ab Level 9 ist das Kostenbudget zu niedrig.
+\end{enumerate}
+Bisher haben wir also unter Vorgabe des Kostenbudgets sowie der gew"unschten Levelanzahl die optimale Verteilung der Samples bestimmt, sofern dies von der Kapazit"at m"oglich ist.
+Nun gilt es die \textbf{optimale Levelanzahl} herauszufinden.\\
+Hierbei bin ich folgenderma"sen vorgegangen:\\
+Es ist klar, dass bei gleichbleibendem Kostenbudget $C$ aber einer h"oheren Levelanzahl weniger Samples auf den bisherigen Level genommen werden m"ussen. Dies ist notwendig um sich die Samples auf dem neuen zus"atzlichen Level leisten zu k"onnen. Eine Verringerung der Sampleanzahlen bedeutet aber eine Vergr"o"serung unseres zweiten Summanden in der Schranke f"ur $\varepsilon$. \\
+Zu Erinnerung: Die Schranke, welche wir minimieren wollen war
+\begin{align*}
+\underbrace{\frac{2}{\pi\sqrt{3}}\left(\frac{1}{2}\right)^L}_{(1)}+ \underbrace{\sum_{l=1}^L\left(\frac{1}{4}\right)^l\cdot\frac{1}{n_l}}_{(2)}.
+\end{align*}
+Eine Erh"ohung der Levelanzahl l"asst also $(2)$ wachsen. Jedoch wird $(1)$ f"ur ein gr"o"ser werdendes $L$ schnell klein. Die Frage ist nun, wie weit wir $L$ erh"ohen k"onnen, sodass die Verringerung in $(1)$ die Erh"ohung in $(2)$ "ubertrifft.
+Deshalb gehe ich von der in $(18)$ bestimmten Anzahl an maximalen Leveln aus und wende den auf der n"achsten Seite beschriebenen Algorithmus an.
+Dieser wird die in $(18)$ beschriebene Schranke sinnvoll reduzieren und anschlie"send alle Level bis zu dieser  neuen Schranke durchgehen. Die Ergebnisse f"ur $\varepsilon$ werden dann verglichen  und die Levelanzahl mit dem kleinsten $\varepsilon$ ausgew"ahlt.\newpage 
+Das Vorgehen zum bestimmen der optimalen Levelanzahl sieht also folgenderma"sen aus:\\
+
+\begin{algorithm}[H]
+$\text{maxL}= \lfloor\frac{\log( cost + 2)}{\log(2)} -1\rfloor;$\\
+temp(l) =$\left\lfloor \frac{\sqrt{2^l}\cdot C}{4^l\sum_{l=1}^{maxL}(\sqrt{2})^{-l}}\right\rfloor$ \text{f"ur $l=1,..,maxL$}
+\text{\%Abgerundete optimale Sampleanzahlen bei einem Kostenbudget C}\\
+\For{i=1 \textbf{to} maxL}{ 
+    \If {temp(i) == 0}{
+        maxL = i-1; }}
+        \For{L=1 \textbf{to} maxL}{bestimme optimale Sampleanzahl und $\varepsilon$ mit Lagrange }
+Suche das $L$ mit minimalen $\varepsilon$.\\[0,5cm]
+
+
+\caption{Algorithmus f"ur optimale Sample-und Levelanzahl mit der Lagrange-Methode}
+\end{algorithm}\vspace{0,3cm}
+Nachfolgend eine Tabelle mit den Ergebnissen:\\
+\begin{center}
+\begin{tabular}{|c|c|c|}
+Kostenbudgets & opt. Levelanzahl & Fehler $\varepsilon$ \\
+ \hline
+10 & 1 & 0.3261 \\
+\hline
+100& 3 & 0.1471 \\
+\hline
+1000& 5 &  0.0518 \\
+\hline
+10 000& 8 & 0.0158 \\
+\hline
+100 000& 10 & 0.0051 \\
+\hline
+1 000 000& 12 &  0.0016 \\
+\hline
+5 000 000& 13 & 7.2485e-04
+ \\
+\end{tabular}
+\end{center}\vspace{0,2cm}
+Wie zu erwarten sinkt der Fehler mit wachsendem Kostenbudget, da dadurch eine h"ohere Levelanzahl m"oglich ist. Eine h"ohere Levelanzahl bedeutet eine feinere Diskretisierung und das Ergebnis wird genauer.\\
+Vergleichen wir die optimale Levelanzahl mit den Ergebnissen aus dem Beispiel davor, ist zu erkennen, dass die gr"o"stm"ogliche Levelanzahl bei dem vorgegebenen Kostenbudgets den kleinsten Fehler liefert.  
+
+Die zugeh"origen Sampleverteilungen zur obiger Tabelle sind:
+\begin{center}
+\begin{tabular}{|c|c|}
+Kostenbudgets & Sampleverteilung \\
+ \hline
+10 & n=5 \\
+\hline
+100& n=(26,8,2) \\
+\hline
+1000& n=(200,62,22,7,2)\\
+\hline
+10 000& n=(1604,552,195,69,24,8,3,1)\\
+\hline
+100 000& n=(15564,5344,1889,668,236,83,29,10,3,1)\\
+\hline
+1 000 000& n=(151252,52598,18596,6574,2324,821,290,102,36,12,4,1)\\
+\hline
+5 000 000& n=(747166,261775,92551,32721,11568,4090,1446,511,180)
+ \\
+\end{tabular}
+\end{center}\vspace{0,3cm}
+Vergleichen wir nun diese Ergebnisse mit denen aus Kapitel 5.1.
+% Um den Unterschied der Probleme nochmal zu wiederholen,
+In Kapitel 5.1 haben wir uns die Fehlerschranke sowie die Levelanzahl vorgegeben
+und wollten den Fehler $\varepsilon$ unter m"oglichst geringen Kosten erreichen. In unserem aktuellen Problem wollen wir den Fehler minimieren und haben die Kosten vorgegeben.\\
+%F"ur einen Fehler von $10^{-1}$ lieferte 5.1 als Ergebnis: \\
+Der Abschnitt 5.1 liefert f"ur $\varepsilon = 10^{-1}$ und $L=2$
+\begin{align*}
+n_L = (2629,930)
+\end{align*}
+als Ergebnis. Dies ergibt also Kosten von 
+\begin{align*}
+2629 \cdot 2+ 930 \cdot 4= 8974.
+\end{align*}
+Die Lagrange-Methode liefert mir bei Vorgabe dieser Kosten und der Vorgabe von 2 Leveln das Ergebnis: 
+\begin{align*}
+n_L=(2629,929)
+\end{align*}
+Es ist also zu erkennen, dass die optimale Sampleanzahlen fast die gleichen sind. Dies ist jedoch bei gleicher Vorgabe der Levelanzahl auch zu erwarten. Bestimmen wir jedoch die optimale Levelanzahl und den optimalen Fehler bei diesen Kosten liefert mein Algorithmus das Ergebnis:
+\begin{align*}
+L=7; \
+n=[1541,509,180,63,22,7,2]; \ 
+\varepsilon=0,0177
+\end{align*}
+Es ist also durch eine Erh"ohung der Levelanzahl und anderer Verteilung der Samples ein deutlich besseres Ergebnis bei selben Kosten m"oglich.\\
+Mit Kosten von $25 000$ liefert die Lagrange-Methode ein optimales $L=8$ mit einem Fehler von $10^{-2}$.\\
+Das Vorgehen aus 5.1 liefert f"ur diese Fehlerschranke mit $L=6$ die Kosten
+\begin{align*}
+16703\cdot 2+ 5906 \cdot 4+ 2088 \cdot 8+ 739 \cdot 16 + 261 \cdot 32 + 93 \cdot 64 =99862
+\end{align*}
+Wir sehen bereits, dass der selbe Fehler durch knapp ein Viertel der Kosten erreicht werden kann.
+Geben wir jedoch auch der Lagrange-Methode die Levelanzahl $L=6$ vor, erhalten wir den Samplevektor
+\begin{align*}
+n=[16733,5909, 2089,738,261,92]
+\end{align*}
+Also wieder das fast gleiche Ergebnis wie aus 5.1.\\
+Das Problem bei der Methode aus 5.1 ist, dass wir die Levelanzahl nicht optimiert haben. 
+Aus \eqref{L1} geht nur hervor, dass wir die Levelanzahl gr"o"ser als 
+\begin{align*}
+\frac{\log(\varepsilon)-\log(\frac{1}{\pi\sqrt{3}})}{\log(\frac{1}{2})}
+\end{align*} w"ahlen m"ussen. Hier kann es bessere M"oglichkeiten als nur das Aufrunden geben. Das hei"st durch die flexible Levelwahl ist ein viel besseres Ergebnis unter geringeren Kosten m"oglich.
+ 

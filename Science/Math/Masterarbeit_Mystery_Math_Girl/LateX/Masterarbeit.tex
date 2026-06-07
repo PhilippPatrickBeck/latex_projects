@@ -1,0 +1,221 @@
+\documentclass[12pt,twoside]{scrartcl}
+\usepackage[ngerman]{babel} 
+\raggedbottom
+
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+%\usepackage{xfrac} 
+\usepackage{bm}
+\usepackage[onehalfspacing]{setspace} %das macht die große Lücke
+\usepackage{tocbibind}
+\usepackage{bibgerm}
+\usepackage{wrapfig}
+\usepackage{subfigure} 																	
+\usepackage{enumitem} 
+\usepackage{lastpage} %Z?hlt die Gesamtseitenzahl. Mit \pageref{LastPage} wird diese ausgegeben
+\usepackage{hyperref}
+\usepackage{bookmark}
+\hypersetup{linktoc=all, colorlinks=true, linkcolor=black, urlcolor=black, citecolor=black}
+\usepackage{mdframed}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{scrextend} 
+\usepackage{geometry} 
+\usepackage{url}
+\usepackage{diagbox}
+
+\usepackage[]{algorithm2e}
+\SetArgSty{}
+\geometry{a4paper, top=35mm, left=25mm, right=25mm, bottom=25mm, headsep=10mm, footskip=10mm} %Headsep beschreibt 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LE]{\textit{\nouppercase{\leftmark}}}
+\fancyhead[RO]{\textit{Das Buffonsche Nadelproblem und die Multi-Level-Monte-Carlo-Methode}}
+%\fancyhead[LO,RE]{\thepage}
+%\fancyfoot{\thepage}
+\fancyfoot[C]{\thepage}
+\addtolength{\headheight}{0.15cm}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{tikz}
+\usepackage{sectsty}
+\definecolor{Mittelblau}{RGB}{0,81,158}
+\setlength{\parindent}{0em} 
+
+
+\newtheoremstyle{satz}% name
+{15pt}% Space above
+{5pt}% Space below
+{\itshape}% Body font
+{}% Indent amount: Indent amount: empty = no indent, \parindent = normal paragraph indent
+{\bfseries}% Theorem head font
+{:}% Punctuation after theorem head
+{\newline}% Space after theorem head: Space after theorem head: { } = normal interword space; \newline = linebreak
+{}% Theorem head spec (can be left empty, meaning `normal')
+
+\newtheoremstyle{bsp}% name
+{15pt}% Space above
+{5pt}% Space below
+{}% Body font
+{}% Indent amount: Indent amount: empty = no indent, \parindent = normal paragraph indent
+{\bfseries}% Theorem head font
+{:}% Punctuation after theorem head
+{\newline}% Space after theorem head: Space after theorem head: { } = normal interword space; \newline = linebreak
+{}% Theorem head spec (can be left empty, meaning `normal')
+
+
+\newcommand{\td}[1]{\text{ d} #1}
+\newcommand{\thistheoremname}{}
+\theoremstyle{satz}
+%Satz
+\newtheorem{sz}{Satz}[section]
+
+
+%Lemma
+\newtheorem{vor}[sz]{Voraussetzung}
+\newtheorem{alg}[sz]{Algorithmus}
+\newtheorem{lem}[sz]{Lemma}
+\newtheorem{kor}[sz]{Korollar}
+\newtheorem{prop}[sz]{Proposition}
+\newtheorem{gsz}[sz]{\thistheoremname}
+\newtheorem*{gthm_no_num}{\thistheoremname}
+\newtheorem{gd}[sz]{\thistheoremname}
+
+\newtheorem*{gdf_no_num}{\thistheoremname}
+
+%Bsp
+\theoremstyle{bsp}
+\newtheorem{bsp}{Beispiel}[section]
+\newtheorem{df}[sz]{Definition}
+
+
+\begin{document}
+
+% Titelseite soll keine Kopf oder Fußzeile haben
+\thispagestyle{empty}
+
+% Alle Elemente sollen zentriert sein
+\begin{center}
+
+
+\hspace{-2cm}
+\includegraphics[width=0.6\textwidth]{_unilogo.png}
+\vspace{-0.6 cm}
+
+\hspace{2,2cm}
+\\[1cm]
+{\Large Institut f"ur angewandte Analysis und Numerische Simulation (IANS)}
+
+
+\vspace*{3cm}
+
+% Art der Arbeit => (Bachelorarbeit ,Diplomarbeit, Masterarbeit, Seminararbeit)
+\Large{\textbf{Masterarbeit}\\
+
+\vspace{2cm}
+
+% Titel der Arbeit 
+\textbf{{\Large{Optimierung der Multi-Level-Monte-Carlo-Methode f"ur das Buffonsche Nadelproblem}}}
+
+\vspace*{1mm}
+
+
+\vspace{4cm}
+
+
+% Gutachter, Kontaktdaten und Abgabetermin
+\parbox{120mm}{
+\begin{large}
+\begin{tabbing}
+Betreuerin: \hspace{0.7cm} \= Prof. Andrea Barth\\[4mm]
+Verfasser:\> Mystery Math Girl\\ % alphabetische Reihenfolge (Nachname)
+Matrikel-Nr.:\> 9999999\\
+Email:\>mystery.math.girl@unknown.de\\
+%\textbf{Abgabetermin:} \hspace{0,3cm} \> \textbf{01. Januar 2017}\\
+\end{tabbing}
+\end{large}
+ }}
+\end{center}
+
+ 
+%deckblatt ende
+\newpage 
+\thispagestyle{empty}
+\quad  
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\textbf{\Large{Danksagung}}\\[2cm]
+\begin{flushleft}
+Zuerst m"ochte ich mich bei Prof. Andrea Barth f"ur die ausgezeichnete Betreuung dieser Arbeit bedanken. \\
+Dank geb"uhrt au"serdem meinem Kommilitonen Philipp Beck f"ur das Korrekturlesen meiner Arbeit und die vielen Diskussionen "uber mein Thema.
+Ein gro"ser Dank geht an meine Eltern, meine Schwester und wiederum Philipp Beck, die mich w"ahrend meines gesamten Studiums unterst"utzt und auch in schwierigeren Situationen stets motiviert und ermutigt haben.
+\end{flushleft}
+\end{center}\vspace{2cm}
+%\newpage
+\newpage 
+\thispagestyle{empty}
+\quad  
+\newpage
+\fancyfoot[C]{}
+\tableofcontents
+\newpage
+\thispagestyle{empty}
+\fancyfoot[C]{\thepage}
+
+\quad  
+\newpage
+\input{Einleitung}
+\newpage
+\input{MC.tex}
+\newpage 
+\thispagestyle{empty}
+\quad  
+\newpage
+\input{Buffonsche_Nadelproblem.tex}
+\newpage 
+\thispagestyle{empty}
+\quad  
+\newpage
+\input{Monte.tex}
+\newpage
+\input{Impl.tex}
+\newpage 
+\input{MLMC.tex}
+\input{Impl2.tex}
+\input{Banach.tex}
+\newpage
+\input{Fehler.tex}
+\newpage 
+\thispagestyle{empty}
+\quad  
+\newpage
+\input{Opt.tex}
+\input{Sample.tex}
+\newpage
+\input{Abh.tex}
+\input{Zeit.tex}
+\newpage
+\input{Lagrange.tex}
+\input{Knapsack.tex}
+\input{Vergleich.tex}
+\newpage 
+\thispagestyle{empty}
+\quad  
+\newpage
+\nocite{*}
+\bibliographystyle{abbrv}
+\bibliography{Literatur}
+\newpage 
+\thispagestyle{empty}
+\quad  
+\newpage
+\thispagestyle{empty}
+\begin{center}\Large{\textbf{Eigenst"andigkeitserkl"arung}} \end{center}\vspace{2cm}
+Hiermit versichere ich, dass ich die vorliegende Masterarbeit selbst"andig verfasst habe.
+Ich versichere, dass ich keine anderen als die angegebenen Quellen benutzt habe und  die eingereichte Arbeit weder vollst"andig noch in wesentlichen Teilen Gegenstand eines anderen Pr"ufungsverfahren gewesen ist.\\[2cm]
+(Unterschrift)
+\end{document}
