@@ -1,0 +1,137 @@
+\section{Einseitige Nebenbedingungen}
+Nun betrachten wir Variationsrechnungsprobleme mit einer punktweisen, einseitigen Nebenbedingung.
+Wir definieren uns das Energiefunktional
+\begin{equation}\label{equ:2.1}
+I(w) :=
+\int_U \frac{1}{2} \cdot | Dw |^2 - f  \cdot w \td{x}
+\end{equation}
+für alle Funktionen $w$, welche in der Menge
+\begin{equation}\label{equ:2.2}
+\mathcal{A}
+:= 
+\lbrace w \in H_0^1(U) \ | \ w \geq h \ \text{f.ü.} \rbrace
+\end{equation}
+enthalten sind. Außerdem sind die Funktionen $h : \overline{U} \to \R$ und $f : \R \to \R$ glatt.
+Durch schnelles Nachrechnen erkennen wir, dass $\mathcal{A}$ konvex ist.
+
+\begin{genericthm}{Existenz des Minimieres}\label{skript:2.1}
+Sei $\mathcal{A}$ nichtleer.
+Dann exisitiert ein eindeutiges $u \in \mathcal{A}$, so dass
+\begin{align*}
+I(u) := \min \limits_{w \in \mathcal{A}} I(w) 
+\end{align*}
+erfüllt ist.
+\end{genericthm}
+
+\begin{proof}
+\begin{enumerate}
+
+\item[\textbf{(1)}]
+Die Existenz folgt sofort mit ähnlichen Ideen wie in \ref{skript:1.2}.
+Sei $a_n$ eine Minimierungsfolge, dann existiert eine schwach konvergente Teilfolge $a_{n_k}$.
+Diese konvergiert wiederum in $L^2(U)$ und die Folgenglieder sind in $\mathcal{A}$.
+Damit folgt auch $u \in \mathcal{A}$.
+
+\item[\textbf{(2)}]
+Angenommen $u$ und $\tilde{u}$ sind verschieden und lösen das Minimierungsproblem.
+Dann folgt mithilfe binomischer Formeln und
+\begin{align*}
+I\left( \frac{u + \tilde{u}}{2} \right)
+&=
+\int_U \frac{1}{2} \cdot \left| \frac{Du + D\tilde{u}}{2} \right|^2 - f \cdot \left( \frac{u + \tilde{u}}{2} \right) \td{x}\\
+&= 
+\int_U \frac{1}{8} \cdot ( 2 \cdot |Du|^2 + 2 \cdot |D \tilde{u} |^2 - | Du - D\tilde{u}|^2)  - f \cdot \left( \frac{u + \tilde{u}}{2} \right) \td{x}\\
+&<
+\frac{1}{2} \cdot \int_U \frac{1}{2} \cdot|Du|^2 - f \cdot u  \td{x} 
++ 
+\frac{1}{2} \cdot \int_U \frac{1}{2} \cdot | D \tilde{u} |^2 - f \cdot \tilde{u} \td{x}\\
+&=
+\frac{1}{2} \cdot( I(u) + I(\tilde{u}))
+\end{align*}
+ein Widerspruch zur Minimaliät von $u$ und $\tilde{u}$.
+\end{enumerate}
+\end{proof}
+
+\begin{genericthm}{Variationsungleichung}\label{skript:2.2}
+Sei $u \in \mathcal{A}$ die eindeutige Lösung von
+\begin{align*}
+I(u) = \min \limits_{w \in \mathcal{A}} I(w).
+\end{align*}
+Dann gilt
+\begin{equation}\label{equ:2.3}
+\int_U f \cdot (w - u) \td{x} 
+\leq 
+\int_U Du \cdot D(w- u) \td{x}
+\end{equation}
+für alle $w \in \mathcal{A}$.
+\end{genericthm}
+
+\begin{proof}
+Sei $w \in \mathcal{A}$ beliebig.
+Wir wissen, dass $\mathcal{A}$ konvex ist.
+Somit gilt $  u + \tau \cdot (w - u) \in \mathcal{A}$ für $0 \leq \tau \leq 1$.
+Wir definieren
+\begin{align*}
+i(\tau) := I (u + \tau \cdot (w - u) ).
+\end{align*}
+Nun ist $u$ ein eindeutiges Minimum, womit  $i(0) \leq i ( \tau ) $ für $0 \leq \tau \leq 1 $ gilt.
+Damit erhalten wir auch $i^\prime(0) \geq 0$.
+Mit dieser Erkenntnis bewaffnet betrachten wir den Differenzenquotient
+\begin{align*}
+\frac{i(\tau) - i(0)}{\tau}
+= ...
+= \int_U Du \cdot D(w-u) + \frac{\tau}{2} \cdot | D(w-u)|^2 - f \cdot (w- u) \td{x}
+\end{align*}
+mit $0 < \tau \leq 1$ und erhalten für $\tau \rightarrow 0 $  durch
+\begin{align*}
+0  \leq i^\prime(0) = \int_U Du \cdot D(w-u) - f\cdot (w- u) \td{x}
+\end{align*}
+die gewünschte Aussage.
+\end{proof}
+
+\begin{genericdf}{Anwendung der Variationsungleichung}\label{skript:2.3}
+Sei $u \in \mathcal{A}$ mit 
+\begin{align*}
+I(u) = \min \limits_{w \in \mathcal{A}} I(w).
+\end{align*}
+Wir setzen nun voraus, dass $\partial U $ glatt ist.
+Nach Kinderlehrer-Stampacchia gilt dann $u \in W^{2,\infty}(U)$.
+Damit folgt dann, dass
+\begin{align*}
+O := \lbrace x \in U \ | \ u(x) > h(x) \rbrace
+\end{align*}
+offen und
+\begin{align*}
+A := \lbrace x \in U \ | \ u(x) = h(x) \rbrace
+\end{align*}
+abgeschlossen ist.
+Sei $v \in C_c^\infty(O)$ beliebig, aber fest.
+Dann gilt $w := u + \tau \cdot v  \in \mathcal{A}$ für $|\tau|$ hinreichend klein.
+Nun folgt
+\begin{align*}
+\int_O Du \cdot D(w - u ) - f(w-u) \td{x} 
+= 
+\tau \cdot \int_O Du \cdot Dv - fv  \td{x}
+\geq 0 
+\end{align*}
+mit der Variationsungleichung.
+Da $\tau$ postiv und negativ sein kann, erhalten wir  
+\begin{align*}
+\int_O -\Delta u \cdot v \td{x} = \int_O Du \cdot Dv \td{x}  = \int_O f \cdot v \td{x}.
+\end{align*}
+Somit ist $u$ eine schwache Lösung von
+\begin{equation}\label{equ:2.4}
+- \Delta u = f
+\end{equation}
+auf $O$ und die Regularitätstheorie für elliptische PDEs liefert uns $u \in C^\infty(O)$.
+Sei $v \in C_c^\infty(U)$ beliebig mit $v \geq 0 $.
+Dann gilt für $w := u + \tau \cdot v  \in \mathcal{A}$ mithilfe der Variationsungleichung und partieller Integration
+\begin{align*}
+\int_U Du \cdot Dv - fv  \td{x} = \int_U -\Delta u \cdot v - f \cdot v  \geq 0,
+\end{align*}
+wodurch 
+\begin{equation}\label{equ:2.5}
+-\Delta u \geq f 
+\end{equation}
+fast überall in $U$ gilt.
+\end{genericdf}

@@ -1,0 +1,111 @@
+\section{Eigenschaften des adjungierten Operators $ S^\ast $}
+
+\begin{sz}
+	\begin{enumerate}[label=\text{\textbf{(\arabic*)}}]
+		\item 
+		Sei $ E $ ein abgeschlossener Teilraum von $ \H^2 $ mit $ E \neq \H^2 $ und $ S^\ast E \subset E $.
+		Dann gilt 
+		\begin{align*}
+		E = \H^2 \ominus \Theta \H^2
+		\end{align*}
+		mit einer inneren Funktion $ \Theta $.
+		Außerdem ist jeder Unterraum der Form $ \H^2 \ominus \Theta \H^2 $
+		$ S^\ast $-  invariant.	
+		
+		\item
+		Wenn $ E $ ein $ S $-und $ S^\ast $-invarianter Unterraum von $ \H^2 $ ist, dann gilt entweder $ E = {0} $ oder $ E = \H^2 $.
+	\end{enumerate}
+\end{sz}
+
+\begin{proof}
+	\begin{enumerate}[label=\text{\textbf{(\arabic*)}}]
+		\item 
+		Mit $ S^\ast E \subset E $ gilt
+		\begin{align*}
+		\langle x , S^\ast y \rangle =
+		\langle S x ,  y \rangle = 0, \quad x \in E^\bot, y \in E,
+		\end{align*}
+		wodurch wir sofort
+		\begin{align*}
+		S^\ast E \subset E \Leftrightarrow S E^\bot \subset E^\bot
+		\end{align*}
+		erhalten. Mit Beurling-Helson erhalten wir dann $ E^\bot = \Theta \H^2 $, womit die Aussage gilt.
+		
+		\item
+		Angenommen $ \lbrace 0 \rbrace \neq E \neq \H^2 $.
+		Wegen $ S E \subset E  $ und $ S^\ast E \subset E $, gelten 
+		\begin{align*}
+		E = \Theta \H^2 = \H^2 \ominus \Theta^\prime \H^2
+		\end{align*}
+		für zwei innere Funktionen $ \Theta, \Theta^\prime$.
+		Dann gilt 
+		\begin{align*}
+		\langle \Theta f , \Theta^\prime g \rangle   
+		=
+		\int \limits_{T} \Theta f \overline{\Theta^\prime g}  \td{\lambda_N} = 0
+		\end{align*}
+		für $ f, g \in \H^2 $. Für $ \langle \Theta \Theta^\prime, \Theta^\prime \Theta \rangle = 1 $ ist dies ein Widerspruch.		
+		\end{enumerate}
+\end{proof}
+
+\begin{genericthm}{Folgerung}
+	Sei $ \mathcal{F}$  eine Familie innerer Funktionen und 
+	$ K_\Theta := \H^2 \ominus \Theta \H^2$ für eine innere Funktion $ \Theta $.
+	Dann gelten:
+	\begin{enumerate}[label=\text{\textbf{(\arabic*)}}]
+		\item $ K_{\Theta_1} \subset K_{\Theta_2}  \ \Leftrightarrow \ \Theta_1 \ \text{teilt} \ \Theta_2$
+		
+		\item
+		$ \bigvee_{\Theta \in \mathcal{F}} K_\Theta  = K_{\Theta^\prime}$ mit $ \Theta^\prime = \kgv(\mathcal{F})  $
+		
+		\item
+		$ \bigcap_{\Theta \in \mathcal{F}} K_\Theta = K_{\Theta^\prime} $
+		mit $ \Theta^\prime = \ggT(\mathcal{F}) $.
+	\end{enumerate}
+	Für den Fall $ \bigvee_{\Theta \in \mathcal{F}} K_\Theta  = \H^2 $ 
+	und $ \bigcap_{\Theta \in \mathcal{F}} K_\Theta = \lbrace 0 \rbrace $ sagen wir $ \kgv( \mathcal{ F}) = 0 $ und $ \ggT(\mathcal{F}) = 1 $.
+\end{genericthm}
+
+\begin{proof}
+	\begin{enumerate}[label=\text{\textbf{(\arabic*)}}]
+		\item
+		Durch
+		\begin{align*}
+		K_{\Theta_1} =  (\Theta_1 \H^2)^\bot  \subset (\Theta_2 \H^2)^\bot = K_{\Theta_2}
+		\ \Leftrightarrow \ 
+		\Theta_2 \H^2 \subset \Theta_1 \H^2
+		\ \Leftrightarrow \
+		\Theta_1 \ \text{teilt} \ \Theta_2
+		\end{align*}
+		erhalten wir die Aussage sofort.
+		
+		\item
+		Der Raum 
+		\begin{align*}
+		\bigvee_{\Theta \in \mathcal{F}} K_\Theta
+		\end{align*}
+		ist $ S^\ast $-invariant.
+		Damit existiert eine innere Funktion $ \Theta^\prime $ mit
+		\begin{align*}
+		\bigvee_{\Theta \in \mathcal{F}} K_\Theta = K_{\Theta^\prime}
+		\end{align*}
+		und es gilt
+		\begin{align*}
+		K_\Theta \subset K_{\Theta^\prime}
+		\end{align*}
+		für alle $ \Theta \in \mathcal{F} $.
+		Damit gilt auch $ \Theta^\prime = \kgv(\mathcal{F}) $.
+		
+		\item
+		Wegen der $ S^\ast $-Invarianz gilt auch hier 
+		\begin{align*}
+		\bigcap_{\Theta \in \mathcal{F}} K_\Theta = K_{\Theta^\prime}
+		\end{align*}
+		für eine innere Funktion $ \Theta^\prime $.
+		Aus 
+		\begin{align*}
+		K_{\Theta^\prime} \subset K_{\Theta}
+		\end{align*}
+		für $ \Theta \in \mathcal{F} $ folgt direkt $ \Theta^\prime = \ggT(\mathcal{F}) $.
+	\end{enumerate}
+\end{proof}

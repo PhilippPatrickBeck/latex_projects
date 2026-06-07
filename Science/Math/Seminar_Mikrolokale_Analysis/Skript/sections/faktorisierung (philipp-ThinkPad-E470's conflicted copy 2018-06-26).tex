@@ -1,0 +1,129 @@
+\section{Faktorisierung}
+
+\begin{df}\label{skript:2.1}
+	Sei $ f \in \H^2 $.
+	Wir bezeichnen $ f $ als \textit{innere Funktion}, falls $ | f | = 1 $ fast überall auf $ \mathbb{T} $ gilt.
+	Wir nennen $ f $ eine \textit{äußere Funktion}, falls
+	\begin{align*}
+	E_f := \bigvee_{n \in \N_0} \mathscr{S}^n f = \H^2
+	\end{align*}
+	gilt.
+\end{df}
+
+\begin{genericthm}{Faktorisierungstheorem}\label{skript:2.2}
+	Sei $ f \in \H^2 \setminus \lbrace 0 \rbrace $.
+	Dann lässt sich $ f $ bis auf eine multiplikative Konstante eindeutig als Produkt einer inneren Funktion $ f^i $ und einer äußeren Funktion $ f^a $ beschreiben.
+	D.h. es gilt $ f = f^i f^a $ und $ E_f = f^i \H^2 $.
+\end{genericthm}
+
+\begin{proof}
+	Wegen $ f \neq 0 $ erhalten wir  mit \ref{skript:1.3}
+	\begin{align*}
+	E_f = \Theta \H^2	
+	\end{align*}
+	mit $ |\Theta| = 1  $ f. ü. auf $ \mathbb{T} $.
+	Damit ist $ \Theta  $ eine innere Funktion. Wir setzen $ f^i := \Theta $ und $ f^a := f \overline{\Theta} $, womit gilt $ f = f^i f^a $. 
+	Wir müssen noch nachweisen, dass $ f^a $ eine äußere Funktion ist.
+	Da $ f^i $ als Multiplikationsoperator eine Isometrie auf $ \L^2 $ bzw. $ \H^2 $ ist, erhalten wir 
+	\begin{align*}
+	E_f
+	= \bigvee_{n \in \N_0} z^n f^i f^a 
+	= f^i \bigvee_{n \in \N_0} z^n f^a 
+	= f^i E_{f^a}.
+	\end{align*}
+	Damit folgt $ f^i H^2 = f^i E_{f^e} $ und damit auch $ H^2 = E_{f^e} $. Also ist $ f^e $ eine äußere Funktion.
+	Die Eindeutigkeit erhalten wir aus Beuerling-Helson und \ref{skript:1.2}.
+\end{proof}
+
+\begin{genericthm}{Folgerung}\label{skript:2.3}
+	Sei $ f \in \H^2$.
+	Dann gilt:
+	\begin{align*}
+	f \ \text{ist äußere Funktion} \
+	\Leftrightarrow
+	\left(g \in \H^2, \frac{g}{f} \in \L^2 \Rightarrow \frac{g}{f} \in \H^2 \right)
+	\end{align*}
+\end{genericthm}
+
+\begin{proof}
+	Zunächst beginnen wir mit der Hinrichtung.
+	Sei $ f $ eine äußere Funktion, $ g \in \H^2$ und $ \frac{g}{f} \in \L^2 $. Wegen $ E_f = \H^2 $ existiert eine Folge $ p_n $ von Polynomen, sodass
+	\begin{align*}
+	\lim\limits_{n \to \infty} \| p_n f - 1 \|_2 = 0
+	\end{align*}
+	gilt. Damit erhalten wir 
+	\begin{align*}
+	\left\| p_n g - \frac{g}{f} \right\|_1 
+	= 
+	\left\| (p_n f - 1 ) \frac{g}{f} \right\|_1 
+	\leq
+	\| p_n f - 1 \|_2 \left\| \frac{g}{f} \right\|_2
+	\stackrel{n \to \infty}{\rightarrow} 0
+	\end{align*}
+	mit der Hölderungleichung. Damit gilt
+	\begin{align*}
+	\left(\frac{g}{f}\right)^{\hat{}}(n) = 0
+	\end{align*}
+	für $ n <0 $. Somit gilt $ \frac{g}{f} \in \H^2$.\\
+	Nun kommen wir zur Rückrichtung.
+	Wir setzen $ g = f^a $.
+	Dann gilt
+	\begin{align*}
+	\frac{g}{f} = \frac{1}{f^i} = \overline{f^i} \in \L^2
+	\end{align*}
+	und mit der Voraussetzung folgt $ \overline{f^i} \in \H^2 $.
+	Wegen $ f^i \in \H^2 $ folgt, dass $ f^i $ konstant ist.
+	Somit ist $ f $ eine äußere Funktion.
+\end{proof}
+
+\begin{genericthm}{Folgerung}\label{skript:2.4}
+	\begin{enumerate}[label=\text{\textbf{(\arabic*)}}]
+		\item
+		Seien $ f$ und $g $ äußere Funktionen mit $ |f| = |g| $ fast überall.
+		Dann folgt $ f = \lambda g $ mit $ \lambda \in \mathbb{T} $.
+		
+		\item Sei $ f \in \L^2 $ und $ \mathscr{S}^{-1} E_f =  E_f$.
+		Dann existiert eine äußere Funktion $ g $ mit $ |f | = |g|  $ fast überall auf $ \mathbb{T} $.
+		
+		\item
+		Falls für $ h \in \L^2 $ mit $ h >0 $ 
+		\begin{align*}
+		\int \limits_{\mathbb{T} } \log h > - \infty
+		\end{align*}
+		gilt, folgt $ |h| = |f| $ fast überall für eine äußere Funktion $ f $.
+	\end{enumerate}
+\end{genericthm}
+
+\begin{proof}
+	\begin{enumerate}[label=\text{\textbf{(\arabic*)}}]
+		\item 
+		Seien $ f $ und $ g $ äußere Funktionen mit $ |f| = |g| $ fast überall.
+		Dann ist mit \ref{skript:2.3}
+		\begin{align*}
+		\frac{g}{f} \in \H^2 \ \wedge \overline{ \left(\frac{f	}{g} \right)} \in \H^2,
+		\end{align*}
+		womit folgt, dass $ \frac{g}{f} $ konstant ist. Somit gilt die Aussage.
+		\item
+		fehlt
+		\item 
+		fehlt
+	\end{enumerate}
+\end{proof}
+
+\begin{genericthm}{Folgerung}\label{skript:2.5}
+	Sei $ f \in \L^2 $. Dann gelten:
+	\begin{enumerate}
+		\item 
+		$ \mathscr{S} E_f = E_f \ \Leftrightarrow  \ \log|f|  \in \L^1$
+		\item 
+		$ E_f = \L^2   \ \Leftrightarrow \ \log|f| \notin \L^1$
+	\end{enumerate}
+\end{genericthm}
+
+\begin{df}\label{skript:2.6}
+	Eine innere Funktion $ \Theta_1 $ \textit{teilt} eine innere Funktion $ \Theta_2 $, falls
+	\begin{align*}
+	\frac{\Theta_2}{\Theta_1} \in \H^2
+	\end{align*}
+	gilt.
+\end{df} 

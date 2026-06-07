@@ -1,0 +1,200 @@
+\section{Nichtlineare Eigenwertprobleme}
+In diesem Abschnitt betrachten wir die Minimierung des Energiefunktionals
+\begin{equation}\label{equ:1.1}
+I(w) := \frac{1}{2} \cdot \int_U |Dw|^2 \td{x}
+\end{equation}
+mit $w \in H_0^1(U)$ und $w \equiv 0 $ auf $\partial U$.
+Wir minimieren $I$ unter der Nebenbedingung
+\begin{equation}\label{equ:1.2}
+J(w) := \int_U G(w) \td{x} = 0,
+\end{equation}
+wobei $G : \R  \to \R$ glatt ist.
+
+%\begin{genericthm}{Korollar}\label{skript:1.1}
+%Sei $g := G^\prime$ und $|g(z)| \leq  \tilde{C} \cdot (|z| + 1 )$ für alle $z \in \R$.
+%Dann gilt
+%\begin{align*}
+%|G(z)| \leq C \cdot ( |z|^2 + 1))
+%\end{align*}
+%für alle $ z \in \R$.
+%\end{genericthm}
+Der Beweis erfolgt hier durch Anwendung des Fundamentalsatzes der Analysis und kurzen Abschätzungen.
+Nun nehmen wir an, dass die offene Menge $U$ beschränkt, zusammenhängend und einen glatten Rand besitzt.
+Außerdem setzen wir für $g := G^\prime$ die Abschätzung
+
+\begin{align*}
+|g(z)| \leq  C \cdot (|z| + 1 )
+\end{align*}
+voraus.
+Weiter definieren wir 
+\begin{align*}
+\mathcal{A} := \left\lbrace w \in H_0^1(U) \ | \ J(w)=0 \right\rbrace
+\end{align*}
+die Menge der zugelassenen Funktionen und gelangen zu unserem ersten Satz.
+
+\begin{genericthm}{Existenz eines eingeschränkten Minimierers}\label{skript:1.1}
+Sei $\mathcal{A}$ nichtleer.
+Dann existiert ein $u \in \mathcal{A}$, sodass
+\begin{align*}
+I(u) = \min \limits_{w \in \mathcal{A}} I(w)
+\end{align*}
+erfüllt ist.
+\end{genericthm}
+
+\begin{proof}
+Zunächst wählen wir uns eine Folge $u_n$ in $\mathcal{A}$ mit
+\begin{align*}
+I(u_n) \rightarrow m = \min \limits_{w \in \mathcal{A}} I(w).
+\end{align*}
+Nun ist $H_0^1(U)$ schwach folgenkompakt, wodurch wir mit
+\begin{align*}
+u_{n_k} \rightharpoonup u
+\end{align*}
+eine schwache konvergente Teilfolge in $H_0^1(U)$ mit $I(u) \leq m$ finden.
+Durch Anwendung des Kompaktheitssatzes von Rellich-Kontrachov erhalten wir 
+\begin{align*}
+u_{n_k} \rightarrow u
+\end{align*}
+in $L^2(U)$.
+Der Kompaktheitssatz liefert uns eine kompakte Einbettung von $H_0^1(U)$ in $L^2(U)$
+und kompakte Operatoren bilden schwach konvergente Folgen auf konvergente Folgen ab.
+Durch punktweise Anwendung des Mittelwertsatzes der Differentialrechnung und $u_n \in \mathcal{A}$ gilt
+\begin{align*}
+|J(u)| 
+= |J(u) - J(u_{n_k})|
+\leq \int_U | G(u) - G(u_{n_k})| \td{x}
+\leq \int_U | u - u_{n_k}| \cdot | 1 + |u| + |u_{n_k}|| \td{x}
+\rightarrow 0
+\end{align*}
+für $k \rightarrow \infty$.
+\end{proof}
+
+\begin{genericthm}{Lagrange Multiplikator}\label{skript:1.3}
+Sei $u \in \mathcal{A}$ mit
+\begin{equation}\label{equ:1.3}
+I ( u) = \min \limits_{w \in \mathcal{A}} I(w).
+\end{equation}
+Dann existiert ein $\lambda \in \R$, so dass
+\begin{equation}\label{equ:1.4}
+\int_U Du \cdot Dv \td{x}
+= \lambda \cdot \int_U g(u) \cdot v \td{x} 
+\end{equation}
+für alle $v \in H_0^1(U)$ gilt.
+\end{genericthm}
+
+\begin{proof}
+Sei $v \in H_0^1(U)$ beliebig.
+\begin{enumerate}
+
+\item[\textbf{(1)}]
+Angenommen $g(u) \neq 0$ fast überall auf $U$.
+Dann existiert ein $w \in H_0^1(U)$, so dass
+\begin{equation}\label{equ:1.5}
+\int_U g(u) \cdot w \td{x} \neq 0
+\end{equation}
+gilt.
+Wir definieren nun
+\begin{equation}\label{equ:1.6}
+j(\tau,\sigma) 
+:= J(u + \tau \cdot v \sigma \cdot w)
+\end{equation}
+und erhalten direkt $j(0,0) = 0$.
+Da $j$ in $C^1$ ist gilt außerdem
+\begin{equation}\label{equ:1.7}
+\frac{\partial j}{\partial \tau}(\tau,\sigma)
+= 
+\int_U g( u + \tau v + \sigma w) \cdot v \td{x}
+\end{equation}
+und
+\begin{equation}\label{equ:1.8}
+\frac{\partial j}{\partial \sigma}(\tau,\sigma)
+= 
+\int_U g( u + \tau v + \sigma w) \cdot w \td{x}.
+\end{equation} 
+Mit (\ref{equ:1.5}) gilt somit 
+\begin{equation} \label{equ:1.9}
+\frac{\partial j}{\partial \sigma}(\tau,\sigma)(0,0) \neq 0,
+\end{equation}
+womit nach dem Satz über implizite Funktionen ein $ \phi \in \mathrm{C}^1 $ mit
+\begin{equation}\label{equ:1.10}
+\phi(0) = 0
+\end{equation}
+und 
+\begin{equation}\label{equ:1.11}
+j(\tau, \phi(\tau)) = 0 
+\end{equation}
+für hinreichend kleine $\tau$ exisitiert.
+Durch Differenzieren erhalten wir 
+\begin{align*}
+\frac{\partial j}{\partial \tau }(\tau, \phi(\tau)) + 
+\frac{\partial j}{\partial \sigma}(\tau, \phi(\tau)) \cdot \phi^\prime (\tau) = 0,
+\end{align*}
+womit mit (\ref{equ:1.7}) und (\ref{equ:1.8})
+\begin{equation}\label{equ:1.12}
+\phi^\prime(0) 
+=
+-\frac{\int_U g(u) \cdot v \td{x}}{\int_U g(u) \cdot w \td{x}}
+\end{equation}
+folgt.
+\item[\textbf{(2)}]
+Wir setzen nun
+\begin{align*}
+w(\tau) := \tau v + \phi(\tau) \cdot w
+\end{align*}
+für hinreichend kleines $\tau$ und definieren
+\begin{align*}
+i(\tau) := I ( u + w(\tau)).
+\end{align*}
+Mit (\ref{equ:1.11}) gilt $J(u + w(\tau)) = 0 $, womit $u + w(\tau) \in \mathcal{A}$ gilt.
+Die $C^1$ Funktion $i$ besitzt also ein Minimum in der $0$.
+Damit erhalten wir
+\begin{equation}\label{equ:1.13}
+0 = i^\prime(0) = \int_U Du \cdot (Dv + \phi^\prime(0)Dw) \td{x}.
+\end{equation}
+Mit (\ref{equ:1.12}), (\ref{equ:1.13}) und der Definition
+\begin{align*}
+\lambda := \frac{\int_U Du \cdot Dw \td{x}}{\int_U g(u)w \td{x}}
+\end{align*}
+folgt die gewünschte Gleichung
+\begin{align*}
+\int_U Du \cdot Dv \td{x} = \lambda \cdot \int_U g(u) v \td{x}
+\end{align*}
+für alle $v \in H_0^1(U)$.
+
+\item[\textbf{(3)}]
+Um den Beweis abzuschließen nehmen wir nun an, dass $g(u) = 0$ fast überall gilt.
+Wenn wir nun $g$ durch beschränkte Funktionen approximieren, so erhalten wir die schwache Ableitung $DG(u) = g(u) = 0$.
+Nun ist $U$ zusammenhängend, womit $G(u)$ konstant fast überall ist.
+Mit $J(u) = 0 $ folgt direkt $G(u) = 0 $ fast überall.
+Wegen \textit{Theorem 2} in Evans 5.5 gilt  $ u = 0 $ auf $\partial U $ und es folgt $G(0)= 0$.
+
+Also erfüllt $0$ die Nebenbedingung.
+Aber dann folgt auch $u = 0$ fast überall, ansonsten würde $I(u) > I(0) = 0$.
+Somit folgt unsere Aussage für beliebige $\lambda$.
+\end{enumerate}
+\end{proof}
+
+\begin{genericdf}{Bemerkung}\label{skript:1.4}
+Sei $u$ eine schwache Lösung des nicht-linearen Randwertproblems
+\begin{equation}\label{equ:1.14}
+\begin{split}
+-\Delta u & = \lambda \cdot g(u) \ \text{in} \ U \\
+u & = 0 \quad \quad \text{auf} \ \partial U.
+\end{split}
+\end{equation}
+Hierbei ist $\lambda$ der Lagrange-Multiplikator, welcher aus der Nebenbedingung $J(u) = 0$ stammt.
+Diesen Zusammenhang können wir bei der Konstruktion des $\lambda$ im letzten Beweis erkennen.
+Wir wollen nun die Verbindungen unserer zwei Theoreme und (\ref{equ:1.14}) zeigen.
+Da $u$ eine schwache Lösung ist, ist 
+\begin{equation*}
+\int_U - \Delta u \cdot v  \td{x}
+= 
+\int_U  Du \cdot Dv \td{x}
+=
+\lambda \cdot \int_U g(u) v \td{x} 
+\end{equation*}
+für alle $v \in H_0^1(U)$ erfüllt.
+Also ist eine Lösung unseres eingeschränkten Minimierungsproblems automatisch eine Lösung von (\ref{equ:1.14}).
+Ein Problem dieser Form mit den Unbekannten $(u,\lambda)$, wobei $u \neq 0 $, nennen
+wir \textbf{\textit{nichtlineares Eigenwertproblem}}.  
+\end{genericdf}

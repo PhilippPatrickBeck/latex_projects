@@ -1,0 +1,175 @@
+\documentclass[12pt,a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[a4paper,scale=0.8]{geometry} 
+\usepackage{fancyhdr}
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{Philipp Beck} %Kopfzeile links
+\fancyhead[C]{Shiftinvariante Unterräume} %zentrierte Kopfzeile
+\fancyhead[R]{29.06.2018} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{\thepage} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+\usepackage{paralist}
+\usepackage{enumitem} 
+
+%\usepackage {picins}
+\usepackage{color}
+\usepackage{float}
+
+% -- Mathe
+%\usepackage{gensymb}
+%fancyhdr, lastpage, booktabs, xy
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+
+% -- Malen
+\usepackage{tikz}
+
+\usetikzlibrary{patterns, decorations.pathreplacing, decorations.pathmorphing, arrows}
+
+\usepackage{units}
+
+\numberwithin{equation}{section}
+
+\author{Philipp Beck}
+
+\subtitle{Sommersemester 2018}
+\title{Seminar zur mikrolokalen Analysis}
+
+%\makeatletter
+%\renewcommand*{\thesection}{\arabic{section}}
+%\renewcommand*{\p@section}{\thechapter.}
+
+%Befehle für bestimmte mathematische Symbole
+\newcommand{\Gl}{\operatorname{GL}}
+\newcommand{\Sl}{\operatorname{SL}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\ord}{\operatorname{o}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\nt}{\unlhd}
+\newcommand{\td}[1]{ \ \text{\rmfamily d} #1}
+\newcommand{\Stab}{\operatorname{Stab}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Bild}{\operatorname{Im}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\ggT}{\operatorname{ggT}}
+\newcommand{\Syl}{\operatorname{Syl}}
+\newcommand{\Grad}{\operatorname{Grad}}
+\newcommand{\Char}{\operatorname{char}}
+\newcommand{\Quot}{\operatorname{Quot}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\kgv}{\operatorname{kgV}}
+%Mengensymbole
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Zn}[1]{\mathbb{Z}/#1\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\L}{\mathrm{L}}
+\newcommand{\F}{\mathbb{F}}
+\renewcommand{\i}{\textrm{i}}
+\renewcommand{\H}{\mathrm{H}}
+\newcommand{\lin}{\operatorname{lin}}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+%Big and italic
+\newcommand{\bi}[1]{\textbf{\textit{#1}}}
+
+\swapnumbers
+
+\newtheoremstyle{satz}% name
+{15pt}% Space above
+{5pt}% Space below
+{\itshape}% Body font
+{}% Indent amount: Indent amount: empty = no indent, \parindent = normal paragraph indent
+{\bfseries}% Theorem head font
+{:}% Punctuation after theorem head
+{\newline}% Space after theorem head: Space after theorem head: { } = normal interword space; \newline = linebreak
+{}% Theorem head spec (can be left empty, meaning `normal')
+
+\newtheoremstyle{def}% name
+{15pt}% Space above
+{5pt}% Space below
+{}% Body font
+{}% Indent amount: Indent amount: empty = no indent, \parindent = normal paragraph indent
+{\bfseries}% Theorem head font
+{:}% Punctuation after theorem head
+{\newline}% Space after theorem head: Space after theorem head: { } = normal interword space; \newline = linebreak
+{}% Theorem head spec (can be left empty, meaning `normal')
+
+\newtheoremstyle{exercise}% name
+{15pt}% Space above
+{5pt}% Space below
+{}% Body font
+{}% Indent amount: Indent amount: empty = no indent, \parindent = normal paragraph indent
+{\bfseries}% Theorem head font
+{:}% Punctuation after theorem head
+{0.5em}% Space after theorem head: Space after theorem head: { } = normal interword space; \newline = linebreak
+{}% Theorem head spec (can be left empty, meaning `normal')
+
+
+
+
+
+\newcommand{\thistheoremname}{}
+\theoremstyle{satz}
+%Satz
+\newtheorem{sz}{Satz}[section]
+
+%Lemma
+\newtheorem{lemma}[sz]{Lemma}
+\newtheorem{gsz}[sz]{\thistheoremname}
+\newtheorem*{gthm_no_num}{\thistheoremname}
+
+
+\theoremstyle{def}
+\newtheorem{df}[sz]{Definition}
+\newtheorem{gd}[sz]{\thistheoremname}
+
+\newtheorem*{gdf_no_num}{\thistheoremname}
+
+
+\theoremstyle{exercise}
+\newtheorem{exe}{Aufgabe}[section]
+\newtheorem{loes}{Lösung}[section]
+
+%Für Beispiele , Bemerkungen
+%Also alles was wie eine Definition aussehen soll, aber keine ist.
+%\begin{genericdf}{(Hier den Text einfügen)}
+%	Inhalt...
+%\end{genericdf}
+\newenvironment{genericdf}[1]{\renewcommand{\thistheoremname}{#1}\begin{gd}}{\end{gd}}
+%Dasselbe ohne Nummerierung
+\newenvironment{generic_no_num}[1]{\renewcommand{\thistheoremname}{#1}\begin{gdf_no_num}}{\end{gdf_no_num}}
+
+%Hier für Sätze
+\newenvironment{genericthm}[1]{\renewcommand{\thistheoremname}{#1}\begin{gsz}}{\end{gsz}}
+%Analog zu Definitionen
+\newenvironment{genericthm_no_num}[1]{\renewcommand{\thistheoremname}{#1}\begin{gthm_no_num}}{\end{gthm_no_num}}
+\parindent0pt
+\parskip1ex
+
+
+%----Dokument----
+
+\begin{document}
+\input{sections/beuerling_helson.tex}
+\newpage
+\input{sections/faktorisierung}
+\newpage
+\input{sections/eigenschaften_adj.tex}
+\end{document}

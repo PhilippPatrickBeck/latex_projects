@@ -1,0 +1,210 @@
+\section{Beurling-Helson und Folgerungen}
+
+\begin{genericthm}{Beurling-Helson}\label{skript:1.1}
+Sei $E$ ein $\mathscr{S}$-invarianter Unterraum von $\L^2$.
+Dann gibt es folgende zwei Fälle:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+\item
+Es gilt $\mathscr{S} E = E$.
+Dann existiert eine $\lambda_N$-messbares $e \subset \mathbb{T}$ mit $E = \chi_e \L^2$.
+\item
+Es gilt $\mathscr{S} E \neq E$.
+Dann existiert ein $\lambda_N$-messbares $\Theta : \mathbb{T} \to \C$ mit $|\Theta| = 1$ fast überall, sodass
+$E = \Theta \H^2$ gilt.
+\end{enumerate}
+\end{genericthm}
+
+\begin{proof}
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+\item
+Sei $P_E$ die orthogonale Projektion auf $E$ und $\varphi := P_E 1 $.
+Das ist $1- \varphi$ wegen $\varphi E = E$ orthogonal zu $\mathscr{S}^n \varphi$ für alle $n \in \Z$.
+Aufgrund von 
+\begin{align*}
+\langle \mathscr{S}^n \varphi, 1 - \varphi \rangle 
+= \int \limits_\mathbb{T} \mathscr{S}^n \varphi \overline{(1 - \varphi)} \td{\lambda_N}
+= \int \limits_\mathbb{T} (\varphi - | \varphi|^2) z^n \td{\lambda_N}
+= 0
+\end{align*}
+erhalten wir $\varphi = | \varphi|^2$ und finden ein $e \subset \mathbb{T}$ mit $\varphi = \chi_e$.
+Da durch $\lbrace z^n \ | \ n \in \Z \rbrace $ ein Basis von $\L^2$ gegeben ist, erhalten wir mit
+\begin{align*}
+\bigvee_{n \in \Z} \mathscr{S}^n \chi_e :=
+\overline{\lin} \bigcup_{n \in \Z} \lbrace \mathscr{S}^n \chi_e \rbrace
+= \chi_e \cdot \L^2,
+\end{align*}
+dass $\chi_e \L^2 \subset E$ gilt.
+Wir müssen also noch die Gleichheit zeigen.
+Hierfür wählen wir $\alpha \in E \ominus \chi_e \L^2 $.
+Damit gilt 
+\begin{align*}
+\langle 1- \chi_e , \mathscr{S}^n \alpha \rangle = 
+\int \limits_\mathbb{T} (1- \chi_e) \overline{\alpha} z^{-n} \td{\lambda_N} = 0
+\end{align*}
+für $n \in \Z$. Damit folgt $(1- \chi_e) \overline{\alpha} = 0$.
+Analog folgt, dass 
+\begin{align*}
+\forall_{n \in \Z}  \ : \ \langle \alpha , \mathscr{S}^n \chi_e \rangle = 0
+\quad \Rightarrow \quad \overline{\alpha} \chi _e= 0
+\end{align*}
+gilt. Wegen 
+\begin{align*}
+(1- \chi_e) \overline{\alpha} =
+\overline{\alpha} \chi _e= 0
+\end{align*}
+erhalten wir direkt $\alpha = 0$.
+Damit gilt $E = \chi_e \L^2$.
+
+\item
+In diesem Fall ist $\mathscr{S}E$ ein echter Teilraum von $E$.
+Wir wählen ein $\Theta \in E \ominus \mathscr{S} E$ mit $\| \Theta \|_2 = 1$.
+Der Operator $\mathscr{S}$ ist unitär, weswegen wir
+\begin{align*}
+\langle \mathscr{S}^n \Theta , \Theta \rangle
+= 
+\langle \Theta, \mathscr{S}^{-n} \Theta \rangle
+=
+\int \limits_\mathbb{T} z^n | \Theta |^2 \td{\lambda_N} =0 
+\end{align*}
+für $n \in \N$ erhalten.
+Damit ist $|\Theta| $ konstant.
+Da $\lambda_N(\mathbb{T}) = 1$ gilt, folgt mit 
+\begin{align*}
+\langle \Theta, \Theta \rangle 
+=
+\int \limits_\mathbb{T} | \Theta|^2 \td{\lambda_N} = 1 
+\end{align*}
+auch $| \Theta  | = 1 $ fast überall.
+Wir betrachten $\Theta$ nun als Multiplikationsoperator, d.h. $f \mapsto \Theta f$. 
+Damit ist $\Theta$ eine Isometrie auf $\L^2$.
+Mit der Einbettung
+\begin{align*}
+\iota \ : \H^2 \hookrightarrow \L^2, \quad 
+z^n \mapsto z^n
+\end{align*}
+und der Isometrie erhalten wir durch
+\begin{align*}
+\bigvee_{n \in \N_0} \mathscr{S}^n \Theta
+=
+\Theta \bigvee_{n \in \N_0} \mathscr{S}^n 1 
+=
+\Theta \bigvee_{n \in \N_0} \iota(z^n) 1
+= \Theta H^2, 
+\end{align*}
+dass $\Theta \H^2 \subset E$ gilt.
+Übrig zu zeigen ist wieder die Gleichheit.
+Wir wählen $\alpha \in E \ominus \Theta \H^2$.
+Dann gilt 
+\begin{align*}
+\langle \alpha , \mathscr{S}^n \Theta \rangle
+= 
+\langle \mathscr{S}^{-n} \alpha , \Theta \rangle
+= 0
+\end{align*} 
+für $n \in \N_0$ und wegen $ \mathscr{S}^n \alpha \in \mathscr{S} E$ gilt auch
+\begin{align*}
+\langle \Theta, \mathscr{S}^n \alpha \rangle 
+=
+\langle \mathscr{S}^{-n} \Theta, \alpha \rangle
+= 0
+\end{align*}
+für $n \in \N$.
+Damit erhalten wir
+\begin{align*}
+\int \limits_\mathbb{T} \Theta \overline{\alpha} z^n \td{\lambda_N} = 0
+\end{align*}
+für alle $n \in \Z$.
+Damit folgt direkt $\alpha = 0$.
+Somit gilt $E = \Theta H^2$.
+\end{enumerate}
+\end{proof} 
+
+\begin{lemma}\label{skript:1.2}
+Sei $E$ ein Unterraum von $\L^2$.
+Es gelten:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+\item
+Jeder Unterraum der Form $\chi_e \L^2$ ist $\mathscr{S}$ und $\mathscr{S}^{-1}$-invariant.
+Die Darstellung $E = \chi_e \L^2$ ist eindeutig.
+
+\item
+Jeder Unterraum der Form $\Theta H^2$, $| \Theta | = 1$ f.ü. ist $\mathscr{S}$-invariant, jedoch nicht $\mathscr{S}^{-1}$-invariant.
+Die Darstellung $E = \Theta H^2$ ist bis auf eine multiplikative Konstante eindeutig. 
+
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+\item
+Folgt direkt aus dem letzten Beweis.
+\item
+Die Invarianz bzgl. $\mathscr{S}$ und Nichtinvarianz bzgl. $\mathscr{S}^{-1}$ folgen auch hier direkt aus dem letzten Beweis.
+Wir betrachten nun $\Theta \H^2 = \Theta^\prime \H^2$.
+Dann folgt $\Theta \overline{\Theta^\prime} \H^2 = H^2$
+bzw $\H^2 = \Theta^\prime \overline{\Theta} \H^2$.
+Nun gilt $\Theta \overline{\Theta^\prime} \in \H^2$ und $\Theta \overline{\Theta^\prime} \in \overline{\H^2}$.
+Seien $f , \overline{f} \in \H^2$.
+Dann erhalten wir 
+\begin{align*}
+\hat{f}(n) = 0
+\end{align*}
+und
+\begin{align*}
+\overline{\hat{f}}(n) = \overline{\hat{f}(-n)} = 0
+\end{align*}
+für $n < 0$. Somit ist $f$ konstant und wir erhalten die Eindeutigkeit bis auf eine multiplikative Konstante.
+%Mit
+%\begin{align*}
+%\bigvee_{n\in \N_0} \mathscr{S}^n \Theta 
+%= 
+%\bigvee_{n \in \N_0} \mathscr{S}^n \Theta^\prime
+%\quad \Rightarrow \quad
+%\Theta \mathscr{S}^n 1 = C \cdot \Theta^\prime \mathscr{S}^n 1
+%\end{align*}
+%folgt die restliche Aussage sofort. 
+\end{enumerate}
+\end{proof}
+
+\begin{genericthm}{Folgerung}\label{skript:1.3}
+Sei $E \subset \H^2$ ein nicht trivialer Unterraum und $\mathrm{S}E \subset E$.
+Dann gilt $E = \Theta \H^2$ mit $| \Theta | = 1$ fast überall auf $\mathbb{T}$.
+\end{genericthm}
+
+\begin{proof}
+Mit der Einbettung 
+\begin{align*}
+\iota \ : \H^2 \hookrightarrow \L^2, \quad 
+z^n \mapsto z^n
+\end{align*}
+gilt $\iota(E) \subset \iota(\H^2) \subset \iota(\L^2)$ und $\mathscr{S} E  \subset E$.
+Aus Beurling-Helson erhalten wir sofort
+\begin{align*}
+E = \iota(E) = \Theta \H^2
+\end{align*}
+mit $|\theta | = 1$ f.ü. auf $\mathbb{T}$.
+Wegen $E \subset \H^2$ gilt auch $\Theta \in \H^2$.
+\end{proof}
+
+
+\begin{genericthm}{Folgerung}\label{skript:1.4}
+Sei $f \in \H^2$ und $\lambda_N( \lbrace \xi \in \mathbb{T}\ | \ f(\xi) = 0 \rbrace) > 0$.
+Dann gilt $f = 0$.
+\end{genericthm}
+
+\begin{proof}
+Zunächst ist klar, dass
+\begin{align*}
+A:=\lbrace \xi \in \mathbb{T}\ | \ f(\xi) = 0 \rbrace
+\end{align*}
+bis auf eine Nullmenge eindeutig ist. Wir betrachten nun $f$ als Element des $\L^2$.
+Dann ist 
+\begin{align*}
+E_f = \bigvee_{n \in \N_0} \mathscr{S}^n f
+\end{align*}
+eine $\mathscr{S}$-invarianter Unterraum.
+Die in $E_f$ enthaltenen Funktionen verschwinden auf $A$.
+Aus $f \neq 0$ folgt zunächst $E_f \neq {0}$.
+Mit \ref{skript:1.3} erhalten wir 
+$E_f = \Theta \H^2$ mit $\Theta \in E_f$ und $|\Theta | = 1$ fast überall.
+\end{proof}

@@ -1,0 +1,155 @@
+\section{Die Liouvilleschen Sätze}
+
+\begin{bla}{Erster Liouvillscher Satz}\label{2.1}
+Sei $f : \mathbb{C} \to \mathbb{C}$ eine ganze Funktion.
+Wenn $f$ elliptisch ist, dann ist $f$ konstant.
+\end{bla}
+
+\begin{proof}
+Sei $f$ eine elliptische Funktion mit den Perioden $\omega_1$ und $\omega_2$.
+Es genügt $f$ auf einem seiner Periodenparallelogramme zu betrachten.
+Also betrachtet man die kompakte Menge
+\begin{align*}
+P := \lbrace t \cdot \omega_1 + r \cdot \omega_2 \ : \ t,r \in [0,1] \rbrace.
+\end{align*}
+und wählt $z \in P$ beliebig. Da $f$ holomorph auf $\mathbb{C}$ ist, ist $f$ stetig auf $P$.
+Mit
+\begin{align*}
+| f(z) | \leq \max_{z \in P} |f(z)| < \infty.
+\end{align*}
+ist $f$ auf $P$ beschränkt. Aus der Periodizität folgt die Beschränkheit auf ganz $\mathbb{C}$.
+Nach dem Satz von Liouville aus Analysis 3 ist $f$ damit konstant.
+\end{proof}
+
+
+
+\begin{bla}{Folgerungen}\label{2.2}
+Aus dem vorherigen Satz ergeben sich die Folgerungen:
+\begin{enumerate}%[leftmargin=*]
+\item[\textbf{(1)} ]
+Jede nicht konstante elliptische Funktion enthält in jedem Periodenparallelogramm mindestens 
+einen Pol.
+\item[\textbf{(2)}]
+Seien $f $ und $g$ elliptische Funktionen mit den gleichen Perioden.
+Zusätzlichen seien deren Polstellen und zugehörige Hauptteile identisch.
+Dann ist $f-g $ konstant.
+\item[\textbf{(3)}]
+Seien $f $ und $g$ elliptische Funktionen mit den gleichen Perioden.
+Nun seien die Null-und Polstellen und deren Ordnungen gleich.
+Dann ist $\nicefrac{f}{g} $ konstant.
+\end{enumerate}
+\end{bla}
+
+\begin{proof}
+\begin{enumerate}%[leftmargin=*]
+\item[(1)]
+Mit der Annahme, dass $f$ keine Polstellen besitzt, erhält man mit \ref{2.1}
+einen Widerspruch. 
+\item[(2)]
+Seien $f,g$ elliptische Funktionen mit den angegebenen Voraussetzungen. Dann ist auch $f-g$ elliptisch.
+Nun sei $z_0$ eine beliebige Polstelle von $f$ und $g$ mit Ordnung $K$. Dann lassen sich $f,g$ in $z_0$ als Laurentreihe darstellen. Es gilt also:
+\begin{align*}
+f(z)-g(z)
+= &\sum_{k=1}^K a_{-k} \cdot (z-z_0)^{-k} + \sum_{k=0}^\infty a_k \cdot (z-z_0)^k
+- \sum_{k=1}^K b_{-k} \cdot (z-z_0)^{-k} - \sum_{k=0}^\infty b_k \cdot (z-z_0)^k\\
+= &\sum_{k=0}^\infty (a_k -b_k) \cdot (z-z_0)^k
+\end{align*} 
+%Da die Haupteile gleich sind gilt: $\forall k \in \lbrace 1,...,K \rbrace : a_{-k} = b_{-k}$
+Damit besitzt $f-g$ an $z_0$ eine hebbare Singularität und da $z_0$ beliebig gewählt wurde ist $f-g$ auf ganz $\mathbb{C}$ holomorph fortsetzbar. %\\
+Also ist $f-g$ mit \ref{2.1} konstant.  
+\item[(3)]
+Seien $f,g$ elliptische Funktionen mit den angegebenen Voraussetzungen. Dann ist auch $\nicefrac{f}{g}$ elliptisch.
+Nun kürzen sich Pole und Nullstellen gegenseitig weg. Damit besitzt $\nicefrac{f}{g}$
+keine Pole.
+Somit ist $\nicefrac{f}{g}$ mit \ref{2.1} konstant.
+\end{enumerate}
+\end{proof}
+
+\begin{bla}{Zweiter Liouvillscher Satz}\label{2.3}
+Sei $f$ eine elliptische Funktion mit den Perioden $\omega_1,\omega_2$.
+Weiter sei $S$ die Menge der Polstellen innerhalb eines Periodenparallelogramms von $f$. Dann gilt
+\begin{align*}
+\sum \limits_{z \in S } \Res(f,z) = 0.
+\end{align*} 
+\end{bla}
+
+\begin{proof}
+Zunächst platziert man ein Periodenparallelogramm,
+so dass keine Polstellen von $f$ auf dessen Rand liegen.
+Nun betrachtet man
+\begin{align*}
+\gamma_1 &:= [z_0,z_0+\omega_1]\\
+\gamma_2 &:= [z_0+\omega_1,z_0+\omega_1+\omega_2]\\
+\gamma_3 &:= [z_0+\omega_1+\omega_2,z_0+\omega_2]\\
+\gamma_4 &:= [z_0+\omega_2,z_0]
+\end{align*}
+und erhält den Weg 
+$\gamma := \gamma_1 \cup \gamma_2 \cup \gamma_3 \cup \gamma_4$,
+welcher das verschobene Parallelogramm berandet.
+Zusätzlich fällt mit der Periodizität von $f$ auf, dass 
+\begin{align*}
+\int \limits_{\gamma_3} f(z) \ \td{z} = -\int \limits_{\gamma_1} f(z) \ \td{z}
+\ \text{und} \
+\int \limits_{\gamma_2} f(z) \ \td{z} = -\int \limits_{\gamma_4} f(z) \ \td{z}
+\end{align*}
+gilt.
+Also folgt mit dem Residuensatz, dass
+\begin{align*}
+\int \limits_\gamma f(z) \ \td{z}
+&= 2 \pi  \mathrm{i}  \cdot \sum \limits_{z \in S } \Res(f,z)\\
+&= \int \limits_{\gamma_1} f(z) \ \td{z}
++ \int \limits_{\gamma_2} f(z) \ \td{z}
++ \int \limits_{\gamma_3} f(z) \ \td{z}
++ \int \limits_{\gamma_4} f(z) \ \td{z}\\
+&= \int \limits_{\gamma_1} f(z) \ \td{z}
+- \int \limits_{\gamma_1} f(z) \ \td{z}
+- \int \limits_{\gamma_4} f(z) \ \td{z}
++ \int \limits_{\gamma_4} f(z) \ \td{z}
+= 0
+\end{align*}
+ist. 
+Somit gilt die Behauptung.
+\end{proof}
+
+\begin{bla}{Folgerung}\label{2.4}
+Es existiert keine elliptische Funktion $f$ mit $\ord(f) = 1$.
+\end{bla}
+\begin{proof}
+Angenommen eine solche Funktion $f$ würde existieren.
+Dann gibt es innerhalb eines Periodenparallelogramms
+genau einen Pol $z_0$ erster Ordnung. Also gilt $\Res(f,z_0) \neq 0$.
+Dies steht im direktem Widerspruch zum letzten Satz.
+\end{proof}
+
+\begin{bla}{Dritter Liouvillscher Satz}\label{2.5}
+Sei $f$ eine elliptische Funktion mit $\ord(f) = n \geq 2$. In einem beliebig verschobenen Periodenparallelogramm $P_{z_0}$ gilt für ein festes $a \in \mathbb{C}$
+\begin{align*}
+\# \lbrace z \in P_{z_0} \ | \ f(z) - a = 0   \rbrace  = n,
+\end{align*}
+wobei bezüglich der Vielfachheit gezählt wird.
+Das heißt, in $P_{z_0}$ wird jeder Funktionswert $a \in \mathbb{C}$ genau $n$-mal 
+angenommen.
+\end{bla}
+
+\begin{proof}
+Sei $a \in \mathbb{C}$ beliebig aber fest.
+Nun betrachtet man $f(z) - a$ und verschiebt ein Periodenparallelogramm so, 
+dass keine Urbilder von $a$ auf dessen Rand liegen.
+Dazu wählt man dann den Weg $\gamma$ aus \ref{2.4} .
+Mit \ref{1.4} ist auch $\nicefrac{f^\prime(z)}{f(z)-a}$ eine elliptische Funktion.
+Es folgt mit dem Null- und Polstellen zählenden Integral,
+\begin{align*}
+\frac{1}{2 \pi \mathrm{i}} \cdot \int \limits_\gamma \frac{f^\prime(z)}{f(z)-a} \ \td{z}
+= N - P \overset{\ref{2.4}}{=} 0
+\quad \Longrightarrow \quad N = P
+\end{align*}
+wobei $N$  die Anzahl der Nullstellen von $f(z) - a$, also die Anzahl der Urbilder von $a$ unter $f$ ist und $P = n$
+gilt.
+Damit wird $a$ genau $n$-mal innerhalb eines Periodenparallelogramms angenommen.
+\end{proof}
+
+\begin{genericdef}{Bemerkung}\label{2.6}
+Seien die Voraussetzungen wie im letzten Satz.
+Dann entspricht die Anzahl der Nullstellen von $f$ (mit Vielfachheiten gezählt) der Ordnung von $f$.
+Also gilt $ \ord f = \ord \nicefrac{1}{f}$.
+\end{genericdef}

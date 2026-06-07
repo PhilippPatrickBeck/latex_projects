@@ -1,0 +1,1041 @@
+\documentclass[headsepline,11pt]{scrbook}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage[ngerman]{babel}
+%
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{thm}[lem]{Satz}
+\theoremstyle{definition}
+\newtheorem{df}[lem]{Definition}
+%
+\def\R{\mathbb R}
+\def\C{\mathbb C}
+\DeclareMathOperator{\vol}{vol}
+%
+\usepackage{tikz}
+%
+\begin{document}
+%
+%%%%% KEiNE AENDERUNGEN UEBER DIESER ZEILE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\setcounter{chapter}{7}
+\chapter{W\"armeleitungskerne }
+
+Ausgearbeitet von: {\sffamily\bfseries Philipp Beck}\\
+
+
+\section{Einleitung}
+Unser Ziel ist es, die W\"armleitungsgleichung 
+\begin{equation}\label{eq:heat_equation}
+\begin{split}
+\frac{\partial u}{\partial  \mathrm{t}} &= - \mathcal{L} u\\
+u(0,\cdot) &= u_0
+\end{split}
+\end{equation}
+auf Graphen und Teilgraphen zu l\"osen.
+%Dies werden wir auf Graphen und Teilgraphen unter Randbedingungen mithilfe des W\"armeleitungskerns bewerkstelligen.
+Die L\"osung werden wir durch
+\begin{align}
+u(t, \cdot) = H_t u_0
+\end{align}
+erhalten. Hierbei ist $ H_t $ der W\"armeleitungsoperator.
+Der Laplaceoperator ist auf einen Graphen bzw. induzierten Teilgraphen unter Randbedingungen selbstadjungiert.
+Nach dem Spektralsatz von Riesz-Schauder erhalten wir eine Orthonormalbasis aus Eigenfunktionen und die Darstellung
+\begin{equation}\label{eq:representation_laplace}
+\mathcal{L}
+= 
+\sum \limits_{\lambda \in \sigma(\mathcal{L})}
+\lambda  \ I_\lambda
+\end{equation}
+\"uber die Eigenwerte $ \lambda \in \sigma(\mathcal{L}) $ und die zugeh\"origen Eigenprojektionen $ I_\lambda $.
+Desweiteren seien die Eigenfunktionen im allgemeinen  
+reell gew\"ahlt.
+
+\begin{lem}\label{th:representation_laplace}
+	F\"ur $ k \in \mathbb{N} $ gilt
+	$ \mathcal{L}^k = \sum_\lambda  \lambda^k  I_\lambda $.
+\end{lem}
+
+\begin{proof}
+	Der Induktionsanfang ist klar. 
+	Angenommen die Aussage gilt f\"ur ein $ k $.
+	Dann folgt mit \eqref{eq:representation_laplace} und $ I_{\lambda^\prime} I_\lambda  f  = 0 $ 
+	%f\"ur $ \lambda \neq \lambda^\prime $
+	\begin{align*}
+	\mathcal{L}^{k+1} f
+	= 
+	\left( \sum \limits_{\lambda \in \sigma(\mathcal{L})} \lambda^k I_\lambda \right)
+	\left( \sum \limits_{\lambda^\prime \in \sigma(\mathcal{L})} \lambda^\prime  I_\lambda^\prime \right) f
+	=
+	\sum \limits_{\lambda} \lambda^{k+1} I_\lambda f +
+	\sum \limits_{\lambda \neq \lambda^\prime} 
+	\lambda^k \lambda^\prime 
+	\underbrace{I_\lambda I_{\lambda^\prime } f}_{=0}
+	=
+	\left(\sum \limits_{\lambda} \lambda^{k+1} I_\lambda \right) f
+	\end{align*}
+	f\"ur $ f \in L^2(G) $.
+\end{proof}
+
+
+
+\section{Der W\"armeleitungskern auf dem Gesamtgraphen }
+Sei $ G  $ ein Graph mit endlich vielen Knoten.
+%(\textcolor{red}{\textbf{oder induzierte Subgraphen etc.}})
+Wie schon erw\"ahnt, erhalten wir mit dem Spektralsatz von Riesz-Schauder
+eine ONB aus reellen Eigenfunktionen f\"ur $ L^2(G) $.
+Durch
+\begin{equation}
+\begin{split}\label{eq:kernel_projection}
+I_\lambda f(x) &=
+\sum \limits_{\phi \in E_\lambda} \langle f , \phi \rangle \phi(x)
+=
+\sum \limits_{\phi \in E_\lambda} 
+\left(\sum \limits_{y \in V(G)} 
+f(y) \phi(y)  \mathrm{d}_y\right) \phi(x)\\
+&=
+\sum \limits_{y \in V(G)} f(y) \mathrm{d}_y  
+\underbrace{\left(\sum \limits_{\phi \in E_\lambda} \phi(x) \phi(y)\right) }_{i_\lambda(x,y)}
+=
+\langle f, i_\lambda(x,\cdot) \rangle_G
+\end{split}
+\end{equation}
+erhalten wir eine Darstellung f\"ur die Projektion auf den Eigenraum $ E_\lambda $. 
+Wir bezeichnen $ i_\lambda $ als \glqq Integralkern\grqq~ von $ I_\lambda $ und verwenden diesen, um den W\"armeleitungskern herzuleiten.
+
+\begin{lem}\label{th:projection_kernel_different_eigenvalues}
+	F\"ur $ \lambda, \lambda^\prime \in \sigma(\mathcal{L}) $ mit $ \lambda \neq \lambda^\prime $ gilt
+	\begin{align}\label{eq:projection_kernel_different_eigenvalues}
+%	\sum \limits_{y \in V(G)} i_\lambda(x,y) i_{\lambda^\prime}(y,z) \mathrm{d}_y = 0
+	\langle i_\lambda(x,\cdot), i_{\lambda^\prime}(\cdot,z) \rangle_G
+	=0
+	\end{align}
+	f\"ur beliebige  $ x,z \in V(G) $.
+\end{lem}
+
+\begin{proof}
+	Es gilt:
+	\begin{align*}
+	\langle i_\lambda(x,\cdot), i_{\lambda^\prime}(\cdot,z) \rangle_G
+	&=
+	\sum \limits_{y \in V(G)}
+	\left( \sum \limits_{\phi_1 \in E_\lambda} \phi_1(x) \phi_1(y) \right)
+	\left(\sum \limits_{\phi_2 \in E_{\lambda^\prime}} \phi_2(y) \phi_2(z)\right) \mathrm{d}_y\\
+	&=
+	\sum \limits_{y \in V(G) }
+	\sum \limits_{\substack{\phi_1 \in E_\lambda\\
+					\phi_2 \in E_{\lambda^\prime}
+			}}
+			\phi_1(x) \phi_1(y) \phi_2(y) \phi_2(z)
+			\mathrm{d}_y\\
+	&=
+	\sum \limits_{\substack{\phi_1 \in E_\lambda\\
+			\phi_2 \in E_{\lambda^\prime}
+			}}
+		\phi_1(x) \phi_2(z) \langle \phi_1,\phi_2 \rangle
+	= 0.	
+	\end{align*}
+\end{proof}
+
+\begin{lem}\label{th:projection_kernel_same_eigenvalues}
+	F\"ur $ \lambda \in \sigma(\mathcal{L}) $ gilt
+	\begin{align}\label{eq:projection_kernel_same_eigenvalues}
+%	\sum \limits_{y \in V(G)} 
+%	i_\lambda(x,y) i_\lambda(y,z) \mathrm{d}_y
+	\langle i_\lambda(x,\cdot) , i_\lambda(\cdot,z) \rangle_G
+	=
+	i_\lambda(x,z)
+	\end{align}
+	f\"ur $ x,z \in V(G) $.
+	
+\end{lem}
+
+\begin{proof}
+	Zun\"achst gilt: 
+	\begin{align*}
+%	\sum \limits_{y \in V(G)} 
+%	i_\lambda(x,y) i_\lambda(y,z) \mathrm{d}_y
+	\langle i_\lambda(x, \cdot), i_\lambda(\cdot, z) \rangle_G
+	=
+	\sum \limits_{y \in V(G)} 
+	\left( \sum \limits_{\phi \in E_\lambda} \phi(x) \phi(y) \right)
+	\left(\sum \limits_{\psi \in E_\lambda} \psi(y) \psi(z)\right) \mathrm{d}_y.
+	\end{align*}
+	Mit $ \langle \phi , \psi \rangle = 0  $ f\"ur $ \phi \neq \psi $ erhalten wir
+	\begin{align*}
+	\langle i_\lambda(x, \cdot), i_\lambda(\cdot, z) \rangle_G
+	=
+	\sum \limits_{\phi \in E_\lambda} 
+	\phi(x)\phi(z) \| \phi\|
+	=
+	i_\lambda(x,z)
+	\end{align*}
+\end{proof}
+
+\begin{df}
+Sei $ t \in [0,\infty) $.
+Der W\"armeleitungsoperator 
+$ H_t $ ist definiert durch
+\begin{align}\label{eq:definition_heatkernel}
+H_t : L^2(G) \to L^2(G),
+u_0 \mapsto u(t,\cdot).
+\end{align}
+Hierbei ist $ u $ die L\"osung der W\"armeleitungsgleichung 
+\eqref{eq:heat_equation}.
+\end{df}
+\begin{thm}\label{th:repres_heat_kernel_global}
+	F\"ur den W\"armeleitungsoperator gilt
+	\begin{align}\label{eq:heat_kernel_def_whole}
+	u(t,x) = (H_t u_0)(x) = 
+	\sum \limits_{\lambda \in \sigma(\mathcal{L})} e^{- \lambda t } (I_\lambda u_0) (x) 
+	=
+	\langle u_0,  h_t(x,\cdot) \rangle_G.
+	%\sum \limits_{y \in V(G)} h_t(x,y) f(y) \mathrm{d}_y.
+	\end{align}
+	f\"ur die Anfangsbedingung $ u_0 \in L^2(G) $.
+	%Insbesondere gilt $ u(0,x) = u_0(x) $.
+	Hierbei ist
+	\begin{align}
+	h_t(x,y) := \sum \limits_{\lambda \in \sigma(\mathcal{L})}
+	e^{- \lambda t} i_\lambda(x,y)
+	\end{align}
+	der W\"armeleitungskern auf $ G $.
+\end{thm}
+
+\begin{proof}
+	Wir betrachten
+	\begin{align*}
+	e^{-t \mathcal{L}}
+	=
+	\sum \limits_{k=0}^\infty
+	\frac{(-t)^k}{k!} \mathcal{L}^k
+	\overset{\ref{th:representation_laplace}}{=}
+	\sum \limits_{\lambda \in \sigma(\mathcal{L})}
+	\sum \limits_{k = 0}^\infty \frac{(-t \lambda)^k}{k!} I_\lambda
+	=
+	\sum \limits_{\lambda \in \sigma(\mathcal{L})} e^{-t \lambda } I_\lambda.
+	\end{align*}
+	Wegen 
+	\begin{align*}
+	\partial_t e^{-t \mathcal{L}} = - \mathcal{L} e^{-t \mathcal{L}}
+	\end{align*}
+	erf\"ullt $ H_t u_0 := e^{-t \mathcal{L}} u_0 $ die W\"armeleitungsgleichung \eqref{eq:heat_equation}.
+	Damit folgt durch die Gleichung \eqref{eq:kernel_projection} die Darstellung:
+	\begin{align*}
+	(H_t u_0)(x) &= 
+	\sum \limits_{\lambda \in \sigma(\mathcal{L})} e^{- \lambda t } (I_\lambda u_0) (x) 
+	=
+	\sum \limits_{\lambda \in \sigma(\mathcal{L})} e^{- \lambda t }
+	\left(\sum \limits_{y \in V(G)} u_0(y) \mathrm{d}_y i_\lambda(x,y) \right)\\
+	&=
+	\sum \limits_{y \in V(G)} u_0(y) \left(\sum \limits_{\lambda \in \sigma(\mathcal{L})} e^{- \lambda t } i_\lambda(x,y) \right) \mathrm{d}_y\\
+	&=
+	\sum \limits_{y \in V(G)} u_0(y) h_t(x,y) \mathrm{d}_y
+	=
+	\langle h_t(x,\cdot) ,u_0 \rangle_G.
+	\end{align*}
+\end{proof}
+Wegen $ 0 \in \sigma(\mathcal{L}) $ und $ \mathbf{1} \in E_0 $ gilt aufgrund der Gleichung \eqref{eq:heat_kernel_def_whole}
+die Identit\"at\\
+$ (H_t \textbf{1})(x) = \textbf{1}(x) $.
+
+\begin{lem}
+	F\"ur $ 0 \leq s \leq t $ gilt:
+	\begin{align}
+%	\sum 
+%	\limits_{y \in V(G)}
+%	h_s(x,y) h_{t-s}(y,z) 
+%	\mathrm{d}_y
+	\langle h_s(x,\cdot), h_{t-s}(\cdot,z) \rangle_G
+	=
+	h_t(x,z).
+	\end{align}
+\end{lem}
+
+\begin{proof}
+	Durch Einsetzen erhalten wir:
+	\begin{align*}
+	&\sum 
+	\limits_{y \in V(G)}
+	h_s(x,y) h_{t-s}(y,z) 
+	\mathrm{d}_y
+	=
+	\sum \limits_{y \in V(G)}
+	\left(\sum \limits_{\lambda \in \sigma(\mathcal{L})}
+	e^{-\lambda s}
+	i_\lambda(x,y)
+	\right)
+	\left(\sum \limits_{\lambda^\prime \in \sigma(\mathcal{L})}
+	e^{-\lambda^\prime (t-s)}
+	i_\lambda(y,z)
+	\right)
+	\mathrm{d}_y\\
+	=
+	&\sum \limits_{y \in V(G)}
+	\left(
+	\sum \limits_{\lambda \in \sigma(\mathcal{L})}
+	e^{t\lambda}
+	i_\lambda(x,y) i_\lambda(y,z)
+	+
+	\sum \limits_{\lambda \neq \lambda^\prime}
+	e^{-\lambda s} e^{- \lambda^\prime(t-s)}
+	i_\lambda(x,y)i_{\lambda^\prime}(y,z)
+	\right)
+	\mathrm{d}_y\\
+	\overset{\ref{th:projection_kernel_different_eigenvalues}}{=}
+	&\sum \limits_{\lambda\in \sigma(\mathcal{L})}
+	e^{t \lambda}
+	\left(\sum \limits_{y \in V(G)} 
+	i_\lambda(x,y) i_\lambda(y,z) \mathrm{d}_y
+	\right)
+	\overset{\ref{th:projection_kernel_same_eigenvalues}}{=}
+	\sum \limits_{\lambda \in \sigma(\mathcal{L})}
+	e^{-\lambda t} i_\lambda(x,z)
+	= h_t(x,z)
+	\end{align*}
+\end{proof}
+
+\begin{thm}
+	F\"ur $ 0 \leq s \leq t $ gilt
+	\begin{align}
+	H_{s} H_{t-s} = H_t.
+	\end{align}
+\end{thm}
+
+\begin{proof}
+	Der Beweis folgt direkt durch Anwenden des letzten Lemmas.
+	Es gilt:
+	\begin{align*}
+	(H_s H_{t-s} f)(x)
+	&=
+	\sum_y h_s(x,y) (H_{t-s} f)(y) \mathrm{d}_y
+	=
+	\sum_z \left(\sum_y h_s(x,y) h_{t-s}(y,z) \mathrm{d}_y \right) f(z) \mathrm{d}_z\\ 
+	&= (H_t f)(x).
+	\end{align*}
+\end{proof}
+
+
+\begin{thm}\label{th:pos_heat_kernel_global}
+	Es gilt 
+	\begin{align}
+	h_t(x,y) \geq 0
+	\end{align}
+	f\"ur $ x,y \in G $.
+\end{thm}
+
+\begin{proof}
+	Sei $ u_0 : V(G)  \to [0,\infty]$ beliebig.
+	Dann existiert f\"ur ein beliebiges $ t \in [0, \infty) $ ein 
+	$ x_{\textrm{max}}  \in  G$ mit
+	\begin{align*}
+	(H_t u_0)(x_{\mathrm{max}}) = u(t,x_{\mathrm{max}}) = \max\limits_{x \in V(G) } u(t,x).
+	\end{align*}
+	F\"ur den Laplace erhalten wir dann
+	\begin{align*}
+	\mathcal{L}u(t,x_{\mathrm{max}} ) =
+	\frac{1}{\mathrm{d}_{x_{\mathrm{max}}}}
+	\sum 
+	\limits_{y \sim x_{\mathrm{max}}}
+	(u(t,x_\mathrm{max}) - u(t,y)) \geq 0
+	\end{align*}
+	Wegen der W\"armeleitungsgleich \eqref{eq:heat_equation} folgt dann auch $ \partial_\mathrm{t} u(t,x_{\mathrm{max}}) \leq 0 $.
+	Durch ein analoges Argument f\"ur das Minimum gilt $ \partial_\mathrm{t} u(t,x_\mathrm{min}) \geq 0 $.
+	Damit wird insbesondere das Maximum mit der Zeit h\"ochstens kleiner und das Minimum gr\"o\ss{}er. 
+	Damit gilt wegen $ u_0 \geq 0  $ auch $ (H_t u_0) \geq 0 $.
+	Mit 
+	\begin{align*}
+	u_z(y) =
+	\begin{cases}
+	\frac{1}{\mathrm{d}_z} , &\quad z=y\\
+	\ 0 ,						&\quad z \neq y
+	\end{cases} 
+	\end{align*}
+	erhalten wir
+	\begin{align*}
+	(H_t u_z )(x) = \sum \limits_{y \in V(G)}
+	u_z(y) h_t(x,y) \mathrm{d}_y
+	= h_t(x,z) \geq 0
+	\end{align*}
+	f\"ur alle $ x,z \in G $.
+	Aufgrund der Symmetrie von $ h_t $ folgt die gew\"unschte Aussage.
+\end{proof}
+
+Als Folgerung ergibt sich f\"ur $ u_0 \geq v_0 $ direkt
+\begin{align}
+(H_t u_0)(x)
+=
+\sum \limits_{y \in V(G)}
+u_0(y) h_t(x,y) \mathrm{d}_y
+\geq 
+\sum \limits_{y \in V(G)}
+v_0(y) h_t(x,y) \mathrm{d}_y
+=
+(H_t v_0)(x)
+\end{align}
+f\"ur alle $ x \in V(G) $.
+Fassen wir den W\"armeleitungsoperator $ H_t  $ als Operator von $ L^\infty $ nach $ L^\infty $ auf, so gilt f\"ur die Operatornorm $ \| H_t f \|_\infty = 1 $.
+Dies folgt wegen
+\begin{align*}
+\| H_t f \|_\infty
+= 
+\max \limits_{ \| f \|_\infty = 1}
+\| H_t f \|_\infty
+\leq 
+\max \limits_{ \| f \|_\infty = 1} 
+\max \limits_{x \in V(G)}
+| (H_t |f |)(x) | 
+\leq 
+\max \limits_{x \in V(G)} 
+| \underbrace{(H_t \textbf{1})}_{
+	= \textbf{1}(x)
+	}(x) |
+= 1.
+\end{align*}
+
+%\begin{thm}
+%	Sei $ x \in V(G) $.
+%	Dann gilt
+%	\begin{align}
+%	\sum \limits_{y \in V(G)}
+%	h_t(x,y) d_y  = \textbf{1}(x).
+%	\end{align}
+%\end{thm}
+%
+%\begin{proof}
+%%	Wir betrachten die Abbildung
+%%	\begin{align*}
+%%	f : G \to \mathbb{R}, \
+%%	x \mapsto \mathrm{d}_x.
+%%	\end{align*}
+%	Es gilt
+%	\begin{align*}
+%	(H_t \textbf{1})(x) = \sum \limits_y h_t(x,y) \mathrm{d}_y
+%	\end{align*}
+%	und wegen $ 0 \in \sigma(\mathcal{L}) $ folgt
+%	\begin{align*}
+%	(H_t f)(x)
+%	=
+%	\sum \limits_{\lambda \in \sigma(\mathcal{L})}
+%	e^{-\lambda t} I_\lambda f(x)
+%	=
+%	\mathrm{d}_x e^0 \textbf{1}(x) = \mathrm{d}_x
+%	\end{align*}
+%	und damit die Aussage.
+%\end{proof}
+
+\begin{thm}\label{th:L_2_estimate_global}
+	Sei $ f \in L^2(G) $.
+	Dann gilt
+	\begin{align*}
+	\| H_t f - \overline{f}  \|_2 \leq e^{-\lambda_1 t} \| f \|_2. 
+	\end{align*}
+	Hierbei bezeichnet 
+	\begin{align}
+	\overline{f} := 
+	\frac{1}{\vol(G)} \langle f ,\textbf{1} \rangle
+	\end{align}
+	den Mittelwert \"uber $ G $.
+\end{thm}
+\begin{proof}
+	Nach Definition gilt $ \overline{f} = I_0 f $.
+	Aus dem Satz \ref{th:repres_heat_kernel_global} folgt
+	\begin{align*}
+	(H_t f)(x) - (I_0 f)(x) = 
+	\sum \limits_{\lambda \in \sigma(\mathcal{L}) \setminus \{0\}}
+	e^{-\lambda t} (I_\lambda f)(x)
+	=
+	\sum \limits_{i = 1}^{n-1} e^{-\lambda_i t} (I_{\lambda_i} f)(x)
+	\end{align*}
+	mit $ 0 < \lambda_1 < ... < \lambda_{n-1} $.
+	Damit erhalten wir durch
+	\begin{align*}
+	\| H_t f - I_0 f  \|_2^2 
+	&=
+	\sum \limits_{x \in V(S)} \left| 
+	\sum \limits_{i=1}^{n-1} e^{-\lambda_i t} I_{\lambda_i} f(x)
+	\ \right|^2 \mathrm{d}_x
+	\leq
+	\sum \limits_{i=1}^n e^{-\lambda_i 2 t}  
+	\left(\sum \limits_x | I_{\lambda_i} f(x) |^2 \mathrm{d}_x\right)\\
+	&\leq 
+	\| f \|_2^2 e^{- \lambda_12  t}
+	\end{align*}
+	die Aussage.
+\end{proof}
+
+
+
+
+\section{Der W\"armeleitungskern unter Dirichletrandbedingung}
+
+Sei $ G  $ ein Graph und $ S \leq G $ ein induzierter Teilgraph.
+Wir betrachten den Laplaceoperator unter Dirichletrandbedingungen. Insbesondere erf\"ullen die Eigenfunktionen diese Randbedingung.
+Durch analoges Vorgehen erhalten wir 
+\begin{align}
+i_\lambda^{D,S}(x,y)
+=
+\sum \limits_{\phi \in E_\lambda}
+\phi(x) \phi(y).
+\end{align}
+Damit ist hierf\"ur automatisch die Dirichletrandbedingung erf\"ullt.
+Falls $ S $ fixiert sein sollte, schreiben wir auch
+$ i_\lambda^D := i_\lambda^{D,S} $.
+Analog werden wir bei dem W\"armeleitungskern verfahren.
+
+\begin{df}
+	Sei $ t \in [0,\infty) $.
+	Der W\"armeleitungsoperator $ H_t^D $ ist definiert durch
+	\begin{align}
+	H_t^D : L^2(S) \to L^2(S),
+	u_0 \mapsto u(t,\cdot ),
+	\end{align}
+	wobei $ f \in  L^2(S) $ mit der Dirichletbedingung $ f(x) = 0 $ f\"ur $ x \in \delta S $ fortgesetzt wird.
+	Hierbei ist $ u $ die L\"osung der W\"armeleitungsgleichung
+	\eqref{eq:heat_equation} mit Dirichlet-Laplace.
+\end{df}
+
+ 
+
+\begin{thm}\label{th:repres_heat_kernel_dirichlet}
+	F\"ur den W\"armeleitungsoperator gilt
+	\begin{align}\label{eq:heat_kernel_def_dirichlet}
+	u(t,x ) = (H_t^D u_0)(x) = 
+	\sum \limits_{\lambda \in \sigma(\mathcal{L})} e^{- \lambda t } (I_\lambda u_0) (x) 
+	=
+	\langle u_0 ,h_t^D(x,\cdot) \rangle_S.
+	%\sum \limits_{y \in V(G)} h_t(x,y) f(y) \mathrm{d}_y.
+	\end{align}
+	f\"ur die Anfangsbedingung $ u_0 \in L^2(S) $.
+	Hierbei ist
+	\begin{align}
+	h_t^D(x,y) := \sum \limits_{\lambda \in \sigma(\mathcal{L})}
+	e^{- \lambda t} i^D_\lambda(x,y) 
+%	=
+%	\begin{cases}
+%	\sum \limits_{\lambda \in \sigma(\mathcal{L})}
+%	e^{- \lambda t} i_\lambda(x,y) , & \  x \in S \wedge y \in S\\
+%	\quad  \quad 0 , & \ \text{sonst}
+%	\end{cases}
+	\end{align}
+	der W\"armeleitungskern auf dem Teilgraphen $ S $ mit Dirichletrandbedingung.
+	Au\ss{}erdem bleibt die Randbedingung unabh\"angig von der Zeit erhalten.
+\end{thm}
+
+\begin{proof}
+	Der Beweis verl\"auft analog zu Satz \ref{th:repres_heat_kernel_global}.
+	Da die Eigenfunktionen die Dirichletrandbedingung erf\"ullen, gilt 
+	\begin{align*}
+	h_t^D(x,y) = 0
+	\end{align*}
+	f\"ur $ x \in \delta S$.  
+	Damit folgt auch
+	\begin{align}
+	u(t,x) = \langle u_0, h_t^D(0,\cdot) \rangle_S  = 0
+	\end{align}
+	f\"ur $ x \in \delta S $ und $ t \in [0,\infty) $ beliebig.
+\end{proof}
+
+Wegen $ u(t,\cdot ) \in L^2(S) $ folgt mit dem Abschnitt 6.1  direkt
+\begin{align}
+\langle \mathcal{ L }u(t,\cdot) , u(t,\cdot ) \rangle_S
+=
+\mathcal{E}^S[u(t ,\cdot),u(t,\cdot)]. 
+\end{align}
+f\"ur den Dirichlet-Laplace.  
+
+
+\begin{thm}\label{th:positivity_heat_kernel_dirichlet}
+	Es gilt 
+	\begin{align}
+	h_t^D(x,y) \geq 0
+	\end{align}
+	f\"ur $ x,y \in S $.
+\end{thm}
+
+\begin{proof}
+Der Beweis verl\"auft analog zu Satz \ref{th:pos_heat_kernel_global}. 
+Der einzige Unterschied ist, dass $ v_\mathrm{min} $ in $ S $ bestimmt werden muss, da wir den Laplaceoperator auswerten wollen.
+
+%	Sei $ f : S \cup \delta S  \to \mathbb{C}$ beliebig.
+%	Dann existiert f\"ur ein beliebiges $ t \in [0, \infty) $ ein 
+%	$ v_{\textrm{max}}  \in  S$ mit
+%	\begin{align*}
+%	(H_t f)(v_{max}) = F(v_{\mathrm{max}},t) = \max\limits_{v \in S } F(v,t).
+%	\end{align*}
+%	F\"ur den Laplace erhalten wir dann
+%	\begin{align*}
+%	\mathcal{L}f(v_{\mathrm{max}} ,t) =
+%	\frac{1}{\mathrm{d}_{v_{\mathrm{max}}}}
+%	\sum 
+%	\limits_{u \sim v_{\mathrm{max}}}
+%	(F(v_\mathrm{max},t) - F(u,t)) \geq 0
+%	\end{align*}
+%	Wegen \eqref{eq:fund_sol_2} folgt dann auch $ \partial_\mathrm{t} F(v_{\mathrm{max}},t) \leq 0 $.
+%	Durch ein analoges Argument f\"ur das Minimum gilt $ \partial_\mathrm{t} F(v_\mathrm{min},t) \geq 0 $.
+%	Damit wird insbesondere das Maximum mit der Zeit h\"ochstens kleiner und das Minimum gr\"o\ss{}er. 
+%	Damit gilt f\"ur $ f \geq 0  $ auch $ (H_t f) \geq 0 $.
+%	Mit 
+%	\begin{align*}
+%	f_z(y) =
+%	\begin{cases}
+%	\frac{1}{\mathrm{d}_z} , &\quad z=y\\
+%	\ 0 ,						&\quad z \neq y
+%	\end{cases} 
+%	\end{align*}
+%	erhalten wir
+%	\begin{align*}
+%	(H_t f )(x) = \sum \limits_{y \in S}
+%	f(y) h_t(x,y) \mathrm{d}_y
+%	= h_t(x,z) \geq 0
+%	\end{align*}
+%	für alle $ x,z \in S $.
+%	Aufgrund der Symmetrie von $ h_t $ folgt die gew\"unschte Aussage.
+
+\end{proof}
+
+\begin{thm}
+	Unter der Dirichletrandbedingung gilt
+	\begin{align*}
+	\| H_t^D f \|_2  \leq e^{- \lambda_1 t} \|f \|_2.
+	\end{align*}
+\end{thm}
+\begin{proof}
+	F\"ur die Dirichleteigenwerte gilt $ 0 < \lambda_1 \leq ....  \leq \lambda_n$.
+	Da die Eigenfunktionen von $ \mathcal{L} $ eine ONB bilden gilt
+	\begin{align*}
+	\| H_t^D f \|_2^2
+	\leq  
+	\sum \limits_{i=1}^n 
+	e^{-\lambda_i 2t}
+	\left(\sum \limits_{x \in V(S)}  |(I_{\lambda_i} f) (x)|^2 \mathrm{d}_x\right)
+	\leq 
+	e^{-\lambda_1 2t} \| f \|_2^2.
+	\end{align*}
+\end{proof}
+
+\begin{thm}
+	Seien $ S \subset S^\prime $ induzierte Teilgraphen.
+	Dann gilt
+	\begin{align}
+	h_t^{D,S}(x,y) \leq h_t^{D,S^\prime}(x,y)
+	\end{align}
+	für $ x,y \in S $.
+\end{thm}
+
+\section{Der W\"armeleitungskern unter Neumannrandbedingung}
+
+%\textbf{\textcolor{red}{Kl\"aren wie Kern unter Neumannbed definiert ist.}}
+Sei $ G  $ ein Graph und $ S \leq G $ ein induzierter Teilgraph.
+Wir betrachten den Laplaceoperator unter Neumannrandbedingungen. Insbesondere erf\"ullen die Eigenfunktionen diese Randbedingung.
+Durch analoges Vorgehen erhalten wir 
+\begin{align}
+i_\lambda^{N,S}(x,y)
+=
+\sum \limits_{\phi \in E_\lambda}
+\phi(x) \phi(y).
+\end{align}
+Damit ist hierf\"ur automatisch die Neumannrandbedingung erf\"ullt.
+Falls $ S $ fixiert sein sollte, schreiben wir auch
+$ i_\lambda^N := i_\lambda^{N,S} $.
+Analog werden wir bei dem W\"armeleitungskern verfahren.
+
+
+\begin{df}
+	Sei $ t \in [0,\infty) $.
+	Der L\"osungsoperator $ H_t^N $ der W\"armeleitungsgleichung \eqref{eq:heat_equation} unter Neumannrandbedingung ist definiert durch
+	\begin{align}
+	H_t^N : L^2(S) \to L^2(S),
+	u_0 \mapsto u(t,\cdot )
+	\end{align}
+	Insbesondere verwenden wir den Laplace unter Neumannrandbedingungen.
+	Hierbei werden $ f \in L^2(S) $ mithilfe der Neumannrandbedingung
+	\begin{align}
+	\sum \limits_{\{x,y\} \in \partial S} f(x) - f(y) = 0 , \ x \in \delta S
+	\end{align}
+	eindeutig auf $ \delta S $ fortgesetzt.
+\end{df}
+
+Wir wollen zun\"achst die Fortsetzung genauer betrachten. 
+Sei $ f : S \cup \delta S \to \R $ mit Neumannrandbedingung und $ x \in \delta S $.
+Dann gilt
+\begin{align*}
+\sum \limits_{\{x,y\} \in \partial S} f(x) - f(y) = 0 , \ x \in \delta S
+\
+\Leftrightarrow
+\
+f(x) = \frac{1}{|x \sim S|} 
+\sum 
+\limits_{
+	\substack{
+		y \in S,\\
+		y \sim x
+		}
+	}
+f(y)
+\end{align*}
+mit $ x \sim S := \{ y \in S : x \sim y \} $.
+Das bedeutet, dass die Randwerte bereits \"uber den Mittelwert der adjazenten Knoten bestimmt sind.\\
+
+
+\begin{thm}\label{th:repres_heat_kernel_neumann}
+	F\"ur den W\"armeleitungsoperator gilt
+	\begin{align}\label{eq:heat_kernel_def_neumann}
+	u(t,x ) = (H_t^N u_0)(x) = 
+	\sum \limits_{\lambda \in \sigma(\mathcal{L})} e^{- \lambda t } (I_\lambda u_0) (x) 
+	=
+	\langle u_0, h_t^N(x,\cdot) \rangle_S.
+	%\sum \limits_{y \in V(G)} h_t(x,y) f(y) \mathrm{d}_y.
+	\end{align}
+	f\"ur die Anfangsbedingung $ u_0 \in L^2(S) $.
+	Insbesondere gilt $ u(0,x ) = 0 $.
+	Hierbei ist
+	\begin{align}
+	h_t^N(x,y) :=
+	\sum \limits_{\lambda \in \sigma(\mathcal{L})}
+	e^{- \lambda t} i_\lambda^N(x,y)
+%	
+%	\begin{cases}
+%	\sum \limits_{\lambda \in \sigma(\mathcal{L})}
+%	e^{- \lambda t} i_\lambda(x,y) , & \  x \in S \wedge y \in S\\
+%	\frac{1}{|x \sim S|}
+%	\sum 
+%	\limits_{
+%		\substack{x \sim z
+%			\\
+%			z \in S
+%			}
+%		} h_t^N(z,y) , & \ x \in \delta S
+%	\end{cases}
+	\end{align}
+	der W\"armeleitungskern auf dem Teilgraphen $ S $ mit Neumannrandbedingung.
+	Au\ss{}erdem bleibt die Randbedingung unabh\"angig von der Zeit erhalten.
+\end{thm}
+
+\begin{proof}
+	Der Beweis verl\"auft analog zu Satz \ref{th:repres_heat_kernel_global}.
+	Da die Eigenfunktionen die Neumannrandbedingung erf\"ullen, gilt 
+	\begin{align*}
+	\sum \limits_{\{x,z \} \in \delta S} h_t^N(x,y) - h_t^N(z,y) = 0
+	\end{align*}
+	f\"ur $ x \in \delta S$.
+	Damit erhalten wir auch
+	\begin{align*}
+	\sum \limits_{\{x,y \} \in \partial S} u(t,x) - u(t,y)
+	=
+	\sum \limits_{\{ x,y\} \in \partial S} \underbrace{\langle h_t(x,\cdot) - h_t(y,\cdot), u_0 \rangle_S}_{=0} = 0
+	\end{align*}  
+	f\"ur $ x \in \delta S $.
+\end{proof}
+ 
+Mit Abschnitt 6.2 erhalten wir 
+\begin{align}
+\langle \mathcal{ L }u(t,\cdot) , u(t,\cdot ) \rangle_S
+=
+\mathcal{E}^S[u(t ,\cdot),u(t,\cdot)]
+\end{align}
+f\"ur den Neumann-Laplace.
+
+
+\begin{thm}
+	Es gilt 
+	\begin{align}
+	h_t(x,y) \geq 0
+	\end{align}
+	f\"ur $ x,y \in S \cup \delta S $.
+\end{thm}
+\begin{proof}
+	Wir bilden Maximum bzw. Minimum \"uber $ S \cup \delta S $. F\"ur die Auswertung des Laplace sollten sich diese im Inneren befinden.
+	Angenommen $ x_\mathrm{max} \in \delta S $.
+	Dann gilt 
+	\begin{align*}
+	\sum \limits_{
+		\substack{x_\mathrm{max} \sim y \\ \ u \in S}
+	}
+	(u_0(x_\mathrm{max}) - u_0(y )) = 0.
+	\end{align*}
+	Wegen $ u_0(x_\mathrm{max}) \geq u_0(y) $ f\"ur alle $ y \in S $ muss zwangsl\"aufig $ u_0(x_\mathrm{max}) = f(y) $ f\"ur $ y \sim  x_\mathrm{max}$ gelten. 
+	Damit befindet sich das Maximum immer auch im Inneren.
+	Analog gilt dies f\"ur das Minimum.
+	Der Rest ist analog zu den Satz \ref{th:pos_heat_kernel_global}.
+\end{proof}
+
+
+\begin{thm}
+	Sei $ f \in L^2(S) $.
+	Dann gilt
+	\begin{align*}
+	\| H_t f - \overline{f}  \|_2 \leq e^{-\lambda_1 t}. 
+	\end{align*}
+\end{thm}
+
+\begin{proof}
+Identisch zu \ref{th:L_2_estimate_global}.	
+\end{proof}
+
+
+
+
+
+\newpage
+%%\section{Die Elementarl\"oesung der W\"armeleitungsgleichung}
+%
+%Wir betrachten von nun an einen beliebigen induzierten Subgraphen $ S $ von $ G $.
+%
+%\begin{thm}
+%	Sei die Anfangsbedingung $ u_0 : S \cup \delta S \to \mathbb{C} $ gegeben.
+%	Dann ist
+%	\begin{align}\label{eq:fund_sol_1}
+%	F(x,t)
+%	:=
+%	(H_t u_0)(x) =
+%	\sum \limits_{y \in S \cup \delta S} h_t(x,y) u_0(y) \mathrm{d}_y
+%	\end{align}
+%	eine L\"osung der W\"armeleitungsgleichung mit $ F(x,0) = u_0(x) $.
+%\end{thm}
+%
+%\begin{proof}
+%	Wegen 
+%	\begin{align*}
+%	F(x,0 )=
+%	e^{-0 \mathcal{L} } u_0(x) = u_0(x) 
+%	\end{align*}
+%	ist die Anfangsbedingung erf\"ullt und aufgrund von
+%	\begin{align}\label{eq:fund_sol_2}
+%	\frac{\partial}{\partial \mathrm{t}} F 
+%	= 
+%	\frac{\partial}{\partial \mathrm{t}} e^{-\mathcal{L} t} _0
+%	=
+%	- \mathcal{L} e^{-t \mathcal{L }} u_0 
+%	= - \mathcal{L} F
+%	\end{align}
+%	ist $ F $ eine L\"osung der W\"armeleitungsgleichung.
+%	\end{proof}
+%
+%Zur Erinnerung wiederholen wir die Dirichlet und-Neumannrandbedingung. Sei $ f : S \cup \delta S  \to \mathbb{R} $.
+%Die Dirichletrandbedinung wird von $ f $ erf\"ullt, falls
+%\begin{align}
+%f(u) = 0
+%\end{align}
+%f\"ur alle $ u \in \delta S $ gilt. Analog wird die Neumannrandbedingung erf\"ullt, falls
+%\begin{align}
+%\sum 
+%\limits_{\{u,v\} \in \partial S} f(u) - f(v) = 0
+%\end{align} 
+%f\"ur alle $ u \in \delta  $ gilt.
+%\begin{thm}
+%	Angenommen die Dirichlet -oder Neumannrandbedingung ist f\"ur $ f : S \cup \delta \mapsto \mathbb{R} $ erf\"ullt.
+%	Dann ist diese auch f\"ur $ F $ unabh\"angig von der Zeit erf\"ullt.
+%\end{thm}
+%\begin{proof}
+%	Wir nehmen an die Neumannrandbedingung ist erfüllt und zeigen die Aussage unter dieser Voraussetzung.
+%	Wir wollen also
+%	\begin{align*}
+%	\sum \limits_{\{x,y\} \in \partial S} F(x,t) - F(y,t) = 0 
+%	\end{align*}
+%	f\"ur $ x \in \delta S $ zeigen.
+%	Sei $ \lambda \in \sigma(\mathcal{L}) $ beliebig mit zugeh\"origer Eigenfunktion $ f_\lambda $, welche die Neumannrandbedingung erf\"ullt.
+%	Dann gilt f\"ur $ x \in \delta S $
+%	\begin{align*}
+%	\sum \limits_{\{x,y\} \in \partial S} F(x,t) - F(y,t)
+%	=
+%	\sum \limits_{\{x,y\} \in \partial S} (H_t f) (x) - (H_t f)(y)
+%	\overset{\ref{th:repres_heat_kernel}}{=}
+%	e^{-\lambda t} \sum \limits_{\{x,y\} \in \partial S}  f (x) -  f(y) = 0.
+%	\end{align*}
+%	Dann gilt die Aussage insgesamt. \textcolor{red}{\textbf{Noch klären warum genau}}
+%	F\"ur den Dirichletrand ist das Vorgehen analog.
+%	
+%\end{proof}
+%
+%Die Dirichletform f\"ur einen Teilgraph $ S \leq G $ ist durch
+%\begin{align}
+%\mathcal{E}^S [f,g]
+%= 
+%\sum \limits_{\{ u,v\} \in S^\ast} (f(u) - f(v)) \overline{(g(u) - g(v))}
+%\end{align}
+%f\"ur $ f,g \in \mathrm{Abb}(S \cup \delta S , \mathbb{C}) $ gegeben.
+%\begin{thm}
+%	Sei $ f : S \cup \delta S \to \mathbb{C} $ und die Neumann- oder Dirichletrandbedingung erf\"ullt.
+%	Dann gilt
+%	\begin{align}
+%	\langle \mathcal{ L }F(\cdot,t) , F(\cdot ,t) \rangle_S
+%	=
+%	\mathcal{E}^S[F(\cdot ,t),F(\cdot,t)]. 
+%	\end{align}
+%	
+%\end{thm}
+%
+%Im letzten Satz wurde gezeigt, dass sich die jeweiligen Randbedingungen von $ u_0 $ unabh\"angig  von $ t $ auf die L\"osung $ F $ \"ubertragen.
+%Desweiteren wurde diese Identit\"at f\"ur beide Randtypen bereits in dem Vortrag von Arthur gezeigt.
+%
+%
+%
+%\section{Der W\"armeleitungskern unter Dirichletrand}
+%
+%In diesem Abschnitt sei $ f : S \cup \delta S \to \mathbb{C} $ mit Dirichletrand vorausgesetzt.
+%
+%
+%\begin{thm}
+%	Es gilt 
+%	\begin{align}
+%	h_t(x,y) \geq 0
+%	\end{align}
+%	f\"ur $ x,y \in S $.
+%\end{thm}
+%
+%\begin{proof}
+%	Sei $ f : S \cup \delta S  \to \mathbb{C}$ beliebig.
+%	Dann existiert f\"ur ein beliebiges $ t \in [0, \infty) $ ein 
+%	$ v_{\textrm{max}}  \in  S$ mit
+%	\begin{align*}
+%	(H_t f)(v_{max}) = F(v_{\mathrm{max}},t) = \max\limits_{v \in S } F(v,t).
+%	\end{align*}
+%	F\"ur den Laplace erhalten wir dann
+%	\begin{align*}
+%	\mathcal{L}f(v_{\mathrm{max}} ,t) =
+%	\frac{1}{\mathrm{d}_{v_{\mathrm{max}}}}
+%	\sum 
+%	\limits_{u \sim v_{\mathrm{max}}}
+%	(F(v_\mathrm{max},t) - F(u,t)) \geq 0
+%	\end{align*}
+%	Wegen \eqref{eq:fund_sol_2} folgt dann auch $ \partial_\mathrm{t} F(v_{\mathrm{max}},t) \leq 0 $.
+%	Durch ein analoges Argument f\"ur das Minimum gilt $ \partial_\mathrm{t} F(v_\mathrm{min},t) \geq 0 $.
+%	Damit wird insbesondere das Maximum mit der Zeit h\"ochstens kleiner und das Minimum gr\"o\ss{}er. 
+%	Damit gilt f\"ur $ f \geq 0  $ auch $ (H_t f) \geq 0 $.
+%	Mit 
+%	\begin{align*}
+%	f_z(y) =
+%	\begin{cases}
+%	\frac{1}{\mathrm{d}_z} , &\quad z=y\\
+%	  \ 0 ,						&\quad z \neq y
+%	\end{cases} 
+%	\end{align*}
+%	erhalten wir
+%	\begin{align*}
+%	(H_t f )(x) = \sum \limits_{y \in S}
+%	f(y) h_t(x,y) \mathrm{d}_y
+%	= h_t(x,z) \geq 0
+%	\end{align*}
+%	für alle $ x,z \in S $.
+%	Aufgrund der Symmetrie von $ h_t $ folgt die gew\"unschte Aussage.
+%\end{proof}
+%
+%\begin{thm}
+%	Unter dem Dirichletrand gilt
+%	\begin{align*}
+%	\lim \limits_{t \to \infty}\| H_t f \|_2 = 0.
+%	\end{align*}
+%\end{thm}
+%\begin{proof}
+%	Für die Dirichleteigenwerte gilt $ 0 < \lambda_1 \leq ....  \leq \lambda_n$.
+%	Da die Eigenfunktionen von $ \mathcal{L} $ eine ONB bilden gilt
+%	\begin{align*}
+%	\| H_t f \|_2
+%	\leq  
+%	\sum \limits_{i=1}^n 
+%	e^{-\lambda_i 2t}
+%	\left(\sum \limits_{x \in V(S)}  |(I_{\lambda_i} f) (x)|^2 \mathrm{d}_x\right)
+%	=\sum \limits_{i=1}^n 
+%	e^{-\lambda_i 2t}
+%	\leq n e^{- \lambda_1 t}\overset{t \to \infty}{\rightarrow} 0. 
+%	\end{align*}
+%\end{proof}
+%
+%\section{Der W\"armeleitungskern unter Neumannrand}
+%In diesem Abschnitt sei $ f : S \cup \delta S \to \mathbb{C} $ mit Neumannrand vorausgesetzt.
+%Die hier bewiesenen Aussagen gelten ebenso auf dem Gesamtgraph $ G $.
+%\begin{thm}
+%	Es gilt 
+%	\begin{align}
+%	h_t(x,y) \geq 0
+%	\end{align}
+%	f\"ur $ x,y \in S \cup \delta S $.
+%\end{thm}
+%\begin{proof}
+%	Der Beweis ist fast analog zu dem Dirichletfall.
+%	Hier bilden wir jedoch Maximum bzw. Minimum über $ S \cup \delta S $. F\"ur die Auswertung des Laplace sollten sich diese im Inneren befinden.
+%	Angenommen $ v_\mathrm{max} \in \delta S $.
+%	Dann gilt 
+%	\begin{align*}
+%	\sum \limits_{
+%		v_\mathrm{max} \sim u , \ u \in S
+%		}
+%		(f(v_\mathrm{max}) - f(u )) = 0.
+%	\end{align*}
+%	Wegen $ fG(v_\mathrm{max}) \geq f(u) $ f\"ur alle $ u \in S $ muss zwangsl\"aufig $ f(v_\mathrm{max}) = f(u) $ f\"ur $ u \sim  v_\mathrm{max}$ gelten. 
+%	Damit befindet sich das Maximum immer auch im Inneren.
+%	Analog gilt dies f\"ur das Minimum.
+%\end{proof}
+%
+%\begin{thm}
+%	Sei $ x \in S \cup \delta S $.
+%	Dann gilt
+%	\begin{align}
+%	\sum \limits_{y \in S \cup \delta S}
+%	h_t(x,y) d_y  = d_x.
+%	\end{align}
+%\end{thm}
+%
+%\begin{proof}
+%	Wir betrachten die Abbildung
+%	\begin{align*}
+%	f : S \cup \delta S \to \mathbb{R}, \
+%	x \mapsto \mathrm{d}_x.
+%	\end{align*}
+%	Damit gilt
+%	\begin{align*}
+%	(H_t f)(x) = \sum \limits_y h_t(x,y) \mathrm{d}_y
+%	\end{align*}
+%	und wegen $ 0 \in \sigma(\mathcal{L}) $ folgt
+%	\begin{align*}
+%	(H_t f)(x)
+%	=
+%	\sum \limits_{\lambda \in \sigma(\mathcal{L})}
+%	e^{-\lambda t} I_\lambda f(x)
+%	=
+%	\mathrm{d}_x e^0 \textbf{1}(x) = \mathrm{d}_x
+%	\end{align*}
+%	und damit die Aussage.
+%\end{proof}
+% 
+%
+%\begin{thm}
+%	Sei $ S  $ ein induzierter Teilgraph mit Neumannrand oder der gesamte Graph selbst.
+%	Dann gilt
+%	\begin{align*}
+%	\lim 
+%	\limits_{t \to \infty}
+%	\| H_t f - I_0 f  \|_2 = 0. 
+%	\end{align*}
+%\end{thm}
+%\begin{proof}
+%	Wegen \ref{th:repres_heat_kernel} gilt
+%	\begin{align*}
+%	(H_t f)(x) - (I_0 f)(x) = 
+%	\sum \limits_{\lambda \in \sigma(\mathcal{L}) \setminus \{0\}}
+%	e^{-\lambda t} (I_\lambda f)(x)
+%	=
+%	\sum \limits_{i = 1}^{n-1} e^{-\lambda_i t} (I_{\lambda_i} f)(x)
+%	\end{align*}
+%	mit $ 0 < \lambda_1 < ... < \lambda_{n-1} $.
+%	Damit erhalten wir durch
+%	\begin{align*}
+%	\| H_t f - I_0 f  \|_2 
+%	&=
+%	\sum \limits_{x \in V(S)} \left| 
+%	\sum \limits_{i=1}^{n-1} e^{-\lambda_i t} I_{\lambda_i} f(x)
+%	\right|^2 \mathrm{d}_x
+%	\leq
+%	\sum \limits_i e^{-\lambda_i t}  
+%	\left(\sum \limits_x | I_{\lambda_i} f(x) |^2 \mathrm{d}_y\right)\\
+%	&= 
+%	\sum \limits_i e^{-\lambda_i t}
+%	\leq 
+%	(n-1 ) e^{-\lambda_1 t}
+% 	\end{align*}
+% 	die Aussage.
+%
+%\end{proof}
+\end{document}
