@@ -1,0 +1,170 @@
+\documentclass[12pt,a4paper]{scrbook}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{microtype}
+\sloppy
+\setlength{\parskip}{1ex}
+
+\newtheorem{lemma}{Lemmada}[chapter]
+\newtheorem{theorem}{Satz}[chapter]
+\newtheorem{definition}{Defidizioo}[chapter]
+\newtheorem{corollary}{Korollar}[chapter]
+
+\title{\textbf{Meischderarbeit}\\[0.5cm]
+	Omordnung ond Klassifizierung vo Reihe in Bänkleräume}
+\author{(Autor/in uff Wunsch anonym)}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	\tableofcontents
+	
+	\chapter{Ei leidong (Einleitung)}
+	Moin, i moin, grüß Gott! Scho in de Grundvorlesonga vo de Analüs begegnet mr de Omordnung vo Reihe. Des bekanntesde Beischbiel isch de \textbf{Riemannsche Omordnungssatz} (1867). Des bedeided: a bedingd konvergente Reihe kaa mr so umschortiera, dass se uff jedwede reelle Zahl zualauft – ja au uff d’Lädche vom Schbädzlemaschdal.
+	
+	Abba was isch mit de komplexe Zahle, odr mit de \textbf{Bänkleräum}? De Paul Lévy hot 1905 de Fall für zwee Dimensione behandelt, ond de Ernst Schteinitz hot 1913 en ganze Bändel druff gmacht – on hot de Fehler vom Lévy ausbessert, so wie mr halt a schwäbische Handwerker macht: „Gscheid isch nur, was hält.“
+	
+	In de vorliegende Arbeit (Die isch fei keen Gschwätz!) zeiget mr, dass de Konvergenzbereich vo bedingde Reihe in Bänkleräum immer die Form 
+	\[
+	\mathcal{K} = s + U
+	\]
+	hot – do isch \(U\) a Untervektorraum ond \(s\) a Verschiebong, ähnlich wia wenn mr d’Couch um a halbs Mameter verschiebt, weil dr Teppich beim Kehre verrutscht.
+	
+	\chapter{Grundlaga (Grundlagen)}
+	\section{Notation}
+	Mit \(\mathbb{N}\) meinet mr die natürliche Zahle (1,2,3,… net de Nochber). \(\mathbb{R}\) isch de Räälzahle-Bodabuur, \(\mathbb{C}\) die komblädse Zahle (für die, wo a Gaudi mit Wurzle vo \(-1\) hend). A \textbf{Banatschraum} (bei uns Bänkleraum) isch a vollschdändiger, normierter Raum. Vollschdändich heißt: Jede Reihe, wo absolut konvergiert, konvergiert au – des isch wie de Schbruch: „Was g’schrieba steht, des g’schrieba bleibt, au wenn dr Schdift abbrichd.“
+	
+	\textbf{Rademacher-Variable} \(r_i\) sind Zufallsvariable, wo d’Werte \(\pm1\) mit gleicher Woi (50:50) annemme. Des isch wie’s Los bei de Vereinslos – entweder du bekomschd a Schbädzle oder a Dätsch.
+	
+	\section{Reelle Reihe (Reelle Raije)}
+	De Riemannsche Satz (1867) sagt: Beddinger Konvergenzbereich = \(\mathbb{R}\). Beweis: Mr nimmt de positive Teil (die schaffe) ond de negative Teil (die dägge) ond mischet se so lange, bis s’Ergebnis uff de gwinschte Wert zualauft – wie wenn mr d’Schwäbische Supp mit Spätzle ond Linsa so umrührt, dass mr glei de ganz Topf voll hot.
+	
+	\section{Reihe in Bänkleräume}
+	Jetz abba in de Bänkleraum: Do hot mr de Begriff vo \textbf{unbedingder Konvergenz} (die Raie konvergiert egal wie mr se umsortiert) ond \textbf{bedingder Konvergenz} (mr muss se gschickt sortiera, sonschd dätt se davonlaufe).
+	
+	Absolut Konvergenz isch fei schdärker als unbedingde Konvergenz, abba im Unendlichdimensional net umgekehrt. Des isch wie beim Kehrwochplan: Wenn du enen unbedingt konvergente Putzplan hosch, dann isch egal in welcher Reihenfolge du d’Schdäg färbisch – Ergebnis isch immer gleich.
+	
+	\chapter{Bedingde Konvergenz in Bänkleräume}
+	\section{Endlichdimensionale Omordnungs- und Rundungssätz}
+	\begin{lemma}[Eckelemma für Polyeder]
+		Sei \(K\) a Polyeder im \(\mathbb{R}^n\) mit \(p\) Gleichungen ond \(q\) Ungleichungen. Für a Ecke \(x_0\) gilt: mindeschdens \(n-p\) Koordinaten send 0 oder 1. Des isch wie beim Spätzledruck: Du hosch \(n\) Löcher, abba nur \(m\) Düse – der Rescht isch blind.
+	\end{lemma}
+	
+	\begin{lemma}[Rundungslemma I]
+		Zu jedem \(x = \sum \lambda_i x_i\) mit \(\lambda_i\in[0,1]\) findsch du a Kombination \(\Theta_i\in\{0,1\}\) mit 
+		\[
+		\bigl\|x - \sum \Theta_i x_i\bigr\| \le \frac{\dim X}{2}\,\max\|x_i\|.
+		\]
+		Praktisch: Du rundsch des Geld uff volle Euro, weil die Kend emmer no d’Schdutzend pfennig ondere.
+	\end{lemma}
+	
+	\section{De Satz vo Schteinitz}
+	\begin{theorem}[Steinitz, 1913]
+		In jedem endlichdimensionalen Raum isch de Konvergenzbereich 
+		\[
+		\mathcal{K} = s + \Gamma_0,
+		\]
+		wobei \(\Gamma_0\) de Annihilator vo de Konvergenzfunktionale isch. Anders gsait: Du kannsch jede Reihe so umschortiera, dass se uff jedes beliebige Element in a affine Unterraum zualauft – vorausgesetzt du hosch lang genuch Kehrwoch gehalten.
+	\end{theorem}
+	
+	\begin{proof}
+		Des isch a bissle gfrickelt, abba mit em Polyederlemma ond em Rundungslemma kriag mr des hi. Zerscht zeiget mr, dass de Konvergenzbereich in \(s+\Gamma_0\) drin isch, dann dass mr jedes Element aus \(s+\Gamma_0\) durch a Permutation erreicha kann. Des isch wie beim Schdutzdäger Schdäffele: Am End kommt immer was G’scheids raus.
+	\end{proof}
+	
+	\section{Hinreichende Bedingong für d’Schteinitzeigenschaft}
+	\begin{theorem}
+		Wenn es zu jedem \(\varepsilon>0\) a \(N_\varepsilon\) gibt, so dass du jede \([0,1]\)-Kombination uff a \(0,1\)-Kombination mit Fehler \(<\varepsilon\) runda kannsch (Rundungseigenschaft) ond zudem a Omordnung mit Partialsumme \(<\varepsilon\) findsch (Omordnungseigenschaft), dann gilt die Schteinitzeigenschaft. Des isch wie beim Bau vom Häusle: Du musch d’Schdä so legga, dass se uff halbe Millimeter passe – sonschd wird’s nix mit dr Schdutzdäger Qualität.
+	\end{theorem}
+	
+	\section{De Satz vo Dvoretzky-Hanani ond de legendäre Pecherskii}
+	\begin{definition}
+		A Folge heißt \textbf{perfekt unsummierbar}, wenn se für jedi Vorzeichewahl divergiert. Schwäbisch: Wenn du a Vereinskasse fihrsch, wo egal wia du d’Einnahme ond Ussgahle vorzeichnesch, immer am End Miese häs – des isch perfekt unsummierbar.
+	\end{definition}
+	
+	\begin{theorem}[Dvoretzky-Hanani, 1947]
+		In endlichdimensionalen Räume konvergiert e perfekt unsummierbare Folge net gegen Null. Beweis: Wär se a Nullfolg, könntsch du a Vorzeiche wähle, dass se konvergiert – widerspricht. Also: Nullfolge isch wie a leere Maultasch – geit’s net.
+	\end{theorem}
+	
+	\begin{theorem}[Pecherskii, 1988]
+		Sei \(X\) a Banatschraum, \((x_n)\) bedingt summierbar mit Grenzwert \(s\). \textbf{Wenn es koi Umordnung gibt, wo \((x_n)\) in a perfekt unsummierbare Folg verwandelt} (so quasi: du kannsch d’Reihe net so lang schüttle, dass se komplett abdreht), \textbf{dann hot \((x_n)\) d’Schteinitzeigenschaft}. 
+	\end{theorem}
+	
+	\begin{proof}[Schwäbischer Beweis (Skizze)]
+		Stell da vor, du hosch a Schbädzlepresse: Solang du d’Schbädzle net so daherdrehsch, dass se zerfließet (perfekt unsummierbar), kannsch se immer zu ara scheena Form omordna. Des isch genau des Lemma: 
+		\emph{„Was koine Chaos macht, dess Omordnung hot a Struktur.“}
+		Mit de Hilf vom Rundungslemma II ond em Omordnungslemma II zeiget mr, dass dann die hinreichende Bedingung erfüllt isch. Also: Kei Chaos $\Rightarrow$ Steinitz. Passt scho.
+	\end{proof}
+	
+	\emph{Und drum isch de Pecherskii so wichtig:} Er hot erkannt, dass net d’Reihe selbschd perfekt unsummierbar sei muss – sondern bloß dass koi Umordnung se in so an Schdadd versetza kann. Des isch wie beim Kehrwoch: Wenn du dr Plan net so umschtella kannsch, dass dr Müll emmer wachsd, dann kannsch dr Putzplan in jedwede Reihenfolge abhacka – d’Bude isch emmer sauber.
+	
+	\section{De Satz vo Chobanyan}
+	\begin{theorem}[Chobanyan, 1985]
+		Wenn \(\sum r_i x_i\) fascht überall konvergiert (d.h. mit Woi 1, also bis uff a Nullmenge), dann hot \((x_n)\) die Schteinitzeigenschaft. Des isch de Hammer! So wie wenn d’Schwäbische Alb fascht überall aus Kalk schdeht – dann konvergiert au jeder Schdroh.
+	\end{theorem}
+	
+	\section{Schteinitzeigenschaft für Lp-Räum}
+	\begin{theorem}[M.I. Kadets, 1954]
+		In \(L_p\) genügt \(\sum \|x_i\|^{\min\{2,p\}} < \infty\) für d’Schteinitzeigenschaft. A Beispiel: Für \(p=1\) nimmsch \(\sum\|x_i\|<\infty\) (absolut konvergent). Für \(p=2\) nemmsch \(\sum\|x_i\|^2<\infty\). Für \(p>2\) zählt des Quadrat. Des isch wie beim Schbädzle: Je nachdem ob du lauwarme odr heiße Wasser nemmsch, brauchsch onderscheide Teig.
+	\end{theorem}
+	
+	\chapter{Unbedingde Konvergenz in Bänkleräume}
+	\section{Charakterisierung}
+	\begin{theorem}[Äquivalenz]
+		Unbedingt summierbar \(\iff\) ungeordnet summierbar \(\iff\) teil-summierbar \(\iff\) perfekt summierbar. Beweis: Dreiecksungleichung ond a bissle Mengenalgebra, wie wenn d’Kehrwochpläne zammfegsch.
+	\end{theorem}
+	
+	\begin{theorem}[\(\ell^1\)-Satz von Schur]
+		Schwache Konvergenz in \(\ell^1\) zieht schdarge Konvergenz noch sich. Des isch so ähnlich wie: Wenn dei Nochber nix sagt (schwach konvergent), dann hot er au nix gemacht (scharf konvergent).
+	\end{theorem}
+	
+	\section{De Satz vo Dvoretzky-Rogers}
+	In jedem unendlichdimensionalen Banatschraum gibt es a unbedingt konvergente Reihe, die net absolut konvergiert. Zum Beischbiel \(x_n = e_n/n\) in \(\ell^2\) – des konvergiert unbedingt, abba net absolut. Des isch wie wenn du d’Schbädzle nochem Rührlöffel sortiersch – es kommt was raus, abba de Teigrand bleibt links.
+	
+	\section{De Satz vo Orlicz}
+	In \(L_p\) (\(1\le p\le2\)) folgt us unbedingder Konvergenz d’2‑Absolutkonvergenz, für \(p\ge2\) d’\(p\)‑Absolutkonvergenz. Des isch wie beim Wäsche uffhänge: In dr Waschküche (\(p=1\)) musch se paarmol hin- und herlege, bevor se trocknet; uffm Bodensee (\(p=\infty\)) schwimmt se von selber.
+	
+	\section{Absolut summierbare Operatore}
+	\begin{definition}
+		A Operator \(T\) heißt \textbf{absolut summierbar}, wenn 
+		\[
+		\sum \|Tx_i\| \le K \max_{\alpha_i=\pm1}\Bigl\|\sum \alpha_i x_i\Bigr\|
+		\]
+		für alle endliche Mengen \(\{x_i\}\). Des isch wie a gueter Handwerker: Egal was du em zammlegsch, er machd draus a saubere Summe.
+	\end{definition}
+	
+	\begin{theorem}[Grothendieck]
+		Jeder beschränkte Operator \(T: \ell^1 \to \ell^2\) isch absolut summierbar mit \(\pi_1(T) \le \kappa_G \|T\|\). Des bedaidet: \(\ell^1\) isch so arg, dass jeder Schuss, der von dort kummt, im \(\ell^2\) land ond do absolut zählbar isch – wie wenn du a ganz Sack voll Fünferlis in d’Spardosch wirfsch, se zählsch se hinterher akkurat.
+	\end{theorem}
+	
+	\chapter{Ausblick (Wos no komme kaa)}
+	Noch offene Froge:
+	\begin{itemize}
+		\item Gibt’s a Banatschraum vom \textbf{Infratyp p}? Do lautet die Vermudung: Wenn \(\sum\|x_i\|^p < \infty\), dann git d’Schteinitzeigenschaft. No net bewiese, abba mir schwöret druff.
+		\item Für nukleare Räum (metrisierbar) gilt au d’Schteinitzeigenschaft – do brauchsch koi Zusatzvoraussetzung, des isch wie a guads Schwäbische Frühschdick: Alles, was drauf isch, konvergiert uff’n Maga.
+	\end{itemize}
+	Abschließend: Wer sein Bänkleraum im Griff hot, hot au d’Reihen im Griff. Ond wer net – der lebt halt uff de Alb.
+	
+	\chapter*{Danksagong (Vergeltsgott)}
+	Bedanke duet sich dr Verfasser bei all dene, die zum Gelingen beigetrage hend – ob mit Fachwisse, mit Korrekturlese odr bloß mit seelischem Bischdand. Besondersch erwähnt sei d’Familie, dass se des Studium ermöglichd hot, ohne jemols z’froga: „Was willsch du mit Bänkleräum em Beruf?“ 
+	
+	\medskip
+	\textit{Stuttgart, im Ländle, \today}
+	
+	\chapter*{Literatur (Nochem Gschmäckle)}
+	\begin{enumerate}
+		\item Albiac, F. ond Kalton, N. – \textit{Themada in Bänkleraumtheory} (uff englisch, net uff schwäbisch).
+		\item Dvoretzky, A. ond Rogers, C. – „Absolude ond unbedingde Konvergenz in normierte lineaare Räum“ (1950).
+		\item Grothendieck, A. – „Über gewisse Klasse vo Folge in Banatschräume ond de Satz vo Dvoretzky-Rogersch“ (1953/56).
+		\item Kadets, M.I. ond Kadets, V.M. – \textit{Reihe in Bänkleräume – bedingde ond unbedingde Konvergenz} (Springer, 1997).
+		\item Pecherskii, D.V. – „Omordnung vo Reihe in Bänkleräume ond Vorzeichewahl“ (1988, uff russisch, abba des Prinzip isch international).
+		\item Steinitz, E. – „Bedingt konvergente Reihe ond konvexe System“ (1913).
+	\end{enumerate}
+	
+\end{document}
