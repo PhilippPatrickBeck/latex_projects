@@ -1,31 +1,42 @@
-name: Alle LaTeX PDFs automatisch erstellen
+name: LaTeX PDFs aus bestimmtem Ordner automatisch erstellen
 
 on:
   push:
     branches: [ main ] # Ggf. in "master" ändern, falls dein Branch bei GitHub so heißt
 
 jobs:
-  build_all_latex:
+  build_folder_latex:
     runs-on: ubuntu-latest
-    # WIR REPARIEREN DEN FEHLER: Nutzung des offiziellen, fehlerfreien TeX-Live-Images
     container:
       image: texlive/texlive:latest
 
     steps:
-      # 1. Den Code aus deinem Repository in die virtuelle Umgebung laden
+      # 1. Den Code aus deinem Repository laden
       - name: Code auschecken
         uses: actions/checkout@v4
 
-      # 2. Alle Dokumente suchen und nacheinander kompilieren
-      - name: Alle LaTeX-Dateien suchen und kompilieren
+      # 2. Nur den angegebenen Ordner durchsuchen und kompilieren
+      - name: LaTeX-Dateien im Zielordner kompilieren
         run: |
-          # Ein zentraler Ordner für alle fertigen PDFs
+          
+          # Beispiel: TARGET_DIR="Vorlagen" oder TARGET_DIR="Lebenslauf"
+          TARGET_DIR="Politics"
+          
+          # Prüfen, ob der Ordner überhaupt existiert
+          if [ ! -d "$TARGET_DIR" ]; then
+            echo "Fehler: Der Ordner '$TARGET_DIR' wurde im Repository nicht gefunden!"
+            exit 1
+          fi
+
+          # Ein zentraler Ordner für alle fertigen PDFs erstellen
           mkdir -p pdf_outputs
           
-          # Suche nach allen .tex Dateien im Repository
-          find . -type f -name "*.tex" | while read -r file; do
+          echo "Suche nach Hauptdokumenten im Ordner: $TARGET_DIR"
+          
+          # Suche nach allen .tex Dateien NUR in diesem Ordner
+          find "$TARGET_DIR" -type f -name "*.tex" | while read -r file; do
             
-            # WICHTIG: Nur Dateien kompilieren, die auch ein Hauptdokument sind
+            # Nur echte Hauptdokumente kompilieren
             if grep -q '\\begin{document}' "$file"; then
               echo "========================================"
               echo "Kompiliere Hauptdokument: $file"
@@ -37,7 +48,7 @@ jobs:
               # Erwarteten PDF-Pfad generieren
               pdf_file="${file%.tex}.pdf"
               
-              # Wenn die PDF erfolgreich erstellt wurde, in den Ausgabe-Ordner kopieren
+              # Wenn die PDF erfolgreich erstellt wurde, in den Ausgabe-Ordner verschieben
               if [ -f "$pdf_file" ]; then
                 rel_dir=$(dirname "$file")
                 mkdir -p "pdf_outputs/$rel_dir"
@@ -46,9 +57,9 @@ jobs:
             fi
           done
 
-      # 3. Den gesamten Ausgabe-Ordner als Download bereitstellen
-      - name: Alle PDFs als Download speichern
+      # 3. Den Ausgabe-Ordner als Download bereitstellen
+      - name: PDFs als Download speichern
         uses: actions/upload-artifact@v4
         with:
-          name: alle-pdf-dokumente
+          name: ordner-pdf-dokumente
           path: pdf_outputs/
