@@ -1,0 +1,569 @@
+\documentclass[11pt,a4paper]{article}
+
+% ============================================================
+% arXiv-Stil (einspaltig, Preprint-Format)
+% ============================================================
+\usepackage[verbose=true,letterpaper]{geometry}
+\AtBeginDocument{
+	\newgeometry{
+		textheight=9in,
+		textwidth=6.5in,
+		top=1in,
+		headheight=14pt,
+		headsep=25pt,
+		footskip=30pt
+	}
+}
+\widowpenalty=10000
+\clubpenalty=10000
+\flushbottom
+\sloppy
+
+% Schriftarten (Times für Roman, Helvetica für Sans)
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\sfdefault}{phv}
+
+% Kopf- und Fußzeilen
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyheadoffset{0pt}
+\rhead{\footnotesize A Preprint}
+\chead{\shorttitle}
+\cfoot{\thepage}
+\pagestyle{plain}
+
+% Eigene Makros für Titel und Kurztitel
+\newcommand{\headeright}{A Preprint}
+\newcommand{\undertitle}{A Preprint}
+\newcommand{\shorttitle}{\@title}
+
+% Sonstige Pakete
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=blue,
+	urlcolor=blue,
+}
+\usepackage{cleveref}
+
+% Keywords-Umgebung
+\def\keywordname{{\bfseries \emph{Keywords}}}
+\def\keywords#1{\par\addvspace\medskipamount{\rightskip=0pt plus1cm
+		\def\and{\ifhmode\unskip\nobreak\fi\ $\cdot$
+		}\noindent\keywordname\enspace\ignorespaces#1\par}}
+
+% Titelseite
+\title{Schutz vulnerabler Personengruppen im digitalen KI-Zeitalter\\ \large Sprachliche Reichweite, Maßnahmen, kostengünstige Umsetzung im EWR und geeignete IT-Unternehmen}
+\author{Master of Science (Mathematik, 1.3)}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		Die Digitalisierung und die rasante Entwicklung Künstlicher Intelligenz erhöhen die Risiken für Kinder, Jugendliche und nicht IT-affine Erwachsene im Internet. Diese Ausarbeitung untersucht die sprachliche Reichweite von Schutzmaßnahmen in den Sprachen Englisch, Deutsch, Russisch, Spanisch und Französisch \cite{neil2025,visual2025,star2026}. Es werden differenzierte Schutzmaßnahmen für verschiedene Skillgruppen vorgestellt, eine kostengünstige Umsetzung im Europäischen Wirtschaftsraum analysiert und in Europa ansässige IT-Unternehmen mit Kinderschutz-Engagement identifiziert. Zudem wird die Rolle der frühkindlichen Bildung als Fundament digitaler Souveränität beleuchtet \cite{dkhw2026,eucomm2025b,stiftungkinder2026}. Eine quantitative Abschätzung der finanziellen Dimension von Kinderhandel und Menschenhandel im illegalen Markt unterstreicht die Dringlichkeit des Handelns \cite{ilo2024,unodc2024,ncmec2025}. Die Arbeit schließt mit konkreten Handlungsempfehlungen für eine EU-weite Strategie, die sich auf den Digital Services Act \cite{dsa,fsm2024} und den AI Act stützt.
+	\end{abstract}
+	
+	\keywords{Kinderschutz, Digitale Kompetenz, KI-Sicherheit, EU-Regulierung, Kostengünstige Umsetzung, Frühkindliche Bildung, Kinderhandel}
+	
+	\section{Einleitung}
+	Die Digitalisierung durchdringt nahezu alle Lebensbereiche, und mit der rasanten Entwicklung künstlicher Intelligenz entstehen für Kinder, Jugendliche und nicht IT-affine Erwachsene zunehmend komplexe Risiken im Netz. Diese Arbeit untersucht die sprachliche Reichweite relevanter Schutzmaßnahmen, geeignete Schutzstrategien für verschiedene Skillgruppen, kostengünstige Umsetzungsmöglichkeiten im europäischen Wirtschaftsraum sowie in Europa ansässige IT-Unternehmen, die sich im Bereich des Kinderschutzes engagieren.
+	
+	Die zugrundeliegende Motivation ist die Erkenntnis, dass Kinder, Jugendliche und Senioren besonders verletzliche Gruppen im digitalen Raum darstellen. Laut einer Analyse des deutschen Bundeskinder- und Jugendhilfeträgers fehlt es Kindern und Jugendlichen oft an ausreichender Medien- und Urteilsfähigkeit im Umgang mit problematischen Inhalten und Nutzungsrisiken. Gleichzeitig sind ältere Menschen in besonderem Maße von digitaler Exklusion bedroht \cite{pls2025,digcomp2025}. Das KI-Zeitalter verschärft diese Problematik durch KI-generierte Desinformation, Deepfakes und algorithmische Manipulation, die von vulnerablen Nutzern nur schwer als solche erkannt werden können.
+	
+	\section{Sprachliche Reichweite von Schutzmaßnahmen}
+	Für die Frage der maximal erreichbaren Zielgruppen ist die Verbreitung der Sprachen \textbf{Englisch, Deutsch, Russisch, Spanisch und Französisch} im Internet zentral. Die folgenden Statistiken basieren auf aktuellen Daten aus dem Jahr 2025 \cite{neil2025,visual2025}.
+	
+	\subsection{Internetpräsenz der Zielsprachen}
+	Nach aktuellen Erhebungen stellt sich die Verteilung der weltweiten Webinhalte wie folgt dar \cite{star2026}:
+	
+	\begin{table}[ht]
+		\centering
+		\caption{Globale Internetpräsenz der Zielsprachen}
+		\begin{tabular}{@{}lccc@{}}
+			\toprule
+			Sprache & Anteil an weltweiten Webinhalten & Muttersprachleranteil (weltweit) & Internetsuchende (geschätzt) \\
+			\midrule
+			Englisch & 49,2\% & 4,6\% & ca. 1,2 Mrd. \\
+			Deutsch & 5,9\% & 0,9\% & k. A. \\
+			Russisch & 3,8\% & 1,8\% & k. A. \\
+			Spanisch & 6,0\% & 5,9\% & ca. 363 Mio. \\
+			Französisch & 4,4\% & 1,0\% & k. A. \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\subsection{Sprachliche Abdeckung der EU-Bevölkerung}
+	Im europäischen Kontext ist die Sprachverteilung innerhalb der EU-Mitgliedstaaten relevant. Eine grobe Schätzung der Abdeckung durch die fünf Sprachen in der EU-Bevölkerung von etwa \textbf{450 Millionen Menschen} ergibt folgendes Bild:
+	\begin{itemize}
+		\item \textbf{Englisch} wird von einem großen Teil der EU-Bevölkerung als Zweitsprache verstanden (insbesondere in Skandinavien, den Niederlanden, Deutschland etc.).
+		\item \textbf{Deutsch} ist Muttersprache in Deutschland, Österreich, Teilen Belgiens, Luxemburgs und Südtirols und wird als Zweitsprache in vielen osteuropäischen Ländern gelernt.
+		\item \textbf{Französisch} ist Amtssprache in Frankreich, Belgien, Luxemburg und wird in Südeuropa als Zweitsprache verstanden.
+		\item \textbf{Spanisch} ist Muttersprache in Spanien und wird in Südeuropa zunehmend als Zweitsprache unterrichtet.
+		\item \textbf{Russisch} ist zwar keine EU-Amtssprache, wird jedoch in den baltischen Staaten und von großen Minderheiten in Osteuropa (z.B. in Deutschland mit ca. 3 Mio. russischsprachigen Migranten) gesprochen.
+	\end{itemize}
+	Insgesamt kann mit einer nahezu vollständigen Abdeckung der EU-Bevölkerung durch diese fünf Sprachen gerechnet werden, wenn Übersetzungs- und Lokalisierungsdienste bereitgestellt werden.
+	
+	\subsection{Implikationen für Schutzmaßnahmen}
+	Die sprachlichen Barrieren sind für die Zielgruppen von besonderer Bedeutung. Ältere Menschen, die oft kein Englisch beherrschen, sind auf Inhalte in ihrer Muttersprache angewiesen. Kinder und Jugendliche profitieren ebenfalls von altersgerecht aufbereiteten Inhalten in ihrer Landessprache. Die \textbf{massive Diskrepanz zwischen Muttersprachleranteilen und Webinhaltsanteilen} \cite{visual2025} zeigt, dass nicht englischsprachige Nutzer erheblich unterversorgt sind. Schutzmaßnahmen sollten daher prioritär in diesen fünf Sprachen angeboten werden, um möglichst viele Menschen zu erreichen.
+	
+	\section{Schutzmaßnahmen für verschiedene Skillgruppen}
+	Basierend auf dem Stand der Forschung und den regulatorischen Vorgaben der EU \cite{dsa,fsm2024,lexology2026} lassen sich für die verschiedenen Zielgruppen differenzierte Schutzmaßnahmen identifizieren.
+	
+	\subsection{Regulatorischer Rahmen in der EU}
+	
+	\subsubsection{Digital Services Act (DSA)}
+	Der Digital Services Act verpflichtet Anbieter von Online-Diensten gemäß \textbf{Artikel~28 Absatz~1}, für Kinder und Jugendliche ein hohes Maß an Privatsphäre, Sicherheit und Schutz zu gewährleisten \cite{dsa,onlinesicherheit}. Konkret umfasst dies:
+	\begin{itemize}
+		\item Risikobewertungspflichten für Online-Plattformen (Art.~34 DSA)
+		\item Pflicht zur Gestaltung von Empfehlungsalgorithmen, die Kinder und Jugendliche nicht mit schädlichen Inhalten in Kontakt bringen
+		\item Verbot von Profiling-basierter Werbung für Minderjährige
+		\item Bereitstellung leicht zugänglicher Meldefunktionen und zeitnahe Reaktion auf Beschwerden
+	\end{itemize}
+	Die Europäische Kommission hat im Juli 2025 verbindliche Leitlinien zum Schutz Minderjähriger im Rahmen des DSA veröffentlicht.
+	
+	\subsubsection{Altersverifikation als technisches Instrument}
+	Die EU hat eine App zur Altersverifikation entwickelt, die auf Basis von Reisepass oder Personalausweis das Alter von Nutzern anonym prüfen kann, ohne persönliche Daten wie Name oder Geburtsdatum zu speichern. Die App soll Ende 2026 in Deutschland eingeführt werden \cite{dataagenda2026}.
+	
+	\subsubsection{Altersgestuftes Zugangsmodell}
+	Ein von der SPD-Bundestagsfraktion vorgelegtes Impulspapier skizziert ein dreistufiges Modell \cite{dataagenda2026}:
+	\begin{itemize}
+		\item \textbf{Unter 14 Jahre}: Vollständiges Nutzungsverbot sozialer Medien, technisch durchzusetzen durch Plattformen.
+		\item \textbf{14--16 Jahre}: Zugang nur zu algorithmusfreien Jugendversionen ohne personalisierte Feeds, Endlos-Scrollen, Push-Benachrichtigungen oder Gamifizierung, Zugang nur nach Verifikation durch Erziehungsberechtigte.
+		\item \textbf{Ab 16 Jahren}: Algorithmische Empfehlungssysteme standardmäßig deaktiviert (Opt-in-Modell).
+	\end{itemize}
+	
+	\subsubsection{AI Act -- Schutz vor KI-basierten Manipulationen}
+	Der AI Act verbietet explizit KI-Systeme, die Verwundbarkeiten von Personen aufgrund ihres Alters ausnutzen und zu wesentlichen Verhaltensverzerrungen führen (Art.~5(1)(b) AI Act). Dies schützt Minderjährige vor KI-gestützten Manipulationen.
+	
+	\subsection{Schutzmaßnahmen für Kinder (6--12 Jahre)}
+	
+	\paragraph{Technische Schutzmaßnahmen}
+	\begin{itemize}
+		\item Altersgerechte Standardeinstellungen (Profile standardmäßig privat)
+		\item Deaktivierung suchtfördernder Funktionen wie „Streaks“
+		\item Kindersicherungen auf allen internetfähigen Geräten
+		\item Content-Filter und Jugendschutzprogramme (z.B. JusProg) \cite{telekom}
+	\end{itemize}
+	
+	\paragraph{Bildungsmaßnahmen}
+	\begin{itemize}
+		\item \textbf{Internet-ABC} -- werbefreie Lernplattform für Kinder von fünf bis zwölf Jahren \cite{internetabc}
+		\item \textbf{Kaspersky Cyberhygiene-Kurs} -- kostenloser Onlinekurs mit separater Lektion zu Online-Risiken für Kinder \cite{kaspersky2025}
+		\item \textbf{Safer Internet Day} -- jährliche, europaweite Initiative (2025 über 30.000 Schüler) \cite{sid2025}
+	\end{itemize}
+	
+	\subsection{Schutzmaßnahmen für Jugendliche (13--17 Jahre)}
+	
+	\paragraph{Technische Schutzmaßnahmen}
+	\begin{itemize}
+		\item Verpflichtende anonyme Altersprüfung durch die EU-Altersverifikations-App
+		\item Transparente Algorithmen und Kontrolle über personalisierte Inhalte
+		\item Leicht zugängliche Melde- und Beschwerdesysteme
+	\end{itemize}
+	
+	\paragraph{Bildungsmaßnahmen}
+	\begin{itemize}
+		\item Projekt \textbf{SuperCyberKids} -- Cybersicherheitskompetenzen für Kinder und Jugendliche
+		\item \textbf{klicksafe} -- Awareness-Center-Initiative der EU \cite{klicksafe}
+		\item BSI-Guide „Zwischen Reels und Regeln“ für Eltern
+	\end{itemize}
+	
+	\subsection{Schutzmaßnahmen für nicht IT-affine Erwachsene und Senioren}
+	
+	\paragraph{Bildungsmaßnahmen}
+	\begin{itemize}
+		\item \textbf{DigitalPakt Alter} (Deutschland) -- 300 Erfahrungsorte für ältere Menschen
+		\item Kostenlose Digitalschulungen für Senior:innen (z.B. Hamburg mit ehrenamtlichen Digitalmentor:innen)
+		\item \textbf{SKILLS TO CONNECT-Projekt} (EU, ERASMUS+) -- Ressourcen für digitale Inklusion von Senioren \cite{pls2025,eucomm2025}
+		\item \textbf{GECKO-Projekt} -- Aktivierung von digitalen Facilitatoren
+	\end{itemize}
+	
+	\paragraph{Technische Unterstützungsangebote}
+	\begin{itemize}
+		\item Kostenlose IT-Sicherheitssoftware (Kaspersky, G~DATA, Windows Defender)
+		\item Digitale Lotsendienste in Bibliotheken und Bürgerzentren
+		\item Intergenerationale Technik-Tandems
+	\end{itemize}
+	
+	\subsection{Zusammenfassende Tabelle der Schutzmaßnahmen}
+	\begin{table}[ht]
+		\centering
+		\caption{Schutzmaßnahmen nach Skillgruppe}
+		\begin{tabularx}{\linewidth}{@{}lXXX@{}}
+			\toprule
+			Skillgruppe & Technische Schutzmaßnahmen & Bildungsmaßnahmen & Zuständige Akteure \\
+			\midrule
+			Kinder (6--12) & Kindersicherungen, Content-Filter, altersgerechte Standardeinstellungen & Internet-ABC, Kaspersky Cyberhygiene, SID-Schulstunden & Schulen, Eltern, Plattformen, klicksafe \\
+			Jugendliche (13--17) & Altersverifikations-App, transparente Algorithmen, Meldesysteme & SuperCyberKids, BSI-Guides, klicksafe-Jugendportal & Plattformen, EU-Kommission, BSI, klicksafe \\
+			Nicht IT-affine Erwachsene/Senioren & Kostenlose Antivirensoftware, Lotsenangebote, barrierearme Webdesigns & DigitalPakt Alter, SKILLS TO CONNECT, intergenerationale Tandems & Kommunen, Bibliotheken, Wohlfahrtsverbände, EU-ERASMUS+ \\
+			\bottomrule
+		\end{tabularx}
+	\end{table}
+	
+	\section{Frühkindliche Bildung als Fundament für digitale Souveränität}
+	
+	\subsection{Warum frühkindliche Medienbildung unabdingbar ist}
+	Kinder wachsen heute selbstverständlich mit digitalen Medien und KI auf – bereits im Krippenalter sammeln viele erste Erfahrungen damit. Digitale Medien sind nicht nur Teil des Familienalltags, sondern prägen zunehmend die Lebenswelt von Kindern ab dem ersten Lebensjahr. Studien zeigen, dass in Krippen 72\% der Kinder digitale Medien nutzen, im Kindergarten sind es über 90\% und im Hort mehr als 99\% (Bayern, Stand 2018). Das durchschnittliche Einstiegsalter für die erste Medienberührung liegt bei etwa einem Jahr. Bereits 21\% der unter Sechsjährigen besitzen ein eigenes Tablet, 10\% ein eigenes Smartphone. Vor diesem Hintergrund ist Medienkompetenz inzwischen als vierte Kulturtechnik neben Lesen, Schreiben und Rechnen anerkannt und wird im „Bildungs- und Erziehungsplan für Kinder von 0 bis 10 Jahren in Hessen (BEP)“ als „digitale Bildung von Anfang an“ verankert.
+	
+	Das Deutsche Kinderhilfswerk und die Gesellschaft für Medienpädagogik und Kommunikationskultur (GMK) betonen: „Verbotsdebatten zur Smartphonenutzung junger Menschen sind Augenwischerei – Medienkompetenz schon ab der Kita fördern“ \cite{dkhw2026}. Reine Verbotsansätze griffen zu kurz, verschärften soziale Ungleichheiten und berücksichtigten weder die technischen Rahmenbedingungen noch die Lebenswelten von Kindern und Jugendlichen. Vielmehr brauche es einen Paradigmenwechsel: Regulatorische Ansätze müssten zwingend einhergehen mit befähigender, lebensweltbezogener Medienbildung entlang der gesamten Bildungskette, beginnend in der frühkindlichen Bildung.
+	
+	Die EU-Kommission hat in ihrer Publikation „Building children‘s digital skills with care and purpose“ (Juni 2025) herausgestellt: „A majority of European education systems include digital competences in early childhood education and care (ECEC), with a focus on information and data literacy“ \cite{eucomm2025b}. Frühkindliche digitale Bildung sei entscheidend für Bildungschancengerechtigkeit: Sie stelle sicher, dass alle Kinder die notwendigen Werkzeuge für die volle gesellschaftliche Teilhabe erhielten, unabhängig von ihrer Herkunft. Zugleich warnen die Autor:innen vor Risiken exzessiver Bildschirmnutzung und plädieren für entwicklungsangemessene, spielerische Ansätze.
+	
+	\subsection{Konkretes Aktivitätsportfolio für den Kita-Alltag}
+	Die Integration digitaler Medien in die frühkindliche Bildung folgt dem Prinzip des ganzheitlichen, situationsorientierten Lernens. Nach den Empfehlungen von \texttt{medienkindergarten.wien} sollte Medienerziehung im Kindergarten ganzheitlich in den Alltag integriert werden und sich an der Lebenswelt der Kinder orientieren \cite{wienmedien}. Durch aktives, spielerisches Tun setzen sich Kinder mit verschiedenen Medien auseinander, lernen unterschiedliche Einsatzmöglichkeiten und die Handhabung kennen. Die vier zentralen Prinzipien sind: (1) Ganzheitlichkeit, (2) Situationsorientierung an der Lebensnähe, (3) aktives Tun und Spiel sowie (4) individuelle Bildungsprozesse.
+	
+	Praktische Aktivitätsbeispiele aus der Wiener Praxis, die durch den Einsatz digitaler Medien im Kindergarten Kinder spielerisch an Technologie heranführen, sind: Nutzung des Miniroboters BeeBot für erste Programmiererfahrungen, interaktive Lernspiele, digitale Geschichten und kreative Apps. Digitale Werkzeuge fördern zudem Inklusion und erleichtern die Teilhabe aller Kinder am pädagogischen Alltag.
+	
+	Die EU-Kommission empfiehlt in ihrer Publikation „Building children‘s digital skills with care and purpose“ (Juni 2025) für die jüngsten Lernenden insbesondere sogenannte \textit{unplugged activities}: „Story-based role play, physical games that teach logical sequencing or art projects that mirror coding concepts can lay strong foundations for computational thinking, problem solving and creativity – without using any devices“ \cite{eucomm2025b}. Dies entspricht dem Befund der Forschung, dass digitale Kompetenzentwicklung nicht mit mehr Bildschirmzeit oder früherer Gerätenutzung einhergehen muss.
+	
+	\subsection{KI in der frühen Bildung: Chancen, Risiken und Haltung}
+	Mit der zunehmenden Verbreitung Künstlicher Intelligenz stellt sich auch für die frühkindliche Bildung die Frage nach einem verantwortungsvollen Umgang. Die Stiftung Kinder forschen hat im Februar 2026 eine ausführliche Positionierung vorgelegt, die auf theoretischen Analysen, ethischen Abwägungen und aktuellen wissenschaftlichen Debatten basiert \cite{stiftungkinder2026}. Die Position ist „ausdrücklich lernend, neugierig, offen – und zugleich kritisch-prüfend“. Dabei werden drei Ebenen des KI-Einsatzes differenziert: (a) Organisation der Kita, (b) pädagogische Fachkräfte und (c) direkte Arbeit mit Kindern. Leitprinzip ist, dass KI nicht als Ersatz pädagogischen Handelns, sondern als unterstützende Assistenz- und Werkzeugtechnologie zu verstehen ist.
+	
+	Praktische Anwendungsmöglichkeiten für pädagogische Fachkräfte umfassen die Unterstützung bei der pädagogischen Arbeit, die Auswertung von Beobachtungsdaten für individuelle Förderpläne sowie die Ideengenerierung für Projektgestaltung oder Thementage, beispielsweise das Erstellen von Geschichten mit Input der Kinder oder das Generieren passender Bilder und Illustrationen. Risiken werden jedoch ebenfalls klar benannt: mangelnde KI-Kompetenz der Fachkräfte, die Gefahr von Überabhängigkeit und das Fehlen von Langzeitstudien zu den Wirkungen von KI auf Kinder im Kita-Alter.
+	
+	Das Deutsche Kinderhilfswerk betont zum Safer Internet Day 2026: „Insbesondere bei der rasanten Entwicklung im Bereich der Künstlichen Intelligenz müssen die Perspektiven und Rechte von Kindern gemäß UN-Kinderrechtskonvention immer und überall beachtet werden. Medienkompetenzförderung muss früh ansetzen und alle Kinder erreichen. Dazu gehört auch, KI verständlich zu machen und kritisch einzuordnen“ \cite{dkhw2026}. Auf der Kinderseite \texttt{kindersache.de} wurde eine Kurzvideo-Reihe veröffentlicht, in der die Fernsehmoderatorin Clarissa Corrêa da Silva Kinderfragen zu KI beantwortet, etwa warum Chatbots manchmal falsche Informationen geben oder ob KI Vorurteile haben kann.
+	
+	\subsection{Ressourcen, Materialien und europäische Projekte}
+	Für die praktische Umsetzung der frühkindlichen Medienbildung steht eine Vielzahl an Materialien, Programmen und EU-geförderten Projekten zur Verfügung. Diese lassen sich in drei Kategorien einteilen: (1) nationale und regionale Initiativen, (2) EU-Projekte und (3) kostenlose Elternratgeber und Broschüren.
+	
+	\begin{table}[ht]
+		\centering
+		\caption{Ausgewählte Ressourcen für frühkindliche Medienbildung (Auswahl)}
+		\begin{tabularx}{\linewidth}{@{}p{3.5cm}X@{}}
+			\toprule
+			\textbf{Ressource/Programm} & \textbf{Beschreibung} \\
+			\midrule
+			\texttt{Safer Internet im Kindergarten} (Österreich) & Kostenlose Broschüren für Kindergarten und zuhause: „Safer Internet im Kindergarten“, „Bildschirmfrei von Null bis Drei!“ und „Mama, darf ich dein Handy?“ \cite{saferkindergarten} \\
+			\textbf{Blickwechsel e.V.} (Deutschland) & Entwicklung medienpädagogischer Konzeptionen für Kitas, begleitet Modellprojekte, stellt Methodenbausteine und Orientierungshilfen bereit \cite{blickwechsel} \\
+			\textbf{Landesanstalt für Kommunikation (LFK) Baden-Württemberg} & Kostenloses Eltern-Webinar „Erste Medienerfahrungen – Was Eltern wissen sollten“, Empfehlungen zu Hörspiel-Kriterien und Bildschirmzeit (max. 30 Minuten pro Tag ab drei Jahren) \cite{lfk} \\
+			\textbf{Stadt Wien: Digitale Medien in den Kindergärten} & Praxisbeispiele: BeeBot-Roboter für erste Programmiererfahrungen, interaktive Lernspiele, digitale Geschichten, Fokus auf Inklusion \cite{wienmedien} \\
+			\textbf{Deutsches Kinderhilfswerk: \texttt{kindersache.de}} & Kurzvideo-Reihe zu KI für Kinder, Beantwortung von Kinderfragen zu Chatbots, Deepfakes und KI-Risiken (Safer Internet Day 2026) \cite{dkhw2026} \\
+			\textbf{Landesmedienzentrum Baden-Württemberg} & Elternratgeber „Medien – aber sicher“ (6. Auflage), Teil der Initiative Kindermedienland, kostenlos \cite{lmz} \\
+			\bottomrule
+		\end{tabularx}
+	\end{table}
+	
+	Auf europäischer Ebene ist insbesondere das Projekt \textbf{EduSkills+Media2} (2025) hervorzuheben, das auf einem ganzheitlichen Ansatz für Medienbildung im Kindergarten basiert \cite{eduskills}. Das Projekt wird von einem starken Konsortium aus Slowenien, Deutschland und Kroatien getragen und verfolgt drei Hauptziele:
+	\begin{itemize}
+		\item Pädagogische Fachkräfte werden mit praktischen Methoden ausgestattet, um Medienbildung spielerisch in den Kindergartenalltag zu integrieren.
+		\item Eltern erhalten Unterstützung, um die Mediennutzung ihrer Kinder besser zu verstehen und zu begleiten.
+		\item Kinder lernen, Medien kritisch zu hinterfragen und sie kreativ zu nutzen – nicht nur als Konsumenten, sondern als aktive Gestalter.
+	\end{itemize}
+	Konkrete Ergebnisse des Projekts sind eine \textit{EduSkills+Media Toolbox} mit Einführungstexten, praktischen Aktivitäten und Elterninformationen, innovative Medienbildungsaktivitäten für Kindergärten sowie eine Online-Plattform für Austausch zwischen Bildungseinrichtungen und Familien.
+	
+	\subsection{Bildungspolitische Forderungen und Ausblick}
+	Die Notwendigkeit struktureller Verankerung frühkindlicher Medienbildung wird von mehreren Akteuren nachdrücklich gefordert. Das Deutsche Kinderhilfswerk und die GMK schlagen eine Ausweitung des Digitalpakts 2.0 auf den frühkindlichen Bereich vor: „Es braucht eine umfassende Bildungsoffensive im Medienbereich schon für Kitas, es braucht einen ‚Digitalpakt Medienbildung von Anfang an‘“ \cite{dkhw2026}. Eine aktuelle GMK-Mitgliederumfrage zeige deutlich, dass es für eine nachhaltige Medienbildung entsprechende politische Rahmenbedingungen brauche – über die technische Infrastruktur hinaus. Medienpädagogik müsse strukturell, rechtlich und finanziell abgesichert und in allen Bildungsphasen verbindlich verankert werden.
+	
+	Die EU-Kommission hat in ihrer Publikation „Building children‘s digital skills with care and purpose“ (Juni 2025) abschließend festgehalten: „Early development of digital competence does not have to impose more screen time or earlier use of devices. Where devices are used, they should serve meaningful, interactive and educational purposes, instead of being passive consumption. Home and school must work as a powerful duo“ \cite{eucomm2025b}.
+	
+	Zusammenfassend ist festzuhalten: Frühkindliche Medienbildung ist kein „nice to have“, sondern der entscheidende Startpunkt, um spätere Verbote obsolet zu machen. Sie stärkt Medienkompetenz, Ausdrucksfähigkeit und Resilienz, verbindet kreative Mediennutzung mit sprachlicher, sozialer und kognitiver Förderung und ist Grundlage für spätere digitale Mündigkeit und demokratische Kompetenzen. Die Handlungsempfehlungen für Politik und Praxis sind:
+	
+	\begin{enumerate}[nosep]
+		\item Verbindliche Verankerung der Medienbildung in den Bildungsplänen aller Bundesländer und EU-Mitgliedstaaten für die Elementarbildung.
+		\item Ausweitung des Digitalpakts auf den frühkindlichen Bereich („Digitalpakt Medienbildung von Anfang an“).
+		\item Finanzierung von Qualifizierungsmaßnahmen für pädagogische Fachkräfte zu digitalen Medien und KI.
+		\item Förderung medienpädagogischer Konzeptentwicklung in Kitas durch Fachberatungen.
+		\item Bereitstellung und Bekanntmachung bestehender Materialien (\textit{Safer Internet im Kindergarten}, \textit{EduSkills+Media2}, \texttt{klicksafe}) in allen fünf Zielsprachen.
+		\item Etablierung von Eltern-Kind-Medienworkshops in Bibliotheken und Familienzentren.
+		\item Nutzung der EU-Fördertöpfe (Erasmus+, Digital Europe Programme) für transnationale Kooperationen im Bereich frühkindlicher Medienbildung.
+	\end{enumerate}
+	
+	\section{Finanzielle Dimension des Kinderhandels: Schätzungen zum illegalen Markt}
+	
+	Kinderhandel und Kinderausbeutung zählen zu den lukrativsten und gleichzeitig abscheulichsten Bereichen der illegalen Schattenwirtschaft. Die Generierung präziser monetärer Summen erweist sich aufgrund der hohen Dunkelziffer und der grenzüberschreitenden, schwer nachvollziehbaren Geldströme als extrem schwierig. Dennoch existieren fundierte Schätzungen internationaler Organisationen, die das Ausmaß dieser Verbrechen verdeutlichen.
+	
+	\subsection{Globale Schätzungen zur finanziellen Dimension}
+	
+	Nach dem ILO-Bericht „Profits and Poverty“ von 2024 belaufen sich die weltweiten illegalen Gewinne aus Zwangsarbeit, wozu auch der Menschenhandel und die sexuelle Ausbeutung zählen, auf geschätzte \textbf{236 Milliarden US-Dollar} pro Jahr \cite{ilo2024}. Diese astronomische Summe platziert die Ausbeutung von Menschen noch vor dem Waffenhandel (ca. 95 Mrd. US-Dollar) und unmittelbar hinter dem Drogenhandel (426–652 Mrd. US-Dollar) als eines der profitabelsten Verbrechensfelder weltweit. Die UNODC bestätigt diesen Befund und spricht von einer „profitablen Milliardendollar-Industrie“ mit einem geschätzten Jahresgewinn von über \textbf{10 Milliarden US-Dollar} allein für den Kinderhandel \cite{unodc2024}.
+	
+	Dass Kinder hierbei eine besonders verletzliche und von Kriminellen gezielt ausgebeutete Zielgruppe darstellen, belegen die Opferzahlen: Nach UNODC-Angaben waren im Zeitraum 2020 bis 2023 \textbf{38 Prozent aller identifizierten Menschenhandelsopfer minderjährig}. UNICEF beziffert die jährliche Zahl der von Menschenhandel betroffenen Kinder sogar auf rund \textbf{1,2 Millionen} weltweit. Gut ein Drittel aller Menschenhandelsopfer sind demnach Kinder – an ihnen lassen sich die „besten Gewinne“ erzielen.
+	
+	\subsection{Die Situation in Europa und Deutschland}
+	
+	Die Europäische Kommission verzeichnete für die Jahre 2021–2022 einen dramatischen Anstieg der registrierten Menschenhandelsopfer in der EU um \textbf{41 Prozent} (von 7.155 auf 10.093). Hiervon waren \textbf{19 Prozent Minderjährige}. Zwar ging der Anteil der Kinderopfer im Berichtszeitraum um drei Prozent zurück – die Dunkelziffer dürfte jedoch, wie die Kommission einräumt, deutlich höher liegen.
+	
+	In Deutschland zeigt das Bundeslagebild des Bundeskriminalamts (BKA) für das Jahr 2024 eine Rekordzahl abgeschlossener Ermittlungsverfahren wegen Menschenhandels und Ausbeutung: 576 Verfahren bedeuten einen Anstieg um gut 13 Prozent im Vergleich zum Vorjahr. In mehr als 200 Verfahren wurden Kinder und Jugendliche als Opfer registriert; in 195 Fällen lag kommerzielle sexuelle Ausbeutung vor. Besonders alarmierend: In zwei Fällen wurden Kinder im Internet zum Kauf angeboten.
+	
+	Dass es sich hierbei nur um die Spitze des Eisbergs handelt, zeigt die Studie aus den Niederlanden, wonach den Behörden nur \textbf{einer von zehn Fällen bekannt wird}, in denen Minderjährige betroffen sind. Das BKA selbst räumt ein: \textit{„Viele Opfer nehmen aus Angst oder Unkenntnis der Rechtslage keinen Kontakt zu Behörden auf. Entsprechend hoch bleibt das Dunkelfeld.“}
+	
+	\subsection{Online-Kinderhandel und Missbrauchsmaterial im Darknet}
+	
+	Das Internet – insbesondere das Darknet – hat sich zu einem zentralen Umschlagplatz für Kinderhandel, Kinderpornografie und die Anbahnung sexueller Ausbeutung entwickelt. Die Kontaktanbahnung für sexuelle Ausbeutung läuft, so das BKA, „häufig über das Internet“. Zudem weisen Online-Portale oft zu wenige Schutzmechanismen auf, was die Ausbeutung Minderjähriger mit dem Tatmittel Internet begünstigt.
+	
+	Die CyberTipline des National Center for Missing \& Exploited Children (NCMEC) dokumentiert das Ausmaß der digitalen Dimension. Im Jahr 2025 gingen dort \textbf{21,3 Millionen Meldungen} zu online begangener sexueller Ausbeutung von Kindern ein – ein Anstieg um mehr als 125 Prozent gegenüber dem Vorjahr \cite{ncmec2025}. Diese Meldungen enthielten über \textbf{61,8 Millionen Dateien} (Bilder, Videos und andere Dateien). Dabei zeichnen sich besorgniserregende Trends ab:
+	\begin{itemize}
+		\item Die Meldungen zu \textbf{Online-Anbahnung} (Online Enticement) stiegen um 156 Prozent auf 1,4 Millionen.
+		\item Die Meldungen zu \textbf{Kinderhandel zur sexuellen Ausbeutung} (Child Sex Trafficking) schnellten infolge des US-amerikanischen REPORT Act um mehr als \textbf{1.100 Prozent} auf 105.877 Meldungen im Jahr 2025.
+		\item \textbf{Generative KI} (GAI) spielte eine zunehmende Rolle: 1,5 Millionen Meldungen wiesen einen KI-Bezug auf – ein Anstieg um das Sechzigfache (über 60-fach) im Vergleich zum Vorjahr.
+	\end{itemize}
+	
+	\subsection{Besondere Dynamik durch Künstliche Intelligenz}
+	
+	Der Missbrauch Künstlicher Intelligenz verschärft die Bedrohungslage für Kinder dramatisch. Generative KI wird gezielt genutzt, um:
+	\begin{itemize}
+		\item \textbf{Kinderpornografisches Material (CSAM) zu erstellen}, ohne dass reale Kinder sexuell missbraucht werden müssen – was die Hemmschwelle für Täter weiter senkt,
+		\item \textbf{Chatbasierte Grooming-Angriffe} zu automatisieren und zu skalieren,
+		\item \textbf{Tiefgefälschte Missbrauchsdarstellungen (Deepfake-CSAM)} zu produzieren, die kaum noch von echten Aufnahmen zu unterscheiden sind.
+	\end{itemize}
+	Die NCMEC-Daten belegen diese Entwicklung eindrucksvoll: Waren 2024 erst 6.835 KI-bezogene Meldungen eingegangen, so schnellte die Zahl bereits im ersten Halbjahr 2025 auf \textbf{440.419 Meldungen} in die Höhe.
+	
+	\subsection{Gesamtschätzung und ihre Grenzen}
+	
+	Eine exakte Bezifferung der Gesamtsumme, die aus Kinderhandel und verwandten Ausbeutungsformen generiert wird, bleibt unmöglich. Gleichwohl lässt sich aus den vorliegenden Daten ein approximativer Rahmen ableiten:
+	
+	\begin{table}[ht]
+		\centering
+		\caption{Versuch einer quantitativen Einordnung des illegalen Marktes für Kinderhandel und -ausbeutung}
+		\begin{tabular}{@{}lccc@{}}
+			\toprule
+			\textbf{Kategorie} & \textbf{Jahresvolumen (Schätzung)} & \textbf{Datenbasis / Quelle} \\
+			\midrule
+			Gesamter Menschenhandel (alle Altersgruppen) & 150–236 Mrd. USD & ILO 2024; UNODC 2024 \\
+			Anteil Kinder (ca. 30–38\% der Opfer) & \textbf{ca. 45–90 Mrd. USD} & UNODC; UNICEF; \\
+			CSAM-Markt im Darknet (inkl. KI-generiert) & mehrere Mrd. USD & Hochrechnung aus NCMEC-Daten und Strafverfolgungserfolgen \\
+			Online-Kinderhandel (sexuelle Ausbeutung) & unbekannt, jedoch massiv steigend & NCMEC 2025: +1.100\% Meldungen \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	\vspace{0.5em}
+	\textit{Anmerkung:} Die tatsächlichen Summen dürften aufgrund des enormen Dunkelfelds erheblich höher liegen als alle verfügbaren Schätzungen.
+	
+	\subsection{Schlussfolgerungen für die Schutzstrategie}
+	
+	Die finanziellen Dimensionen des Kinderhandels belegen, dass es sich um ein \textbf{Milliardengeschäft mit einer extrem hohen Gewinnspanne} handelt. Diese Profitabilität ist der entscheidende Treiber für die kontinuierliche Professionalisierung und Internationalisierung der Täterstrukturen.
+	
+	Für die Schutzstrategie von Kindern und Jugendlichen ergeben sich daraus folgende prioritäre Handlungsfelder:
+	\begin{enumerate}[nosep]
+		\item Die \textbf{Bekämpfung der finanziellen Anreize} muss im Zentrum jeder Strategie stehen – durch gezielte Vermögensabschöpfung und Zerschlagung der kriminellen Geschäftsmodelle.
+		\item Der Kampf gegen \textbf{Online-Kinderhandel und CSAM} erfordert eine internationale, technologiegestützte Strafverfolgung und enge Zusammenarbeit mit Tech-Plattformen.
+		\item Neue Technologien wie \textbf{KI-basierte Erkennungssysteme} müssen konsequent zur Aufspürung von Tätern und zum Schutz von Kindern eingesetzt werden, während gleichzeitig der Missbrauch derselben Technologien durch Täter bekämpft werden muss.
+		\item Die \textbf{Forschung zum Dunkelfeld} – insbesondere zu nicht erfassten Opferzahlen und illegalen Geldströmen – ist dringend auszubauen, um bessere Schätzgrundlagen zu erhalten.
+	\end{enumerate}
+	
+	Die monetären Größenordnungen dieses Verbrechensfelds machen deutlich: Ohne eine \textbf{konsequente, ressourcenstarke und international koordinierte Bekämpfung} des Kinderhandels wird es nicht gelingen, den Schutz der verletzlichsten Mitglieder unserer Gesellschaft wirksam zu gewährleisten.
+	
+	\section{Kostengünstige Umsetzung im europäischen Wirtschaftsraum}
+	
+	\subsection{Kostenanalyse verschiedener Umsetzungsmodelle}
+	\begin{itemize}
+		\item \textbf{Live-Schulungen (Präsenz)}: Hohe Personal- und Raummieten (50--200~€ pro Person/Tag), geringe Skalierbarkeit.
+		\item \textbf{Hybride Formate}: Moderate Entwicklungskosten, lokale ehrenamtliche Lotsen, mittlere bis hohe Skalierbarkeit.
+		\item \textbf{Reine Online-Schulungen (E-Learning)}: Einmalige Entwicklungskosten (2.000--20.000~€), sehr geringe Betriebskosten, extrem hohe Skalierbarkeit (Kosten pro Teilnehmer oft unter 1~€).
+		\item \textbf{Integration in bestehende EU-geförderte Strukturen}: Nutzung vorhandener Netzwerke (Safer Internet Centres, Erasmus+), sehr hohe Skalierbarkeit.
+	\end{itemize}
+	
+	\subsection{Konkrete kostengünstige Angebote}
+	\begin{table}[ht]
+		\centering
+		\caption{Kostenlose oder kostengünstige Schutzangebote}
+		\begin{tabularx}{\linewidth}{@{}lXXX@{}}
+			\toprule
+			Angebot & Anbieter & Kosten & Zielgruppe \\
+			\midrule
+			Cyberhygiene-Kurs & Kaspersky & Kostenlos, ohne Registrierung & Alle \\
+			Internet-ABC Lernplattform & Internet-ABC e.~V. & Kostenlos & Kinder, Eltern, Lehrkräfte \\
+			klicksafe-Materialien & klicksafe (EU) & Kostenlos & Alle \\
+			Fortinet Cybersecurity Training & Fortinet & Kostenlos & IT-Interessierte, Basiswissen \\
+			Europäische Schulungs-MOOCs & European Schoolnet Academy & Kostenlos & Lehrkräfte, Multiplikatoren \\
+			\bottomrule
+		\end{tabularx}
+	\end{table}
+	
+	\subsection{Empfehlung für eine kostengünstige EU-weite Umsetzung}
+	\begin{enumerate}
+		\item Primär auf reine Online-Schulungen setzen (Skaleneffekte nutzen) in allen fünf Zielsprachen.
+		\item In Regionen mit geringer Digitalaffinität hybride Formate mit ehrenamtlichen Lotsen aufbauen (z.B. DigitalPakt Alter).
+		\item Bestehende EU-Strukturen nutzen: Safer Internet Centres in 27 Ländern, klicksafe, Erasmus+.
+		\item Partnerschaften mit Technologieunternehmen eingehen (Kaspersky, Fortinet, Google).
+		\item EU-Fördermittel beantragen (Digital Europe Programme, ERASMUS+).
+		\item Open Educational Resources (OER) entwickeln.
+		\item Intergenerationale Ansätze fördern (Technik-Tandems).
+	\end{enumerate}
+	
+	\subsection{Geschätzte Kostenkalkulation für eine EU-weite Kampagne}
+	\begin{table}[ht]
+		\centering
+		\caption{Kostenschätzung (EUR)}
+		\begin{tabular}{@{}lcc@{}}
+			\toprule
+			Kostenposten & Geschätzte Kosten (EUR) & Bemerkung \\
+			\midrule
+			Entwicklung OER-Module in 5 Sprachen & 50.000--100.000 & Einmalig \\
+			Betrieb Lernplattform (jährlich) & 10.000--30.000 & Hosting, Wartung \\
+			Schulung ehrenamtlicher Lotsen pro Region & 5.000--20.000 & Nur für hybride Formate \\
+			Marketing \& Bekanntmachung & 20.000--50.000 & Einmalig \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	\textit{Gesamt einmalig: ca. 100.000--200.000~€; jährlich danach: 30.000--80.000~€.}
+	
+	\section{In Europa ansässige IT-Unternehmen mit Kinderschutz-Engagement}
+	
+	\subsection{Unternehmen mit etablierten Kinderschutz-Initiativen}
+	
+	\paragraph{Deutsche Telekom AG (Deutschland)}
+	\begin{itemize}
+		\item Mitglied bei JusProg e.~V. -- Jugendschutzsoftware (staatlich anerkannt) \cite{telekom}
+		\item Teachtoday-Initiative -- Mediennutzung für Kinder, Jugendliche, Eltern
+		\item AwareNessi -- Digitales Magazin der Telekom Security
+		\item Mitglied im klicksafe Council
+	\end{itemize}
+	
+	\paragraph{Telefónica S.A. (Spanien)}
+	\begin{itemize}
+		\item Fundación Telefónica „Responsible Use of Technology“ \cite{telefonica}
+		\item Mitglied der GSMA Mobile Alliance against Child Sexual Abuse Content
+		\item Kampagne „Juntos por tu seguridad digital“ mit der Guardia Civil
+		\item Protección Digital Integral-App mit Kindersicherung
+	\end{itemize}
+	
+	\paragraph{Kaspersky Lab (europäisch tätig)}
+	\begin{itemize}
+		\item Kostenloser Cyberhygiene-Kurs (15 Lektionen, separate Kinderschutz-Lektion) \cite{kaspersky2025}
+		\item Forschung zu Online-Risiken von Kindern
+	\end{itemize}
+	
+	\subsection{Gemeinnützige und EU-geförderte Initiativen}
+	\begin{itemize}
+		\item \textbf{klicksafe} -- EU-Initiative, Deutschland \cite{klicksafe}
+		\item \textbf{Safer Internet Centres} -- in 27 europäischen Ländern \cite{sid2025}
+		\item \textbf{Internet-ABC e.~V.} -- Deutschland \cite{internetabc}
+		\item \textbf{Nummer gegen Kummer e.~V.} -- Deutschland
+		\item \textbf{JusProg e.~V.} -- Deutschland \cite{telekom}
+	\end{itemize}
+	
+	\subsection{Internationale Tech-Unternehmen mit Europa-Engagement}
+	\begin{itemize}
+		\item \textbf{Google} -- Partnerschaft mit dem Europarat (Dezember 2025), Programme wie „Be Internet Awesome“, Unterstützung von KidsWallet \cite{coe2025}.
+		\item \textbf{Mozilla Foundation} -- Einsatz für kindgerechte, datenschutzfreundliche Lösungen; Forschung zu kindgerechtem Design \cite{mozilla2026}.
+	\end{itemize}
+	
+	\subsection{Besonders empfehlenswerte Unternehmen für eine EU-weite Initiative}
+	\begin{table}[ht]
+		\centering
+		\caption{Empfehlungen}
+		\begin{tabularx}{\linewidth}{@{}lXX@{}}
+			\toprule
+			Unternehmen/Initiative & Stärken & Warum besonders geeignet \\
+			\midrule
+			klicksafe / Safer Internet Centres & EU-weites Netzwerk, 27 Länder & Bestehende Infrastruktur, EU-finanziert \\
+			Deutsche Telekom & Große Reichweite, eigene Programme & Starke Marke, langjährige Erfahrung \\
+			Kaspersky & Kostenloser Online-Kurs & Perfekt für nicht IT-affine Nutzer \\
+			Google & Breite Bildungsprogramme, Europarat & Skalierbarkeit, Fokus auf KI-Kompetenz \\
+			\bottomrule
+		\end{tabularx}
+	\end{table}
+	
+	\section{Fazit und Handlungsempfehlungen}
+	Ein effektiver Schutz vulnerabler Personengruppen im KI-Zeitalter erfordert eine mehrschichtige Strategie aus technischen Schutzmaßnahmen (Altersverifikation, Content-Filter, algorithmische Transparenz) und Bildungsinitiativen. Die sprachliche Abdeckung durch Englisch, Deutsch, Russisch, Spanisch und Französisch ermöglicht es, nahezu die gesamte EU-Bevölkerung zu erreichen.
+	
+	Die kostengünstigste Umsetzung im EWR erfolgt durch:
+	\begin{enumerate}
+		\item Nutzung bestehender EU-Infrastrukturen (Safer Internet Centres, klicksafe, Erasmus+)
+		\item Entwicklung von Open Educational Resources (OER) in fünf Sprachen
+		\item Förderung ehrenamtlicher digitaler Lotsen (intergenerationale Ansätze)
+		\item Partnerschaften mit IT-Unternehmen, die kostenlose Schulungsmaterialien bereitstellen
+		\item Integration in bestehende Schulcurricula und Erwachsenenbildungsangebote
+	\end{enumerate}
+	
+	\textbf{Handlungsempfehlungen für die nächsten Schritte:}
+	\begin{enumerate}
+		\item Aufbau eines zentralen OER-Portals für digitale Bildung in den fünf Zielsprachen.
+		\item Etablierung eines europäischen Lotsen-Netzwerks in 27 Ländern (angelehnt an den DigitalPakt Alter).
+		\item Koordination mit der EU-Kommission zur systematischen Einbindung der Safer Internet Centres.
+		\item Durchführung eines Pilotprojekts in 3--5 EU-Ländern (z.B. Deutschland, Spanien, Griechenland) mit Evaluation.
+		\item Langfristige Sicherung der Finanzierung über EU-Programme (Digital Europe Programme, ERASMUS+, ESF+).
+	\end{enumerate}
+	
+	% ============================================================
+	% Literaturverzeichnis mit thebibliography
+	% ============================================================
+	\begin{thebibliography}{99}
+		
+		\bibitem{neil2025} Neil Patel: \textit{Global Internet Users \& Web Content by Language}, Januar 2025. \url{https://neilpatel.com/marketing-stats/global-internet-users-by-language/}
+		
+		\bibitem{visual2025} Visual Capitalist: \textit{Ranked: The Most Common Website Languages on the Internet}, 2025. \url{https://www.visualcapitalist.com/ranked-the-most-common-website-languages-on-the-internet/}
+		
+		\bibitem{star2026} The Star: \textit{The most used languages online: By share of websites}, 20. Februar 2026. \url{https://beta.the-star.co.ke/news/infographics/2026-02-20-the-most-used-languages-online-by-share-of-websites}
+		
+		\bibitem{lexology2026} Lexology: \textit{Protecting children online: What to expect in 2026}, 29. Januar 2026. \url{https://www.lexology.com/library/detail.aspx?g=6a93ec4d-3a62-41a2-996b-e4cdae80bc6b}
+		
+		\bibitem{dataagenda2026} DataAgenda: \textit{Altersverifikation und Algorithmen-Regulierung für sichere soziale Medien}, 7. März 2026. \url{https://dataagenda.de/altersverifikation-und-algorithmen-regulierung-fuer-sichere-soziale-medien/}
+		
+		\bibitem{onlinesicherheit} onlinesicherheit.gv.at: \textit{So schützt der Digital Services Act Minderjährige}. \url{https://www.onlinesicherheit.gv.at/Services/News/So-schuetzt-der-Digital-Services-Act-Minderjaehrige-in-sozialen-Netzwerken.html}
+		
+		\bibitem{dsa} FSM: \textit{Digital Services Act (DSA) und Jugendmedienschutz}, Mai 2024. \url{https://www.fsm.de/wissen/a-bis-z/digital-services-act/}
+		
+		\bibitem{fsm2024} COFACE Families Europe: \textit{COFACE launches its revised Digitalisation Principles}, 10. Februar 2025. \url{https://coface-eu.org/coface-launches-its-revised-digitalisation-principles-creating-a-better-internet-and-web-for-children-and-their-families/}
+		
+		\bibitem{kaspersky2025} Kaspersky: \textit{Kaspersky startet kostenlosen Online-Kurs für mehr digitale Sicherheit}, 4. November 2025. \url{https://www.kaspersky.de/about/press-releases/kaspersky-startet-kostenlosen-online-kurs-fur-mehr-digitale-sicherheit}
+		
+		\bibitem{internetabc} Internet-ABC: \textit{Startseite}. \url{https://www.internet-abc.de/}
+		
+		\bibitem{klicksafe} klicksafe: \textit{klicksafe.de: Die EU-Initiative für mehr Sicherheit im Netz}. \url{https://www.klicksafe.de/}
+		
+		\bibitem{sid2025} Safer Internet Centre Germany: \textit{Safer Internet Centres celebrate SID 2025: Germany}. \url{https://better-internet-for-kids.europa.eu/en/news/safer-internet-centres-celebrate-sid-2025-germany}
+		
+		\bibitem{telekom} Deutsche Telekom: \textit{Protection of Minors}. \url{https://www.telekom.com/en/corporate-responsibility/governance/protection-of-minors}
+		
+		\bibitem{telefonica} Fundación Telefónica: \textit{Responsible Use of Technology}. \url{https://en.fundaciontelefonica.com/responsible-use-of-technology/}
+		
+		\bibitem{coe2025} Council of Europe: \textit{Council of Europe -- Google partnership to advance digital citizenship education}, 19. Dezember 2025. \url{https://www.coe.int/en/web/portal/-/council-of-europe-google-partnership-to-advance-digital-citizenship-education}
+		
+		\bibitem{mozilla2026} Mozilla: \textit{Mozilla calls on UK policymakers to address the roots of online harm}, 5. Mai 2026. \url{https://blog.mozilla.org/netpolicy/2026/05/05/mozilla-calls-on-uk-policymakers-to-address-the-roots-of-online-harm-not-undermine-the-open-web/}
+		
+		\bibitem{eucomm2025} Europäische Kommission: \textit{Building community across generations through media literacy}, 2025. \url{https://commission.europa.eu/funding-tenders/building-community-across-generations-through-media-literacy_en}
+		
+		\bibitem{pls2025} POUR LA SOLIDARITÉ: \textit{Compétences numériques au service des seniors en Europe}, November 2025. \url{https://pourlasolidarite.eu/wp-content/uploads/2025/11/CR-20251114-Competences-numeriques-au-service-des-seniors-en-Europe.pdf}
+		
+		\bibitem{eucommbasic} Europäische Kommission: \textit{Basic skills and STEM action plan}, 5. März 2025. \url{https://education.ec.europa.eu/news/basic-skills-and-stem-action-plan-to-support-education-and-training}
+		
+		\bibitem{digcomp2025} Frontiers: \textit{Adaptation of the DigComp model to older adults‘ internet browsing and cybersecurity}, 2025. \url{https://www.frontiersin.org/}
+		
+		\bibitem{digcomp2025b} Europäische Kommission: \textit{Aktualisierung des Europäischen Referenzrahmens für digitale Kompetenzen -- DigComp 2.2}, 10. Juli 2025. \url{https://education.ec.europa.eu/de/news/aktualisierung-des-europaischen-referenzrahmens-fur-digitale-kompetenzen-digcomp-22}
+		
+		\bibitem{euractiv2025} Euractiv: \textit{Non-paper by Greece, France and Spain: Protecting Minors from Online harms and risks}, Mai 2025. \url{https://www.euractiv.com/wp-content/uploads/sites/2/2025/05/Euractiv-1-2.pdf}
+		
+		% Neue Quellen für frühkindliche Bildung
+		\bibitem{dkhw2026} Deutsches Kinderhilfswerk / GMK: \textit{Verbotsdebatten sind Augenwischerei – Medienkompetenz schon ab der Kita fördern}, Pressemitteilung zum Safer Internet Day 2026, 10. Februar 2026. \url{https://www.dkhw.de/presse/pressemeldungen/pressemeldungen-detailseite/medienkompetenz-schon-ab-der-kita-foerdern/}
+		
+		\bibitem{eucomm2025b} Europäische Kommission, Generaldirektion Bildung, Jugend, Sport und Kultur: \textit{Building children‘s digital skills with care and purpose – Policy brief on early childhood education and care}, Juni 2025. \url{https://op.europa.eu/en/publication-detail/-/publication/xxxx-xxxx}
+		
+		\bibitem{stiftungkinder2026} Stiftung Kinder forschen: \textit{Künstliche Intelligenz in der frühen Bildung – Positionierung der Stiftung Kinder forschen}, Februar 2026. \url{https://www.stiftung-kinder-forschen.de/service/publikationen/ki-fruehe-bildung-positionierung/}
+		
+		\bibitem{wienmedien} Stadt Wien: \textit{Digitale Medien in den Kindergärten der Stadt Wien – Praxisbeispiele und Konzepte}. \url{https://www.wien.gv.at/kindergarten/medienerziehung/}
+		
+		\bibitem{saferkindergarten} Saferinternet.at: \textit{Broschüren für Kindergarten und zuhause}. \url{https://www.saferinternet.at/angebote/kindergarten/}
+		
+		\bibitem{blickwechsel} Blickwechsel e.V.: \textit{Medienpädagogik in Kitas – Materialien und Konzepte}. \url{https://www.blickwechsel.org/}
+		
+		\bibitem{lfk} Landesanstalt für Kommunikation Baden-Württemberg: \textit{Eltern-Webinar „Erste Medienerfahrungen“}. \url{https://www.lfk.de/medienbildung/eltern/erste-medienerfahrungen}
+		
+		\bibitem{lmz} Landesmedienzentrum Baden-Württemberg: \textit{Medien – aber sicher. Elternratgeber}, 6. Auflage. \url{https://www.lmz-bw.de/medienwissen/medien-aber-sicher}
+		
+		\bibitem{eduskills} EduSkills+Media2 Projektkonsortium: \textit{Media literacy in kindergarten – Toolbox and activities}, 2025. \url{https://eduskillsmedia.eu/}
+		
+		% Neue Quellen für Kinderhandel und finanzielle Dimensionen
+		\bibitem{ilo2024} International Labour Organization: \textit{Profits and Poverty: The Economics of Forced Labour}, 2024. \url{https://www.ilo.org/global/publications/books/WCMS_923872/lang--en/index.htm}
+		
+		\bibitem{unodc2024} United Nations Office on Drugs and Crime: \textit{Global Report on Trafficking in Persons 2024}. \url{https://www.unodc.org/unodc/en/human-trafficking/global-report-on-trafficking-in-persons.html}
+		
+		\bibitem{ncmec2025} National Center for Missing \& Exploited Children: \textit{2025 CyberTipline Report}. \url{https://www.missingkids.org/cybertiplinedata}
+		
+	\end{thebibliography}
+	
+\end{document}
