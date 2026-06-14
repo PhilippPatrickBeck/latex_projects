@@ -1,39 +1,116 @@
-# LaTeX-Projekte
+# LaTeX-Projekte & Vorlagen
 
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
-In diesem Repository befindet sich eine persönliche Sammlung meiner Arbeiten, die mit dem Textsatzsystem **LaTeX** erstellt wurden. Die Bandbreite reicht von wissenschaftlichen Analysen und Präsentationen über Programmierbeispiele bis hin zu Anleitungen.
+Eine strukturierte Sammlung von LaTeX-Projekten, wissenschaftlichen Dokumentenvorlagen und automatisierten Workflows.
 
 ---
 
-## 🗂️ Projekte im Überblick
+## 📌 Inhalt des Repositories
 
-| Projekt | Beschreibung |
-| :--- | :--- |
-| **KI_Polizei_Justiz** | Eine mehrteilige Analyse der rechtlichen und ethischen Herausforderungen durch den Einsatz Künstlicher Intelligenz bei Polizei und Justiz in Deutschland. Die Arbeit beleuchtet Themen wie algorithmische Diskriminierung, KI-Halluzinationen und die Gefahr von Fehlurteilen [18†L14-L21]. |
-| **Lebenslauf** | Eine professionelle, in LaTeX gesetzte Bewerbungsmappe. Dieses Projekt zeigt, wie man mit LaTeX formatstrenge und strukturierte Lebensläufe erstellt, die sowohl optisch ansprechend als auch maschinenlesbar (ATS-freundlich) sind [9†L4-L7][19†L11-L13]. |
-| **Politics** | Eine Artikelserie mit politischen und gesellschaftlichen Themen, darunter Arbeiten zur Zukunft Europas und den Menschenrechten [4†L4-L9]. |
-| **Science** | Eine Sammlung wissenschaftlicher Ausarbeitungen aus den Bereichen Mathematik ("Mystery_Math_Girl"), Medizin, Informatik und Klimawandel. Besonders hervorzuheben ist die deutsche Analyse zum Klimawandel [3†L4-L15][21†L2-L3]. |
-| **date_sicherheit** | Eine Präsentation zum Thema Datensicherheit, erstellt mit der LaTeX-Beamer-Klasse. Perfekt geeignet, um komplexe Sachverhalte visuell und strukturiert darzustellen [0†L36-L38]. |
-| **latex_tutorial** | Ein umfassender Leitfaden, der LaTeX mit klassischen Textverarbeitungen (WYSIWYG) vergleicht. Er dient als Entscheidungshilfe für Schüler und Studenten, um den richtigen Einsatz von LaTeX in verschiedenen Szenarien zu verstehen [10†L3-L18]. |
+Hier ist eine Übersicht der typischen Verzeichnisse in diesem Projekt:
+
+* 📂 `/Vorlagen` – Universelle Templates für Berichte, Protokolle, Hausarbeiten und Dokumente.
+* 📂 `/Abschlussarbeit` – Quellcode und Struktur für wissenschaftliche Arbeiten (Bachelor-/Masterarbeit).
+* 📂 `/Lebenslauf` – Moderne, professionelle und minimalistische Lebenslauf-Vorlagen (CV).
+* 📂 `/Praesentationen` – Beamer-Templates für wissenschaftliche oder geschäftliche Vorträge.
 
 ---
 
-## 🏗️ Projektstruktur
+## 🚀 Voraussetzungen & Installation (Für die lokale Bearbeitung)
 
-Das Repository ist thematisch in Hauptkategorien unterteilt, die eine schnelle Navigation ermöglichen:
+Wenn du die Dokumente direkt auf deinem eigenen Computer bearbeiten und kompilieren möchtest, benötigst du eine LaTeX-Distribution und einen geeigneten Editor.
 
-```text
-latex_projects/
-├── KI_Polizei_Justiz/       # Mehrteilige Analyse zu KI in Polizei & Justiz
-├── Lebenslauf/              # LaTeX-CV mit Bewerbungsfotos
-├── Politics/                # Politische Essays & Analysen
-│   ├── Europa/              # Artikel zur EU
-│   └── human_rights/        # Menschenrechts-Analysen
-├── Science/                 # Wissenschaftliche Arbeiten
-│   ├── Math/                # Mathematische Rätsel & Theorien
-│   ├── Medizin/             # Medizinische Aufsätze
-│   ├── Computer_Science/    # Informatik-Themen (z. B. Sortieralgorithmen)
-│   └── climate_change/      # Klimawandel-Analysen (deutsch)
-├── date_sicherheit/         # Beamer-Präsentation zur Datensicherheit
-└── latex_tutorial/          # Leitfaden: LaTeX vs. Textverarbeitung
+### 1. LaTeX-Distribution installieren
+* **Windows:** [MiKTeX](https://miktex.org/) oder [TeX Live](https://www.tug.org/texlive/)
+* **macOS:** [MacTeX](https://www.tug.org/mactex/)
+* **Linux (Ubuntu/Debian):** `sudo apt-get update && sudo apt-get install texlive-full`
+
+### 2. Empfohlene Editoren
+* **VS Code (Empfohlen):** Zusammen mit der Erweiterung **LaTeX Workshop**.
+* **TeXstudio:** Eine klassische, einsteigerfreundliche Komplettlösung.
+* **Overleaf (Cloud):** Alternativ einfach als ZIP-Datei exportieren und in [Overleaf](https://www.overleaf.com/) hochladen.
+
+---
+
+## 🛠️ Manuelle Kompilierung (Kommandozeile)
+
+```bash
+# Kompilierung mit pdfLaTeX (Standard)
+latexmk -pdf main.tex
+
+# Bereinigen von temporären Hilfsdateien (.aux, .log, .toc, etc.)
+latexmk -c
+```
+
+---
+
+## 🤖 Automatische PDF-Erstellung (GitHub Actions)
+
+Dieses Repository ist für eine automatische Hintergrund-Funktion (CI/CD) vorbereitet.
+
+### 🤔 Was bedeutet das für dich?
+Jedes Mal, wenn du eine Änderung an deinen LaTeX-Dateien vornimmst und sie hier auf GitHub hochlädst (ein "Push"), fängt im Hintergrund ein virtueller Computer von GitHub automatisch an zu arbeiten. Er liest deinen LaTeX-Code komplett durch und baut daraus die fertige PDF-Datei zusammen. 
+
+**Dein großer Vorteil:** Du musst LaTeX nicht einmal auf deinem eigenen Computer installiert haben, um zu sehen, wie das fertige Dokument aussieht. GitHub übernimmt das fehlerfrei für dich im Hintergrund!
+
+### 📂 Wo finde ich die automatisch erstellte PDF?
+1. Klicke ganz oben auf dieser GitHub-Projektseite auf den Reiter **"Actions"** (direkt neben "Code").
+2. Klicke in der Liste auf den obersten (neuesten) Eintrag.
+3. Scrolle auf der folgenden Detailseite ganz nach unten bis zum Bereich **"Artifacts"** (Artefakte).
+4. Klicke auf den Download-Link namens `pdf-dokument`, um deine fertige PDF-Datei als ZIP-Archiv herunterzuladen.
+
+---
+
+## 📝 TODO: CI/CD Automatisierung im Repository aktivieren
+
+> ⚠️ **HINWEIS:** Damit die oben beschriebene automatische PDF-Erstellung funktioniert, muss dieser technische Bauplan noch im Repository hinterlegt werden.
+
+**Deine Aufgabe (TODO):**
+1. Erstelle im Hauptverzeichnis dieses Repositories einen Ordner namens `.github` (mit dem Punkt am Anfang).
+2. Erstelle darin einen Unterordner namens `workflows`.
+3. Erstelle in diesem Ordner eine Datei namens `compile_latex.yml`.
+4. Kopiere den folgenden YAML-Code exakt so in diese Datei hinein und speichere sie ab:
+
+```yaml
+name: LaTeX PDF automatisch erstellen
+
+on:
+  push:
+    branches: [ main ] # Startet die Automatisierung bei jedem Push in den "main"-Branch
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Den Code aus diesem Repository auf den virtuellen Server laden
+      - name: Code auschecken
+        uses: actions/checkout@v4
+
+      # 2. LaTeX im Hintergrund ausführen und PDF erstellen
+      - name: LaTeX kompilieren
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex # ⚠️ WICHTIG: Wenn deine Hauptdatei anders heißt, hier anpassen (z.B. master.tex)!
+
+      # 3. Die fertige PDF-Datei auf GitHub als Download bereitstellen
+      - name: PDF als Download speichern
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-dokument
+          path: main.pdf # ⚠️ WICHTIG: Wenn deine Hauptdatei anders heißt, hier anpassen (z.B. master.pdf)!
+```
+
+---
+
+## ✍️ Beitrag leisten (Contributing)
+
+GitHub-Issues und Pull Requests sind herzlich willkommen!
+1. Repository forken
+2. Neuen Feature-Branch erstellen (`git checkout -b feature/OptimierteVorlage`)
+3. Änderungen committen und Branch hochladen
+4. Einen Pull Request auf GitHub eröffnen
+
+---
+
+## 📄 Lizenz
+
+Dieses Projekt ist unter der [MIT-Lizenz](LICENSE) lizenziert.
