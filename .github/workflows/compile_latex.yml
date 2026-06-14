@@ -1,8 +1,8 @@
-name: LaTeX PDFs aus bestimmtem Ordner automatisch erstellen
+name: Compile LaTeX PDFs from specific folder
 
 on:
   push:
-    branches: [ main ] # Ggf. in "master" ändern, falls dein Branch bei GitHub so heißt
+    branches: [ main ] # Change to master if your repository uses master instead of main
 
 jobs:
   build_folder_latex:
@@ -11,55 +11,81 @@ jobs:
       image: texlive/texlive:latest
 
     steps:
-      # 1. Den Code aus deinem Repository laden
-      - name: Code auschecken
+      # 1. Checkout the repository code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Nur den angegebenen Ordner durchsuchen und kompilieren
-      - name: LaTeX-Dateien im Zielordner kompilieren
+      # 2. Search and compile only the specified folder
+      - name: Find and compile LaTeX files in target folder
         run: |
-          
-          # Beispiel: TARGET_DIR="Vorlagen" oder TARGET_DIR="Lebenslauf"
+          # The target folder has been set to Politics
           TARGET_DIR="Politics"
           
-          # Prüfen, ob der Ordner überhaupt existiert
           if [ ! -d "$TARGET_DIR" ]; then
-            echo "Fehler: Der Ordner '$TARGET_DIR' wurde im Repository nicht gefunden!"
+            echo "CRITICAL ERROR: The folder '$TARGET_DIR' does not exist in the repository!"
             exit 1
           fi
 
-          # Ein zentraler Ordner für alle fertigen PDFs erstellen
+          # Create output directory for completed PDFs
           mkdir -p pdf_outputs
           
-          echo "Suche nach Hauptdokumenten im Ordner: $TARGET_DIR"
+          echo "Starting search for .tex files in folder: $TARGET_DIR"
           
-          # Suche nach allen .tex Dateien NUR in diesem Ordner
-          find "$TARGET_DIR" -type f -name "*.tex" | while read -r file; do
+          # Write the list of files to a temporary file to avoid subshell issues
+          find "$TARGET_DIR" -type f -name "*.tex" > found_files.txt
+          
+          # Check if any files were found
+          if [ ! -s found_files.txt ]; then
+            echo "CRITICAL ERROR: No .tex files found in folder '$TARGET_DIR'!"
+            rm found_files.txt
+            exit 1
+          fi
+
+          echo "The following files will be checked:"
+          cat found_files.txt
+          
+          # Run loop without a pipeline
+          while read -r file; do
+            # Skip empty lines
+            [ -z "$file" ] && continue
             
-            # Nur echte Hauptdokumente kompilieren
+            echo "----------------------------------------"
+            echo "Checking file: $file"
+            
             if grep -q '\\begin{document}' "$file"; then
-              echo "========================================"
-              echo "Kompiliere Hauptdokument: $file"
-              echo "========================================"
+              echo "Main document detected! Compiling with latexmk..."
               
-              # LaTeX-Kompilierung starten
-              latexmk -pdf -interaction=nonstopmode "$file" || echo "Fehler beim Kompilieren von $file"
+              # Start compilation (will abort immediately if LaTeX errors occur)
+              latexmk -pdf -interaction=nonstopmode "$file"
               
-              # Erwarteten PDF-Pfad generieren
+              # Determine the expected PDF file path
               pdf_file="${file%.tex}.pdf"
               
-              # Wenn die PDF erfolgreich erstellt wurde, in den Ausgabe-Ordner verschieben
               if [ -f "$pdf_file" ]; then
+                echo "PDF successfully created: $pdf_file"
                 rel_dir=$(dirname "$file")
                 mkdir -p "pdf_outputs/$rel_dir"
                 mv "$pdf_file" "pdf_outputs/$rel_dir/"
+                echo "Moved PDF to output directory."
+              else
+                echo "ERROR: latexmk completed, but '$pdf_file' was not generated!"
+                exit 1
               fi
+            else
+              echo "Skipping: $file (No \begin{document} found / likely a sub-chapter)"
             fi
-          done
+          done < found_files.txt
+          
+          # Clean up the temporary file
+          rm found_files.txt
+          
+          echo "----------------------------------------"
+          echo "Content of the output directory before upload:"
+          ls -R pdf_outputs
 
-      # 3. Den Ausgabe-Ordner als Download bereitstellen
-      - name: PDFs als Download speichern
+      # 3. Upload the output directory as a downloadable artifact
+      - name: Upload PDFs as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ordner-pdf-dokumente
+          name: folder-pdf-documents
           path: pdf_outputs/
