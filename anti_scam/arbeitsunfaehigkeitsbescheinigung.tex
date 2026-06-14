@@ -1,0 +1,207 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\usetikzlibrary{positioning, calc}
+\pagestyle{empty}
+
+% Farbdefinitionen nach deiner Vorlage
+\definecolor{formyellow}{HTML}{FFF9C4} % Authentisches Formular-Gelb
+\definecolor{formred}{HTML}{E57373}   % Helles Rot für Rahmen und feste Label
+\definecolor{formgreen}{HTML}{2E7D32} % Grün für den ausfüllbaren Text
+
+\begin{document}
+	
+	\begin{tikzpicture}[remember picture, overlay, shift=(current page.south west)]
+		
+		% 1. Gelber Hintergrund
+		\fill[formyellow] (1.5cm, 1.5cm) rectangle (\paperwidth-1.5cm, \paperheight-1.5cm);
+		
+		% =========================================================================
+		% FÄLSCHUNGSSCHUTZ / SATIRE-WASSERZEICHEN (Dezent im Hintergrund)
+		% =========================================================================
+		\node[rotate=35, scale=4.5, opacity=0.05, text=black, font=\sffamily\bfseries] 
+		at (\paperwidth/2, \paperheight/2 + 2cm) {EINLADUNG -- KEIN DOKUMENT};
+		\node[rotate=35, scale=4.5, opacity=0.05, text=black, font=\sffamily\bfseries] 
+		at (\paperwidth/2, \paperheight/2 - 3cm) {SATIRE -- PARTY-GAG};
+		
+		% 2. Vertikaler grüner Text ganz links
+		\node[rotate=90, font=\sffamily\bfseries\small, color=formgreen, anchor=south] 
+		at (2.1cm, \paperheight/2) {Bei nicht rechtzeitiger Vorlage droht extreme Langeweile!};
+		
+		% =========================================================================
+		% RECHTE SEITE: TITEL & HINWEISE
+		% =========================================================================
+		
+		% Haupttitel
+		\node[anchor=north west, font=\sffamily\bfseries\Large, color=formgreen, align=left] 
+		at (9.5cm, \paperheight-1.8cm) {Feier-\\bescheinigung};
+		
+		\node[anchor=north east, font=\sffamily\bfseries\Large] 
+		at (\paperwidth-2cm, \paperheight-1.8cm) {1};
+		
+		% Box: Ausfertigung zur Vorlage...
+		\draw[formred, thick] (9.5cm, \paperheight-3.8cm) rectangle (\paperwidth-2cm, \paperheight-4.8cm);
+		\node[anchor=center, font=\sffamily\bfseries\small, color=formgreen, align=center] 
+		at ($(9.5cm, \paperheight-3.8cm)!0.5!(\paperwidth-2cm, \paperheight-4.8cm)$) 
+		{Ausfertigung zur Vorlage\\beim Gastgeber};
+		
+		% Gedicht rechts
+		\node[anchor=north west, font=\sffamily\small, color=formgreen, align=left, text width=9cm] 
+		at (9.5cm, \paperheight-5.2cm) {
+			Wer sich fragt: „Was soll ich kaufen?“\\
+			Braucht sich nicht die Haare raufen.\\
+			Willst du mir eine Freude machen,\\
+			lass doch mein Sparschwein lachen.\\[1em]
+			\footnotesize Bitte um Rückantwort - bis 01.12.21\\
+			Wer nicht kann, ruft an - 0111/123456
+		};
+		
+		% =========================================================================
+		% LINKE SEITE: FORMULARFELDER
+		% =========================================================================
+		
+		% Box 1: Anlass
+		\draw[formred, thick] (2.7cm, \paperheight-1.8cm) rectangle (9.0cm, \paperheight-3.0cm);
+		\node[anchor=north west, font=\sffamily\tiny\bfseries, color=formred] at (2.8cm, \paperheight-1.9cm) {Anlass};
+		\node[anchor=west, font=\sffamily\small, color=formgreen] at (2.8cm, \paperheight-2.6cm) {Einladung zum 30.ten Geburtstag};
+		
+		% Box 2: Gastgeber & Geb. am
+		\draw[formred, thick] (2.7cm, \paperheight-3.0cm) rectangle (9.0cm, \paperheight-4.2cm);
+		\draw[formred, thick] (7.0cm, \paperheight-3.0cm) -- (7.0cm, \paperheight-4.2cm);
+		
+		\node[anchor=north west, font=\sffamily\tiny\bfseries, color=formred] at (2.8cm, \paperheight-3.1cm) {Gastgeber};
+		\node[anchor=west, font=\sffamily\small, color=formgreen] at (2.8cm, \paperheight-3.8cm) {Max Mustermann};
+		
+		\node[anchor=north west, font=\sffamily\tiny\bfseries, color=formred] at (7.1cm, \paperheight-3.1cm) {geb. am};
+		\node[anchor=west, font=\sffamily\small, color=formgreen] at (7.1cm, \paperheight-3.8cm) {11.12.1991};
+		
+		% Box 3: Veranstaltungsort
+		\draw[formred, thick] (2.7cm, \paperheight-4.2cm) rectangle (9.0cm, \paperheight-6.4cm);
+		\node[anchor=north west, font=\sffamily\tiny\bfseries, color=formred] at (2.8cm, \paperheight-4.3cm) {Veranstaltungsort};
+		\node[anchor=north west, font=\sffamily\small, color=formgreen, align=left] at (2.8cm, \paperheight-4.8cm) {
+			Auf der Tulpe\\
+			Tulpenweg 60\\
+			90768 Fürth
+		};
+		
+		% Box 4: Motto
+		\draw[formred, thick] (2.7cm, \paperheight-6.4cm) rectangle (9.0cm, \paperheight-7.6cm);
+		\node[anchor=north west, font=\sffamily\tiny\bfseries, color=formred] at (2.8cm, \paperheight-6.5cm) {Motto};
+		\node[anchor=west, font=\sffamily\small, color=formgreen] at (2.8cm, \paperheight-7.2cm) {Unterm Tisch ist auch auf der Party!};
+		
+		% =========================================================================
+		% INTERAKTIVE PROFILE: CHECKBOXEN MIT ROTEM 'X'
+		% =========================================================================
+		
+		% Macro für die stilechten Checkboxen aus dem Bild
+		\newcommand{\partybox}[3]{%
+			\begin{scope}[shift={(#1, #2)}]
+				\draw[black, thick] (0,0) rectangle (0.4, 0.4);
+				\draw[formred, ultra thick] (0.05,0.05) -- (0.35,0.35);
+				\draw[formred, ultra thick] (0.05,0.35) -- (0.35,0.05);
+				\node[anchor=west, font=\sffamily\scriptsize, color=black] at (0.5, 0.2) {#3};
+			\end{scope}
+		}
+		
+		\newcommand{\partyboxgreen}[3]{%
+			\begin{scope}[shift={(#1, #2)}]
+				\draw[black, thick] (0,0) rectangle (0.4, 0.4);
+				\draw[formred, ultra thick] (0.05,0.05) -- (0.35,0.35);
+				\draw[formred, ultra thick] (0.05,0.35) -- (0.35,0.05);
+				\node[anchor=west, font=\sffamily\scriptsize, color=formgreen] at (0.5, 0.2) {#3};
+			\end{scope}
+		}
+		
+		\partybox{2.7cm}{\paperheight-8.5cm}{Getränke vorhanden}
+		\partybox{2.7cm}{\paperheight-9.3cm}{Musik}
+		\partybox{6.5cm}{\paperheight-8.5cm}{Abriss}
+		\partybox{6.5cm}{\paperheight-9.3cm}{Leckere Snacks}
+		
+		% Datums-Kästchen-Generator
+		\newcommand{\dateboxes}[4]{
+			\node[anchor=west, font=\sffamily\tiny, color=formgreen] at (2.7cm, #1) {#2};
+			\begin{scope}[shift={(6.5cm, #1-0.2cm)}]
+				\draw[formred, thick] (0,0) rectangle (2.4, 0.5);
+				\foreach \x in {0.4, 0.8, 1.2, 1.6, 2.0} {
+					\draw[formred, thin] (\x, 0) -- (\x, 0.5);
+				}
+				\foreach \txt [count=\i] in {#3} {
+					\node[font=\sffamily\small, anchor=center, color=formgreen] at (\i*0.4-0.2, 0.25) {\txt};
+				}
+			\end{scope}
+		}
+		
+		\dateboxes{\paperheight-10.3cm}{Veranstaltungsdatum}{1,1,1,2,2,1}
+		\dateboxes{\paperheight-11.1cm}{Beginn der Veranstaltung}{, ,2,0,1,5}
+		\dateboxes{\paperheight-11.9cm}{Ende der Veranstaltung}{-,-,-,-,-,-}
+		
+		% =========================================================================
+		% STEMPELBOX / ARZT
+		% =========================================================================
+		
+		\draw[formred, thick] (11.0cm, \paperheight-8.5cm) rectangle (\paperwidth-2cm, \paperheight-12.2cm);
+		
+		% Der Äskulapstab als feine TikZ-Zeichnung
+		\begin{scope}[shift={(11.4cm, \paperheight-10.8cm)}, scale=0.7]
+			\draw[thick] (0,0) -- (0,2.5);
+			\draw[thick] (-0.2,2.5) -- (0.2,2.5);
+			\draw[thick, formgreen] plot[domain=0.5:2, samples=50] ({0.3*sin(\x*360)}, \x);
+			\draw[fill=black] (0,2.6) circle (0.1);
+		\end{scope}
+		
+		\node[anchor=north west, font=\sffamily\tiny\bfseries, color=formgreen, align=left] at (12.0cm, \paperheight-8.7cm) {
+			\small Dr. Peter Feierschwein\\
+			\scriptsize -Facharzt für Party und Spaß-\\
+			Wer nicht kann - ruft an:\\
+			Tel.: 0152 / 123 45 67\\
+			oder schreibt:\\
+			peter.feierschwein@urlaub.de
+		};
+		\node[anchor=south east, font=\itshape\large, color=formgreen] at (\paperwidth-2.2cm, \paperheight-12.0cm) {Peter Feierschwein};
+		
+		% =========================================================================
+		% UNTERER BEREICH: DIAGNOSE
+		% =========================================================================
+		
+		\node[anchor=west, font=\sffamily\tiny\bfseries, color=formgreen] at (2.7cm, \paperheight-13.0cm) {Diagnose};
+		
+		\draw[formred, thick] (2.7cm, \paperheight-13.4cm) rectangle (10.5cm, \paperheight-17.5cm);
+		\node[anchor=north west, font=\ttfamily\small, color=formgreen, text width=7.3cm, align=left] 
+		at (2.9cm, \paperheight-13.6cm) {
+			Schwere Pilsvergiftung und krankhaft gute Laune! 
+			Es wird dringend empfohlen sofort eine Feier aufzusuchen, 
+			um dort auf die Krankheit anzustoßen und sie daraufhin zu vergessen. 
+			Viel Spaß!
+		};
+		
+		\partyboxgreen{11.0cm}{\paperheight-13.8cm}{Feiern unbedingt}
+		\node[anchor=west, font=\sffamily\scriptsize, color=formgreen] at (11.7cm, \paperheight-14.2cm) {empfohlen!};
+		\partyboxgreen{11.0cm}{\paperheight-15.0cm}{Pilsvergiftung}
+		
+		\node[anchor=west, font=\sffamily\tiny\bfseries, color=formgreen, text width=8cm] at (2.7cm, \paperheight-18.0cm) {
+			Es wird die Einleitung folgender besonderer Maßnahmen für erforderlich gehalten:
+		};
+		\draw[formred, thick] (2.7cm, \paperheight-18.6cm) rectangle (10.5cm, \paperheight-20.0cm);
+		\node[anchor=west, font=\ttfamily\small, color=formgreen, text width=7.3cm] at (2.9cm, \paperheight-19.3cm) {
+			Konsumieren von Getränken und tanzen wie der Lump am Stecken!
+		};
+		
+		% =========================================================================
+		% FUSSZEILE (Mit rechtlicher Absicherung / Satire-Hinweis)
+		% =========================================================================
+		
+		\draw[formred, thin] (1.5cm, 2.5cm) -- (\paperwidth-1.5cm, 2.5cm);
+		\node[anchor=west, font=\sffamily\tiny, color=formgreen] at (2.7cm, 2.2cm) {für Zwecke der Einladung};
+		
+		% Der "Lachgarantie"-Disclaimer ganz unten, der es endgültig als Fake entlarvt:
+		\node[anchor=south, font=\sffamily\tiny\itshape, color=gray!80] at (\paperwidth/2, 1.6cm) {
+			Hinweis: Dieses Dokument besitzt keinen medizinischen Nutzwert. Einlösen beim Arbeitgeber führt zu akutem Jobverlust. 
+			Gültig nur für gute Laune.
+		};
+		
+	\end{tikzpicture}
+	
+\end{document}
