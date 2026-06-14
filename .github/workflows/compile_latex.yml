@@ -1,0 +1,54 @@
+name: Alle LaTeX PDFs automatisch erstellen
+
+on:
+  push:
+    branches: [ main ] # Startet bei jedem Push in den "main"-Branch (ggf. in "master" ändern)
+
+jobs:
+  build_all_latex:
+    runs-on: ubuntu-latest
+    # Wir nutzen direkt das offizielle LaTeX-Docker-Image als Umgebung
+    container:
+      image: ghcr.io/xu-cheng/texlive:latest
+
+    steps:
+      # 1. Den Code aus dem Repository in die virtuelle Umgebung laden
+      - name: Code auschecken
+        uses: actions/checkout@v4
+
+      # 2. Alle Dokumente suchen und nacheinander kompilieren
+      - name: Alle LaTeX-Dateien suchen und kompilieren
+        run: |
+          # Ein zentraler Ordner für alle fertigen PDFs
+          mkdir -p pdf_outputs
+          
+          # Suche nach allen .tex Dateien im Repository
+          find . -type f -name "*.tex" | while read -r file; do
+            
+            # WICHTIG: Nur Dateien kompilieren, die auch ein Hauptdokument sind
+            if grep -q '\\begin{document}' "$file"; then
+              echo "========================================"
+              echo "Kompiliere Hauptdokument: $file"
+              echo "========================================"
+              
+              # LaTeX-Kompilierung starten
+              latexmk -pdf -interaction=nonstopmode "$file" || echo "Fehler beim Kompilieren von $file"
+              
+              # Erwarteten PDF-Pfad generieren
+              pdf_file="${file%.tex}.pdf"
+              
+              # Wenn die PDF erfolgreich erstellt wurde, in den Ausgabe-Ordner kopieren
+              if [ -f "$pdf_file" ]; then
+                rel_dir=$(dirname "$file")
+                mkdir -p "pdf_outputs/$rel_dir"
+                mv "$pdf_file" "pdf_outputs/$rel_dir/"
+              fi
+            fi
+          done
+
+      # 3. Den gesamten Ausgabe-Ordner als Download bereitstellen
+      - name: Alle PDFs als Download speichern
+        uses: actions/upload-artifact@v4
+        with:
+          name: alle-pdf-dokumente
+          path: pdf_outputs/
