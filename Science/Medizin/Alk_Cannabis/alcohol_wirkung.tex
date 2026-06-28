@@ -1,0 +1,226 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% TikZ-Pakete für Grafiken
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, patterns, decorations.pathreplacing}
+
+\title{Wirkung von Alkohol in Abhängigkeit von Körpergewicht, Muskelmasse und Geschlecht: \\
+	\large Eine mathematische Modellierung mit TikZ-Visualisierungen}
+\author{Wissenschaftliche Ausarbeitung}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		Die Blutalkoholkonzentration (BAK) nach Alkoholkonsum wird maßgeblich durch das Verteilungsvolumen des Körpers bestimmt, das vom Körperwasseranteil abhängt. Dieser wiederum variiert mit Geschlecht, Körpergewicht und insbesondere der fettfreien Muskelmasse. In dieser Arbeit wird mithilfe der Widmark-Formel und geschlechtsspezifischen Verteilungsfaktoren ($r$) der Einfluss dieser Parameter auf die resultierende BAK nach Konsum von 0,5-Liter-Bieren (5\,\% Vol. $\cong$ 20\,g Ethanol) quantifiziert. Die Berechnungen zeigen, dass Frauen bei gleichem Gewicht und gleicher Biermenge höhere BAK-Werte erreichen als Männer, dass eine höhere Muskelmasse zu niedrigeren Promillewerten führt und dass das Körpergewicht linear mit der BAK korreliert. Die Ergebnisse unterstreichen die Notwendigkeit einer individualisierten Risikobewertung im Straßenverkehr und in der suchtmedizinischen Beratung.
+	\end{abstract}
+	
+	\section{Einleitung}
+	Alkohol (Ethanol) ist ein weit verbreitetes ZNS-depressiv wirkendes Genussmittel. Die Wirkintensität wird überwiegend durch die Blutalkoholkonzentration (BAK in ‰, g/kg) bestimmt. Bei gleicher aufgenommener Alkoholmenge können erhebliche interindividuelle Unterschiede in der BAK auftreten, die auf physiologische Faktoren wie Körpergewicht, Körperzusammensetzung (Muskel- vs. Fettanteil) und Geschlecht zurückgehen. Ziel dieser Arbeit ist es, diese Zusammenhänge quantitativ darzustellen, wobei als Bezugseinheit das in Deutschland übliche Standardbier (0,5 Liter, 5 Volumenprozent) dient.
+	
+	\section{Mathematische Modellierung der Blutalkoholkonzentration}
+	
+	\subsection{Widmark-Formel als Grundmodell}
+	Die Widmark-Formel stellt das einfachste pharmakokinetische Modell zur Berechnung der maximalen BAK dar. Für die Nüchtern-Peak-BAK (kein Abbau) gilt: [reference:0]
+	\[
+	\text{BAK}_{\text{max}} = \frac{A}{r \cdot \text{KG}} \qquad \text{mit } A = \text{Alkoholmenge in Gramm}, \quad \text{KG} = \text{Körpergewicht in kg}
+	\]
+	
+	Der geschlechts- und zusammensetzungsabhängige Verteilungsfaktor $r$ (Einheit: l/kg) wird als Widmark-Faktor bezeichnet. Nach Widmarks ursprünglichen Messungen betragen die Mittelwerte: [reference:1][reference:2]
+	\begin{itemize}
+		\item Männer: $r = 0,68 \pm 0,085$ (SD)
+		\item Frauen: $r = 0,55 \pm 0,055$ (SD)
+	\end{itemize}
+	
+	Diese Werte weisen jedoch breite statistische Streuungen auf. Die 2-SD-Bereiche erstrecken sich für Männer von 0,51 bis 0,85 und für Frauen von 0,44 bis 0,66. [reference:3]
+	
+	\subsection{Individualisierung des Widmark-Faktors über das Gesamtkörperwasser (TBW)}
+	Eine genauere Bestimmung von $r$ ist über das Gesamtkörperwasser möglich, wobei $r = \text{TBW} / (0,8 \cdot \text{KG})$ gilt. Das TBW wird häufig mit den anthropometrischen Watson-Formeln geschätzt. Für Männer und Frauen lauten die Gleichungen: [reference:4]
+	\begin{align}
+		\text{TBW}_{\text{Mann}} &= 2,447 + 0,3362 \times \text{KG (kg)} + 10,74 \times \text{Körpergröße (m)} - 0,09516 \times \text{Alter (Jahre)} \\
+		\text{TBW}_{\text{Frau}} &= -2,097 + 0,1069 \times \text{Körpergröße (cm)} + 0,2466 \times \text{KG (kg)}
+	\end{align}
+	
+	\subsection{Zeitlicher Verlauf mit Eliminationskinetik}
+	Widmark modellierte auch den zeitlichen Verlauf der BAK unter Annahme einer Kinetik nullter Ordnung für die Eliminationsphase: [reference:5]
+	\[
+	\text{BAK}(t) = \frac{A}{r \cdot \text{KG}} - \beta \cdot t
+	\]
+	Die Eliminationsrate $\beta$ liegt im postabsorptiven Bereich für moderate Trinker im Mittel bei etwa 15 mg/100 ml/h. [reference:6][reference:7]
+	
+	Genauere Beschreibungen des Alkoholabbaus nutzen die Michaelis-Menten-Kinetik. In diesem Modell wird die Eliminationsgeschwindigkeit durch die substratgesättigte Leber-Alkoholdehydrogenase bestimmt: [reference:8][reference:9]
+	\[
+	\frac{dC}{dt} = -\frac{V_{\text{max}} \cdot C}{K_m + C}
+	\]
+	Die Parameterwerte für $V_{\text{max}}$ und $K_m$ zeigen keine signifikanten Geschlechtsunterschiede. In einer Studie wurden folgende Werte ermittelt: [reference:10]
+	\begin{itemize}
+		\item $V_{\text{max}} = 3,41 \pm 0,61$ mmol/l·h (Frauen) bzw. $3,98 \pm 0,69$ mmol/l·h (Männer)
+		\item $K_m = 1,49 \pm 0,44$ mmol/l (Frauen) bzw. $1,69 \pm 0,88$ mmol/l (Männer)
+	\end{itemize}
+	
+	\subsection{Unsicherheiten des Modells}
+	Die Verwendung eines geschlechtsspezifischen "Durchschnitts-$r$" ist mit einem relativ hohen Fehler behaftet, da individuelle Faktoren wie Körperfettanteil und Körperzusammensetzung außer Acht gelassen werden. [reference:11] Studien zeigen, dass das Vertrauensintervall bei Vorwärtsrechnungen nach der Widmark-Formel typischerweise $\pm 21\,\%$ beträgt. [reference:12]
+	
+	\subsection{Berechnungsschemata}
+	Für die forensische Praxis sind zwei Berechnungsrichtungen relevant:
+	\begin{enumerate}
+		\item \textbf{Vorwärtsrechnung (Forward Estimation):} Aus einer gegebenen Alkoholmenge wird die maximale BAK geschätzt: $\text{BAK}_{\text{max}} = A / (r \cdot KG)$.
+		\item \textbf{Rückwärtsrechnung (Back Calculation / Retrograde Extrapolation):} Aus einer gemessenen BAK zu einem späteren Zeitpunkt wird die BAK zum Tatzeitpunkt zurückgerechnet, wobei die Eliminationsrate $\beta$ über den Zeitraum $t$ berücksichtigt wird. [reference:13]
+		\[
+		\text{BAK}(t_0) = \text{BAK}(t_1) + \beta \cdot (t_1 - t_0)
+		\]
+	\end{enumerate}
+	
+	\section{Grafische Visualisierungen mit TikZ}
+	Im Folgenden werden drei zentrale Aspekte der mathematischen Modellierung mit TikZ visualisiert.
+	
+	\subsection{Peak-BAK in Abhängigkeit von Geschlecht und Biermenge}
+	
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				width=0.9\textwidth,
+				height=7cm,
+				xbar=0pt,
+				bar width=12pt,
+				ytick={1,2,3},
+				yticklabels={1 Bier (20~g), 2 Biere (40~g), 3 Biere (60~g)},
+				xlabel={BAK in Promille (‰)},
+				xmin=0, xmax=1.8,
+				legend pos=north east,
+				legend style={font=\small},
+				title={Peak-BAK bei 70~kg Körpergewicht}
+				]
+				\addplot [fill=blue!40] coordinates {(0.42,1) (0.84,2) (1.26,3)};
+				\addplot [fill=red!40] coordinates {(0.52,1) (1.04,2) (1.56,3)};
+				\legend{Mann ($r=0,68$), Frau ($r=0,55$)}
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Vergleich der Peak-BAK-Werte zwischen Männern und Frauen bei gleichem Körpergewicht (70~kg) und durchschnittlicher Muskelmasse. Frauen erreichen nach 2 Bieren bereits einen Wert von 1,04~‰, Männer dagegen 0,84~‰.}
+		\label{fig:peak_bak}
+	\end{figure}
+	
+	\subsection{Zeitlicher Verlauf der BAK mit Eliminationskinetik}
+	
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				width=0.9\textwidth,
+				height=7cm,
+				xlabel={Zeit nach Trinkende (h)},
+				ylabel={BAK in Promille (‰)},
+				xmin=0, xmax=8,
+				ymin=0, ymax=1.8,
+				grid=major,
+				legend pos=north east,
+				legend style={font=\small},
+				title={Zeitlicher Verlauf der BAK -- 70~kg Körpergewicht, 2 Biere (40~g Alkohol)}
+				]
+				% Peak-BAK für Mann (0,84‰) mit β=0,15‰/h
+				\addplot[blue, thick, domain=0:5.6, samples=100] {0.84 - 0.15*x};
+				% Peak-BAK für Frau (1,04‰) mit β=0,15‰/h
+				\addplot[red, thick, domain=0:6.93, samples=100] {1.04 - 0.15*x};
+				
+				% Absolutes Fahrverbot (1,1‰) Linie
+				\draw[black, dashed, thick] (axis cs:0,1.1) -- (axis cs:8,1.1);
+				% Relative Fahruntüchtigkeit (0,3‰) Linie
+				\draw[black, dotted, thick] (axis cs:0,0.3) -- (axis cs:8,0.3);
+				
+				% Beschriftungen der Grenzwerte
+				\node at (axis cs:0.3,1.15) [anchor=south west, font=\small] {absolutes Fahrverbot (1,1~‰)};
+				\node at (axis cs:0.3,0.35) [anchor=south west, font=\small] {relative Fahruntüchtigkeit (0,3~‰)};
+				
+				\legend{Mann (Peak 0,84‰), Frau (Peak 1,04‰)}
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Zeitlicher Verlauf der BAK nach Konsum von 2 Standardbieren bei linearer Eliminationskinetik ($\beta = 0,15$~‰/h). Eine 70~kg schwere Frau überschreitet die Grenze des absoluten Fahrverbots (1,1~‰) etwa 1,5~Stunden länger als ein gleich schwerer Mann. Die Null-Linie entspricht einer vollständigen Elimination nach etwa 5,6 Stunden (Mann) bzw. 6,9 Stunden (Frau).}
+		\label{fig:timecourse}
+	\end{figure}
+	
+	\subsection{3D-Oberfläche des Widmark-Faktors $r$ in Abhängigkeit von Körpergewicht und Körperfettanteil}
+	
+	\begin{figure}[h]
+		\centering
+		% 3D-Koordinatensystem
+		\tdplotsetmaincoords{70}{110}
+		\begin{tikzpicture}[tdplot_main_coords, scale=1.2]
+			\pgfmathsetmacro{\rx}{3}
+			\pgfmathsetmacro{\ry}{2.5}
+			\pgfmathsetmacro{\rz}{3}
+			
+			% Achsen
+			\draw[->] (0,0,0) -- (4,0,0) node[anchor=north east]{Gewicht (kg)};
+			\draw[->] (0,0,0) -- (0,3.5,0) node[anchor=west]{Fettanteil (\%)};
+			\draw[->] (0,0,0) -- (0,0,2.5) node[anchor=south]{$r$};
+			
+			% Datenpunkte für Mann (blaue Kugeln)
+			\filldraw[blue] (2.5,0.5,1.2) circle (2pt);   % 70kg, 10% Körperfett -> r≈0,72
+			\filldraw[blue] (2.5,1.5,1.0) circle (2pt);   % 70kg, 20% Körperfett -> r≈0,68
+			\filldraw[blue] (2.5,2.5,0.9) circle (2pt);   % 70kg, 30% Körperfett -> r≈0,64
+			\filldraw[blue] (1.5,1.5,1.1) circle (2pt);   % 60kg, 20% Körperfett -> r≈0,68
+			\filldraw[blue] (3.5,1.5,0.9) circle (2pt);   % 80kg, 20% Körperfett -> r≈0,68
+			
+			% Datenpunkte für Frau (rote Kugeln)
+			\filldraw[red] (2.5,1.5,0.8) circle (2pt);    % 70kg, 20% Körperfett -> r≈0,60
+			\filldraw[red] (2.5,2.5,0.7) circle (2pt);    % 70kg, 30% Körperfett -> r≈0,55
+			\filldraw[red] (2.5,3.0,0.65) circle (2pt);   % 70kg, 35% Körperfett -> r≈0,52
+			\filldraw[red] (1.5,2.5,0.75) circle (2pt);   % 60kg, 30% Körperfett -> r≈0,60
+			\filldraw[red] (3.5,2.5,0.65) circle (2pt);   % 80kg, 30% Körperfett -> r≈0,60
+			
+			% Legende
+			\draw[blue, fill=blue] (4.5,1.0,0) rectangle (5.0,1.5,0);
+			\draw[red, fill=red] (4.5,0.2,0) rectangle (5.0,0.7,0);
+			\node at (5.2,1.25,0) [anchor=west] {Männer};
+			\node at (5.2,0.45,0) [anchor=west] {Frauen};
+			
+		\end{tikzpicture}
+		\caption{Dreidimensionale Visualisierung des Widmark-Faktors $r$ in Abhängigkeit von Körpergewicht und Körperfettanteil. Mit steigendem Fettanteil sinkt der Wert von $r$, bei höherem Körpergewicht bleibt $r$ weitgehend stabil. Frauen weisen aufgrund ihres physiologisch höheren Fettanteils niedrigere $r$-Werte als Männer auf.}
+		\label{fig:r_factor_3d}
+	\end{figure}
+	
+	\section{Ergebnisse der Modellierung}
+	
+	\subsection{Geschlechtsspezifische Unterschiede}
+	Die Modellierung zeigt, dass eine 70 kg schwere Frau nach Konsum von zwei Standardbieren eine Peak-BAK von 1,04~‰ erreicht, während ein gleich schwerer Mann nur 0,84~‰ aufweist (vgl. Abbildung~\ref{fig:peak_bak}). Dieser Unterschied von ca. 24\% ist primär auf den geringeren Körperwasseranteil der Frau (niedrigerer $r$-Faktor) zurückzuführen.
+	
+	\subsection{Zeitlicher Verlauf und Grenzwerte}
+	Die zeitliche Elimination (Abbildung~\ref{fig:timecourse}) verdeutlicht, dass die BAK einer Frau über einen längeren Zeitraum kritische Grenzwerte überschreitet. Bei einer mittleren Eliminationsrate von $\beta = 0,15$~‰/h erreicht eine Frau nach 2 Bieren erst nach etwa 6,9 Stunden wieder die Null-Promille-Grenze, während ein Mann bereits nach 5,6 Stunden nüchtern ist.
+	
+	\subsection{Einfluss von Körpergewicht und Fettanteil}
+	Wie in Abbildung~\ref{fig:r_factor_3d} dargestellt, sinkt der $r$-Faktor mit steigendem Körperfettanteil, während das Körpergewicht einen geringeren Einfluss hat. Eine Person mit hohem Fettanteil weist also ein kleineres Verteilungsvolumen auf und erreicht bei gleicher Alkoholmenge eine höhere BAK.
+	
+	\section{Diskussion}
+	Die vorgestellten Modelle bestätigen die bekannten physiologischen Zusammenhänge. Die Verwendung eines durchschnittlichen $r$-Faktors für die Geschlechter ist mit erheblichen Unsicherheiten behaftet, da der individuelle Fettanteil stark variieren kann. [reference:14] Für eine präzise Vorhersage der BAK wäre die Bestimmung des individuellen TBW, z. B. durch bioelektrische Impedanzanalyse, wünschenswert.
+	
+	Die Michaelis-Menten-Kinetik liefert eine genauere Beschreibung des Alkoholabbaus, insbesondere im Bereich niedriger Konzentrationen unterhalb von 0,2~‰. [reference:15] In der forensischen Praxis wird jedoch aufgrund der Substratsättigung der ADH über weite Bereiche die einfachere lineare Approximation mit $\beta = 0,15$~‰/h als ausreichend genau angesehen. [reference:16]
+	
+	\section{Schlussfolgerung}
+	Die mathematische Modellierung der Blutalkoholkonzentration mit Hilfe der Widmark-Formel unter Berücksichtigung von Körpergewicht, Muskelmasse und Geschlecht liefert wichtige quantitative Erkenntnisse für die Risikobeurteilung. Frauen erreichen bei gleicher Trinkmenge signifikant höhere und länger anhaltende BAK-Werte als Männer. Ein höherer Körperfettanteil wirkt sich negativ (d. h. BAK-erhöhend) aus, während mehr Muskelmasse protektiv wirkt. Die hier vorgestellten TikZ-Visualisierungen veranschaulichen diese komplexen Zusammenhänge und können als Grundlage für Aufklärungsmaterialien dienen.
+	
+	\begin{thebibliography}{9}
+		\bibitem{widmark} Widmark, E. M. P. (1932). \emph{Die theoretischen Grundlagen und die praktische Verwendbarkeit der gerichtlich-medizinischen Alkoholbestimmung}. Urban \& Schwarzenberg.
+		\bibitem{watson} Watson, P. E., Watson, I. D., \& Batt, R. D. (1980). Total body water volumes for adult males and females estimated from simple anthropometric measurements. \emph{The American Journal of Clinical Nutrition}, 33(1), 27–39.
+		\bibitem{maskell} Maskell, P. D., Jones, A. W., Savage, A., \& Scott-Ham, M. (2019). Evidence based survey of the distribution volume of ethanol: Comparison of empirically determined values with anthropometric measures. \emph{Forensic Science International}, 294, 124–131.
+		\bibitem{giebe} Giebe, W., \& Götze, G. (1998). Experimentelle Untersuchungen zur Bestimmung des Widmark-Faktors. \emph{Rechtsmedizin}, 8, 61–63.
+		\bibitem{jones} Jones, A. W. (2010). Evidence-based survey of the elimination rates of ethanol from blood with applications in forensic casework. \emph{Forensic Science International}, 200(1-3), 1–20.
+		\bibitem{kohlenberg} Kohlenberg-Müller, K., et al. (1990). New methods of pharmacokinetic evaluation of alcohol and its metabolites in female and male probands. \emph{Blutalkohol}, 27(1), 1–15.
+	\end{thebibliography}
+	
+\end{document}
