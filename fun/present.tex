@@ -1,0 +1,137 @@
+\documentclass[11pt,a4paper]{article}
+
+% Paket-Imports
+\usepackage[utf8]{inputenc}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[german,ukrainian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+% Seitenränder
+\geometry{a4paper, margin=20mm}
+
+% Farbpalette
+\definecolor{kievblue}{RGB}{0, 87, 183}
+\definecolor{kievyellow}{RGB}{255, 215, 0}
+\definecolor{darknavy}{RGB}{27, 54, 93}
+\definecolor{burgundy}{RGB}{139, 0, 0}
+\definecolor{bgcream}{RGB}{250, 247, 242}
+
+\pagecolor{bgcream}
+
+\begin{document}
+	
+	% Header Banner
+	\begin{tcolorbox}[
+		colback=kievblue,
+		colframe=darknavy,
+		arc=4mm,
+		boxrule=1pt,
+		top=12pt, bottom=12pt,
+		halign=center
+		]
+		{\Huge \color{white} \bfseries Warum $1 + 1 = 0$ sein kann}\\[4pt]
+		{\LARGE \color{kievyellow} \bfseries (und $40 \sim 34$ ist)}\\[6pt]
+		{\large \color{white} \itshape Eine mathematische Geburtstagsgeschichte aus Kiew für Viktoriia}
+	\end{tcolorbox}
+	
+	\vspace{3mm}
+	
+	% Intro-Box
+	\begin{tcolorbox}[
+		colback=white,
+		colframe=kievblue,
+		boxrule=0pt,
+		leftrule=4pt,
+		arc=2mm,
+		fontupper=\itshape
+		]
+		An einem sonnigen Morgen am Ufer des Dnjepr in Kiew saß der weise \textbf{Prof. Dnjepr} auf einer Bank im Mariinskyi-Park. Er trug ein Buch voller mathematischer Formeln unter dem Arm. Da trat das Geburtstagskind \textbf{Viktoriia} an ihn heran. Sie ahnte noch nicht, dass heute ein ganz besonderer Beweis auf sie wartete...
+	\end{tcolorbox}
+	
+	\vspace{2mm}
+	
+	% Dialoge
+	\noindent \textcolor{burgundy}{\textbf{Prof. Dnjepr:}} „З днем народження, liebe Viktoriia! Bevor du deine Geschenke bekommst und den leckeren Kiewer Kuchen (Київський торт) anschneidest, muss ich dir unbedingt verraten, warum heute $1 + 1 = 0$ gilt – und warum eine runde \textbf{40} mathematisch absolut perfekt zu meinen \textbf{34} Jahren passt!“
+	
+	\vspace{2mm}
+	
+	\noindent \textcolor{kievblue}{\textbf{Viktoriia:}} „Aber Prof. Dnjepr, was für ein Quark! Wenn ich einen Borschtsch koche und noch einen dazu stelle, habe ich doch zwei Töpfe und nicht null! Und 40 ist schließlich eine Zahl mit einer 4 vorne! Da wundere ich mich gar nicht mehr, dass niemand die Mathematiker versteht.“
+	
+	\vspace{2mm}
+	
+	\noindent \textcolor{burgundy}{\textbf{Prof. Dnjepr:}} „Das verstehe ich vollkommen. Aber es kommt immer darauf an, in welcher Welt du rechnest! Kennst du denn noch das Symbol $A \Leftrightarrow B$?
+
+\vspace{2mm}
+
+\noindent \textcolor{kievblue}{\textbf{Viktoriia:}} „Na klar! Das heißt \textit{'genau dann, wenn'}. Aussage A ist wahr genau dann, wenn B wahr ist.“
+
+\section*{\color{darknavy} 1. Die Magie der Äquivalenzrelation ($\sim$)}
+
+\noindent \textcolor{burgundy}{\textbf{Prof. Dnjepr:}} „Ausgezeichnet! Damit ausgerüstet schauen wir uns eine Äquivalenzrelation an:
+
+\[
+x \sim y \iff x - y \text{ ist durch 2 teilbar.}
+\]
+
+\noindent Das bedeutet: Zwei Zahlen $x$ und $y$ gehören zur selben 'Familie', wenn ihre Differenz gerade ist. Zum Beispiel:
+\begin{itemize}
+	\item $5 \sim 3$, denn $5 - 3 = 2$ (durch 2 teilbar).
+	\item $2026 \sim 2024$, denn die Differenz ist 2.
+	\item Aber $2 \not\sim 1$, denn $2 - 1 = 1$ (nicht teilbar).
+\end{itemize}
+In dieser Welt gibt es nur zwei Gruppen von Zahlen: die \textbf{geraden} $[0]$ und die \textbf{ungeraden} $[1]$.“
+
+\section*{\color{darknavy} 2. Der Beweis: Warum $1 + 1 = 0$ ist}
+
+\noindent \textcolor{burgundy}{\textbf{Prof. Dnjepr:}} „Wenn wir nun mit diesen Mengen rechnen, definieren wir die Addition: $[x] + [y] = [x + y]$.\\
+Setzen wir nun zwei ungerade Zahlen ein, zum Beispiel $[1] + [1]$:
+\[
+[1] + [1] = [1 + 1] = [2]
+\]
+Da die Zahl 2 aber \textbf{gerade} ist, gehört sie zur Klasse $[0]$. Es gilt also:
+
+\begin{tcolorbox}[colback=yellow!15, colframe=kievyellow, arc=2mm, halign=center]
+	{\color{burgundy}\Large \textbf{$[1] + [1] = [0] \quad \Rightarrow \quad 1 + 1 = 0$}}
+\end{tcolorbox}
+
+\noindent Das bedeutet anschaulich: \textit{Ungerade plus ungerade ergibt immer etwas Gerades!}“
+
+\section*{\color{darknavy} 3. Das Kiewer Alterstheorem: $40 \sim 34$}
+
+\noindent \textcolor{kievblue}{\textbf{Viktoriia:}} „Aha! Das ist ja faszinierend. Aber was hat das mit meinen 40 Jahren und deinen 34 Jahren zu tun?“
+
+\vspace{2mm}
+
+\noindent \textcolor{burgundy}{\textbf{Prof. Dnjepr:}} „Ganz genau das! Betrachten wir unsere beiden Alterspunkte nach genau dieser Äquivalenzrelation:
+\[
+40 - 34 = 6 \quad \Rightarrow \quad 6 \text{ ist durch 2 teilbar!}
+\]
+Das beweist streng mathematisch:
+
+\begin{tcolorbox}[colback=kievblue!10, colframe=kievblue, arc=2mm, halign=center]
+	{\color{darknavy}\Large \textbf{$40 \sim 34 \iff [40] = [34] = [0]$}}
+\end{tcolorbox}
+
+\noindent Wir befinden uns also in der \textbf{exakt selben Äquivalenzklasse}! Mir macht deine wunderschöne 40 gar nichts aus, denn mathematisch gesehen sind 40 und 34 völlig gleichwertig. Und nach dem Modulo-Lebensfreude-Gesetz bleiben wir sowieso beide für immer äquivalent zu 25!“
+
+\vspace{4mm}
+
+% Footer / Q.E.D.
+\begin{tcolorbox}[
+	colback=white,
+	colframe=kievyellow,
+	arc=3mm,
+	boxrule=1.5pt,
+	halign=center
+	]
+	{\Large \color{darknavy} \textbf{$\star$ Q.E.D. – Was zu beweisen war! $\star$}}\\[4pt]
+	Nun war Prof. Dnjepr zufrieden, Viktoriia lächelte glücklich über den mathematischen Liebesbeweis, und die 40 Kerzen auf dem Kiewer Kuchen wurden gemeinsam ausgepustet.\\[6pt]
+	{\color{burgundy} \bfseries З днем народження, Вікторіє! Моє кохання, бажаю щастя, миру та кохання!}\\
+	{\small (Alles Liebe zum 40. Geburtstag, liebe Viktoriia! Ich wünsche dir Glück, Frieden und all meine Liebe!)}
+\end{tcolorbox}
+
+\end{document}
